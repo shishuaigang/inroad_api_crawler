@@ -8,7 +8,7 @@ from Test_scripts import api_param, api_response, getcookie, sendmail, write_dat
 
 
 if __name__ == "__main__":
-    print u'API test begin'
+    print u'API遍历测试开始'
     if platform.system() == 'Windows':
         cur_dir = os.getcwd()
         api_json_path = cur_dir + '\\APIcrawler_json_data'
@@ -18,8 +18,7 @@ if __name__ == "__main__":
         api_ver = conf['api_version']
         cookie = getcookie.gecookie(api_ver)
         print 'Current api version is ' + api_ver
-        inroad_url = api_param.api_url(api_json_path).api_url()
-        print inroad_url  # 获取api的url的地址
+        inroad_url = api_param.api_url(api_json_path).api_url()  # 获取api的url的地址
         cn_name = api_param.api_cn_name(api_json_path).api_chinese_name()  # 获取api的中文名字
         api_len = len(inroad_url)  # 获取api的个数
         print 'Now you need test api number is ' + str(api_len)
