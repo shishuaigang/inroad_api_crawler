@@ -1,0 +1,92 @@
+{
+    "resource": "Notification",
+    "section": [
+        {
+            "name": "通知",
+            "value": "apis"
+        }
+    ],
+    "apis": [
+
+        {
+            "url": "UAPI/Notification/LatestGet",
+            "summary": "获取最新提醒信息数量及信息",
+            "type": "POST",
+            "params": {
+            },
+            "response": {
+                "items": {
+                    "createtime": "创建时间",
+                    "sendtime": "发送时间",
+                    "finishtime": "到达时间",
+                    "source": "来源用户名/系统",
+                    "type": "0-系统级通知、1-日程通知、2-站内消息通知、3.4.5.......业务通知（具体业务逻辑相关,3以上是系统内部定义扩展业务）",
+                    "content": "通知的文字内容表述",
+                    "link": "根据不同的类型而对应的链接关键标记，可扩展支持点击跳转",
+                    "priority": "1-3,1为普通，2位重要，3为紧急"
+                }
+            }
+        },
+        {
+            "url": "UAPI/Notification/GetList",
+            "summary": "获取某类最新通知信息",
+            "type": "POST",
+            "params": {
+                "type": {
+                    "default": "0",
+                    "required": false,
+                    "description": "得到具体类型的提醒信息，0代表全部"
+                },
+                "pageindex": {
+                    "default": "0",
+                    "required": true,
+                    "description": "第几页数据"
+                }
+            },
+            "response": {
+                "items": {
+                    "createtime": "创建时间",
+                    "sendtime": "发送时间",
+                    "finishtime": "到达时间",
+                    "source": "来源用户名/系统",
+                    "type": "0-系统级通知、1-日程通知、2-站内消息通知、3.4.5.......业务通知（具体业务逻辑相关,3以上是系统内部定义扩展业务）",
+                    "content": "通知的文字内容表述",
+                    "link": "根据不同的类型而对应的链接关键标记，可扩展支持点击跳转",
+                    "priority": "1-3,1为普通，2位重要，3为紧急"
+                }
+            }
+        },
+        {
+            "url": "UAPI/Notification/GetUnreadByType",
+            "summary": "获取不同类型未读提醒信息",
+            "type": "POST",
+            "params": {
+            },
+            "response": {
+                "items": {
+                    "type": "1-日程 2-任务 3-对话消息 4-承包商 5-设备隐患 6-核心数据.......（更多系统内部定义扩展业务）",
+                    "unreadcount": "对应类未读提醒数",
+                    "description": "备注（预留）",
+                    "webicon": "app的对应图标（预留）",
+                    "appicon": "app的对应图标（预留）"
+                }
+            }
+        },
+        {
+            "url": "UAPI/Notification/Clean",
+            "summary": "获取不同类型未读提醒信息",
+            "type": "POST",
+            "params": {
+                "type": {
+                    "default": "1",
+                    "required": true,
+                    "description": "得到具体类型的提醒信息，0代表全部"
+                }
+            },
+            "response": {
+                "items": {
+                }
+            }
+        }
+    ]
+}

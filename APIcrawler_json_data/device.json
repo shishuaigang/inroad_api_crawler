@@ -1,0 +1,659 @@
+{
+    "resource": "Device",
+    "section": [
+        {
+            "name": "设备日常管理",
+            "value": "apis"
+        }
+    ],
+    "apis": [
+         {
+            "url": "UAPI/Device/GroupGetList",
+            "summary": "获取备车列表",
+            "type": "POST",
+            "params": {
+		"regionids": {
+                    "default": "80",
+                    "required": true,
+                    "description": "区域id"
+                },
+		"devicetypeids": {
+                    "default": "",
+                    "required": true,
+                    "description": "设备类型id"
+                },
+		"isimportant": {
+                    "default": "",
+                    "required": true,
+                    "description": "0-全部，1-重要，2-不重要"
+                },
+		"iscare": {
+                    "default": "",
+                    "required": true,
+                    "description": "0-无所谓，1-是关注"
+                },
+		"keyword": {
+                    "default": "",
+                    "required": true,
+                    "description": "关键字"
+                },
+		"groupid": {
+                    "default": "",
+                    "required": true,
+                    "description": "备车组id"
+                }
+
+            },
+            "response": {
+            }
+        },
+	 {
+            "url": "UAPI/Device/DeviceDetail",
+            "summary": "设备详情",
+            "type": "POST",
+            "params": {
+		"deviceid": {
+                    "default": "DB193CA6-3C0F-415C-8E12-F72F2FBFD412",
+                    "required": true,
+                    "description": "设备id"
+                }
+            },
+            "response": {
+            }
+        },
+	 {
+            "url": "UAPI/Device/ChangeStatus",
+            "summary": "变更设备状态",
+            "type": "POST",
+            "params": {
+		"deviceid": {
+                    "default": "DB193CA6-3C0F-415C-8E12-F72F2FBFD412",
+                    "required": true,
+                    "description": "设备id"
+                },
+		"changetime": {
+                    "default": "",
+                    "required": true,
+                    "description": "更改时间"
+                },
+		"finishtime": {
+                    "default": "",
+                    "required": true,
+                    "description": "预计的结束时间"
+                },
+		"status": {
+                    "default": "",
+                    "required": true,
+                    "description": "新的状态，0-备车，1运行，2-检修"
+                },
+		"sign": {
+                    "default": "",
+                    "required": true,
+                    "description": "电子签名"
+                },
+		"memo": {
+                    "default": "",
+                    "required": true,
+                    "description": "备注"
+                },
+		"files": {
+                    "default": "",
+                    "required": true,
+                    "description": "附件"
+                }
+            },
+            "response": {
+            }
+        },
+	 {
+            "url": "UAPI/Device/PartChangeStatus",
+            "summary": "变更备件状态",
+            "type": "POST",
+            "params": {
+		"devicepartid": {
+                    "default": "",
+                    "required": true,
+                    "description": "备件id"
+                },
+		"changetime": {
+                    "default": "",
+                    "required": true,
+                    "description": "更改时间"
+                },
+		"status": {
+                    "default": "",
+                    "required": true,
+                    "description": "状态，1维护，2-更换"
+                },
+		"sign": {
+                    "default": "",
+                    "required": true,
+                    "description": "电子签名"
+                },
+		"memo": {
+                    "default": "",
+                    "required": true,
+                    "description": "备注"
+                },
+		"files": {
+                    "default": "",
+                    "required": true,
+                    "description": "附件"
+                }
+            },
+            "response": {
+            }
+        },
+	 {
+            "url": "UAPI/Device/DevicePartGetList",
+            "summary": "设备备件列表",
+            "type": "POST",
+            "params": {
+		"deviceid": {
+                    "default": "DB193CA6-3C0F-415C-8E12-F72F2FBFD412",
+                    "required": true,
+                    "description": "设备id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Device/StandbyMachineStatistics",
+            "summary": "备车信息",
+            "type": "POST",
+            "params": {
+		            },
+            "response": {
+            }
+        },
+	 {
+            "url": "UAPI/Device/DevicePartDetail",
+            "summary": "设备备件详情",
+            "type": "POST",
+            "params": {
+		"devicepartid": {
+                    "default": "",
+                    "required": true,
+                    "description": "设备备件id"
+                }
+            },
+            "response": {
+            }
+        },
+	 {
+            "url": "UAPI/Device/GroupCare",
+            "summary": "关注",
+            "type": "POST",
+            "params": {
+		"groupid": {
+                    "default": "",
+                    "required": true,
+                    "description": "备车组id"
+                },
+		"addtype": {
+                    "default": "",
+                    "required": true,
+                    "description": "1-添加关注，2-移出关注"
+                }
+            },
+            "response": {
+            }
+        },
+	 {
+            "url": "UAPI/Device/GroupAdd",
+            "summary": "新增备车组",
+            "type": "POST",
+            "params": {
+		"groupid": {
+                    "default": "",
+                    "required": true,
+                    "description": "备车组id"
+                },
+		"title": {
+                    "default": "",
+                    "required": true,
+                    "description": "备车组标题"
+                },
+		"isimportant": {
+                    "default": "",
+                    "required": true,
+                    "description": "1-重点，2-非重点"
+                },
+		"devicetype": {
+                    "default": "",
+                    "required": true,
+                    "description": "设备类型id"
+                },
+		"regionid": {
+                    "default": "",
+                    "required": true,
+                    "description": "区域id"
+                }
+            },
+            "response": {
+            }
+        },
+	 {
+            "url": "UAPI/Device/GroupDelete",
+            "summary": "删除备车组",
+            "type": "POST",
+            "params": {
+		"groupid": {
+                    "default": "",
+                    "required": true,
+                    "description": "备车组id"
+                }
+            },
+            "response": {
+            }
+        },
+	 {
+			"NoNeed": "1",
+            "url": "UAPI/Device/Group",
+            "summary": "设备分组",
+            "type": "POST",
+            "params": {
+		"groupid": {
+                    "default": "",
+                    "required": true,
+                    "description": "备车组id"
+                },
+		"deviceid": {
+                    "default": "",
+                    "required": true,
+                    "description": "设备id"
+                },
+		"addtype": {
+                    "default": "",
+                    "required": true,
+                    "description": "1-添加设备到备车组，2-从备车组移出设备"
+                }
+            },
+            "response": {
+            }
+        },
+	 {
+            "url": "UAPI/Device/PartAdd",
+            "summary": "新增备件",
+            "type": "POST",
+            "params": {
+		"partid": {
+                    "default": "",
+                    "required": true,
+                    "description": "备件id"
+                },
+		"title": {
+                    "default": "",
+                    "required": true,
+                    "description": "名称"
+                }
+            },
+            "response": {
+            }
+        },
+	 {
+            "url": "UAPI/Device/PartGetList",
+            "summary": "新增备件",
+            "type": "POST",
+            "params": {
+            },
+            "response": {
+            }
+        },
+	 {
+            "url": "UAPI/Device/PartDelete",
+            "summary": "删除备件",
+            "type": "POST",
+            "params": {
+		"partid": {
+                    "default": "",
+                    "required": true,
+                    "description": "备件id"
+                }
+            },
+            "response": {
+            }
+        },
+	 {
+            "url": "UAPI/Device/PartSet",
+            "summary": "备件绑定到设备，或从设备移除",
+            "type": "POST",
+            "params": {
+		"partid": {
+                    "default": "",
+                    "required": true,
+                    "description": "备件id"
+                },
+		"deviceid": {
+                    "default": "",
+                    "required": true,
+                    "description": "设备id"
+                },
+		"lifecycle": {
+                    "default": "",
+                    "required": true,
+                    "description": "生命周期"
+                },
+		"isimportant": {
+                    "default": "",
+                    "required": true,
+                    "description": "1-重点备件，2不是重点"
+                },
+		"devicepartid": {
+                    "default": "",
+                    "required": true,
+                    "description": "已经绑定到设备上的备件的id，完成绑定后会生成"
+                },
+		"code": {
+                    "default": "",
+                    "required": true,
+                    "description": "备件对于当前设备的编号，用于区分同一个设备上多个相同的备件"
+                },
+		"maintaincycle": {
+                    "default": "",
+                    "required": true,
+                    "description": "保养周期"
+                },
+		"addtype": {
+                    "default": "",
+                    "required": true,
+                    "description": "1-新增编辑，2删除"
+                }
+            },
+            "response": {
+            }
+        },
+	 {
+            "url": "UAPI/Device/RepairRecordGetList",
+            "summary": "获取设备维护记录列表",
+            "type": "POST",
+            "params": {
+		"deviceid": {
+                    "default": "",
+                    "required": true,
+                    "description": "设备id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Device/StandbyMachineSearch",
+            "summary": "检索备车设备",
+            "type": "POST",
+            "params": {
+		"regionid": {
+                    "default": "",
+                    "required": true,
+                    "description": "区域id"
+                },
+		"devicetype": {
+                    "default": "",
+                    "required": true,
+                    "description": "设备类型"
+                },
+		"devicelevel": {
+                    "default": "",
+                    "required": true,
+                    "description": "设备等级"
+                },
+		"status": {
+                    "default": "",
+                    "required": true,
+                    "description": "设备状态"
+                },
+		"key": {
+                    "default": "",
+                    "required": true,
+                    "description": "关键字"
+                }
+            },
+            "response": {
+            }
+        },
+		{
+            "url": "UAPI/Device/StandbyMachineDetailGetlist",
+            "summary": "备车设备详情",
+            "type": "POST",
+            "params": {
+		"deviceid": {
+                    "default": "",
+                    "required": true,
+                    "description": "设备id"
+                }
+            },
+            "response": {
+            }
+        },
+		{
+            "url": "UAPI/Device/StandbyMachineStatistics",
+            "summary": "备车设备统计",
+            "type": "POST",
+            "params": {
+		            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Device/StandbyDeviceLevelGellist",
+            "summary": "备车设备等级",
+            "type": "POST",
+            "params": {
+		            },
+            "response": {
+            }
+        },
+	
+	{
+            "url": "UAPI/Device/StatusChangeRecordSave",
+            "summary": "备车设备状态变更",
+            "type": "POST",
+            "params": {
+		"deviceid": {
+                    "default": "",
+                    "required": true,
+                    "description": "设备id"
+                },
+		"afterstatus": {
+                    "default": "",
+                    "required": true,
+                    "description": "变更后状态 1运行 2备用/停止 3 热备 4 检修"
+                },
+		"files": {
+                    "default": "",
+                    "required": true,
+                    "description": "附件"
+                },
+		"memo": {
+                    "default": "",
+                    "required": true,
+                    "description": "备注"
+                },
+			"changetype": {
+                    "default": "",
+                    "required": true,
+                    "description": "通过什么方式更改的状态 ios,web,Android"
+                }
+           
+            },
+		            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Device/FollowUserGetList",
+            "summary": "增加设备关注",
+            "type": "POST",
+            "params": {
+                
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Device/FollowUserAdd",
+            "summary": "增加设备关注",
+            "type": "POST",
+            "params": {
+		"deviceid": {
+                    "default": "85B21F2F-1457-4C31-A227-10E4B397B1D6",
+                    "required": true,
+                    "description": "设备id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Device/FollowUserDel",
+            "summary": "增加设备关注",
+            "type": "POST",
+            "params": {
+		"deviceid": {
+                    "default": "",
+                    "required": true,
+                    "description": "设备id"
+                }
+            },
+            "response": {
+            }
+        },
+ 	{
+            "url": "UAPI/Device/StandbyDeviceLevelDel",
+            "summary": "删除设备等级",
+            "type": "POST",
+            "params": {
+		"devicelevelid": {
+                    "default": "",
+                    "required": true,
+                    "description": "设备等级id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Device/StandbyDeviceTypeDel",
+            "summary": "删除设备类型",
+            "type": "POST",
+            "params": {
+		"devicetypeid": {
+                    "default": "",
+                    "required": true,
+                    "description": "设备类型id"
+                }
+            },
+            "response": {
+            }
+        },
+ 	{
+			"NoNeed": "1",
+            "url": "UAPI/Device/StandbyDeviceLevelEdit",
+            "summary": "删除设备等级",
+            "type": "POST",
+            "params": {
+		"devicelevelid": {
+                    "default": "",
+                    "required": true,
+                    "description": "设备等级id"
+                },
+		"devicelevel": {
+                    "default": "",
+                    "required": true,
+                    "description": "设备等级名称"
+                },
+		"devicetype": {
+                    "default": "",
+                    "required": true,
+                    "description": "设备类型id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Device/StandbyDeviceTypeEdit",
+            "summary": "修改设备类型",
+            "type": "POST",
+            "params": {
+		"devicetypeid": {
+                    "default": "",
+                    "required": true,
+                    "description": "设备类型id"
+                },
+		"typename": {
+                    "default": "",
+                    "required": true,
+                    "description": "设备类型名称"
+                },
+		"ismaster": {
+                    "default": "",
+                    "required": true,
+                    "description": "是否是重点关注项"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Device/StandbyDeviceSave",
+            "summary": "保存备车设备属性",
+            "type": "POST",
+            "params": {
+		"deviceid": {
+                    "default": "",
+                    "required": true,
+                    "description": "设备id"
+                },
+		"firstusedate": {
+                    "default": "",
+                    "required": true,
+                    "description": "首次运行时间"
+                },
+		"lastusedate": {
+                    "default": "",
+                    "required": true,
+                    "description": "最后1次开始运行时间"
+                },
+		"timeruned": {
+                    "default": "",
+                    "required": true,
+                    "description": "已运行时间"
+                },
+		"lifecycle": {
+                    "default": "",
+                    "required": true,
+                    "description": "设计寿命"
+                },
+		"maintaincycle": {
+                    "default": "",
+                    "required": true,
+                    "description": "维护周期"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Device/StandbyDeviceTypeGetlist",
+            "summary": "设备类型列表",
+            "type": "POST",
+            "params": {
+		
+            },
+            "response": {
+            }
+        },
+	 {
+            "url": "UAPI/Device/PartRepairRecordGetList",
+            "summary": "获取备件维护记录列表",
+            "type": "POST",
+            "params": {
+		
+                
+            },
+            "response": {
+            }
+        }
+    ]
+}

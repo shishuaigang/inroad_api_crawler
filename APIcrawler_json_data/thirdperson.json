@@ -1,0 +1,2905 @@
+{
+    "resource": "ThirdPerson",
+    "section": [
+        {
+            "name": "承包商人员",
+            "value": "apis"
+        },
+        {
+            "name": "承包商人员 / 人员信息",
+            "value": "apiPerson"
+        },
+        {
+            "name": "承包商人员 / 人员许可",
+            "value": "apisPass"
+        },
+        {
+            "name": "承包商人员 / 人员事由",
+            "value": "apiReason"
+        },
+        {
+            "name": "承包商人员 / 培训 & 课程",
+            "value": "apiLessonAndLearn"
+        },
+        {
+            "name": "承包商人员 / 单位",
+            "value": "apiDept"
+        },
+        {
+            "name": "承包商人员 / 区域",
+            "value": "apiRegion"
+        },
+        {
+            "name": "承包商人员 / 评定",
+            "value": "apiEvalue"
+        },
+        {
+            "name": "承包商人员 / 违规",
+            "value": "apiIllegal"
+        },
+        {
+            "name": "承包商人员 / 工种",
+            "value": "apiWorkType"
+        },
+        {
+            "name": "承包商人员 / 数据分析",
+            "value": "apiAnalyse"
+        },
+        {
+            "name": "承包商人员 / 操作(原校验 评定)",
+            "value": "apiAction"
+        },
+        {
+            "name": "承包商人员 / 黑名单",
+            "value": "apiBlackList"
+        }
+    ],
+    "apis": [
+        {
+            "url": "UAPI/ThirdPerson/GetOnemain",
+            "summary": "读取某个承包商人员安全许可概要信息",
+            "type": "POST",
+            "params": {
+                "personnfc": {
+                    "default": "37CBA580",
+                    "required": true,
+                    "description": "根据NFC查询信息(即：读卡)"
+                }
+            },
+            "response": {
+                "items": {
+                    "name": "承包商人员姓名",
+                    "dept": "所属单位",
+                    "job": "许可事由",
+                    "type": "工种级别",
+                    "personid": "承包商人员NFC的GUID",
+                    "photo": "承包商人员头像",
+                    "passbegin": "授权有效期开始日期",
+                    "passend": "授权有效期结束日期",
+                    "passarea": "授权许可范围"
+                }
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/GetOnemain2",
+            "summary": "读取某个承包商人员安全许可概要信息",
+            "type": "POST",
+            "params": {
+                "personguid": {
+                    "default": "7639446c-dcc8-4ab8-a087-d7e4cb83a037",
+                    "required": true,
+                    "description": "根据Guid查询信息(即：手工查找)"
+                }
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/GetOneActionHistory",
+            "summary": "读取某个承包商人员检验违规记录",
+            "type": "POST",
+            "params": {
+                "personguid": {
+                    "default": "4d457f2f-35e6-41f0-a72d-996dc25e325b",
+                    "required": true,
+                    "description": "承包商人员Guid"
+                },
+                "actionids": {
+                    "default": "3",
+                    "required": true,
+                    "description": "1.校验成功，2.校验失败，3评定 (多个用分号隔开)"
+                },
+                "pageindex": {
+                    "default": "0",
+                    "required": false,
+                    "description": "页数，从0开始 "
+                }
+            },
+            "response": {
+                "items": {
+                    "personguid": "承包商人员guid",
+                    "passcheckintime": "检验时间",
+                    "passcheckinuserid": "检验人",
+                    "passcheckinerrors": "违规说明",
+                    "passcheckinerrorfiles": "违规附件"
+                }
+            }
+        },
+        {
+			"NoNeed": "1",
+            "url": "UAPI/ThirdPerson/GetOneErrorHistory",
+            "summary": "读取某个承包商人员检验违规记录",
+            "type": "POST",
+            "params": {
+                "personguid": {
+                    "default": "4d457f2f-35e6-41f0-a72d-996dc25e325b",
+                    "required": true
+                }
+            },
+            "response": {
+                "items": {
+                    "personguid": "承包商人员guid",
+                    "passcheckintime": "检验时间",
+                    "passcheckinuserid": "检验人",
+                    "passcheckinerrors": "违规说明",
+                    "passcheckinerrorfiles": "违规附件"
+                }
+            }
+        },
+        {
+			"NoNeed": "1",
+            "url": "UAPI/ThirdPerson/GetOneEvalHistory",
+            "summary": "读取某个承包商人员评定记录",
+            "type": "POST",
+            "params": {
+
+                "personguid": {
+                    "default": "4d457f2f-35e6-41f0-a72d-996dc25e325b",
+                    "required": true
+                }
+            },
+            "response": {
+                "items": {
+                    "personguid": "承包商人员guid",
+                    "passcheckouttime": "评定时间",
+                    "passcheckoutvalue": "评定得分",
+                    "passcheckoutuserid": "评定人",
+                    "passcheckoutinfo": "评定说明",
+                    "passcheckoutinfofiles": "评定附件"
+                }
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/GetOneLearnHistory",
+            "summary": "读取某个承包商人员培训记录",
+            "type": "POST",
+            "params": {
+
+                "personguid": {
+                    "default": "4d457f2f-35e6-41f0-a72d-996dc25e325b",
+                    "required": true
+                }
+            },
+            "response": {
+                "items": {
+                    "learnid": "培训记录guid",
+                    "lessonid": "培训科目guid",
+                    "personguid": "承包商人员guid",
+                    "lessontitle": "培训科目名",
+                    "personlearnstatus": "培训状态",
+                    "personlearnvalue": "培训得分",
+                    "personlearndesc": "培训说明",
+                    "begindate": "培训开始时间",
+                    "enddate": "培训结束时间",
+                    "location": "培训地点"
+                }
+            }
+        },
+        {
+			"NoNeed": "1",
+            "url": "UAPI/ThirdPerson/SetOnceOk",
+            "summary": "通过某个承包商人员安全许可",
+            "type": "POST",
+            "params": {
+
+                "personid": {
+                    "default": "7639446c-dcc8-4ab8-a087-d7e4cb83a037",
+                    "required": true
+                },
+                "checkdate": {
+                    "default": "2015-07-14 11:45:50",
+                    "required": true
+                },
+                "userid": {
+                    "default": "4147ed62-fc04-485a-8448-9819944c2269",
+                    "required": true
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+			"NoNeed": "1",
+            "url": "UAPI/ThirdPerson/SetOnceNo",
+            "summary": "驳回记录某个承包商人员安全许可",
+            "type": "POST",
+            "params": {
+
+                "personid": {
+                    "default": "7639446c-dcc8-4ab8-a087-d7e4cb83a037",
+                    "required": true
+                },
+                "checkdate": {
+                    "default": "2015-07-14 11:45:50",
+                    "required": true
+                },
+                "userid": {
+                    "default": "4147ed62-fc04-485a-8448-9819944c2269",
+                    "required": true
+                },
+                "reason": {
+                    "default": "2,3",
+                    "required": true
+                },
+                "addreason": {
+                    "default": "2,3",
+                    "required": false,
+                    "description": ""
+                },
+                "filesurl": {
+                    "default": "file1.bmp;file2.jpg;file3.png",
+                    "required": false,
+                    "description": ""
+                },
+                "region": {
+                    "default": "",
+                    "required": false,
+                    "description": "校验区域(可暂时为空)"
+                },
+                "point": {
+                    "default": "8",
+                    "required": true,
+                    "description": "违规扣分"
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "API/ThirdPerson/GetNoReasonList",
+            "summary": "读取违规事项列表",
+            "type": "POST",
+            "params": {
+            },
+            "response": {
+
+            }
+        },
+        {
+			"NoNeed": "1",
+            "url": "UAPI/ThirdPerson/GetNeedEvalList",
+            "summary": "查询待评定人员",
+            "type": "POST",
+            "params": {
+            },
+            "response": {
+
+            }
+        },
+        {
+			"NoNeed": "1",
+            "url": "UAPI/ThirdPerson/GetNeedEvalTodayList",
+            "summary": "查询当日承包商人员",
+            "type": "POST",
+            "params": {
+
+                "searchdate": {
+                    "default": "2015-09-01",
+                    "required": true,
+                    "description": ""
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/GetAllPersonList",
+            "summary": "按姓名查询所有承包商人员",
+            "type": "POST",
+            "params": {
+
+                "deptid": {
+                    "default": "0",
+                    "required": true,
+                    "description": "所属部门"
+                },
+                "personname": {
+                    "default": "",
+                    "required": true,
+                    "description": "承包商人员姓名"
+                },
+                "persontype": {
+                    "default": "",
+                    "required": true,
+                    "description": "工种(安全员,资料员,仪表工....)"
+                },
+                "isactive": {
+                    "default": "false",
+                    "required": false,
+                    "description": "是否仅查询有效人员"
+                },
+                "sheetid": {
+                    "default": "",
+                    "required": false,
+                    "description": "安全作业单id"
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+			"NoNeed": "1",
+            "url": "UAPI/ThirdPerson/SetOnceEval",
+            "summary": "记录评定信息",
+            "type": "POST",
+            "params": {
+
+                "personid": {
+                    "default": "7639446c-dcc8-4ab8-a087-d7e4cb83a037",
+                    "required": true
+                },
+                "userid": {
+                    "default": "4147ed62-fc04-485a-8448-9819944c2269",
+                    "required": true
+                },
+                "value": {
+                    "default": 5,
+                    "required": true,
+                    "description": "1-5颗星的综合评分"
+                },
+                "info": {
+                    "default": "1;2;3",
+                    "required": true
+                },
+                "addinfo": {
+                    "default": "xxxxxxxxx",
+                    "required": true,
+                    "description": "系统标准评定说明外文字补充"
+                },
+                "filesurl": {
+                    "default": "file1.bmp;file2.jpg;file3.png",
+                    "required": true,
+                    "description": "附加图片视频等文件地址（暂未支持）"
+                },
+                "region": {
+                    "default": "区域A",
+                    "required": true,
+                    "description": "评定区域"
+                },
+                "point": {
+                    "default": "8",
+                    "required": true,
+                    "description": "评定扣分"
+                },
+                "deptid": {
+                    "default": "8",
+                    "required": false,
+                    "description": "评定单位时使用，此时personid无效"
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "API/ThirdPerson/GetEvalInfoList",
+            "summary": "读取需要评价的承包商人员列表",
+            "type": "POST",
+            "params": {
+
+                "worktype": {
+                    "default": "电焊工",
+                    "required": true
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+			"NoNeed": "1",
+            "url": "UAPI/ThirdPerson/GetNeedNFCPersonList",
+            "summary": "读取需要NFC/头像设置的承包商人员列表",
+            "type": "POST",
+            "params": {
+
+                "name": {
+                    "default": "",
+                    "required": true,
+                    "description": "姓名"
+                }
+
+            },
+            "response": {
+
+            }
+        },
+        {
+			"NoNeed": "1",
+            "url": "UAPI/ThirdPerson/SetOnePersonNFC",
+            "summary": "分配某个承包商人员NFC",
+            "type": "POST",
+            "params": {
+
+                "personid": {
+                    "default": "7639446c-dcc8-4ab8-a087-d7e4cb83a037",
+                    "required": true
+                },
+                "userid": {
+                    "default": "4147ed62-fc04-485a-8448-9819944c2269",
+                    "required": true
+                },
+                "checkdate": {
+                    "default": "2015-07-30",
+                    "required": true
+                },
+                "setmode": {
+                    "default": "1",
+                    "required": true
+                },
+                "nfcvalue": {
+                    "default": "",
+                    "required": false
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+			"NoNeed": "1",
+            "url": "UAPI/ThirdPerson/CancelOnePersonNFC",
+            "summary": "取消某个承包商人员NFC (回收实物凭证)",
+            "type": "POST",
+            "params": {
+
+                "personnfcid": {
+                    "default": "0499CAA2794880",
+                    "required": true
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+			"NoNeed": "1",
+            "url": "UAPI/ThirdPerson/CancelOnePersonNFCByPersonid",
+            "summary": "取消某个承包商人员NFC (回收实物凭证)",
+            "type": "POST",
+            "params": {
+
+                "personguid": {
+                    "default": "61a2a133-db80-4403-9ae7-41a893a25ab7",
+                    "required": true
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+			"NoNeed": "1",
+            "url": "UAPI/ThirdPerson/SetOnePersonPic",
+            "summary": "分配某个承包商人员头像",
+            "type": "POST",
+            "params": {
+
+                "personid": {
+                    "default": "7639446c-dcc8-4ab8-a087-d7e4cb83a037",
+                    "required": true
+                },
+                "userid": {
+                    "default": "4147ed62-fc04-485a-8448-9819944c2269",
+                    "required": true
+                },
+                "checkdate": {
+                    "default": "2015-07-30",
+                    "required": true
+                },
+                "photo": {
+                    "default": "http://xxxxxxxxx/a.jpg",
+                    "required": true
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+			"NoNeed": "1",
+            "url": "UAPI/ThirdPerson/GetEvalListAll",
+            "summary": "获取查询列表",
+            "type": "POST",
+            "params": {
+            },
+            "response": {
+
+            }
+        },
+        {
+			"NoNeed": "1",
+            "url": "API/ThirdPerson/GetThirdDeptListSelector",
+            "summary": "获取第三方部门列表",
+            "type": "POST",
+            "params": {
+            },
+            "response": {
+
+            }
+        },
+
+        {
+			"NoNeed": "1",
+            "url": "UAPI/ThirdPerson/SearchIllegal",
+            "summary": "查询人员违规记录",
+            "type": "POST",
+            "params": {
+
+                "deptid": {
+                    "default": "0",
+                    "required": true,
+                    "description": "部门id(所有是:0)"
+                },
+                "begindate": {
+                    "default": "",
+                    "required": false,
+                    "description": "开始日期"
+                },
+                "enddate": {
+                    "default": "",
+                    "required": false,
+                    "description": "结束日期"
+                },
+                "personname": {
+                    "default": "",
+                    "required": false,
+                    "description": "姓名"
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+			"NoNeed": "1",
+            "url": "UAPI/ThirdPerson/SearchEvalue",
+            "summary": "查询人员评定记录",
+            "type": "POST",
+            "params": {
+
+                "deptid": {
+                    "default": "0",
+                    "required": true,
+                    "description": "部门id(所有是:0)"
+                },
+                "begindate": {
+                    "default": "",
+                    "required": false,
+                    "description": "开始日期"
+                },
+                "enddate": {
+                    "default": "",
+                    "required": false,
+                    "description": "结束日期"
+                },
+                "personname": {
+                    "default": "",
+                    "required": false,
+                    "description": "姓名"
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/GetDeptErrorHistory",
+            "summary": "读取某个承包商检验违规记录",
+            "type": "POST",
+            "params": {
+                "deptid": {
+                    "default": "8",
+                    "required": true
+                }
+            },
+            "response": {
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/GetDeptEvalHistory",
+            "summary": "读取某个承包商人员及单位评定记录",
+            "type": "POST",
+            "params": {
+                "deptid": {
+                    "default": "8",
+                    "required": true
+                },
+                "actionid": {
+                    "default": "3",
+                    "required": false,
+                    "description": "3违章，4表扬"
+                },
+                "pageindex": {
+                    "default": "0",
+                    "required": false,
+                    "description": "页数，从0开始"
+                }
+            },
+            "response": {
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/GetEvalSearch",
+            "summary": "承包商人员管理自定义查询API",
+            "type": "POST",
+            "params": {
+                "deptid": {
+                    "default": "0",
+                    "required": true,
+                    "description": "单位：某个单位ID/全部单位（0）"
+                },
+                "personname": {
+                    "default": "王",
+                    "required": true,
+                    "description": "姓名：具体姓名/全部（空白）"
+                },
+                "region": {
+                    "default": "区域A",
+                    "required": false,
+                    "description": "已经无效"
+                },
+                "regionids": {
+                    "default": "12;22",
+                    "required": true,
+                    "description": "区域id（分号隔开）"
+                },
+                "evaluetype": {
+                    "default": "",
+                    "required": true,
+                    "description": "评定分类：某分类/全部分类"
+                },
+                "begindate": {
+                    "default": "",
+                    "required": true,
+                    "description": "开始日期"
+                },
+                "enddate": {
+                    "default": "",
+                    "required": true,
+                    "description": "结束日期"
+                },
+                "point": {
+                    "default": "0",
+                    "required": true,
+                    "description": "单次扣分(大于)：---用于查询重要违规"
+                },
+                "worksheetid": {
+                    "default":"",
+                    "required": true,
+                    "description": "作业单id"
+                },
+                "actionids": {
+                    "default":"",
+                    "required": true,
+                    "description": "2禁用3违规4表扬"
+                },
+                "isexport": {
+                    "default":"0",
+                    "required": true,
+                    "description": ""
+                }
+            },
+            "response": {
+            }
+        },
+{
+            "url": "UAPI/ThirdPerson/GetEvalSearchByGuid",
+            "summary": "承包商人员管理单个操作查询API",
+            "type": "POST",
+            "params": {
+                "checkid": {
+                    "default": "7671FA70-4A48-4A31-A761-E7C811B48D27",
+                    "required": true,
+                    "description": "评定guid"
+                }
+            },
+            "response": {
+            }
+        }
+
+
+    ],
+    "apiPerson": [
+        {
+            "url": "UAPI/ThirdPerson/PersonList",
+            "summary": "获取承包商人员列表",
+            "type": "POST",
+            "params": {
+
+                "persondeptid": {
+                    "default": "1",
+                    "required": false,
+                    "description": "承包商人员部门id"
+                },
+                "personname": {
+                    "default": "",
+                    "required": false,
+                    "description": "承包商人员姓名"
+                },
+                "persontype": {
+                    "default": "",
+                    "required": false,
+                    "description": "工种"
+                },
+                "page": {
+                    "default": "1",
+                    "required": false,
+                    "description": "页数(最小为1)"
+                },
+                "personactive": {
+                    "default": "0",
+                    "required": false,
+                    "description": "是否仅显示有效人员(有效为1)"
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/Create",
+            "summary": "新建承包商人员信息",
+            "type": "POST",
+            "params": {
+
+                "personname": {
+                    "default": "姓名",
+                    "required": true,
+                    "description": ""
+                },
+                "persondeptid": {
+                    "default": "1",
+                    "required": true,
+                    "description": "从第三方部门列表获取值"
+                },
+                "persontype": {
+                    "default": "电工",
+                    "required": true,
+                    "description": "工种"
+                },
+                "personjob": {
+                    "default": "小队长",
+                    "required": false,
+                    "description": "职位？"
+                },
+                "personbirth": {
+                    "default": "1990-01-01",
+                    "required": false,
+                    "description": "出生日期"
+                },
+                "personid": {
+                    "default": "",
+                    "required": false,
+                    "description": "身份证号"
+                },
+                "personsex": {
+                    "default": "男",
+                    "required": true,
+                    "description": "是否为男性"
+                },
+                "persondesc": {
+                    "default": "",
+                    "required": false,
+                    "description": "人员描述"
+                },
+                "personNFC": {
+                    "default": "",
+                    "required": false,
+                    "description": "预分配NFC(实物凭证，如：卡、手环、二维码等等)号码"
+                },
+                "personphone": {
+                    "default": "",
+                    "required": true,
+                    "description": "手机号码"
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/Edit",
+            "summary": "编辑承包商人员信息",
+            "type": "POST",
+            "params": {
+
+                "personguid": {
+                    "default": "d3dbf841-a49b-4b55-b45d-846632664b50",
+                    "required": true,
+                    "description": "承包商人员唯一ID"
+                },
+                "personname": {
+                    "default": "张11",
+                    "required": true,
+                    "description": ""
+                },
+                "persondeptid": {
+                    "default": "3",
+                    "required": true,
+                    "description": "从第三方部门列表获取值"
+                },
+                "persontype": {
+                    "default": "电工",
+                    "required": true,
+                    "description": "工种"
+                },
+                "personjob": {
+                    "default": "小队长",
+                    "required": false,
+                    "description": "职位？"
+                },
+                "personbirth": {
+                    "default": "1990-01-01",
+                    "required": false,
+                    "description": "出生日期"
+                },
+                "personid": {
+                    "default": "",
+                    "required": false,
+                    "description": "身份证号"
+                },
+                "personsex": {
+                    "default": "男",
+                    "required": true,
+                    "description": "是否为男性"
+                },
+                "persondesc": {
+                    "default": "",
+                    "required": false,
+                    "description": "人员描述"
+                },
+                "personNFC": {
+                    "default": "",
+                    "required": false,
+                    "description": "预分配NFC(实物凭证，如：卡、手环、二维码等等)号码"
+                },
+                "personphone": {
+                    "default": "",
+                    "required": true,
+                    "description": "手机号码"
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/PersonDelete",
+            "summary": "删除承包商人员",
+            "type": "POST",
+            "params": {
+
+                "c_id": {
+                    "default": "d3dbf841-a49b-4b55-b45d-846632664b50",
+                    "required": true,
+                    "description": "承包商人员唯一ID"
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/PersonGetDuplicate",
+            "summary": "获取承包商人员重名列表",
+            "type": "POST",
+            "params": {
+
+                "persondeptid": {
+                    "default": "10",
+                    "required": true,
+                    "description": "要增加的人员单位"
+                },
+                "personname": {
+                    "default": "孙东柏",
+                    "required": true,
+                    "description": "要增加的人员姓名"
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/Suspend",
+            "summary": "终止承包商人员信息",
+            "type": "POST",
+            "params": {
+
+                "personguid": {
+                    "default": "d3dbf841-a49b-4b55-b45d-846632664b50",
+                    "required": true,
+                    "description": "承包商人员Guid"
+                },
+                "personactive": {
+                    "default": "false",
+                    "required": true,
+                    "description": "(false:无效   true:有效)"
+                }
+            },
+            "response": {
+
+            }
+        }
+    ],
+    "apisPass": [
+        {
+            "url": "UAPI/ThirdPerson/PassCreate",
+            "summary": "新建承包商人员许可",
+            "type": "POST",
+            "params": {
+
+                "reasonid": {
+                    "default": "08379c6a-4363-441e-ba61-91689d774c08",
+                    "required": true,
+                    "description": "许可事由Guid"
+                },
+                "personguids": {
+                    "default": "4bd9db9f-2203-46e7-b955-c8af3185da43;7d46285a-53d4-4fd2-b29b-ebfe7b0d79e5",
+                    "required": true,
+                    "description": "（多人用;隔开）"
+                },
+                "personnames": {
+                    "default": "人名一;人名二",
+                    "required": true,
+                    "description": "（多人用;隔开）"
+                },
+                "begindate": {
+                    "default": "",
+                    "required": true,
+                    "description": "有效期开始日期"
+                },
+                "enddate": {
+                    "default": "",
+                    "required": true,
+                    "description": "有效期开始日期"
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/PassEdit",
+            "summary": "改变承包商人员许可状态",
+            "type": "POST",
+            "params": {
+
+                "passid": {
+                    "default": "5ecf1d6e-7c2e-414a-be51-cc4d9fb85822",
+                    "required": true,
+                    "description": "承包商人员许可Guid"
+                },
+                "personpassregion": {
+                    "default": "A001,C009",
+                    "required": true,
+                    "description": "许可区域"
+                },
+                "personpassbegin": {
+                    "default": "2015-08-01",
+                    "required": true,
+                    "description": "许可授权开始日期"
+                },
+                "personpassend": {
+                    "default": "2015-08-05",
+                    "required": true,
+                    "description": "许可授权结束日期"
+                },
+                "personpassstatus": {
+                    "default": "有效",
+                    "required": true,
+                    "description": "状态(有效 或 无效)"
+                },
+                "personpassdesc": {
+                    "default": "备注内容",
+                    "required": true,
+                    "description": "备注"
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/PassGetList",
+            "summary": "获取承包商人员许可列表",
+            "type": "POST",
+            "params": {
+
+                "reason": {
+                    "default": "",
+                    "required": true,
+                    "description": "文本，支持模糊查询"
+                },
+                "deptid": {
+                    "default": "1",
+                    "required": false,
+                    "description": "承包商人员所属单位id"
+                },
+                "personguid": {
+                    "default": "",
+                    "required": false,
+                    "description": "承包商人员Guid"
+                },
+                "begindate": {
+                    "default": "",
+                    "required": false,
+                    "description": "开始日期(需要确定逻辑，此时间段包含还是包含此时间段)"
+                },
+                "enddate": {
+                    "default": "",
+                    "required": false,
+                    "description": "结束日期"
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/PassDisable",
+            "summary": "承包商人员许可禁用",
+            "type": "POST",
+            "params": {
+
+                "passids": {
+                    "default": "",
+                    "required": true,
+                    "description": "许可Guid，分号分隔"
+                }
+            },
+            "response": {
+
+            }
+        }
+    ],
+    "apiReason": [
+        {
+            "url": "UAPI/ThirdPerson/ReasonCreate",
+            "summary": "创建承包商人员事由",
+            "type": "POST",
+            "params": {
+
+                "reason": {
+                    "default": "临时维修",
+                    "required": true,
+                    "description": "文本不能为空"
+                },
+                "reasonregion": {
+                    "default": "区域F,区域D,区域K",
+                    "required": true,
+                    "description": "可访问区域"
+                },
+                "contactor": {
+                    "default": "张工(138xxxxxxxx)",
+                    "required": true,
+                    "description": "负责人"
+                },
+                "reasonbegindate": {
+                    "default": "2015-08-01",
+                    "required": true,
+                    "description": "此事由有效期开始自"
+                },
+                "reasonenddate": {
+                    "default": "2015-09-01",
+                    "required": true,
+                    "description": "此事由有效期截止至"
+                },
+                "reasondesc": {
+                    "default": "",
+                    "required": true,
+                    "description": "事由备注说明"
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/ReasonEdit",
+            "summary": "修改承包商人员事由",
+            "type": "POST",
+            "params": {
+
+                "reasonid": {
+                    "default": "81676333-051b-401d-8ec9-d61588e3295a",
+                    "required": true,
+                    "description": "承包商人员事由Guid"
+                },
+                "reason": {
+                    "default": "日常",
+                    "required": true,
+                    "description": "文本不能为空"
+                },
+                "reasonregion": {
+                    "default": "区域F,区域D,区域K",
+                    "required": true,
+                    "description": "可访问区域"
+                },
+                "contactor": {
+                    "default": "张工(138xxxxxxxx)",
+                    "required": true,
+                    "description": "负责人"
+                },
+                "reasonbegindate": {
+                    "default": "2015-07-01",
+                    "required": true,
+                    "description": "此事由有效期开始自"
+                },
+                "reasonenddate": {
+                    "default": "2016-07-01",
+                    "required": true,
+                    "description": "此事由有效期截止至"
+                },
+                "reasondesc": {
+                    "default": "",
+                    "required": true,
+                    "description": "事由备注说明"
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/ReasonGetList",
+            "summary": "获取承包商人员事由列表",
+            "type": "POST",
+            "params": {
+
+                "reason": {
+                    "default": "日常",
+                    "required": false,
+                    "description": "文本，可选"
+                },
+                "begindate": {
+                    "default": "",
+                    "required": false,
+                    "description": ""
+                },
+                "enddate": {
+                    "default": "",
+                    "required": false,
+                    "description": ""
+                },
+                "showactive": {
+                    "default": "1",
+                    "required": true,
+                    "description": "是否仅显示有效许可"
+                }
+            },
+            "response": {
+
+            }
+        }
+    ],
+    "apiLessonAndLearn": [
+        {
+            "url": "UAPI/ThirdPerson/LessonCreate",
+            "summary": "创建课程培训",
+            "type": "POST",
+            "params": {
+
+                "lessontitle": {
+                    "default": "安全培训",
+                    "required": true,
+                    "description": "课程培训"
+                },
+                "location": {
+                    "default": "第一会议室",
+                    "required": true,
+                    "description": "课程培训地点"
+                },
+                "begindate": {
+                    "default": "2015-08-01",
+                    "required": true,
+                    "description": "课程培训开始日期"
+                },
+                "enddate": {
+                    "default": "2015-08-10",
+                    "required": true,
+                    "description": "课程培训结束日期"
+                },
+                "teacher": {
+                    "default": "高级讲师陈浩",
+                    "required": true,
+                    "description": "培训人"
+                },
+                "memo": {
+                    "default": "每天上去9:00-11:00 下午13:00-15:00 法定假期不培训",
+                    "required": true,
+                    "description": "备注"
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/LessonEdit",
+            "summary": "编辑课程",
+            "type": "POST",
+            "params": {
+
+                "lessonid": {
+                    "default": "85fed6cd-7ee0-4316-962f-7b14a273bcbd",
+                    "required": true,
+                    "description": "课程培训Guid"
+                },
+                "lessontitle": {
+                    "default": "安全培训",
+                    "required": true,
+                    "description": "课程培训"
+                },
+                "location": {
+                    "default": "第一会议室",
+                    "required": true,
+                    "description": "课程培训地点"
+                },
+                "begindate": {
+                    "default": "2015-08-01",
+                    "required": true,
+                    "description": "课程培训开始日期"
+                },
+                "enddate": {
+                    "default": "2015-08-10",
+                    "required": true,
+                    "description": "课程培训结束日期"
+                },
+                "teacher": {
+                    "default": "高级讲师陈浩",
+                    "required": true,
+                    "description": "培训人"
+                },
+                "memo": {
+                    "default": "每天上去9:00-11:00 下午13:00-15:00 法定假期不培训",
+                    "required": true,
+                    "description": "备注"
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/LessonGetList",
+            "summary": "获取课程列表",
+            "type": "POST",
+            "params": {
+
+                "lessontitle": {
+                    "default": "安全",
+                    "required": false,
+                    "description": "查询条件：课程名称"
+                },
+                "begindate": {
+                    "default": "2015-08-01",
+                    "required": true,
+                    "description": "查询条件：课程培训开始日期"
+                },
+                "enddate": {
+                    "default": "2015-08-10",
+                    "required": true,
+                    "description": "查询条件：课程培训结束日期"
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/LearnCreate",
+            "summary": "添加学习培训记录",
+            "type": "POST",
+            "params": {
+
+                "lessonid": {
+                    "default": "85fed6cd-7ee0-4316-962f-7b14a273bcbd",
+                    "required": true,
+                    "description": "课程Guid"
+                },
+                "personguids": {
+                    "default": "e84e3beb-aa24-48f4-95cc-2bd07558f5fb;21fb4eb9-8187-4dd8-9622-309eb01536c6",
+                    "required": true,
+                    "description": "(多人用；隔开) ，"
+                },
+                "personlearnstatus": {
+                    "default": "通过",
+                    "required": true,
+                    "description": "状态：通过，不合格"
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/LearnEdit",
+            "summary": "编辑学习培训记录",
+            "type": "POST",
+            "params": {
+
+                "learnid": {
+                    "default": "38182ccd-6679-492c-9db7-e8cfbf0f04f1",
+                    "required": false,
+                    "description": "学习培训Guid"
+                },
+                "personlearnstatus": {
+                    "default": "不合格",
+                    "required": true,
+                    "description": "状态：通过，不合格"
+                },
+                "personlearnvalue": {
+                    "default": "丙级乙等甲",
+                    "required": true,
+                    "description": "成绩"
+                },
+                "personlearndesc": {
+                    "default": "上课说话",
+                    "required": true,
+                    "description": "备注"
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/LearnGetList",
+            "summary": "获取学习培训记录列表",
+            "type": "POST",
+            "params": {
+
+                "lessonid": {
+                    "default": "85fed6cd-7ee0-4316-962f-7b14a273bcbd",
+                    "required": false,
+                    "description": "课程Guid"
+                }
+            },
+            "response": {
+
+            }
+        }
+    ],
+    "apiDept": [
+        {
+            "url": "UAPI/ThirdPerson/DeptCreate",
+            "summary": "获取承包商人员单位列表",
+            "type": "POST",
+            "params": {
+
+                "deptname": {
+                    "default": "新部门名称",
+                    "required": true,
+                    "description": "部门名称"
+                },
+                "managername": {
+                    "default": "联系人",
+                    "required": true,
+                    "description": "联系人姓名"
+                },
+                "deptaddr": {
+                    "default": "上海市浦东新区",
+                    "required": true,
+                    "description": "地址"
+                },
+                "depttel": {
+                    "default": "0512-00000000",
+                    "required": true,
+                    "description": "联系电话"
+                },
+                "managermobile": {
+                    "default": "13800138000",
+                    "required": true,
+                    "description": "联系人手机"
+                },
+                "begintime": {
+                    "default": "2000-01-01",
+                    "required": true,
+                    "description": "合作开始日期"
+                },
+                "endtime": {
+                    "default": "2100-12-31",
+                    "required": true,
+                    "description": "合作结束日期"
+                },
+                "status": {
+                    "default": "合作",
+                    "required": true,
+                    "description": "状态(合作，终止)"
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/DeptEdit",
+            "summary": "获取承包商人员单位列表",
+            "type": "POST",
+            "params": {
+
+                "deptid": {
+                    "default": "6",
+                    "required": true,
+                    "description": "部门名称id"
+                },
+                "deptname": {
+                    "default": "新部门名称",
+                    "required": true,
+                    "description": "部门名称"
+                },
+                "managername": {
+                    "default": "联系人",
+                    "required": true,
+                    "description": "联系人姓名"
+                },
+                "deptaddr": {
+                    "default": "上海市浦东新区",
+                    "required": true,
+                    "description": "地址"
+                },
+                "depttel": {
+                    "default": "0512-00000000",
+                    "required": true,
+                    "description": "联系电话"
+                },
+                "managermobile": {
+                    "default": "13800138000",
+                    "required": true,
+                    "description": "联系人手机"
+                },
+                "begintime": {
+                    "default": "2000-01-01",
+                    "required": true,
+                    "description": "合作开始日期"
+                },
+                "endtime": {
+                    "default": "2100-12-31",
+                    "required": true,
+                    "description": "合作结束日期"
+                },
+                "status": {
+                    "default": "合作",
+                    "required": true,
+                    "description": "状态(合作，终止)"
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/DeptGetList",
+            "summary": "获取承包商人员单位列表",
+            "type": "POST",
+            "params": {
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/DeptInfo",
+            "summary": "获取承包商单位信息",
+            "type": "POST",
+            "params": {
+                "deptid": {
+                    "default": "8",
+                    "required": true,
+                    "description": "承包商单位ID"
+                }
+            },
+            "response": {
+                "description": { }
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/DeptConnect",
+            "summary": "关联承包商单位",
+            "type": "POST",
+            "params": {
+                "deptid": {
+                    "default": "8",
+                    "required": true,
+                    "description": "承包商单位ID"
+                },
+                "accountdeptid": {
+                    "default": "33",
+                    "required": true,
+                    "description": "系统用户部门ID (0或null代表不关联)"
+                }
+            },
+            "response": {
+                "description": { }
+            }
+        }
+    ],
+    "apiRegion": [
+        {
+            "url": "UAPI/ThirdPerson/RegionCreate",
+            "summary": "添加区域",
+            "type": "POST",
+            "params": {
+
+                "codename": {
+                    "default": "新区域",
+                    "required": true,
+                    "description": "区域名称"
+                },
+                "codevalue": {
+                    "default": "R001",
+                    "required": true,
+                    "description": "区域代码(暂做排序用)"
+                },
+                "codedesc": {
+                    "default": "区域描述",
+                    "required": true,
+                    "description": "区域描述"
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/RegionEdit",
+            "summary": "编辑区域",
+            "type": "POST",
+            "params": {
+
+                "c_id": {
+                    "default": "d40d7db3-5e79-4d5e-9fd4-b504010bbf7f",
+                    "required": true,
+                    "description": "区域Guid"
+                },
+                "codename": {
+                    "default": "新区域",
+                    "required": true,
+                    "description": "区域名称"
+                },
+                "codevalue": {
+                    "default": "R001",
+                    "required": true,
+                    "description": "区域代码(暂做排序用)"
+                },
+                "codedesc": {
+                    "default": "区域描述",
+                    "required": true,
+                    "description": "区域描述"
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/RegionGetList",
+            "summary": "获取区域列表",
+            "type": "POST",
+            "params": {
+            },
+            "response": {
+
+            }
+        }
+    ],
+    "apiEvalue": [
+        {
+            "url": "UAPI/ThirdPerson/EvalueCreate",
+            "summary": "添加评定",
+            "type": "POST",
+            "params": {
+
+                "codename": {
+                    "default": "新评定",
+                    "required": true,
+                    "description": "评定名称"
+                },
+                "codevalue": {
+                    "default": "5",
+                    "required": true,
+                    "description": "评定分值"
+                },
+                "codedesc": {
+                    "default": "评定描述",
+                    "required": true,
+                    "description": "评定描述"
+                },
+                "codeaddvalue": {
+                    "default": "测试评定类型",
+                    "required": true,
+                    "description": "评定类型"
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/EvalueEdit",
+            "summary": "编辑评定",
+            "type": "POST",
+            "params": {
+
+                "c_id": {
+                    "default": "28991021-e9cf-4286-aaee-ad0dafbfe87b",
+                    "required": true,
+                    "description": "评定Guid"
+                },
+                "codename": {
+                    "default": "新评定",
+                    "required": true,
+                    "description": "评定名称"
+                },
+                "codevalue": {
+                    "default": "3",
+                    "required": true,
+                    "description": "评定分值"
+                },
+                "codedesc": {
+                    "default": "评定描述",
+                    "required": true,
+                    "description": "评定描述"
+                },
+                "codeaddvalue": {
+                    "default": "测试评定类型",
+                    "required": true,
+                    "description": "评定类型"
+                },
+                "sort": {
+                    "default": "1",
+                    "required": true,
+                    "description": "评定类型排序号"
+                }
+            },
+            "response": {
+
+            }
+        },
+	{
+            "url": "UAPI/ThirdPerson/EvalueDel",
+            "summary": "删除评定",
+            "type": "POST",
+            "params": {
+
+                "optionid": {
+                    "default": "",
+                    "required": true,
+                    "description": "评定id"
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/EvalueGetList",
+            "summary": "获取评定列表",
+            "type": "POST",
+            "params": {
+
+                "evaluetype": {
+                    "default": "测试评定类型",
+                    "required": true,
+                    "description": "评定类型"
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/EvalueTypeCreate",
+            "summary": "创建评定类型",
+            "type": "POST",
+            "params": {
+
+                "codename": {
+                    "default": "新评定类型",
+                    "required": true,
+                    "description": "评定类型名称"
+                },
+                "codevalue": {
+                    "default": "001",
+                    "required": true,
+                    "description": "评定类型编码"
+                },
+                "codedesc": {
+                    "default": "评定描述",
+                    "required": true,
+                    "description": "评定描述"
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/EvalueTypeEdit",
+            "summary": "编辑评定类型",
+            "type": "POST",
+            "params": {
+
+                "c_id": {
+                    "default": "af838e43-afb0-4cc6-a94c-21e7ef497b6d",
+                    "required": true,
+                    "description": "评定类型Guid"
+                },
+                "codename": {
+                    "default": "测试评定类型",
+                    "required": true,
+                    "description": "评定类型名称"
+                },
+                "codevalue": {
+                    "default": "E002",
+                    "required": true,
+                    "description": "评定类型编码"
+                },
+                "codedesc": {
+                    "default": "评定类型描述",
+                    "required": true,
+                    "description": "评定类型描述"
+                }
+            },
+            "response": {
+
+            }
+        },
+	{
+            "url": "UAPI/ThirdPerson/EvalueTypeSort",
+            "summary": "评定类型排序",
+            "type": "POST",
+            "params": {
+
+                "optiontypeids": {
+                    "default": "af838e43-afb0-4cc6-a94c-21e7ef497b6d",
+                    "required": true,
+                    "description": "评定类型ids"
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/EvalueTypeGetList",
+            "summary": "获取评定类型列表",
+            "type": "POST",
+            "params": {
+            },
+            "response": {
+
+            }
+        }
+    ],
+    "apiIllegal": [
+        {
+            "url": "UAPI/ThirdPerson/IllegalEdit",
+            "summary": "编辑违规",
+            "type": "POST",
+            "params": {
+
+                "c_id": {
+                    "default": "",
+                    "required": true,
+                    "description": "违规id"
+                },
+                "codename": {
+                    "default": "新违规",
+                    "required": true,
+                    "description": "违规名称"
+                },
+                "codIllegal": {
+                    "default": "I001",
+                    "required": true,
+                    "description": "违规代码(暂做排序用)"
+                },
+                "codedesc": {
+                    "default": "违规描述",
+                    "required": true,
+                    "description": "违规描述"
+                },
+                "actionid": {
+                    "default": "2",
+                    "required": true,
+                    "description": "2禁入，3违规，4表扬"
+                },
+                "point": {
+                    "default": "",
+                    "required": true,
+                    "description": "分值"
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/IllegalDelete",
+            "summary": "获取违规列表",
+            "type": "POST",
+            "params": {
+		"c_id": {
+                    "default": "",
+                    "required": true,
+                    "description": "违规id"
+                 }
+            },
+            "response": {
+
+            }
+        },
+	{
+            "url": "UAPI/ThirdPerson/IllegalSort",
+            "summary": "获取违规列表",
+            "type": "POST",
+            "params": {
+		"c_ids": {
+                    "default": "",
+                    "required": true,
+                    "description": "违规ids"
+                 }
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/IllegalGetList",
+            "summary": "获取违规列表",
+            "type": "POST",
+            "params": {
+            },
+            "response": {
+
+            }
+        }
+    ],
+    "apiWorkType": [
+        {
+            "url": "UAPI/ThirdPerson/WorkTypeCreate",
+            "summary": "添加工种",
+            "type": "POST",
+            "params": {
+
+                "codename": {
+                    "default": "新工种",
+                    "required": true,
+                    "description": "工种名称"
+                },
+                "codWorkType": {
+                    "default": "W001",
+                    "required": true,
+                    "description": "工种代码(暂做排序用)"
+                },
+                "codedesc": {
+                    "default": "工种描述",
+                    "required": true,
+                    "description": "工种描述"
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/WorkTypeEdit",
+            "summary": "编辑工种",
+            "type": "POST",
+            "params": {
+
+                "c_id": {
+                    "default": "0a0f519b-3cdc-4822-ae4f-adb874a95736",
+                    "required": true,
+                    "description": "工种Guid"
+                },
+                "codename": {
+                    "default": "新工种",
+                    "required": true,
+                    "description": "工种名称"
+                },
+                "codWorkType": {
+                    "default": "W001",
+                    "required": true,
+                    "description": "工种代码(暂做排序用)"
+                },
+                "codedesc": {
+                    "default": "工种描述",
+                    "required": true,
+                    "description": "工种描述"
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/WorkTypeGetList",
+            "summary": "获取工种列表",
+            "type": "POST",
+            "params": {
+		"isexport": {
+                    "default": "1",
+                    "required": true,
+                    "description": ""
+                }
+            },
+            "response": {
+
+            }
+        }
+    ],
+    "apiAnalyse": [
+        {
+            "url": "UAPI/ThirdPerson/AnalyseDeptByCompare",
+            "summary": "单位校验评定的横向对比统计API",
+            "type": "POST",
+            "params": {
+                "deptid": {
+                    "default": "0",
+                    "required": true,
+                    "description": "承包商id"
+                },
+                "type": {
+                    "default": "0",
+                    "required": true,
+                    "description": "0---默认全部，1--仅统计严重违规（系统后台配置严重违规分值定义）"
+                },
+                "begindate": {
+                    "default": "",
+                    "required": true,
+                    "description": "汇总日期开始"
+                },
+                "enddate": {
+                    "default": "",
+                    "required": true,
+                    "description": "汇总日期结束"
+                }
+            },
+            "response": {
+                "items": {
+                    "deptname": "承包商名称",
+                    "deptid": "承包商id",
+                    "countvalue": "违规人次",
+                    "sumvalue": "违规分数",
+                    "avgcountvalue": "平均违规人次",
+                    "avgsumvalue": "平均违规份数"
+                }
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/AnalyseDeptBySummary",
+            "summary": "单位的校验评定汇总查询API",
+            "type": "POST",
+            "params": {
+                "deptid": {
+                    "default": "0",
+                    "required": true,
+                    "description": "承包商id"
+                },
+                "type": {
+                    "default": "0",
+                    "required": true,
+                    "description": "0---默认全部，1--仅统计严重违规（系统后台配置严重违规分值定义）"
+                },
+                "begindate": {
+                    "default": "",
+                    "required": true,
+                    "description": "汇总日期开始"
+                },
+                "enddate": {
+                    "default": "",
+                    "required": true,
+                    "description": "汇总日期结束"
+                }
+            },
+            "response": {
+                "items": {
+                    "deptname": "承包商名称",
+                    "deptid": "承包商id",
+                    "countvalue": "违规人次",
+                    "sumvalue": "违规分数",
+                    "avgcountvalue": "平均违规人次",
+                    "avgsumvalue": "平均违规份数"
+                }
+            }
+        },
+
+        {
+            "url": "UAPI/ThirdPerson/AnalyseDeptByTrend",
+            "summary": "单位的校验评定趋势统计 API",
+            "type": "POST",
+            "params": {
+                "deptid": {
+                    "default": "0",
+                    "required": true,
+                    "description": "承包商id"
+                },
+                "period": {
+                    "default": "1",
+                    "required": true,
+                    "description": "1--按日 2---按周 3--按月 4--按季 5--按年"
+                },
+                "type": {
+                    "default": "0",
+                    "required": true,
+                    "description": "0---默认全部，1--仅统计严重违规（系统后台配置严重违规分值定义）"
+                },
+                "pageindex": {
+                    "default": "0",
+                    "required": true,
+                    "description": "0--最近30条，1，2,3....前拉30"
+                }
+            },
+            "response": {
+                "items": {
+                    "dataxvalue": "分别是x轴数据",
+                    "countvalue": "违规人次",
+                    "sumvalue": "违规分数",
+                    "avgcountvalue": "平均违规人次",
+                    "avgsumvalue": "平均违规份数",
+                    "hidedatebegin": "对应开始日期",
+                    "hidedateend": "对应结束日期"
+                }
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/AnalyseDeptByTrendDetail",
+            "summary": "单位的校验评定趋势详情统计 API",
+            "type": "POST",
+            "params": {
+                "deptid": {
+                    "default": "0",
+                    "required": true,
+                    "description": "承包商id"
+                },
+                "type": {
+                    "default": "0",
+                    "required": true,
+                    "description": "0---默认全部，1--仅统计严重违规（系统后台配置严重违规分值定义）"
+                },
+                "begindate": {
+                    "default": "",
+                    "required": true,
+                    "description": "汇总日期开始"
+                },
+                "enddate": {
+                    "default": "",
+                    "required": true,
+                    "description": "汇总日期结束"
+                }
+            },
+            "response": {
+                "items": {
+                    "deptname": "承包商名称",
+                    "deptid": "承包商id",
+                    "countvalue": "违规人次",
+                    "sumvalue": "违规分数",
+                    "avgcountvalue": "平均违规人次",
+                    "avgsumvalue": "平均违规份数"
+                }
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/AnalyseDeptByRegion",
+            "summary": "单位的校验评定区域构成统计 API",
+            "type": "POST",
+            "params": {
+                "deptid": {
+                    "default": "0",
+                    "required": true,
+                    "description": "承包商id"
+                },
+                "type": {
+                    "default": "0",
+                    "required": true,
+                    "description": "0---默认全部，1--仅统计严重违规（系统后台配置严重违规分值定义）"
+                },
+                "begindate": {
+                    "default": "",
+                    "required": true,
+                    "description": "汇总日期开始"
+                },
+                "enddate": {
+                    "default": "",
+                    "required": true,
+                    "description": "汇总日期结束"
+                }
+            },
+            "response": {
+                "items": {
+                    "deptname": "承包商名称",
+                    "deptid": "承包商id",
+                    "countvalue": "违规人次",
+                    "sumvalue": "违规分数",
+                    "avgcountvalue": "平均违规人次",
+                    "avgsumvalue": "平均违规份数"
+                }
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/AnalyseDeptBySubject",
+            "summary": "单位的校验评定分类构成统计 API",
+            "type": "POST",
+            "params": {
+                "deptid": {
+                    "default": "0",
+                    "required": true,
+                    "description": "承包商id"
+                },
+                "type": {
+                    "default": "0",
+                    "required": true,
+                    "description": "0---默认全部，1--仅统计严重违规（系统后台配置严重违规分值定义）"
+                },
+                "begindate": {
+                    "default": "",
+                    "required": true,
+                    "description": "汇总日期开始"
+                },
+                "enddate": {
+                    "default": "",
+                    "required": true,
+                    "description": "汇总日期结束"
+                }
+            },
+            "response": {
+                "items": {
+                    "deptname": "承包商名称",
+                    "deptid": "承包商id",
+                    "countvalue": "违规人次",
+                    "sumvalue": "违规分数",
+                    "avgcountvalue": "平均违规人次",
+                    "avgsumvalue": "平均违规份数"
+                }
+            }
+        },
+
+
+
+
+
+
+        {
+            "url": "UAPI/ThirdPerson/AnalyseRegionByCompare",
+            "summary": "区域校验评定的横向对比统计API",
+            "type": "POST",
+            "params": {
+                "regionid": {
+                    "default": "0",
+                    "required": true,
+                    "description": "承包商id"
+                },
+                "type": {
+                    "default": "0",
+                    "required": true,
+                    "description": "0---默认全部，1--仅统计严重违规（系统后台配置严重违规分值定义）"
+                },
+                "begindate": {
+                    "default": "",
+                    "required": true,
+                    "description": "汇总日期开始"
+                },
+                "enddate": {
+                    "default": "",
+                    "required": true,
+                    "description": "汇总日期结束"
+                }
+            },
+            "response": {
+                "items": {
+                    "deptname": "承包商名称",
+                    "deptid": "承包商id",
+                    "countvalue": "违规人次",
+                    "sumvalue": "违规分数",
+                    "avgcountvalue": "平均违规人次",
+                    "avgsumvalue": "平均违规份数"
+                }
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/AnalyseRegionBySummary",
+            "summary": "区域的校验评定汇总查询API",
+            "type": "POST",
+            "params": {
+                "regionid": {
+                    "default": "0",
+                    "required": true,
+                    "description": "承包商id"
+                },
+                "type": {
+                    "default": "0",
+                    "required": true,
+                    "description": "0---默认全部，1--仅统计严重违规（系统后台配置严重违规分值定义）"
+                },
+                "begindate": {
+                    "default": "",
+                    "required": true,
+                    "description": "汇总日期开始"
+                },
+                "enddate": {
+                    "default": "",
+                    "required": true,
+                    "description": "汇总日期结束"
+                }
+            },
+            "response": {
+                "items": {
+                    "deptname": "承包商名称",
+                    "deptid": "承包商id",
+                    "countvalue": "违规人次",
+                    "sumvalue": "违规分数",
+                    "avgcountvalue": "平均违规人次",
+                    "avgsumvalue": "平均违规份数"
+                }
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/AnalyseRegionByTrend",
+            "summary": "区域的校验评定趋势统计 API",
+            "type": "POST",
+            "params": {
+                "regionid": {
+                    "default": "0",
+                    "required": true,
+                    "description": "承包商id"
+                },
+                "period": {
+                    "default": "1",
+                    "required": true,
+                    "description": "1--按日 2---按周 3--按月 4--按季 5--按年"
+                },
+                "type": {
+                    "default": "0",
+                    "required": true,
+                    "description": "0---默认全部，1--仅统计严重违规（系统后台配置严重违规分值定义）"
+                },
+                "pageindex": {
+                    "default": "0",
+                    "required": true,
+                    "description": "0--最近30条，1，2,3....前拉30"
+                }
+            },
+            "response": {
+                "items": {
+                    "deptname": "承包商名称",
+                    "deptid": "承包商id",
+                    "countvalue": "违规人次",
+                    "sumvalue": "违规分数",
+                    "avgcountvalue": "平均违规人次",
+                    "avgsumvalue": "平均违规份数"
+                }
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/AnalyseRegionByTrendDetail",
+            "summary": "区域的校验评定趋势详情统计 API",
+            "type": "POST",
+            "params": {
+                "regionid": {
+                    "default": "0",
+                    "required": true,
+                    "description": "承包商id"
+                },
+                "type": {
+                    "default": "0",
+                    "required": true,
+                    "description": "0---默认全部，1--仅统计严重违规（系统后台配置严重违规分值定义）"
+                },
+                "begindate": {
+                    "default": "",
+                    "required": true,
+                    "description": "汇总日期开始"
+                },
+                "enddate": {
+                    "default": "",
+                    "required": true,
+                    "description": "汇总日期结束"
+                }
+            },
+            "response": {
+                "items": {
+                    "deptname": "承包商名称",
+                    "deptid": "承包商id",
+                    "countvalue": "违规人次",
+                    "sumvalue": "违规分数",
+                    "avgcountvalue": "平均违规人次",
+                    "avgsumvalue": "平均违规份数"
+                }
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/AnalyseRegionBySubject",
+            "summary": "区域的校验评定分类构成统计 API",
+            "type": "POST",
+            "params": {
+                "regionid": {
+                    "default": "0",
+                    "required": true,
+                    "description": "承包商id"
+                },
+                "type": {
+                    "default": "0",
+                    "required": true,
+                    "description": "0---默认全部，1--仅统计严重违规（系统后台配置严重违规分值定义）"
+                },
+                "begindate": {
+                    "default": "",
+                    "required": true,
+                    "description": "汇总日期开始"
+                },
+                "enddate": {
+                    "default": "",
+                    "required": true,
+                    "description": "汇总日期结束"
+                }
+            },
+            "response": {
+                "items": {
+                    "deptname": "承包商名称",
+                    "deptid": "承包商id",
+                    "countvalue": "违规人次",
+                    "sumvalue": "违规分数",
+                    "avgcountvalue": "平均违规人次",
+                    "avgsumvalue": "平均违规份数"
+                }
+            }
+        },
+
+
+
+
+
+        {
+            "url": "UAPI/ThirdPerson/AnalyseSubjectByCompare",
+            "summary": "分类校验评定的横向对比统计API",
+            "type": "POST",
+            "params": {
+                "subjectid": {
+                    "default": "0",
+                    "required": true,
+                    "description": "承包商id"
+                },
+                "type": {
+                    "default": "0",
+                    "required": true,
+                    "description": "0---默认全部，1--仅统计严重违规（系统后台配置严重违规分值定义）"
+                },
+                "begindate": {
+                    "default": "",
+                    "required": true,
+                    "description": "汇总日期开始"
+                },
+                "enddate": {
+                    "default": "",
+                    "required": true,
+                    "description": "汇总日期结束"
+                }
+            },
+            "response": {
+                "items": {
+                    "deptname": "承包商名称",
+                    "deptid": "承包商id",
+                    "countvalue": "违规人次",
+                    "sumvalue": "违规分数",
+                    "avgcountvalue": "平均违规人次",
+                    "avgsumvalue": "平均违规份数"
+                }
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/AnalyseSubjectBySummary",
+            "summary": "分类的校验评定汇总查询API",
+            "type": "POST",
+            "params": {
+                "subjectid": {
+                    "default": "0",
+                    "required": true,
+                    "description": "承包商id"
+                },
+                "type": {
+                    "default": "0",
+                    "required": true,
+                    "description": "0---默认全部，1--仅统计严重违规（系统后台配置严重违规分值定义）"
+                },
+                "begindate": {
+                    "default": "",
+                    "required": true,
+                    "description": "汇总日期开始"
+                },
+                "enddate": {
+                    "default": "",
+                    "required": true,
+                    "description": "汇总日期结束"
+                }
+            },
+            "response": {
+                "items": {
+                    "deptname": "承包商名称",
+                    "deptid": "承包商id",
+                    "countvalue": "违规人次",
+                    "sumvalue": "违规分数",
+                    "avgcountvalue": "平均违规人次",
+                    "avgsumvalue": "平均违规份数"
+                }
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/AnalyseSubjectByTrend",
+            "summary": "分类的校验评定趋势统计 API",
+            "type": "POST",
+            "params": {
+                "subjectid": {
+                    "default": "0",
+                    "required": true,
+                    "description": "承包商id"
+                },
+                "period": {
+                    "default": "1",
+                    "required": true,
+                    "description": "1--按日 2---按周 3--按月 4--按季 5--按年"
+                },
+                "type": {
+                    "default": "0",
+                    "required": true,
+                    "description": "0---默认全部，1--仅统计严重违规（系统后台配置严重违规分值定义）"
+                },
+                "pageindex": {
+                    "default": "0",
+                    "required": true,
+                    "description": "0--最近30条，1，2,3....前拉30"
+                }
+
+            },
+            "response": {
+                "items": {
+                    "deptname": "承包商名称",
+                    "deptid": "承包商id",
+                    "countvalue": "违规人次",
+                    "sumvalue": "违规分数",
+                    "avgcountvalue": "平均违规人次",
+                    "avgsumvalue": "平均违规份数"
+                }
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/AnalyseSubjectByTrendDetail",
+            "summary": "分类的校验评定趋势详情统计 API",
+            "type": "POST",
+            "params": {
+                "subjectid": {
+                    "default": "0",
+                    "required": true,
+                    "description": "承包商id"
+                },
+                "type": {
+                    "default": "0",
+                    "required": true,
+                    "description": "0---默认全部，1--仅统计严重违规（系统后台配置严重违规分值定义）"
+                },
+                "begindate": {
+                    "default": "",
+                    "required": true,
+                    "description": "汇总日期开始"
+                },
+                "enddate": {
+                    "default": "",
+                    "required": true,
+                    "description": "汇总日期结束"
+                }
+            },
+            "response": {
+                "items": {
+                    "deptname": "承包商名称",
+                    "deptid": "承包商id",
+                    "countvalue": "违规人次",
+                    "sumvalue": "违规分数",
+                    "avgcountvalue": "平均违规人次",
+                    "avgsumvalue": "平均违规份数"
+                }
+            }
+        },
+
+        {
+            "url": "UAPI/ThirdPerson/AnalyseSubjectByRegion",
+            "summary": "分类的校验评定区域构成统计 API",
+            "type": "POST",
+            "params": {
+                "subjectid": {
+                    "default": "0",
+                    "required": true,
+                    "description": "承包商id"
+                },
+                "type": {
+                    "default": "0",
+                    "required": true,
+                    "description": "0---默认全部，1--仅统计严重违规（系统后台配置严重违规分值定义）"
+                },
+                "begindate": {
+                    "default": "",
+                    "required": true,
+                    "description": "汇总日期开始"
+                },
+                "enddate": {
+                    "default": "",
+                    "required": true,
+                    "description": "汇总日期结束"
+                }
+            },
+            "response": {
+                "items": {
+                    "deptname": "承包商名称",
+                    "deptid": "承包商id",
+                    "countvalue": "违规人次",
+                    "sumvalue": "违规分数",
+                    "avgcountvalue": "平均违规人次",
+                    "avgsumvalue": "平均违规份数"
+                }
+            }
+        },
+
+
+
+
+
+
+
+
+
+
+
+        {
+            "url": "UAPI/ThirdPerson/AnalyseBlackList",
+            "summary": "黑名单查询接口",
+            "type": "POST",
+            "params": {
+                "deptid": {
+                    "default": "0",
+                    "required": true,
+                    "description": "承包商id"
+                },
+                "begindate": {
+                    "default": "",
+                    "required": true,
+                    "description": "汇总日期开始"
+                },
+                "enddate": {
+                    "default": "",
+                    "required": true,
+                    "description": "汇总日期结束"
+                },
+                "type": {
+                    "default": "1",
+                    "required": true,
+                    "description": "1--累积扣分数 2---累计扣分次数  3---单次扣分值"
+                },
+                "point": {
+                    "default": "0",
+                    "required": true,
+                    "description": "统计阙值：大于多少分/次"
+                }
+            },
+            "response": {
+                "items": {
+                }
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/AnalyseOperator",
+            "summary": "承包商管理绩效统计API",
+            "type": "POST",
+            "params": {
+                "begindate": {
+                    "default": "",
+                    "required": true,
+                    "description": "汇总日期开始"
+                },
+                "enddate": {
+                    "default": "",
+                    "required": true,
+                    "description": "汇总日期结束"
+                },
+                "deptid": {
+                    "default": "",
+                    "required": true,
+                    "description": "部门id"
+                }
+            },
+            "response": {
+                "items": {
+                    "": "用户名",
+                    "": "用户头像id",
+                    "": "累计校验次数",
+                    "": "累计评定次数",
+                    "": "累积扣分数"
+                }
+            }
+        }
+    ],
+    "apiAction": [
+        {
+            "url": "UAPI/ThirdPerson/ActionGetList",
+            "summary": "获取操作列表",
+            "type": "POST",
+            "params": {
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/ActionOptionTypeGetList",
+            "summary": "获取操作选项大类列表",
+            "type": "POST",
+            "params": {
+                "actionids": {
+                    "default": "2;3",
+                    "required": true,
+                    "description": "操作种类(分号隔开)，空字符串为所有(目前只有1.校验成功  2.校验失败  3.评定)"
+                }
+            },
+            "response": {
+
+            }
+        },
+
+        {
+            "url": "UAPI/ThirdPerson/ActionOptionGetList",
+            "summary": "获取操作选项明细列表",
+            "type": "POST",
+            "params": {
+                "actionid": {
+                    "default": "1",
+                    "required": true,
+                    "description": "操作种类， 0查询所有(目前只有1.校验成功  2.校验失败  3.违章，4表扬)"
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/ActionGetOptionList",
+            "summary": "获取操作选项明细列表(尽量用上一个)",
+            "type": "POST",
+            "params": {
+                "actionid": {
+                    "default": "1",
+                    "required": true,
+                    "description": "尽量用上一个，这个名字不对，准备作废"
+                }
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/ActionExecute",
+            "summary": "执行操作",
+            "type": "POST",
+            "params": {
+                "actionid": {
+                    "default": "3",
+                    "required": true,
+                    "description": "操作类别：1.校验成功  2.校验失败  3.评定"
+                },
+                "passid": {
+                    "default": "",
+                    "required": false,
+                    "description": "许可Guid（目前可为空，后台自动匹配）"
+                },
+                "deptid": {
+                    "default": "",
+                    "required": false,
+                    "description": "单位评定时使用，个人时可不传"
+                },
+                "personid": {
+                    "default": "4d457f2f-35e6-41f0-a72d-996dc25e325b",
+                    "required": true,
+                    "description": "承包商人员Guid"
+                },
+                "checkdate": {
+                    "default": "2015-11-11 11:11:11",
+                    "required": true,
+                    "description": "操作时间"
+                },
+                "userid": {
+                    "default": "6d3b5089-c2d3-4685-91fd-4bee68a8a881",
+                    "required": true,
+                    "description": "操作人Guid"
+                },
+                "optionids": {
+                    "default": "",
+                    "required": true,
+                    "description": "选中选项id（分号隔开）"
+                },
+                "region": {
+                    "default": "",
+                    "required": true,
+                    "description": "区域id（分号隔开）"
+                },
+                "value": {
+                    "default": "0",
+                    "required": true,
+                    "description": "5星评分"
+                },
+                "addinfo": {
+                    "default": "测试手工输入",
+                    "required": true,
+                    "description": "手工输入信息"
+                },
+                "filesurl": {
+                    "default": "http://files.in-road.com/inroadfiles/nbwh/images/20151027/6358156438920513006933772-Med.jpg;http://files.in-road.com/inroadfiles/nbwh/images/20151027/6358156480801779062551775-Med.jpg;",
+                    "required": true,
+                    "description": "文件路径（分号隔开）"
+                },
+                "point1": {
+                    "default": "10",
+                    "required": true,
+                    "description": "调整后得分1"
+                },
+                "point2": {
+                    "default": "2",
+                    "required": true,
+                    "description": "调整后得分2"
+                },
+                "point3": {
+                    "default": "1",
+                    "required": true,
+                    "description": "调整后得分3"
+                },
+                "worksheetid": {
+                    "default":"",
+                    "required": true,
+                    "description": "作业单id"
+                }
+
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/ActionUndo",
+            "summary": "撤销操作",
+            "type": "POST",
+            "params": {
+                "userid": {
+                    "default": "6d3b5089-c2d3-4685-91fd-4bee68a8a881",
+                    "required": true,
+                    "description": "操作人Guid"
+                },
+                "checkid": {
+                    "default": "",
+                    "required": true,
+                    "description": "校验评定Guid"
+                },
+                "undoreason": {
+                    "default": "",
+                    "required": true,
+                    "description": "撤销原因"
+                }
+            },
+            "response": {
+
+            }
+        }
+
+    ],
+    "apiBlackList": [
+        {
+            "url": "UAPI/ThirdPerson/BlackListGetList",
+            "summary": "获取黑名单列表",
+            "type": "POST",
+            "params": {
+            },
+            "response": {
+
+            }
+        },
+        {
+            "url": "UAPI/ThirdPerson/BlackListGetListNotIn",
+            "summary": "将人员放入黑名单",
+            "type": "POST",
+            "params": {
+                "type": {
+                    "default": "1",
+                    "required": true,
+                    "description": "1.累计次数 2.累计分数 3.单次分数"
+                },
+                "number": {
+                    "default": "5",
+                    "required": true,
+                    "description": "分数或次数(包含此数字，即'>=')"
+                },
+                "begindate": {
+                    "default": "2015-01-01",
+                    "required": true,
+                    "description": "时间段开始日期"
+                },
+                "enddate": {
+                    "default": "2015-12-31",
+                    "required": true,
+                    "description": "时间段结束日期(包含此日期数据)"
+                }
+            },
+            "response": {
+
+            }
+        },
+	{
+            "url": "UAPI/ThirdPerson/WorkTypeDel",
+            "summary": "删除工种",
+            "type": "POST",
+            "params": {
+                "Worktypeid": {
+                    "default": "0a0f519b-3cdc-4822-ae4f-adb874a95736",
+                    "required": true,
+                    "description": "工种的c_id"
+                }
+            },
+            "response": {
+
+            }
+        },
+	{
+            "url": "UAPI/ThirdPerson/LearnDel",
+            "summary": "删除学习记录",
+            "type": "POST",
+            "params": {
+                "TrainCertificateid": {
+                    "default": "0a0f519b-3cdc-4822-ae4f-adb874a95736",
+                    "required": true,
+                    "description": "学习记录id"
+                }
+            },
+            "response": {
+
+            }
+        },	
+        {
+            "url": "UAPI/ThirdPerson/BlackListBlock",
+            "summary": "将人员放入黑名单",
+            "type": "POST",
+            "params": {
+                "personguids": {
+                    "default": "b08e7698-e1a7-4e8b-b321-7f093ef31135;67a44bb8-bfa1-4f60-b296-80c42a4c81c1;39a6fab8-27ea-4be3-8863-817392091f73;",
+                    "required": true,
+                    "description": "承包商人员Guid（分号隔开）"
+                },
+                "isblock": {
+                    "default": "1",
+                    "required": true,
+                    "description": "1.添加到黑名单  0.从黑名单中移除"
+                }
+            },
+            "response": {
+
+            }
+        }
+    ]
+}

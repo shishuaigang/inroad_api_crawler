@@ -1,0 +1,105 @@
+{
+    "resource": "Feedback",
+    "section": [
+        {
+            "name": "问题反馈",
+            "value": "question"
+        }
+    ],
+    "apis": [
+        {
+            "url": "UAPI/Feedback/Edit",
+            "summary": "创建问题反馈",
+            "type": "POST",
+            "params": {
+                "title": {
+                    "default": "测试问题反馈",
+                    "required": true,
+                    "description": "问题反馈名称(50字符限制)"
+                },
+                "type": {
+                    "default": "其他建议",
+                    "required": true,
+                    "description": "问题反馈类型(50字符限制)"
+                },
+                "content": {
+                    "default": "问题反馈内容",
+                    "required": true,
+                    "description": "问题反馈内容(2000字符限制)"
+                },
+                "filesurl": {
+                    "default": "url1;url2;",
+                    "required": true,
+                    "description": "测试问题文件列表(分号隔开)"
+                }
+
+            },
+            "response": {
+            }
+        },
+
+        {
+            "url": "UAPI/Feedback/GetList",
+            "summary": "获取问题反馈列表",
+            "type": "POST",
+            "params": {
+                "pageindex": {
+                    "default": "1",
+                    "required": true,
+                    "description": "第几页数据(0代表全部)"
+                }
+            },
+            "response": {
+            }
+        },
+        {
+            "url": "UAPI/Feedback/ReplyEdit",
+            "summary": "获取问题回复添加",
+            "type": "POST",
+            "params": { 
+                "feedbackid": {
+                    "default": "13C8143E-3B8B-491B-B92E-AFE0626D8885",
+                    "required": true,
+                    "description": "问题反馈GUID"
+                },
+                "content": {
+                    "default": "回复内容",
+                    "required": true,
+                    "description": "回复内容(2000字符限制)"
+                },
+                "filesurl": {
+                    "default": "url1;url2;",
+                    "required": true,
+                    "description": "回复文件列表(分号隔开)"
+                }
+            },
+            "response": {
+            }
+        },
+
+        {
+            "url": "UAPI/Feedback/ReplyGetList",
+            "summary": "获取问题回复获取列表",
+            "type": "POST",
+            "params": {
+                "feedbackid": {
+                    "default": "6D3B5089-C2D3-4685-91FD-4BEE68A8A881",
+                    "required": true,
+                    "description": "问题反馈GUID"
+                }
+            },
+            "response": {
+            }
+        },
+
+        {
+            "url": "UAPI/Feedback/TypeGetList",
+            "summary": "获取问题反馈类型列表",
+            "type": "POST",
+            "params": { },
+            "response": {
+            }
+        }
+
+    ]
+}

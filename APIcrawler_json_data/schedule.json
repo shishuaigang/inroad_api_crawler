@@ -1,0 +1,203 @@
+{
+    "resource": "Schedule",
+    "section": [
+        {
+            "name": "日程",
+            "value": "apis"
+        }
+    ],
+    "apis": [
+        {
+            "url": "UAPI/Schedule/Create",
+            "summary": "创建日程",
+            "type": "POST",
+            "params": {
+                "c_id": {
+                    "default": "",
+                    "required": true,
+                    "description": "日程GUID（为空时新建，否则为编辑）"
+                },
+                "begintime": {
+                    "default": "2015-11-18 12:00:01",
+                    "required": true,
+                    "description": "开始时间"
+                },
+                "endtime": {
+                    "default": "2015-11-22 13:00:02",
+                    "required": true,
+                    "description": "结束时间"
+                },
+                "type": {
+                    "default": "0",
+                    "required": true,
+                    "description": "类型(0:公有 1:私有)"
+                },
+                "priority": {
+                    "default": "3",
+                    "required": true,
+                    "description": "日程重要级别 1:紧急  2:重要  3:普通"
+                },
+                "title": {
+                    "default": "日程标题",
+                    "required": true,
+                    "description": "标题"
+                },
+                "memo": {
+                    "default": "备注内容",
+                    "required": true,
+                    "description": "备注"
+                },
+                "attachfiles": {
+                    "default": "",
+                    "required": true,
+                    "description": "附件地址(多个用分号隔开)"
+                },
+                "sharetouserids": {
+                    "default": "",
+                    "required": true,
+                    "description": "分享对象用户Guid(多个用分号隔开)"
+                },
+                "noticetime": {
+                    "default": "",
+                    "required": false,
+                    "description": "通知时间"
+                },
+                "repeattype": {
+                    "default": "0",
+                    "required": true,
+                    "description": "重复类型"
+                }
+            },
+            "response": {
+            }
+        },
+        {
+            "url": "UAPI/Schedule/Share",
+            "summary": "分享日程",
+            "type": "POST",
+            "params": {
+                "scheduleid": {
+                    "default": "8B0C1B6B-B168-4AC0-8FAA-067C5282CF9E",
+                    "required": true,
+                    "description": "日程Guid"
+                },
+                "sharetouserids": {
+                    "default": "249938C9-F3F9-4788-8ECA-0582AFC7F1F2;1B3FAF23-33A4-43E9-870E-BD35CD8EEC70;B079D542-6996-4B61-9D2B-8E5120A8AB05;",
+                    "required": true,
+                    "description": "分享对象用户Guid(多个用分号隔开)"
+                },
+                "removeshare": {
+                    "default": "0",
+                    "required": false,
+                    "description": "删除分享（1:删除分享  0或其他:分享）"
+                }
+            },
+            "response": {
+            }
+        },
+        {
+            "url": "UAPI/Schedule/GetList",
+            "summary": "获取日程列表",
+            "type": "POST",
+            "params": {
+                "begintime": {
+                    "default": "2015-10-01",
+                    "required": true,
+                    "description": "开始时间"
+                },
+                "endtime": {
+                    "default": "2015-12-31",
+                    "required": true,
+                    "description": "结束时间"
+                },
+                "keyword": {
+                    "default": "",
+                    "required": true,
+                    "description": "关键字"
+                },
+                "pageindex": {
+                    "default": "",
+                    "required": true,
+                    "description": "分页页数"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Schedule/GetDetail",
+            "summary": "获取日程详情",
+            "type": "POST",
+            "params": {
+                "scheduleid": {
+                    "default": "bd25147f-ba3d-42e1-85a7-24b9c0fe7fbd",
+                    "required": true,
+                    "description": "日程Guid"
+                }
+            },
+            "response": {
+            }
+        },
+        {
+            "url": "UAPI/Schedule/CountGetList",
+            "summary": "获取日程列表",
+            "type": "POST",
+            "params": {
+                "begintime": {
+                    "default": "2015-10-01",
+                    "required": true,
+                    "description": "开始时间"
+                },
+                "endtime": {
+                    "default": "2015-12-31",
+                    "required": true,
+                    "description": "结束时间"
+                }
+            },
+            "response": {
+            }
+        },
+        {
+            "url": "UAPI/Schedule/ShareGetList",
+            "summary": "获取日程列表",
+            "type": "POST",
+            "params": {
+                "scheduleid": {
+                    "default": "FF34020F-7285-4CEE-AA95-9BC92B9AE5DC",
+                    "required": true,
+                    "description": "用户Guid"
+                }
+            },
+            "response": {
+            }
+        },
+        {
+            "url": "UAPI/Schedule/Delete",
+            "summary": "删除日程",
+            "type": "POST",
+            "params": {
+                "scheduleids": {
+                    "default": "FF34020F-7285-4CEE-AA95-9BC92B9AE5DC",
+                    "required": true,
+                    "description": "日程Guid"
+                }
+            },
+            "response": {
+            }
+        },
+        {
+            "url": "UAPI/Schedule/ShareReceipt",
+            "summary": "日程分享回执",
+            "type": "POST",
+            "params": {
+                "scheduleid": {
+                    "default": "",
+                    "required": true,
+                    "description": "日程Guid"
+                }
+            },
+            "response": {
+            }
+        }
+    ]
+}

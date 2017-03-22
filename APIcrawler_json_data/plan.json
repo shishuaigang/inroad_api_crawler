@@ -1,0 +1,28 @@
+{
+    "resource": "Plan",
+    "section": [
+        {
+            "name": "行动计划",
+            "value": "action"
+        }
+    ],
+    "apis": [
+
+        {
+			"NoNeed": "1",
+            "url": "UAPI/Plan/Test",
+            "summary": "测试",
+            "type": "POST",
+            "params": { },
+            "response": {
+                "items": {
+                    "logo": "公司图标",
+                    "companyName": "公司名称"
+                }
+            }
+        }
+
+
+
+    ]
+}

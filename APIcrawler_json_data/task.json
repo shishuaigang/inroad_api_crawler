@@ -1,0 +1,403 @@
+{
+    "resource": "Task",
+    "section": [
+        {
+            "name": "任务",
+            "value": "apis"
+        }
+    ],
+    "apis": [
+        {
+            "url": "UAPI/Task/Create",
+            "summary": "创建任务",
+            "type": "POST",
+            "params": {
+                "c_id": {
+                    "default": "",
+                    "required": true,
+                    "description": "任务GUID（为空时新建，否则为编辑）"
+                },
+                "douserid": {
+                    "default": "6D3B5089-C2D3-4685-91FD-4BEE68A8A881",
+                    "required": true,
+                    "description": "创建用户Guid"
+                },
+                "touserid": {
+                    "default": "6D3B5089-C2D3-4685-91FD-4BEE68A8A881",
+                    "required": true,
+                    "description": "协同用户Guid"
+                },
+                "begintime": {
+                    "default": "2015-11-18 12:00:01",
+                    "required": true,
+                    "description": "开始时间"
+                },
+                "endtime": {
+                    "default": "2015-11-22 13:00:02",
+                    "required": true,
+                    "description": "结束时间"
+                },
+                "priority": {
+                    "default": "1",
+                    "required": true,
+                    "description": "任务重要级别 1:紧急  2:重要  3:普通"
+                },
+                "title": {
+                    "default": "任务标题",
+                    "required": true,
+                    "description": "标题"
+                },
+                "memo": {
+                    "default": "备注内容",
+                    "required": true,
+                    "description": "备注"
+                },
+                "attachfiles": {
+                    "default": "",
+                    "required": true,
+                    "description": "附件地址(多个用分号隔开)"
+                },
+                "sharetouserids": {
+                    "default": "",
+                    "required": true,
+                    "description": "分享对象用户Guid(多个用分号隔开)"
+                },
+                "inviteuserids": {
+                    "default": "",
+                    "required": true,
+                    "description": "邀请关注用户Guid(多个用分号隔开)"
+                },
+                "parenttaskid": {
+                    "default": "",
+                    "required": false,
+                    "description": "主任务Guid"
+                }
+            },
+            "response": {
+            }
+        },
+        {
+            "url": "UAPI/Task/GetList",
+            "summary": "获取任务列表",
+            "type": "POST",
+            "params": {
+                "userid": {
+                    "default": "6D3B5089-C2D3-4685-91FD-4BEE68A8A881",
+                    "required": true,
+                    "description": "用户Guid"
+                },
+                "status": {
+                    "default": "1",
+                    "required": true,
+                    "description": "1-进行中，2-已完成，3-已终止，4-已删除"
+                },
+                "type": {
+                    "default": "1",
+                    "required": true,
+                    "description": "对应界面：1-负责任务，2-参与任务，3-关注任务，4-系统任务，5-邀请关注任务，6-下属任务"
+                }
+            },
+            "response": {
+            }
+        },
+        {
+            "url": "UAPI/Task/GetDetail",
+            "summary": "获取任务信息详情",
+            "type": "POST",
+            "params": {
+                "userid": {
+                    "default": "6D3B5089-C2D3-4685-91FD-4BEE68A8A881",
+                    "required": true,
+                    "description": "用户Guid"
+                },
+                "taskid": {
+                    "default": "CE6F0C55-12E9-4653-9732-EA440267FAE6",
+                    "required": true,
+                    "description": "主任务GUID"
+                }
+            },
+            "response": {
+            }
+        },
+        {
+            "url": "UAPI/Task/GetChildList",
+            "summary": "获取主任务参与子任务及人员列表",
+            "type": "POST",
+            "params": {
+                "userid": {
+                    "default": "6D3B5089-C2D3-4685-91FD-4BEE68A8A881",
+                    "required": true,
+                    "description": "用户Guid"
+                },
+                "taskid": {
+                    "default": "CE6F0C55-12E9-4653-9732-EA440267FAE6",
+                    "required": true,
+                    "description": "主任务GUID"
+                }
+            },
+            "response": {
+            }
+        },
+        {
+            "url": "UAPI/Task/UpdateChildPercent",
+            "summary": "更新子任务进度",
+            "type": "POST",
+            "params": {
+                "userid": {
+                    "default": "6D3B5089-C2D3-4685-91FD-4BEE68A8A881",
+                    "required": true,
+                    "description": "用户Guid"
+                },
+                "childtaskid": {
+                    "default": "FAB0480B-549D-4822-917E-2C6694BFE275",
+                    "required": true,
+                    "description": "子任务GUID"
+                },
+                "percent": {
+                    "default": "50",
+                    "required": true,
+                    "description": "完成百分比"
+                }
+            },
+            "response": {
+            }
+        },
+        {
+            "url": "UAPI/Task/UpdateChildStatus",
+            "summary": "提交子任务最终结果",
+            "type": "POST",
+            "params": {
+                "userid": {
+                    "default": "6D3B5089-C2D3-4685-91FD-4BEE68A8A881",
+                    "required": true,
+                    "description": "用户Guid"
+                },
+                "childtaskid": {
+                    "default": "FAB0480B-549D-4822-917E-2C6694BFE275",
+                    "required": true,
+                    "description": "子任务GUID"
+                },
+                "status": {
+                    "default": "2",
+                    "required": true,
+                    "description": "1-进行中，2-已完成，3-已终止，4-已删除"
+                },
+                "finishmemo": {
+                    "default": "结束说明",
+                    "required": true,
+                    "description": "结束说明"
+                }
+            },
+            "response": {
+            }
+        },
+        {
+            "url": "UAPI/Task/UpdateChildEvalue",
+            "summary": "提交子任务评定信息",
+            "type": "POST",
+            "params": {
+                "userid": {
+                    "default": "6D3B5089-C2D3-4685-91FD-4BEE68A8A881",
+                    "required": true,
+                    "description": "用户Guid"
+                },
+                "childtaskid": {
+                    "default": "FAB0480B-549D-4822-917E-2C6694BFE275",
+                    "required": true,
+                    "description": "子任务GUID"
+                },
+                "evaluestatus": {
+                    "default": "2",
+                    "required": true,
+                    "description": "评定状态：2-已完成，3-已终止"
+                },
+                "evaluememo": {
+                    "default": "评定备注",
+                    "required": true,
+                    "description": "评定备注"
+                }
+            },
+            "response": {
+            }
+        },
+        {
+            "url": "UAPI/Task/UpdateStatus",
+            "summary": "提交主任务最终结果",
+            "type": "POST",
+            "params": {
+                "userid": {
+                    "default": "6D3B5089-C2D3-4685-91FD-4BEE68A8A881",
+                    "required": true,
+                    "description": "用户Guid"
+                },
+                "taskid": {
+                    "default": "CE6F0C55-12E9-4653-9732-EA440267FAE6",
+                    "required": true,
+                    "description": "主任务GUID"
+                },
+                "status": {
+                    "default": "2",
+                    "required": true,
+                    "description": "1-进行中，2-已完成，3-已终止，4-已删除"
+                },
+                "finishmemo": {
+                    "default": "结束说明",
+                    "required": true,
+                    "description": "结束说明"
+                }
+            },
+            "response": {
+            }
+        },
+        {
+            "url": "UAPI/Task/Delete",
+            "summary": "删除任务",
+            "type": "POST",
+            "params": {
+                "userid": {
+                    "default": "6D3B5089-C2D3-4685-91FD-4BEE68A8A881",
+                    "required": true,
+                    "description": "用户Guid"
+                },
+                "taskid": {
+                    "default": "FAB0480B-549D-4822-917E-2C6694BFE275",
+                    "required": true,
+                    "description": "任务GUID"
+                }
+            },
+            "response": {
+            }
+        },
+        {
+            "url": "UAPI/Task/UpdateChildInfo",
+            "summary": "更新子任务信息",
+            "type": "POST",
+            "params": {
+                "userid": {
+                    "default": "6D3B5089-C2D3-4685-91FD-4BEE68A8A881",
+                    "required": true,
+                    "description": "用户Guid"
+                },
+                "childtaskid": {
+                    "default": "1A29B830-7A40-4563-81C7-F9AB476E5E08",
+                    "required": true,
+                    "description": "子任务GUID"
+                },
+                "title": {
+                    "default": "子任务标题",
+                    "required": true,
+                    "description": "子任务标题"
+                },
+                "begintime": {
+                    "default": "2015-12-01",
+                    "required": true,
+                    "description": "开始日期时间"
+                },
+                "endtime": {
+                    "default": "2015-12-02",
+                    "required": true,
+                    "description": "结束日期时间"
+                },
+                "memo": {
+                    "default": "备注",
+                    "required": true,
+                    "description": "备注"
+                },
+                "attachfile": {
+                    "default": "附件",
+                    "required": true,
+                    "description": "附件"
+                }
+            },
+            "response": {
+            }
+        },
+        {
+            "url": "UAPI/Task/CountGetList",
+            "summary": "获取任务列表",
+            "type": "POST",
+            "params": {
+                "userid": {
+                    "default": "6D3B5089-C2D3-4685-91FD-4BEE68A8A881",
+                    "required": true,
+                    "description": "用户Guid"
+                }
+            },
+            "response": {
+                "TEST": {
+                    "介绍": "1-负责任务，2-参与任务，3-关注任务，4-系统任务，5-邀请关注任务，6-下属任务"
+                }
+            }
+        },
+        {
+            "url": "UAPI/Task/InviteGetList",
+            "summary": "获取任务邀请/关注人员列表",
+            "type": "POST",
+            "params": {
+                "taskid": {
+                    "default": "6EFFDC86-F433-42C5-9657-0341446F1EB9",
+                    "required": true,
+                    "description": "任务Guid"
+                },
+                "type": {
+                    "default": "0",
+                    "required": true,
+                    "description": "0.所有  1.已同意  2.已拒绝"
+                }
+            },
+            "response": {
+            }
+        },
+        {
+            "url": "UAPI/Task/Invite",
+            "summary": "发出邀请关注任务",
+            "type": "POST",
+            "params": {
+                "taskid": {
+                    "default": "6EFFDC86-F433-42C5-9657-0341446F1EB9",
+                    "required": true,
+                    "description": "任务Guid"
+                },
+                "inviteuserids": {
+                    "default": "",
+                    "required": true,
+                    "description": "邀请关注用户Guid(多个用分号隔开)"
+                }
+            },
+            "response": {
+            }
+        },
+        {
+            "url": "UAPI/Task/InviteAccept",
+            "summary": "接受邀请关注（或主动关注）任务",
+            "type": "POST",
+            "params": {
+                "taskid": {
+                    "default": "6EFFDC86-F433-42C5-9657-0341446F1EB9",
+                    "required": true,
+                    "description": "任务Guid"
+                },
+                "accept": {
+                    "default": "1",
+                    "required": true,
+                    "description": "1.接受关注  2.拒绝关注(或已关注时取消关注)"
+                }
+            },
+            "response": {
+            }
+        },
+        {
+			"NoNeed": "1",
+            "url": "UAPI/Task/GetTaskModelList",
+            "summary": "获取任务模板列表",
+            "type": "POST",
+            "params": {
+            },
+            "response": {
+            }
+        }
+
+
+
+    ]
+}

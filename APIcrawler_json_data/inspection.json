@@ -1,0 +1,1079 @@
+{
+    "resource": "Inspection",
+    "section": [
+        {
+            "name": "点巡检",
+            "value": "apis"
+        }
+    ],
+    "apis": [
+        
+			{
+				"url": "UAPI/Inspection/InspectionPlanRecordStart",
+				"summary": "选定巡检计划开始巡检，记录巡检记录",
+				"type": "POST",
+				"params": {
+					"planid": {
+						"default": "00000000-0000-0000-0000-000000000000",
+						"required": true,
+						"description": "巡检计划id"
+						},
+					"regionid": {
+								"default": "14",
+								"required": true,
+								"description": "区域id"
+							},
+					"participants": {
+						"default": "0D7234DD-8F44-44C4-BCE4-E8FB98127BF7;200B5938-4978-4940-83CB-2B925A23ED80;0103D669-59F7-480D-ACE4-04896421C8AB;",
+						"required": true,
+						"description": "参与人员s"
+						}
+					
+						},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionPlanRecordUserGetlist",
+				"summary": "读取计划开始记录对应的人员",
+				"type": "POST",
+				"params": {
+               		"recordid": {
+								"default": "19498ECB-7EB6-48D8-9AB8-EAA557C72D71",
+								"required": true,
+								"description": "巡检计划记录id"
+							}
+						},
+					"response": {
+				}
+			},
+	 		{
+				"url": "UAPI/Inspection/InspectionPlanAdd",
+				"summary": "增加巡检计划",
+				"type": "POST",
+				"params": {
+					"title": {
+						"default": "",
+						"required": true,
+						"description": "巡检计划名称"
+						},
+					"regionid": {
+						"default": "85",
+						"required": true,
+						"description": "区域id"
+						},
+					"inspectiontype": {
+								"default": "1",
+								"required": true,
+								"description": "巡检类型"
+							},
+					"needperson": {
+								"default": "3",
+								"required": true,
+								"description": "巡检需要的人员数量"
+							},
+					"cycle": {
+								"default": "24",
+								"required": true,
+								"description": "巡检周期"
+							},
+					"needsort": {
+								"default": "0",
+								"required": true,
+								"description": "是否需要排序"
+							},
+					"needallpoint": {
+						"default": "0",
+						"required": true,
+						"description": "是否需要巡检所有的巡检点"
+							},
+					"planid": {
+						"default": "",
+						"required": true,
+						"description": "巡检计划id"
+							},
+					"starttime": {
+						"default": "",
+						"required": true,
+						"description": "一天中的第一次开始时间"
+							},
+					"errorburst": {
+						"default": "",
+						"required": true,
+						"description": "允许误差的时间（单位分钟）"
+							}
+						},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionPlanRecordPointDetailGetlist",
+				"summary": "读取巡检计划的巡检点内的设备及其关键数据",
+				"type": "POST",
+				"params": {
+               		"recordpointid": {
+								"default": "9D5D782B-9A7E-47FD-929C-101EC991423E",
+								"required": true,
+								"description": "巡检计划"
+							}
+						},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionPlanRecordPointDetailSave",
+				"summary": "巡检计划的巡检点内关键数据保存",
+				"type": "POST",
+				"params": {
+					"recordpointid": {
+						"default": "177B24F5-55B5-4FD5-8E6F-13034201808C",
+						"required": true,
+						"description": "巡检计划记录对应的巡检点id"
+						},
+					"configids": {
+						"default": "19498ECB-7EB6-48D8-9AB8-EAA557C72D71",
+						"required": true,
+						"description": "设备对应关键数据的配置ids"
+						},
+					"deviceids": {
+						"default": "19498ECB-7EB6-48D8-9AB8-EAA557C72D71",
+						"required": true,
+						"description": "设备ids"
+						},
+					"coredataitems": {
+						"default": "19498ECB-7EB6-48D8-9AB8-EAA557C72D71",
+						"required": true,
+						"description": "关键数据ids"
+						},
+					"coredatavalues": {
+								"default": "",
+								"required": true,
+								"description": "数据项值 s"
+							}
+									
+						},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionPlanRecordFinish",
+				"summary": "巡检计划的记录的结束",
+				"type": "POST",
+				"params": {
+					"recordid": {
+						"default": "177B24F5-55B5-4FD5-8E6F-13034201808C",
+						"required": true,
+						"description": "巡检计划记录id"
+								}
+						},
+					"response": {
+				}
+			},
+{
+				"url": "UAPI/Inspection/InspectionPlanSearch",
+				"summary": "检索巡检计划",
+				"type": "POST",
+				"params": {
+					"regionids": {
+						"default": "84",
+						"required": true,
+						"description": "区域 ids"
+						},
+					"inspectiontype": {
+						"default": "1",
+						"required": true,
+						"description": "巡检类型"
+						},
+					"key": {
+								"default": "",
+								"required": true,
+								"description": "关键字"
+							}
+						},
+					"response": {
+				}
+			},
+			
+				{
+				"url": "UAPI/Inspection/InspectionPlanSend",
+				"summary": "派发巡检计划",
+				"type": "POST",
+				"params": {
+					"planid": {
+						"default": "177B24F5-55B5-4FD5-8E6F-13034201808C",
+						"required": true,
+						"description": "巡检计划id"
+						},
+					"personids": {
+						"default": "00E274AD-79FD-4051-BC83-2388EA2A79A4,0103D669-59F7-480D-ACE4-04896421C8AB;",
+						"required": true,
+						"description": "人员ids"
+								}					
+						},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionPlanRecordCheck",
+				"summary": "检查巡检计划是否已经有未完成的巡检记录",
+				"type": "POST",
+				"params": {
+					"planid": {
+						"default": "177B24F5-55B5-4FD5-8E6F-13034201808C",
+						"required": true,
+						"description": "巡检计划id"
+						}				
+						},
+					"response": {
+				}
+			},
+			
+			{
+				"url": "UAPI/Inspection/InspectionPlanRecordDetailGetList",
+				"summary": "巡检记录明细数据",
+				"type": "POST",
+				"params": {
+					"recordid": {
+						"default": "9D45DD78-C311-49B6-9BB7-DBFFD1F73D3E",
+						"required": true,
+						"description": "巡检记录id"
+						}				
+						},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionPerformance",
+				"summary": "巡检绩效",
+				"type": "POST",
+				"params": {
+					"deptid": {
+						"default": "14",
+						"required": true,
+						"description": "部门 id"
+						},
+					"begintime": {
+								"default": "",
+								"required": true,
+								"description": "开始时间"
+							},
+					"endtime": {
+								"default": "",
+								"required": true,
+								"description": "开始时间"
+							}
+						},
+					"response": {
+				}
+			},
+			
+				{
+				"url": "UAPI/Inspection/InspectionPlanFollowAdd",
+				"summary": "巡检计划关注增加",
+				"type": "POST",
+				"params": {
+					"planids": {
+						"default": "177B24F5-55B5-4FD5-8E6F-13034201808C",
+						"required": true,
+						"description": "巡检计划ids"
+							}
+						},
+					"response": {
+				}
+			},
+
+				{
+				"url": "UAPI/Inspection/InspectionPlanFollowDel",
+				"summary": "巡检计划关注删除",
+				"type": "POST",
+				"params": {
+					"planfollowid": {
+						"default": "C4A06CF4-9A69-4EF8-AA19-CC1C05482278",
+						"required": true,
+						"description": "巡检计划关注id"
+							}
+						},
+					"response": {
+				}
+			},
+
+			{
+				"url": "UAPI/Inspection/InspectionPlanFollowGetList",
+				"summary": "读取巡检计划关注",
+				"type": "POST",
+				"params": {
+							},
+					"response": {
+				}
+			},
+
+			{
+				"url": "UAPI/Inspection/InspectionPlanToUserNoFollowGetList",
+				"summary": "读取当前用户未关注的巡检计划",
+				"type": "POST",
+				"params": {
+							},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionPointFollowAdd",
+				"summary": "巡检点关注增加",
+				"type": "POST",
+				"params": {
+					"pointids": {
+						"default": "38B93DED-DCED-4EA1-B468-97B8EC69CCD8",
+						"required": true,
+						"description": "巡检计划ids"
+							}
+						},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionPointFollowDel",
+				"summary": "巡检点关注删除",
+				"type": "POST",
+				"params": {
+					"pointfollowid": {
+						"default": "38B93DED-DCED-4EA1-B468-97B8EC69CCD8",
+						"required": true,
+						"description": "巡检点关注id"
+							}
+						},
+					"response": {
+				}
+			},
+				{
+				"url": "UAPI/Inspection/InspectionPointFollowGetList",
+				"summary": "读取已关注巡检点",
+				"type": "POST",
+				"params": {
+							},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionPointNoFollowGetList",
+				"summary": "读取当前用户未关注的巡检点",
+				"type": "POST",
+				"params": {
+							},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionPlanToUserGetList",
+				"summary": "对应用户的巡检计划",
+				"type": "POST",
+				"params": {
+					"planid": {
+						"default": "38B93DED-DCED-4EA1-B468-97B8EC69CCD8",
+						"required": true,
+						"description": "巡检计划id"
+							}
+						},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionPointGetlist",
+				"summary": "读取巡检点列表",
+				"type": "POST",
+				"params": {
+					"pointid": {
+						"default": "38B93DED-DCED-4EA1-B468-97B8EC69CCD8",
+						"required": true,
+						"description": "巡检点id"
+							},
+					"regionid": {
+						"default": "80",
+						"required": true,
+						"description": "区域id"
+							}	
+						},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionPlanDel",
+				"summary": "读取巡检点列表",
+				"type": "POST",
+				"params": {
+					"planid": {
+						"default": "38B93DED-DCED-4EA1-B468-97B8EC69CCD8",
+						"required": true,
+						"description": "巡检计划id"
+							}
+						},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionTypeAdd",
+				"summary": "增加巡检类型名称",
+				"type": "POST",
+				"params": {
+					"title": {
+						"default": "inroad apis测试",
+						"required": true,
+						"description": "巡检类型名称"
+							},
+					"typeid": {
+						"default": "",
+						"required": true,
+						"description": "巡检类型id"
+							}
+
+						},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionTypeDel",
+				"summary": "删除巡检类型名称",
+				"type": "POST",
+				"params": {
+					"typeid": {
+						"default": "",
+						"required": true,
+						"description": "巡检类型id"
+							}
+						},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionTypeGetList",
+				"summary": "读取巡检类型列表",
+				"type": "POST",
+				"params": {
+							},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionPointAdd",
+				"summary": "增加巡检点",
+				"type": "POST",
+				"params": {
+					"regionid": {
+						"default": "85",
+						"required": true,
+						"description": "区域id"
+						},
+					"pointname": {
+								"default": "inroad api测试专用",
+								"required": true,
+								"description": "巡检点名称"
+							},
+					"memo": {
+								"default": "",
+								"required": true,
+								"description": "备注"
+							},
+					"files": {
+								"default": "",
+								"required": true,
+								"description": "链接地址"
+							},
+					"pointid": {
+								"default": "FCDD9787-940D-4D69-8FF2-3F8BBA95459B",
+								"required": true,
+								"description": "巡检点id"
+							},
+
+					"nfcid": {
+								"default": "",
+								"required": true,
+								"description": "nfcid"
+							},
+					"qrcode": {
+								"default": "",
+								"required": true,
+								"description": "二维码id"
+							}
+						},
+					"response": {
+				}
+			},
+			{
+				"NoNeed": "1",
+				"url": "UAPI/Inspection/InspectionPointDel",
+				"summary": "删除巡检点",
+				"type": "POST",
+				"params": {
+					"pointid": {
+						"default": "38B93DED-DCED-4EA1-B468-97B8EC69CCD8",
+						"required": true,
+						"description": "巡检点id"
+							}
+						},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionPointDeviceGetList",
+				"summary": "读取巡检点对应设备",
+				"type": "POST",
+				"params": {
+					"pointid": {
+							"default": "FCAB2FDF-2F7F-40A6-8A59-865F4F97A02D",
+							"required": true,
+							"description": "巡检点id"
+								}
+						},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionPointDeviceDel",
+				"summary": "删除巡检点对应设备",
+				"type": "POST",
+				"params": {
+					"pointdeviceid": {
+							"default": "FCAB2FDF-2F7F-40A6-8A59-865F4F97A02D",
+							"required": true,
+							"description": "巡检点设备id"
+								}
+						},
+					"response": {
+				}
+			},
+			{
+				"NoNeed": "1",
+				"url": "UAPI/Inspection/InspectionPlanPointDeviceDel",
+				"summary": "删除巡检点对应设备",
+				"type": "POST",
+				"params": {
+					"planpointdeviceid ": {
+							"default": "38B93DED-DCED-4EA1-B468-97B8EC69CCD8",
+							"required": true,
+							"description": "巡检计划巡检点设备id"
+								}
+						},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionPointDeviceAdd",
+				"summary": "增加巡检点对应设备",
+				"type": "POST",
+				"params": {
+					"pointid": {
+							"default": "38B93DED-DCED-4EA1-B468-97B8EC69CCD8",
+							"required": true,
+							"description": "巡检计划巡检点id"
+								},
+					"deviceids": {
+							"default": "38B93DED-DCED-4EA1-B468-97B8EC69CCD8",
+							"required": true,
+							"description": "设备ids"
+								}
+						},
+					"response": {
+				}
+			},	
+			{
+				"url": "UAPI/Inspection/InspectionDeviceCoredataAdd",
+				"summary": "增加设备对应的关键数据",
+				"type": "POST",
+				"params": {
+					"deviceid": {
+							"default": "38B93DED-DCED-4EA1-B468-97B8EC69CCD8",
+							"required": true,
+							"description": "设备id"
+								},
+					"coredataitemids": {
+							"default": "38B93DED-DCED-4EA1-B468-97B8EC69CCD8",
+							"required": true,
+							"description": "关键数据ids"
+								}
+						},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionDeviceCoredataDel",
+				"summary": "删除设备对应的关键数据",
+				"type": "POST",
+				"params": {
+					"devicecoredataid": {
+							"default": "38B93DED-DCED-4EA1-B468-97B8EC69CCD8",
+							"required": true,
+							"description": "设备关键数据id"
+								}
+						},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionDeviceCoredataGetList",
+				"summary": "读取设备对应的关键数据",
+				"type": "POST",
+				"params": {
+					"deviceid": {
+							"default": "38B93DED-DCED-4EA1-B468-97B8EC69CCD8",
+							"required": true,
+							"description": "设备id"
+								}
+						},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionPlanPointAdd",
+				"summary": "增加巡检计划的巡检点",
+				"type": "POST",
+				"params": {
+					"planid": {
+							"default": "38B93DED-DCED-4EA1-B468-97B8EC69CCD8",
+							"required": true,
+							"description": "巡检计划id"
+								},
+					"pointids": {
+							"default": "38B93DED-DCED-4EA1-B468-97B8EC69CCD8",
+							"required": true,
+							"description": "巡检点ids"
+								}
+						},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionPlanPointDel",
+				"summary": "删除巡检计划的巡检点",
+				"type": "POST",
+				"params": {
+					"planpointid": {
+							"default": "38B93DED-DCED-4EA1-B468-97B8EC69CCD8",
+							"required": true,
+							"description": "巡检计划id"
+								}					
+						},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionPlanPointGetList",
+				"summary": "读取巡检计划的巡检点",
+				"type": "POST",
+				"params": {
+					"planid": {
+							"default": "38B93DED-DCED-4EA1-B468-97B8EC69CCD8",
+							"required": true,
+							"description": "巡检计划id"
+								}	,
+					"planrecordid": {
+							"default": "38B93DED-DCED-4EA1-B468-97B8EC69CCD8",
+							"required": true,
+							"description": "巡检计划的记录id"
+								}	,
+					"regionid": {
+							"default": "80",
+							"required": true,
+							"description": "区域id"
+						},
+					"type": {
+							"default": "1",
+							"required": true,
+							"description": "类型 1 web 端配置用   2 业务端检索用"
+						}						
+						},
+					"response": {
+				}
+			},
+			
+			{
+				"NoNeed": "1",
+				"url": "UAPI/Inspection/InspectionPlanPointDeviceGetList",
+				"summary": "读取巡检计划中巡检点的设备",
+				"type": "POST",
+				"params": {
+					"planpointid": {
+							"default": "38B93DED-DCED-4EA1-B468-97B8EC69CCD8",
+							"required": true,
+							"description": "巡检计划中巡检点id"
+								}			
+						},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionPlanPointDeviceCoredataAdd",
+				"summary": "增加巡检计划中巡检点的设备的关键数据",
+				"type": "POST",
+				"params": {
+					"planpointid": {
+							"default": "38B93DED-DCED-4EA1-B468-97B8EC69CCD8",
+							"required": true,
+							"description": "巡检计划中巡检点id"
+								}	,
+					"configids": {
+							"default": "38B93DED-DCED-4EA1-B468-97B8EC69CCD8",
+							"required": true,
+							"description": "关键数据配置ids"
+								}	,
+					"Includedevices": {
+							"default": "1",
+							"required": true,
+							"description": "是否包含设备s"
+								}	,
+					"includecoredatas": {
+							"default": "1",
+							"required": true,
+							"description": "是否包含关键数据s"
+								}	,
+					"ismusts": {
+							"default": "1",
+							"required": true,
+							"description": "是否必须s"
+								}				
+						},
+					"response": {
+				}
+			},
+			{
+				"NoNeed": "1",
+				"url": "UAPI/Inspection/InspectionPlanPointDeviceCoredataDel",
+				"summary": "删除巡检计划中巡检点的设备的关键数据",
+				"type": "POST",
+				"params": {
+					"planpointdeviceCoredataItemid": {
+							"default": "38B93DED-DCED-4EA1-B468-97B8EC69CCD8",
+							"required": true,
+							"description": "巡检计划中巡检点设备关键数据id"
+								}				
+						},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionPlanPointDeviceCoredataGetList",
+				"summary": "读取巡检计划中巡检点的设备的关键数据",
+				"type": "POST",
+				"params": {
+					"planpointid": {
+							"default": "535A29BB-A176-43B0-81EF-27EC2271F299",
+							"required": true,
+							"description": "巡检计划巡检点id"
+								}				
+						},
+					"response": {
+				}
+			},
+				{
+				"url": "UAPI/Inspection/InspectionPlanPointSort",
+				"summary": "巡检计划中巡检点的排序",
+				"type": "POST",
+				"params": {
+						
+					"planpointids": {
+							"default": "38B93DED-DCED-4EA1-B468-97B8EC69CCD8",
+							"required": true,
+							"description": "巡检点ids"
+								}			
+						},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionPlanRecordGetList",
+				"summary": "读取 记录用户的所有的巡检记录",
+				"type": "POST",
+				"params": {
+					"recorduserid": {
+							"default": "38B93DED-DCED-4EA1-B468-97B8EC69CCD8",
+							"required": true,
+							"description": "记录用户id"
+								}		
+						},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionPlanRecordSearch",
+				"summary": "巡检记录查询",
+				"type": "POST",
+				"params": {
+					"regionids": {
+						"default": "80",
+						"required": true,
+						"description": "区域 ids"
+						},
+					"inspectiontype": {
+						"default": "1",
+						"required": true,
+						"description": "巡检类型"
+						},
+					"key": {
+								"default": "",
+								"required": true,
+								"description": "关键字"
+							},
+					"begintime": {
+								"default": "",
+								"required": true,
+								"description": "开始时间"
+							},
+					"endtime": {
+								"default": "",
+								"required": true,
+								"description": "开始时间"
+							},
+					"planid": {
+								"default": "",
+								"required": true,
+								"description": "巡检计划id"
+							},
+					"recorduserid": {
+								"default": "",
+								"required": true,
+								"description": "巡检记录人id"
+							},
+					"israndom": {
+								"default": "0",
+								"required": true,
+								"description": "是否是随机巡查"
+							},
+					"isqualified": {
+								"default": "0",
+								"required": true,
+								"description": "是否是合格巡查，全部的时候传null"
+							}
+						},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionPlanRecordPointStart",
+				"summary": "校验巡检点nfc或者二维码，通过后插入巡检点记录",
+				"type": "POST",
+				"params": {
+					"pointid": {
+						"default": "FCDD9787-940D-4D69-8FF2-3F8BBA95459B",
+						"required": true,
+						"description": "巡检点id"
+						},
+					"nfcid": {
+								"default": "",
+								"required": true,
+								"description": "nfcid"
+							},
+					"qrcode": {
+						"default": "20170222131727697",
+						"required": true,
+						"description": "二维码id"
+						},
+					"recordid": {
+						"default": "",
+						"required": true,
+						"description": "巡检计划的记录id"
+						},
+					"longitude": {
+						"default": "",
+						"required": true,
+						"description": "经度"
+						},
+					"latitude": {
+						"default": "",
+						"required": true,
+						"description": "纬度"
+						}
+						},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionPlanRecordRandomPointAdd",
+				"summary": "增加随机巡检的巡检点",
+				"type": "POST",
+				"params": {
+					"nfcid": {
+								"default": "",
+								"required": true,
+								"description": "nfcid"
+							},
+					"qrcode": {
+						"default": "20170222131727697",
+						"required": true,
+						"description": "二维码id"
+						},
+					"recordid": {
+						"default": "",
+						"required": true,
+						"description": "巡检计划的记录id"
+						},
+					"longitude": {
+						"default": "",
+						"required": true,
+						"description": "经度"
+						},
+					"latitude": {
+						"default": "",
+						"required": true,
+						"description": "纬度"
+						}
+						},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionPointRecordSearch",
+				"summary": "根据巡检点查询巡检记录",
+				"type": "POST",
+				"params": {
+					"pointid": {
+						"default": "FCDD9787-940D-4D69-8FF2-3F8BBA95459B",
+						"required": true,
+						"description": "巡检点id"
+								}			
+							},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionDeviceTroubleCheck",
+				"summary": "检查巡检计划记录的设备是否登记过隐患",
+				"type": "POST",
+				"params": {
+					"inspectionrecordid": {
+						"default": "177B24F5-55B5-4FD5-8E6F-13034201808C",
+						"required": true,
+						"description": "巡检计划的记录id"
+						},
+					"deviceid": {
+						"default": "19498ECB-7EB6-48D8-9AB8-EAA557C72D71",
+						"required": true,
+						"description": "设备id"
+						}									
+						},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionPlanRecordRandomFilesSave",
+				"summary": "保存随机巡查的附件及其备注",
+				"type": "POST",
+				"params": {
+					"recordpointid": {
+						"default": "177B24F5-55B5-4FD5-8E6F-13034201808C",
+						"required": true,
+						"description": "巡检计划的记录的巡检点的id"
+						},
+					"files": {
+						"default": "",
+						"required": true,
+						"description": "附件地址"
+						}	,
+					"memo": {
+						"default": "",
+						"required": true,
+						"description": "备注"
+						}								
+						},
+					"response": {
+				}
+			},
+			{
+						"url": "UAPI/Inspection/InspectionPointQrcodeSave",
+						"summary": "保存巡检点的二维码",
+						"type": "POST",
+						"params": {
+							"pointid": {
+								"default": "177B24F5-55B5-4FD5-8E6F-13034201808C",
+								"required": true,
+								"description": "巡检点id"
+							}
+						},
+						"response": {}
+			},
+  			{
+						"url": "UAPI/Inspection/InspectionPointNFCSave",
+						"summary": "保存巡检点的nfc",
+						"type": "POST",
+						"params": {
+							"pointid": {
+								"default": "177B24F5-55B5-4FD5-8E6F-13034201808C",
+								"required": true,
+								"description": "巡检点id"
+							},
+							"nfcid": {
+								"default": "177B24F5-55B5-4FD5-8E6F-13034201808C",
+								"required": true,
+								"description": "nfcid"
+							}
+						},
+						"response": {}
+			},
+			{
+						"url": "UAPI/Inspection/InspectionPointNFCDel",
+						"summary": "删除巡检点的nfc",
+						"type": "POST",
+						"params": {
+							"pointid": {
+								"default": "177B24F5-55B5-4FD5-8E6F-13034201808C",
+								"required": true,
+								"description": "巡检点id"
+							}
+						},
+						"response": {}
+			},
+			{
+						"url": "UAPI/Inspection/InspectionPointDeviceCoredataGetList",
+						"summary": "根据巡检点读取设备及其关键数据",
+						"type": "POST",
+						"params": {
+							"pointid": {
+								"default": "177B24F5-55B5-4FD5-8E6F-13034201808C",
+								"required": true,
+								"description": "巡检点id"
+							}
+						},
+						"response": {}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionPlanRecordTroubleGetList",
+				"summary": "读取有问题巡检计划（巡检 的gps位置相同数超过3个）",
+				"type": "POST",
+				"params": {
+					"begintime": {
+							"default": "",
+							"required": false,
+							"description": "开始时间"
+								}	,	
+					"endtime": {
+							"default": "",
+							"required": false,
+							"description": "结束时间"
+								},	
+					"regionid ": {
+							"default": "",
+							"required": false,
+							"description": "结束时间"
+								}				
+						},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Inspection/InspectionPlanGetList",
+				"summary": "读取巡检计划",
+				"type": "POST",
+				"params": {
+					"planid": {
+							"default": "38B93DED-DCED-4EA1-B468-97B8EC69CCD8",
+							"required": true,
+							"description": "巡检计划id"
+								}	,	
+					"key": {
+							"default": "",
+							"required": true,
+							"description": "关键字"
+								}			
+						},
+					"response": {
+				}
+			}
+    ]
+}

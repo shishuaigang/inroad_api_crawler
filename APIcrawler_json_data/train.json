@@ -1,0 +1,1531 @@
+{
+    "resource": "Train",
+    "section": [
+        {
+            "name": "人员培训",
+            "value": "apis"
+        }
+    ],
+    "apis": [
+         {
+            "url": "UAPI/Train/CollectionAdd",
+            "summary": "添加收藏",
+            "type": "POST",
+            "params": {
+			"collectionid": {
+                    "default": "DC64FADE-996A-421B-9F0B-F8CC94D38F80",
+                    "required": true,
+                    "description": "收藏的对象的id"
+                },
+                "addtype": {
+                    "default": "1",
+                    "required": true,
+                    "description": "--1.我的课程，2.我的课时，3.我的课件，4我的测试卷,5.无状态课程6.无状态课时7.无状态课件8.无状态测试卷"
+                },
+                "type": {
+                    "default": "1",
+                    "required": true,
+                    "description": "--1添加收藏，2取消收藏"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/CollectionGetList",
+            "summary": "获取收藏列表",
+            "type": "POST",
+            "params": 
+		{
+                "addtype": {
+                    "default": "1",
+                    "required": true,
+                    "description": "--1.课程，2课时， 3课件，4测试卷"
+                }
+		
+            },
+            "response": {
+            }
+        }
+	,
+	{
+            "url": "UAPI/Train/ItemAppraiseAdd",
+            "summary": "添加课程,课时，测试卷评论",
+            "type": "POST",
+            "params": {
+                "itemid": {
+                    "default": "C3D7EB5C-EBD1-416E-8229-04798DD027CE",
+                    "required": true,
+                    "description": "课程,课时，测试卷id"
+                },
+		"content": {
+                    "default": "这个一个很好的课程",
+                    "required": true,
+                    "description": "对课程的评论"
+                },
+		"score": {
+                    "default": "5",
+                    "required": true,
+                    "description": "评分"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/ItemAppraiseGetList",
+            "summary": "获取课程,课时，测试卷评论列表",
+            "type": "POST",
+            "params": {
+                "itemid": {
+                    "default": "C3D7EB5C-EBD1-416E-8229-04798DD027CE",
+                    "required": true,
+                    "description": "课程,课时，测试卷id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/LessonGetList",
+            "summary": "获取课程列表",
+            "type": "POST",
+            "params": {
+		"traintypeid": {
+                    "default": "9E804F97-13D6-480F-8998-B91B7AF5373E",
+                    "required": false,
+                    "description": "课程培训类别id"
+                }, 
+		    "searchtype": {
+                    "default": "0",
+                    "required": false,
+                    "description": "1最新发布，2使用最多，3最分最高"
+                }, 
+		    "key": {
+                    "default": "",
+                    "required": false,
+                    "description": "关键字，目前是课程标题"
+                }, 
+		    "createuser": {
+                    "default": "",
+                    "required": false,
+                    "description": "创建人id"
+                }, 
+		    "begintime": {
+                    "default": "",
+                    "required": false,
+                    "description": "开始时间"
+                }, 
+		    "endtime": {
+                    "default": "",
+                    "required": false,
+                    "description": "结束时间"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+			"NoNeed": "1",
+            "url": "UAPI/Train/LessonDelete",
+            "summary": "获取课程列表",
+            "type": "POST",
+            "params": {
+		"lessonid": {
+                    "default": "",
+                    "required": true,
+                    "description": "删除课程"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/LessonSend",
+            "summary": "课程派发",
+            "type": "POST",
+            "params": {
+                "lessonid": {
+                    "default": "C3D7EB5C-EBD1-416E-8229-04798DD027CE",
+                    "required": true,
+                    "description": "课程id,多个用;分隔"
+                },
+		"learnuserids": {
+                    "default": "547388bd-ed1e-48e4-b99c-63dd48b985a9;6d3b5089-c2d3-4685-91fd-4bee68a8a881",
+                    "required": true,
+                    "description": "课程派发的对象的id，如果是选修(addtype=2)，则默认自己"
+                },
+		"addtype": {
+                    "default": "1",
+                    "required": true,
+                    "description": "派发类型，1：派发给别人，2：自学"
+                },
+		"priority": {
+                    "default": "1",
+                    "required": true,
+                    "description": "重要程度 3注意 2 重要  1紧急"
+                },
+		"completetime": {
+                    "default": "",
+                    "required": true,
+                    "description": "学习截止时间"
+                },
+		"neednotification": {
+                    "default": "1",
+                    "required": true,
+                    "description": "过期为完成是否发送提醒 "
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/PeriodDiscussionAdd",
+            "summary": "添加课时讨论",
+            "type": "POST",
+            "params": {
+                "periodid": {
+                    "default": "06734520-72D5-4694-AACD-F1FCBE61CF76",
+                    "required": true,
+                    "description": "课时id"
+                },
+		"content": {
+                    "default": "这个是对课时的讨论呀",
+                    "required": true,
+                    "description": "对课时的讨论内容，或者是对一个讨论内容的回复"
+                },
+		"addtype": {
+                    "default": "1",
+                    "required": true,
+                    "description": "1：新增一个讨论，2：对讨论的回复"
+                },
+		"discussionid": {
+                    "default": "",
+                    "required": false,
+                    "description": "当addtype=2的时候，回复的讨论的id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/PeriodDiscussionGetList",
+            "summary": "获取对课时的讨论列表",
+            "type": "POST",
+            "params": {
+                "periodid": {
+                    "default": "06734520-72D5-4694-AACD-F1FCBE61CF76",
+                    "required": true,
+                    "description": "课时id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/PeriodGetList",
+            "summary": "获取无状态课时列表",
+            "type": "POST",
+            "params": {
+                "lessonid": {
+                    "default": "C3D7EB5C-EBD1-416E-8229-04798DD027CE",
+                    "required": false,
+                    "description": "课程id"
+                },
+		"traintypeid": {
+                    "default": "9E804F97-13D6-480F-8998-B91B7AF5373E",
+                    "required": false,
+                    "description": "课程培训类别id"
+                }, 
+		"searchtype": {
+                    "default": "0",
+                    "required": false,
+                    "description": "1最新发布，2使用最多，3最分最高"
+                }, 
+		"key": {
+                    "default": "",
+                    "required": false,
+                    "description": "关键字，目前是课时标题"
+                }, 
+		    "createuser": {
+                    "default": "",
+                    "required": false,
+                    "description": "创建人id"
+                }, 
+		    "begintime": {
+                    "default": "",
+                    "required": false,
+                    "description": "开始时间"
+                }, 
+		    "endtime": {
+                    "default": "",
+                    "required": false,
+                    "description": "结束时间"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/PeriodSearch",
+            "summary": "课时搜索",
+            "type": "POST",
+            "params": {
+                "lessonid": {
+                    "default": "C3D7EB5C-EBD1-416E-8229-04798DD027CE",
+                    "required": false,
+                    "description": "课程id"
+                },
+		"traintypeid": {
+                    "default": "9E804F97-13D6-480F-8998-B91B7AF5373E",
+                    "required": false,
+                    "description": "课程培训类别id"
+                }, 
+		"searchtype": {
+                    "default": "0",
+                    "required": false,
+                    "description": "1最新发布，2使用最多，3最分最高"
+                }, 
+		"key": {
+                    "default": "",
+                    "required": false,
+                    "description": "关键字，目前是课时标题"
+                }, 
+		"periodid": {
+                    "default": "",
+                    "required": false,
+                    "description": "课时id，指定某个课时"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/PeriodAdd",
+            "summary": "添加课时",
+            "type": "POST",
+            "params":{
+		"title": {
+                    "default": "课时标题",
+                    "required": true,
+                    "description": "课时标题"
+                },
+		"traintypeid": {
+                    "default": "",
+                    "required": true,
+                    "description": "培训类别id"
+                },
+		"score": {
+                    "default": "1",
+                    "required": true,
+                    "description": "课时积分"
+                },
+		"lessonid": {
+                    "default": "",
+                    "required": true,
+                    "description": "课程id，绑定已有课时到一个课程下时有用"
+                },
+		"sectionid": {
+                    "default": "",
+                    "required": true,
+                    "description": "目录id，绑定已有课时到一个课程下时有用"
+                },
+		"periodid": {
+                    "default": "",
+                    "required": true,
+                    "description": "课时id，修改的时候有用"
+                },
+		"addtype": {
+                    "default": "1",
+                    "required": true,
+                    "description": "1新增一个课时，并绑定到目录下，2编辑一个课时，3将一个已存在的课时绑定到一个目录下"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/PeriodSort",
+            "summary": "课程下课时排序",
+            "type": "POST",
+            "params":{
+		"lessonid": {
+                    "default": "",
+                    "required": true,
+                    "description": "课程id"
+                },
+		"sectionid": {
+                    "default": "",
+                    "required": true,
+                    "description": "目录id"
+                },
+		"periodids": {
+                    "default": "",
+                    "required": true,
+                    "description": "有序课时id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+			"NoNeed": "1",
+            "url": "UAPI/Train/PeriodDelete",
+            "summary": "删除课时",
+            "type": "POST",
+            "params": {
+                "periodid": {
+                    "default": "",
+                    "required": false,
+                    "description": "课时id"
+                },
+		"lessonid": {
+                    "default": "",
+                    "required": false,
+                    "description": "课程id"
+                },
+		"sectionid": {
+                    "default": "",
+                    "required": false,
+                    "description": "课程目录章节id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/PeriodSend",
+            "summary": "课时派发",
+            "type": "POST",
+            "params": {
+                "periodids": {
+                    "default": "06734520-72D5-4694-AACD-F1FCBE61CF76;5A7263F1-3148-4442-A476-C51CB95F67F6",
+                    "required": true,
+                    "description": "课时id，多个用;分隔"
+                },
+		"learnuserids": {
+                    "default": "547388bd-ed1e-48e4-b99c-63dd48b985a9;6d3b5089-c2d3-4685-91fd-4bee68a8a881",
+                    "required": true,
+                    "description": "课课时派发的对象的id，如果是选修(addtype=2)，则默认自己"
+                },
+		"addtype": {
+                    "default": "1",
+                    "required": true,
+                    "description": "派发类型，1：派发给别人，2：自学"
+                },
+		"priority": {
+                    "default": "1",
+                    "required": true,
+                    "description": "重要程度 3注意 2 重要  1紧急"
+                },
+		"completetime": {
+                    "default": "",
+                    "required": true,
+                    "description": "学习截止时间"
+                }
+
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/SectionGetList",
+            "summary": "获取课程目录列表",
+            "type": "POST",
+            "params": {
+                "lessonid": {
+                    "default": "C3D7EB5C-EBD1-416E-8229-04798DD027CE",
+                    "required": false,
+                    "description": "课程id"
+                },
+   		"userlessonid": {
+                    "default": "",
+                    "required": false,
+                    "description": "用户课程id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/SectionSort",
+            "summary": "课程目录排序",
+            "type": "POST",
+            "params": {
+                "lessonid": {
+                    "default": "",
+                    "required": false,
+                    "description": "课程id"
+                },
+		 "sectionids": {
+                    "default": "",
+                    "required": false,
+                    "description": "有序的课程目录id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+			"NoNeed": "1",
+            "url": "UAPI/Train/SectionDelete",
+            "summary": "删除课程目录章节",
+            "type": "POST",
+            "params": {
+                "lessonid": {
+                    "default": "",
+                    "required": false,
+                    "description": "课程id"
+                },
+		 "sectionid": {
+                    "default": "",
+                    "required": false,
+                    "description": "课程目录id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/SectionAdd",
+            "summary": "添加章节",
+            "type": "POST",
+            "params": {
+                "lessonid": {
+                    "default": "",
+                    "required": false,
+                    "description": "课程id"
+                },
+ 		"title": {
+                    "default": "",
+                    "required": false,
+                    "description": "章节标题"
+                },
+ 		"parentid": {
+                    "default": "",
+                    "required": false,
+                    "description": "父章节id"
+                },
+ 		"sectionid": {
+                    "default": "",
+                    "required": false,
+                    "description": "章节id，编辑的时候传"
+                },
+ 		"sectiontype": {
+                    "default": "1",
+                    "required": false,
+                    "description": "章节类型，1章，2节"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/UserCoursewareGetList",
+            "summary": "获取用户课件列表",
+            "type": "POST",
+            "params": {
+                "userperiodid": {
+                    "default": "0c934cd1-0877-46a5-9fb0-963653b440b5",
+                    "required": true,
+                    "description": "用户课时id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/UserLessonGetList",
+            "summary": "获取用户课程列表",
+            "type": "POST",
+            "params": {
+                "type": {
+                    "default": "1",
+                    "required": false,
+                    "description": "课程类型1，必修，2选修"
+                }, 
+		"status": {
+                    "default": "1",
+                    "required": false,
+                    "description": "课程状态 -1:未开始， 1:进行中，2已完成,5学习记录，6用户查询"
+                }, 
+		"lessonid": {
+                    "default": "C3D7EB5C-EBD1-416E-8229-04798DD027CE",
+                    "required": false,
+                    "description": "无状态课程id，当status为5时有用"
+                }, 
+		"traintypeid": {
+                    "default": "9E804F97-13D6-480F-8998-B91B7AF5373E",
+                    "required": false,
+                    "description": "培训类别id"
+                }, 
+		"keyword": {
+                    "default": "",
+                    "required": false,
+                    "description": "关键字"
+                }, 
+		"sendusers": {
+                    "default": "",
+                    "required": false,
+                    "description": "派发人，多个用;分隔"
+                }, 
+		"begintime": {
+                    "default": "",
+                    "required": false,
+                    "description": "开始时间，针对派发时间的过滤"
+                }, 
+		"endtime": {
+                    "default": "",
+                    "required": false,
+                    "description": "结束时间，针对派发时间的过滤"
+                }, 
+		"userlessonid": {
+                    "default": "",
+                    "required": false,
+                    "description": "有状态课程id，获取详情用"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/UserPeriodGetList",
+            "summary": "获取用户课时列表",
+            "type": "POST",
+            "params": {
+                "type": {
+                    "default": "1",
+                    "required": false,
+                    "description": "课时类型 ,1，必修，2选修"
+                }, 
+		"status": {
+                    "default": "1",
+                    "required": false,
+                    "description": "课时状态,-1:未开始， 1，进行中，2已完成，6用户查询"
+                }, 
+		"userlessonid": {
+                    "default": "dc64fade-996a-421b-9f0b-f8cc94d38f80",
+                    "required": false,
+                    "description": "用户课程id"
+                }, 
+		"traintypeid": {
+                    "default": "9E804F97-13D6-480F-8998-B91B7AF5373E",
+                    "required": false,
+                    "description": "培训类别id"
+                }, 
+		"keyword": {
+                    "default": "",
+                    "required": false,
+                    "description": "关键字"
+                }, 
+		"sendusers": {
+                    "default": "",
+                    "required": false,
+                    "description": "派发人，多个用;分隔"
+                }, 
+		"begintime": {
+                    "default": "",
+                    "required": false,
+                    "description": "开始时间，针对派发时间的过滤"
+                }, 
+		"endtime": {
+                    "default": "",
+                    "required": false,
+                    "description": "结束时间，针对派发时间的过滤"
+                }, 
+		"periodid": {
+                    "default": "",
+                    "required": false,
+                    "description": "课时id，查询学习记录有用"
+                }, 
+		"userperiodid": {
+                    "default": "",
+                    "required": false,
+                    "description": "用户课时id，获取详情用"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/UserQuestionGetList",
+            "summary": "获取测验问题列表",
+            "type": "POST",
+            "params": {
+                "usertestpaperid": {
+                    "default": "C124F82D-37F7-4DEB-B038-81BC7125EE9C",
+                    "required": true,
+                    "description": "用户测验id"
+                },
+		"questiontype": {
+                    "default": "0",
+                    "required": true,
+                    "description": "用户问题类型，3：主观题"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/TestpaperSend",
+            "summary": "测验派发",
+            "type": "POST",
+            "params": {
+                "testpaperids": {
+                    "default": "AC07B53A-9065-4C61-9731-1CE0A974DC78;D61DCB8A-C17E-4ED5-A493-CCE03E72C47C",
+                    "required": true,
+                    "description": "测验id,多个用;分隔"
+                },
+		"answeruserids": {
+                    "default": "547388bd-ed1e-48e4-b99c-63dd48b985a9;6d3b5089-c2d3-4685-91fd-4bee68a8a881",
+                    "required": true,
+                    "description": "测验派发的对象的id，如果是选修(addtype=2)，则默认自己"
+                },
+		"addtype": {
+                    "default": "1",
+                    "required": true,
+                    "description": "派发类型，1：派发给别人，2：自学"
+                },
+		"islimit": {
+                    "default": "1",
+                    "required": true,
+                    "description": "是否限时，0：不限时，1：限时"
+                },
+		"limittime": {
+                    "default": "30",
+                    "required": true,
+                    "description": "限时时长"
+                },
+		"gradeuserid": {
+                    "default": "6d3b5089-c2d3-4685-91fd-4bee68a8a881",
+                    "required": true,
+                    "description": "阅卷人，如不传，则默认是当前用户"
+                },
+		"israndom": {
+                    "default": "0",
+                    "required": true,
+                    "description": "是否打乱题目"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/UserTestpaperGetList",
+            "summary": "获取用户测验列表",
+            "type": "POST",
+            "params": {
+                "type": {
+                    "default": "1",
+                    "required": false,
+                    "description": "测验类型 ,1，必修，2选修"
+                }, 
+		"status": {
+                    "default": "1",
+                    "required": false,
+                    "description": "测验状态, 1-进行中，2-已完成,3待阅卷,4需要我评分的,5测评记录,6用户查询"
+                }, 
+		"testpaperid": {
+                    "default": "AC07B53A-9065-4C61-9731-1CE0A974DC78",
+                    "required": false,
+                    "description": "无状态试卷id"
+                }, 
+		"traintypeid": {
+                    "default": "9E804F97-13D6-480F-8998-B91B7AF5373E",
+                    "required": false,
+                    "description": "培训类别id"
+                }, 
+		"keyword": {
+                    "default": "",
+                    "required": false,
+                    "description": "关键字"
+                }, 
+		"sendusers": {
+                    "default": "",
+                    "required": false,
+                    "description": "派发人，多个用;分隔"
+                }, 
+		"begintime": {
+                    "default": "",
+                    "required": false,
+                    "description": "开始时间，针对派发时间的过滤"
+                }, 
+		"endtime": {
+                    "default": "",
+                    "required": false,
+                    "description": "结束时间，针对派发时间的过滤"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/TestpaperGetList",
+            "summary": "获取测验列表",
+            "type": "POST",
+            "params": {
+		"traintypeid": {
+                    "default": "9E804F97-13D6-480F-8998-B91B7AF5373E",
+                    "required": false,
+                    "description": "测验类别id"
+                }, 
+		"searchtype": {
+                    "default": "0",
+                    "required": false,
+                    "description": "1最新发布，2使用最多，3最分最高"
+                }, 
+		"testpaperid": {
+                    "default": "AC07B53A-9065-4C61-9731-1CE0A974DC78",
+                    "required": false,
+                    "description": "无状态试卷id"
+                }, 
+		"key": {
+                    "default": "",
+                    "required": false,
+                    "description": "关键字，目前是试卷标题"
+                }, 
+		    "createuser": {
+                    "default": "",
+                    "required": false,
+                    "description": "创建人id"
+                }, 
+		    "begintime": {
+                    "default": "",
+                    "required": false,
+                    "description": "开始时间"
+                }, 
+		    "endtime": {
+                    "default": "",
+                    "required": false,
+                    "description": "结束时间"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/QuestionAnswerSet",
+            "summary": "回答问题",
+            "type": "POST",
+            "params": {
+		"userquestionid": {
+                    "default": "056EE0BD-6609-416D-8191-CEAB26EB81E4",
+                    "required": true,
+                    "description": "用户问题id"
+                },
+		"answerids": {
+                    "default": "0F6AE358-C748-4E0B-B77F-8A1A5A06AEC1",
+                    "required": true,
+                    "description": "选择的答案id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/TestpaperSubmit",
+            "summary": "交卷",
+            "type": "POST",
+            "params": {
+		"usertestpaperid": {
+                    "default": "67AADBBD-9843-4D7B-A1C5-199415008163",
+                    "required": true,
+                    "description": "用户试卷id"
+                },
+		"submittype": {
+                    "default": "1",
+                    "required": true,
+                    "description": "1用户交卷，2阅卷人阅卷完成"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/TrainTypeGetList",
+            "summary": "获取培训类别",
+            "type": "POST",
+            "params": {
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/UserTestpaperDetail",
+            "summary": "用户测验卷详情，包含问题",
+            "type": "POST",
+            "params": {
+                "usertestpaperid": {
+                    "default": "174b464b-884f-462a-a9c3-2f570d8581fa",
+                    "required": true,
+                    "description": "用户测验id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/UserTestpaperStart",
+            "summary": "用户限时测验卷确认开始答题",
+            "type": "POST",
+            "params": {
+                "usertestpaperid": {
+                    "default": "174b464b-884f-462a-a9c3-2f570d8581fa",
+                    "required": true,
+                    "description": "用户测验id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/CoursewareFinish",
+            "summary": "课件学习完成",
+            "type": "POST",
+            "params": {
+                "usercoursewareid": {
+                    "default": "2C23B798-7848-405E-A5DA-A4BCD2D1F9E0",
+                    "required": true,
+                    "description": "用户课件id"
+                },
+		"finishtype": {
+                    "default": "0",
+                    "required": true,
+                    "description": "0正常完成课件学习，1暂停学习"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/UserQuestionGrade",
+            "summary": "主观题评分",
+            "type": "POST",
+            "params": {
+                "userquestionid": {
+                    "default": "DE1B6518-2EE7-44B6-8CBE-50B3BFA8D699",
+                    "required": true,
+                    "description": "用户问题id"
+                },
+ 		"score": {
+                    "default": "1",
+                    "required": true,
+                    "description": "问题得分"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/ItemCount",
+            "summary": "各类别的课程，课时，测试卷的数量",
+            "type": "POST",
+            "params": {
+                "type": {
+                    "default": "1",
+                    "required": true,
+                    "description": "1课程，2课时,3测试卷"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/AchievementGet",
+            "summary": "我的成就",
+            "type": "POST",
+            "params":{
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/CertificateAdd",
+            "summary": "添加一个空白证书",
+            "type": "POST",
+            "params":{
+		"title": {
+                    "default": "安全专家",
+                    "required": true,
+                    "description": "证书名字"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/UserCertificateGet",
+            "summary": "获取用户获得的证书",
+            "type": "POST",
+            "params":{
+		"usercertificateid": {
+                    "default": "",
+                    "required": false,
+                    "description": "用户已经获取到的证书的id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/CertificateGet",
+            "summary": "获取空白证书",
+            "type": "POST",
+            "params":{		
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/CertificateAward",
+            "summary": "颁发证书",
+            "type": "POST",
+            "params":{
+		"certificateid": {
+                    "default": "C604DB1B-3AA3-444C-958C-449985036FEB",
+                    "required": true,
+                    "description": "空白证书id"
+                },
+		"awarduserids": {
+                    "default": "6d3b5089-c2d3-4685-91fd-4bee68a8a881",
+                    "required": true,
+                    "description": "获得证书的人，多个用;分隔"
+                },
+		"title": {
+                    "default": "证书名字",
+                    "required": true,
+                    "description": "自己添加证书时需要调用的参数"
+                },
+		"link": {
+                    "default": "证书图片的链接",
+                    "required": true,
+                    "description": "自己添加证书时需要调用的参数"
+                },
+		"addtype": {
+                    "default": "1",
+                    "required": true,
+                    "description": "1根据空白证书颁发，2自己上传"
+                },
+		"memo": {
+                    "default": "颁发备注",
+                    "required": false,
+                    "description": "颁发(获得证书)的备注"
+                },
+		"awarddept": {
+                    "default": "工之道",
+                    "required": false,
+                    "description": "颁发证书的机构"
+                },
+		"dateget": {
+                    "default": "2016-03-12 12:32:22",
+                    "required": false,
+                    "description": "获得（颁发）证书的时间"
+                }
+
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/CoursewareAdd",
+            "summary": "添加课件",
+            "type": "POST",
+            "params":{
+		"title": {
+                    "default": "一个课件的名字",
+                    "required": true,
+                    "description": "一个课件的名字"
+                },
+		"type": {
+                    "default": "2",
+                    "required": true,
+                    "description": "1-doc,2-pdf,3-sound,4-video"
+                },
+		"link": {
+                    "default": "",
+                    "required": true,
+                    "description": "课件链接"
+                },
+		"size": {
+                    "default": "",
+                    "required": true,
+                    "description": "课件大小"
+                },
+		"coursewareid": {
+                    "default": "A287C835-7580-4E92-A852-0B184328C033",
+                    "required": true,
+                    "description": "课件id"
+                },
+		"periodid": {
+                    "default": "4EACA86B-DB66-4CB6-B640-1257B7A8E632",
+                    "required": true,
+                    "description": "课时id"
+                },
+		"addtype": {
+                    "default": "1",
+                    "required": true,
+                    "description": "1新增一个课件到一个课时下，2更新一个课件，3绑定一个已存在的课件到一个课时下"
+                },
+		"synperiod": {
+                    "default": "0",
+                    "required": true,
+                    "description": ""
+                },
+		"traintypeid": {
+                    "default": "",
+                    "required": true,
+                    "description": ""
+                },
+		"score": {
+                    "default": "",
+                    "required": true,
+                    "description": ""
+                },
+		"needminute": {
+                    "default": "",
+                    "required": true,
+                    "description": "完成课件需要的时间"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/UserCoursewareStart",
+            "summary": "开始阅读课件",
+            "type": "POST",
+            "params":{
+		"usercoursewareid": {
+                    "default": "2C23B798-7848-405E-A5DA-A4BCD2D1F9E0",
+                    "required": true,
+                    "description": "用户课件id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/CourseWareGetList",
+            "summary": "无状态课件获取列表",
+            "type": "POST",
+            "params":{
+		"periodid": {
+                    "default": "",
+                    "required": true,
+                    "description": "无状态课时id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/CoursewareSearch",
+            "summary": "无状态课件搜索",
+            "type": "POST",
+            "params":{
+		"typeid": {
+                    "default": "0",
+                    "required": true,
+                    "description": "课件类型id"
+                },
+		"key": {
+                    "default": "",
+                    "required": true,
+                    "description": "关键字，目前是title"
+                },
+		"sorttype": {
+                    "default": "0",
+                    "required": true,
+                    "description": "排序规则，1时间排序，2使用次数排序"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/CoursewareTypeGetList",
+            "summary": "获取课件类别",
+            "type": "POST",
+            "params":{
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/CoursewareDelete",
+            "summary": "删除课件",
+            "type": "POST",
+            "params":{
+		"coursewareid": {
+                    "default": "E2479012-4EC5-440B-BF67-BEC2767BE648",
+                    "required": true,
+                    "description": "课件id"
+                },
+		"periodid": {
+                    "default": "",
+                    "required": true,
+                    "description": "跟课件绑定的课时id"
+                },
+		"deletetype": {
+                    "default": "1",
+                    "required": true,
+                    "description": "1从课件库直接删除，2移除跟课时的绑定关系"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/AnswerGetList",
+            "summary": "问题答案列表",
+            "type": "POST",
+            "params":{
+		"questionids": {
+                    "default": "",
+                    "required": true,
+                    "description": "问题ids"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/AnswerSetValid",
+            "summary": "设置问题正确答案",
+            "type": "POST",
+            "params":{
+		"questionid": {
+                    "default": "",
+                    "required": true,
+                    "description": "问题id"
+                },
+		"answerids": {
+                    "default": "",
+                    "required": true,
+                    "description": "正确答案的ids"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/AnswerDelete",
+            "summary": "删除问题答案",
+            "type": "POST",
+            "params":{
+		"answerid": {
+                    "default": "",
+                    "required": true,
+                    "description": "答案id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/QuestionDelete",
+            "summary": "删除问题",
+            "type": "POST",
+            "params":{
+		"questionid": {
+                    "default": "",
+                    "required": true,
+                    "description": "问题id"
+                },
+		"testpaperid": {
+                    "default": "",
+                    "required": true,
+                    "description": "试卷id，如果从试卷中移除问题，则传该值"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/QuestionAnswerAdd",
+            "summary": "新增问题答案",
+            "type": "POST",
+            "params":{
+		"questionid": {
+                    "default": "",
+                    "required": true,
+                    "description": "问题id"
+                },
+		"content": {
+                    "default": "",
+                    "required": true,
+                    "description": "答案内容"
+                },
+		"imagelink": {
+                    "default": "",
+                    "required": true,
+                    "description": "图片链接"
+                },
+		"videolink": {
+                    "default": "",
+                    "required": true,
+                    "description": "视频链接"
+                },
+		"soundlink": {
+                    "default": "",
+                    "required": true,
+                    "description": "声音链接"
+                },
+		"isvalid": {
+                    "default": "",
+                    "required": true,
+                    "description": "是否正确"
+                },
+		"answerid": {
+                    "default": "",
+                    "required": true,
+                    "description": "答案id，修改时用"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/QuestionSearch",
+            "summary": "问题搜索",
+            "type": "POST",
+            "params":{
+		"key": {
+                    "default": "",
+                    "required": true,
+                    "description": "关键字，目前是题目内容"
+                },
+		"traintypeid": {
+                    "default": "",
+                    "required": true,
+                    "description": "培训类别id"
+                },
+		"typeid": {
+                    "default": "1",
+                    "required": true,
+                    "description": "问题类型，1单选，2多选，3主观"
+                },
+		"testpaperid": {
+                    "default": "",
+                    "required": true,
+                    "description": "试卷id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/QuestionTypeGetList",
+            "summary": "获取问题类别",
+            "type": "POST",
+            "params":{
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/QuestionAdd",
+            "summary": "题库新增问题",
+            "type": "POST",
+            "params":{
+		"content": {
+                    "default": "这个是题目的内容",
+                    "required": true,
+                    "description": "题目内容"
+                },
+		"type": {
+                    "default": "1",
+                    "required": true,
+                    "description": "1单选，2多选，3主观"
+                },
+		"score": {
+                    "default": "1",
+                    "required": true,
+                    "description": "题目分值"
+                },
+		"traintypeid": {
+                    "default": "CDE9F29A-9576-4AEE-B90D-7C37D5FADDA4",
+                    "required": true,
+                    "description": "培训类别id"
+                },
+		"imagelink": {
+                    "default": "",
+                    "required": true,
+                    "description": "如果题目中有图片类型的附件，则此字段存图片地址"
+                },
+		"videolink": {
+                    "default": "",
+                    "required": true,
+                    "description": "如果题目中有视频类型的附件，则此字段存视频地址"
+                },
+		"soundlink": {
+                    "default": "",
+                    "required": true,
+                    "description": "如果题目中有声音类型的附件，则此字段存声音地址"
+                },
+		"doclink": {
+                    "default": "",
+                    "required": true,
+                    "description": "如果题目中有文本文件类型的附件，则此字段存文本地址"
+                },
+		"questionid": {
+                    "default": "",
+                    "required": true,
+                    "description": "题目id，更新问题时传"
+                },
+		"answers": {
+                    "default": "",
+                    "required": false,
+                    "description": "题目备选答案，包含字段content,imagelink,videolink,soundlink,isvalid(0错，1对)"
+                }
+			
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/LessonAdd",
+            "summary": "添加课程",
+            "type": "POST",
+            "params":{
+		"title": {
+                    "default": "课程标题",
+                    "required": true,
+                    "description": "课程标题"
+                },
+		"traintypeid": {
+                    "default": "",
+                    "required": true,
+                    "description": "培训类别id"
+                },
+		"deptid": {
+                    "default": "0",
+                    "required": true,
+                    "description": "课程开放的部门id，目前没用"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/TestpaperAdd",
+            "summary": "添加试卷",
+            "type": "POST",
+            "params":{
+		"title": {
+                    "default": "试卷标题",
+                    "required": true,
+                    "description": "试卷标题"
+                },
+		"traintypeid": {
+                    "default": "",
+                    "required": true,
+                    "description": "培训类别id"
+                },
+		"islimit": {
+                    "default": "0",
+                    "required": true,
+                    "description": "0:不限时，1限时"
+                },
+		"limittime": {
+                    "default": "0",
+                    "required": true,
+                    "description": "限时时间"
+                },
+		"testpaperid": {
+                    "default": "",
+                    "required": true,
+                    "description": "试卷id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/TestpaperBinding",
+            "summary": "添加试卷",
+            "type": "POST",
+            "params":{
+		"testpaperid": {
+                    "default": "",
+                    "required": true,
+                    "description": "试卷id"
+                },
+		"questionids": {
+                    "default": "",
+                    "required": true,
+                    "description": "问题ids，多个用;分隔，添加问题和删除问题用"
+                },
+		"questionid": {
+                    "default": "",
+                    "required": true,
+                    "description": "单个问题id，修改分数用"
+                },
+		"score": {
+                    "default": "0",
+                    "required": true,
+                    "description": "单个问题分值，修改分数用"
+                },
+		"addtype": {
+                    "default": "1",
+                    "required": true,
+                    "description": "1添加问题绑定，2解除问题绑定,3修改试卷中问题的分值"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/TrainTypeDel",
+            "summary": "删除培训类型",
+            "type": "POST",
+            "params":{
+		"traintypeid": {
+                    "default": "",
+                    "required": true,
+                    "description": "培训类型"
+                }
+            },
+            "response": {
+            }
+        },
+		{
+            "url": "UAPI/Train/TrainTypeAdd",
+            "summary": "增加培训类型",
+            "type": "POST",
+            "params":{
+		"title": {
+                    "default": "",
+                    "required": true,
+                    "description": "类型名称"
+                },
+		"traintypeid": {
+                    "default": "",
+                    "required": true,
+                    "description": "培训类型id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Train/TestpaperSort",
+            "summary": "试卷问题排序",
+            "type": "POST",
+            "params":{
+		"testpaperid": {
+                    "default": "",
+                    "required": true,
+                    "description": "试卷id"
+                },
+		"questionids": {
+                    "default": "",
+                    "required": true,
+                    "description": "问题ids，多个用;分隔"
+                }
+            },
+            "response": {
+            }
+        }
+    ]
+}

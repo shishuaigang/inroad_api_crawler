@@ -1,0 +1,800 @@
+{
+    "resource": "Work",
+    "section": [
+        {
+            "name": "安全作业单",
+            "value": "apis"
+        }
+    ],
+    "apis": [
+         {
+            "url": "UAPI/Work/AppraiseItemGetList",
+            "summary": "获取评估分类子项列表",
+            "type": "POST",
+            "params": {
+		"appraisetypeid": {
+                    "default": "8FE84989-1086-45B8-A4A1-25F826133F3E",
+                    "required": true,
+                    "description": "评估分类id"
+                },
+		"sheetid": {
+                    "default": "",
+                    "required": true,
+                    "description": "作业单id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/AppraiseOptionGetList",
+            "summary": "获取评估选项列表",
+            "type": "POST",
+            "params": {
+		"appraiseitemid": {
+                    "default": "C9D774F6-9517-46F2-B418-B9996240803A",
+                    "required": true,
+                    "description": "评估分类子项id"
+                },
+		"sheetid": {
+                    "default": "",
+                    "required": true,
+                    "description": "作业单id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/AppraiseOptionSort",
+            "summary": "评估选项列表排序",
+            "type": "POST",
+            "params": {
+		"optiontypeid": {
+                    "default": "C9D774F6-9517-46F2-B418-B9996240803A",
+                    "required": true,
+                    "description": "可选措施的类型id"
+                },
+		"optionids": {
+                    "default": "",
+                    "required": true,
+                    "description": "可选措施ids"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/AppraiseTypeGetList",
+            "summary": "获取评估分类列表",
+            "type": "POST",
+            "params": {
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/SheetAdd",
+            "summary": "新增作业单",
+            "type": "POST",
+            "params": {
+		"deptid": {
+                    "default": "33",
+                    "required": true,
+                    "description": "申请部门"
+                },
+		"workarea": {
+                    "default": "1",
+                    "required": true,
+                    "description": "工作区域id(regionid)"
+                },
+		"title": {
+                    "default": "新的测试作业单",
+                    "required": true,
+                    "description": "作业单标题"
+                },
+		"startdate": {
+                    "default": "2016-04-15",
+                    "required": true,
+                    "description": "作业开始时间"
+                },
+		"overdate": {
+                    "default": "2016-04-25",
+                    "required": true,
+                    "description": "作业结束时间"
+                },
+		"worktype": {
+                    "default": "D67A005B-A6C7-4CC8-9DCB-A8FE7B55A4D2",
+                    "required": true,
+                    "description": "作业类别id"
+                },
+		"workdetailids": {
+                    "default": "4C5266B6-4BA9-47B2-8E46-5BAB58A79B09;7DF6129B-1CF1-400E-AC08-E52EB6AA513F;C0F8E743-2A29-4C6F-9A1E-4FE72AEB9D4B;CA7192C9-A95D-45D7-9EE4-9F80B731BC94",
+                    "required": true,
+                    "description": "作业详情id，多个用;分隔"
+                },
+		"applyuserids": {
+                    "default": "6D3B5089-C2D3-4685-91FD-4BEE68A8A881",
+                    "required": true,
+                    "description": "申请人，多个用;分隔"
+                },
+		"leadinguserids": {
+                    "default": "6D3B5089-C2D3-4685-91FD-4BEE68A8A881",
+                    "required": true,
+                    "description": "负责人，多个用;分隔"
+                },
+		"workuserids": {
+                    "default": "6D3B5089-C2D3-4685-91FD-4BEE68A8A881",
+                    "required": true,
+                    "description": "参与人，多个用;分隔"
+                },
+		"appraiseuserids": {
+                    "default": "6D3B5089-C2D3-4685-91FD-4BEE68A8A881",
+                    "required": true,
+                    "description": "评估人，多个用;分隔"
+                },
+		"userdefineddetail": {
+                    "default": "",
+                    "required": true,
+                    "description": "自定义作业详情"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/SheetAppraise",
+            "summary": "作业单评估",
+            "type": "POST",
+            "params": {
+		"sheetid": {
+                    "default": "F4DD6E09-88A0-4C9C-A61F-B26CB6ED3A2F",
+                    "required": true,
+                    "description": "作业单id"
+                },
+		"appraisememo": {
+                    "default": "这个是对作业单的评估备注",
+                    "required": true,
+                    "description": "评估备注"
+                },
+		"appraisedanger": {
+                    "default": "这个是对作业单的危险提示",
+                    "required": true,
+                    "description": "评估备注"
+                },
+		"approvaluserid": {
+                    "default": "6D3B5089-C2D3-4685-91FD-4BEE68A8A881",
+                    "required": true,
+                    "description": "审批人"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/SheetAppraiseItem",
+            "summary": "作业单评估分类设置",
+            "type": "POST",
+            "params": {
+		"sheetid": {
+                    "default": "F4DD6E09-88A0-4C9C-A61F-B26CB6ED3A2F",
+                    "required": true,
+                    "description": "作业单id"
+                },
+		"appraisememo": {
+                    "default": "这个是对作业单评估分类子项的评估备注",
+                    "required": true,
+                    "description": "评估备注"
+                },
+		"appraisedanger": {
+                    "default": "这个是对作业单评估分类子项的危险提示",
+                    "required": true,
+                    "description": "危险备注"
+                },
+		"appraiseitemid": {
+                    "default": "676BA1FF-D33E-4BE1-9895-02DFAA396C72",
+                    "required": true,
+                    "description": "作业单评估分类id"
+                },
+		"appraiseoptions": {
+                    "default": "4496188B-6D8C-43CA-9935-4D56704288F3;96380D8A-1450-4C7D-92F6-8515ADA998F7;2121BF6D-FD34-4293-88B4-D97071D1E1F8",
+                    "required": true,
+                    "description": "作业单评估分类子项的选择项id,多个用;分隔"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/SheetAppraiseItemDelete",
+            "summary": "删除作业单评估子项",
+            "type": "POST",
+            "params": {
+		"sheetid": {
+                    "default": "F4DD6E09-88A0-4C9C-A61F-B26CB6ED3A2F",
+                    "required": true,
+                    "description": "作业单id"
+                },
+		"appraiseitemid": {
+                    "default": "",
+                    "required": true,
+                    "description": "作业单评估子项"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/SheetApproval",
+            "summary": "作业单审批",
+            "type": "POST",
+            "params": {
+		"sheetid": {
+                    "default": "F4DD6E09-88A0-4C9C-A61F-B26CB6ED3A2F",
+                    "required": true,
+                    "description": "作业单id"
+                },
+		"approvalresult": {
+                    "default": "1",
+                    "required": true,
+                    "description": "1通过，2驳回"
+                },
+		"approvaltype": {
+                    "default": "2",
+                    "required": true,
+                    "description": "1转交审批，2-最终审批"
+                },
+		"memo": {
+                    "default": "这个是对作业单的审批备注",
+                    "required": true,
+                    "description": "审批备注"
+                },
+		"signlink": {
+                    "default": "",
+                    "required": true,
+                    "description": "电子签名找图片"
+                },
+		"approvaluserid": {
+                    "default": "6D3B5089-C2D3-4685-91FD-4BEE68A8A881",
+                    "required": true,
+                    "description": "转交审批人"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/SheetGetList",
+            "summary": "获取作业单列表",
+            "type": "POST",
+            "params": {
+		"status": {
+                    "default": "1",
+                    "required": true,
+                    "description": "1待评估，2待审批，3进行中，4已完成"
+                },
+		"searchtype": {
+                    "default": "0",
+                    "required": true,
+                    "description": "0无条件，1我创建的，2需要我操作的（待评估，待审批）"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/SheetSubmit",
+            "summary": "作业单提交完成",
+            "type": "POST",
+            "params": {
+		"sheetid": {
+                    "default": "F4DD6E09-88A0-4C9C-A61F-B26CB6ED3A2F",
+                    "required": true,
+                    "description": "作业单id"
+                },
+		"submittype": {
+                    "default": "1",
+                    "required": true,
+                    "description": "1提交完成，2撤销提交完成"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/WorkDetailGetList",
+            "summary": "作业详情获取列表",
+            "type": "POST",
+            "params": {
+		"workdetailtypeid": {
+                    "default": "8E74EF6E-0D1D-405C-A3F0-39AF25ACD454",
+                    "required": true,
+                    "description": "作业详情分类id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/WorkDetailSearch",
+            "summary": "作业详情搜索",
+            "type": "POST",
+            "params": {
+		"title": {
+                    "default": "维修",
+                    "required": true,
+                    "description": "作业详情标题关键字"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/SheetDetail",
+            "summary": "作业单详情",
+            "type": "POST",
+            "params": {
+		"sheetid": {
+                    "default": "CD3B8CA8-8ECB-49D4-86E6-E85EED648AAF",
+                    "required": true,
+                    "description": "作业id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/SheetSearch",
+            "summary": "作业单搜索",
+            "type": "POST",
+            "params": {
+		"status": {
+                    "default": "0",
+                    "required": true,
+                    "description": "0全部，1待评估，2待审批，3进行中，4已完成"
+                },
+		"deptid": {
+                    "default": "",
+                    "required": true,
+                    "description": "作业单申请单位部门id"
+                },
+		"workuserid": {
+                    "default": "",
+                    "required": true,
+                    "description": "相关人员,多个用;分隔"
+                },
+		"regionid": {
+                    "default": "",
+                    "required": true,
+                    "description": "工作区域id,多个用;分隔"
+                },
+		"sheetorder": {
+                    "default": "",
+                    "required": true,
+                    "description": "作业单号（审批通过之后生成)"
+                },
+		"startdate": {
+                    "default": "2017/1/1",
+                    "required": true,
+                    "description": "作业开始时间（大于输入值）"
+                },
+		"overdate": {
+                    "default": "",
+                    "required": true,
+                    "description": "作业结束时间（小于输入值）"
+                },
+		"key": {
+                    "default": "",
+                    "required": true,
+                    "description": "关键字（目前是title）"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/SheetSearchForOutput",
+            "summary": "作业单搜索导出用",
+            "type": "POST",
+            "params": {
+		"deptid": {
+                    "default": "",
+                    "required": true,
+                    "description": "作业单申请单位部门id"
+                },
+		"regionid": {
+                    "default": "",
+                    "required": true,
+                    "description": "工作区域id,多个用;分隔"
+                },
+		"startdate": {
+                    "default": "",
+                    "required": true,
+                    "description": "作业开始时间（大于输入值）"
+                },
+		"overdate": {
+                    "default": "",
+                    "required": true,
+                    "description": "作业结束时间（小于输入值）"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/WorkTypeGetList",
+            "summary": "获取作业类别列表",
+            "type": "POST",
+            "params": {
+		
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/WorkTypeAdd",
+            "summary": "新增作业类别",
+            "type": "POST",
+            "params": {
+		"title": {
+                    "default": "第一类",
+                    "required": true,
+                    "description": "作业类别"
+                },
+		"worktypeid": {
+                    "default": "D67A005B-A6C7-4CC8-9DCB-A8FE7B55A4D2",
+                    "required": true,
+                    "description": "作业类别id，更新的时候传"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/WorkTypeSort",
+            "summary": "作业类别排序",
+            "type": "POST",
+            "params": {
+		"worktypeids": {
+                    "default": "",
+                    "required": true,
+                    "description": "作业类别ids"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/WorkTypeDelete",
+            "summary": "删除作业类别",
+            "type": "POST",
+            "params": {
+		"worktypeid": {
+                    "default": "",
+                    "required": true,
+                    "description": "作业类别id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/WorkDetailAdd",
+            "summary": "新增作业详情",
+            "type": "POST",
+            "params": {
+		"title": {
+                    "default": "设备仪器维修",
+                    "required": true,
+                    "description": "作业详情标题"
+                },
+		"workdetailtypeid": {
+                    "default": "",
+                    "required": true,
+                    "description": "作业详情分类id(没有分类则空)"
+                },
+		"workdetailid": {
+                    "default": "",
+                    "required": true,
+                    "description": "作业详情id，更新的时候传"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/WorkDetailDelete",
+            "summary": "删除作业详情",
+            "type": "POST",
+            "params": {
+		"workdetailid": {
+                    "default": "",
+                    "required": true,
+                    "description": "作业详情id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/WorkDetailTypeGetList",
+            "summary": "获取作业详情类别",
+            "type": "POST",
+            "params": {
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/WorkDetailTypeAdd",
+            "summary": "新增作业详情类别",
+            "type": "POST",
+            "params": {
+		"title": {
+                    "default": "新增作业详情类别",
+                    "required": true,
+                    "description": "新增作业详情类别"
+                },
+		"workdetailtypeid": {
+                    "default": "",
+                    "required": true,
+                    "description": "作业详情类别id，更新的时候传"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/WorkDetailTypeDelete",
+            "summary": "删除作业详情类别",
+            "type": "POST",
+            "params": {
+		"workdetailtypeid": {
+                    "default": "",
+                    "required": true,
+                    "description": "作业详情类别id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/AppraiseTypeAdd",
+            "summary": "新增作业评估分类",
+            "type": "POST",
+            "params": {
+		"title": {
+                    "default": "新增作业评估分类",
+                    "required": true,
+                    "description": "新增作业评估分类"
+                },
+		"appraisetypeid": {
+                    "default": "",
+                    "required": true,
+                    "description": "作业评估分类id，更新的时候传"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/AppraiseTypeDelete",
+            "summary": "删除作业评估分类",
+            "type": "POST",
+            "params": {
+		"workappraisetypeid": {
+                    "default": "",
+                    "required": true,
+                    "description": "作业评估分类id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/AppraiseItemAdd",
+            "summary": "新增作业评估子类（作业评估分类下的子类）",
+            "type": "POST",
+            "params": {
+		"title": {
+                    "default": "新增作业评估子类",
+                    "required": true,
+                    "description": "新增作业评估子类"
+                },
+		"link": {
+                    "default": "",
+                    "required": true,
+                    "description": "图片地址"
+                },
+		"content": {
+                    "default": "强制措施",
+                    "required": true,
+                    "description": "强制措施"
+                },
+		"appraisetypeid": {
+                    "default": "8FE84989-1086-45B8-A4A1-25F826133F3E",
+                    "required": true,
+                    "description": "作业评估分类id"
+                },
+		"appraiseitemid": {
+                    "default": "",
+                    "required": true,
+                    "description": "作业评估子类id，更新的时候传"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/AppraiseItemDelete",
+            "summary": "删除作业评估子类（作业评估分类下的子类）",
+            "type": "POST",
+            "params": {
+		"appriaseitemid": {
+                    "default": "",
+                    "required": true,
+                    "description": "作业评估子类id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/AppraiseOptionTypeGetList",
+            "summary": "获取作业评估常见选项分类",
+            "type": "POST",
+            "params": {
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/AppraiseOptionTypeAdd",
+            "summary": "新增作业评估常见选项分类",
+            "type": "POST",
+            "params": {
+		"title": {
+                    "default": "新增作业评估常见选项分类",
+                    "required": true,
+                    "description": "新增作业评估常见选项分类"
+                },
+		"appraiseoptiontypeid": {
+                    "default": "",
+                    "required": true,
+                    "description": "作业评估常见选项分类id，更新的时候传"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/AppraiseOptionTypeDelete",
+            "summary": "删除作业评估常见选项分类",
+            "type": "POST",
+            "params": {
+		"appraiseoptiontypeid": {
+                    "default": "",
+                    "required": true,
+                    "description": "作业评估常见选项分类id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/AppraiseOptionAdd",
+            "summary": "新增作业评估常见选项",
+            "type": "POST",
+            "params": {
+		"title": {
+                    "default": "新增作业评估常见选项",
+                    "required": true,
+                    "description": "新增作业评估常见选项"
+                },
+		"appraiseitemid": {
+                    "default": "C9D774F6-9517-46F2-B418-B9996240803A",
+                    "required": true,
+                    "description": "作业评估子类id"
+                },
+		"typeid": {
+                    "default": "52770E91-6E8E-460F-93DF-0173BF849C67",
+                    "required": true,
+                    "description": "作业评估常见选项分类id"
+                },
+		"appraiseoptionid": {
+                    "default": "",
+                    "required": true,
+                    "description": "作业评估常见选项id"
+                },
+		"risk": {
+                    "default": "",
+                    "required": true,
+                    "description": "风险"
+                },
+		"ismust": {
+                    "default": "",
+                    "required": true,
+                    "description": "是否必须"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/AppraiseOptionDelete",
+            "summary": "删除作业评估常见选项",
+            "type": "POST",
+            "params": {
+		"appraiseoptionid": {
+                    "default": "",
+                    "required": true,
+                    "description": "作业评估常见选项id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/AppraiserChange",
+            "summary": "更改作业单评估人",
+            "type": "POST",
+            "params": {
+		"sheetid": {
+                    "default": "",
+                    "required": true,
+                    "description": "作业单id"
+                },
+		"appraiseuserid": {
+                    "default": "",
+                    "required": true,
+                    "description": "新的评估人id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/SheetPersonSet",
+            "summary": "更改作业单参与人和负责人",
+            "type": "POST",
+            "params": {
+		"sheetid": {
+                    "default": "",
+                    "required": true,
+                    "description": "作业单id"
+                },
+		"workuserids": {
+                    "default": "",
+                    "required": true,
+                    "description": "新的作业单参与人员"
+                },
+		"leaduserid": {
+                    "default": "",
+                    "required": true,
+                    "description": "新的作业单负责人"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/Work/SheetPersonGetList",
+            "summary": "获取作业单人员信息",
+            "type": "POST",
+            "params": {
+		"sheetid": {
+                    "default": "",
+                    "required": true,
+                    "description": "作业单id"
+                },
+		"relationtype": {
+                    "default": "",
+                    "required": true,
+                    "description": "1申请人，2负责人，3参与人，4评估人，5审批人"
+                }
+            },
+            "response": {
+            }
+        }
+    ]
+}

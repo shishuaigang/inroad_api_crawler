@@ -1,0 +1,703 @@
+{
+    "resource": "NewTask",
+    "section": [
+        {
+            "name": "新任务",
+            "value": "apis"
+        }
+    ],
+    "apis": [
+         {
+            "url": "UAPI/NewTask/GetTaskModelList",
+            "summary": "获取任务模板列表",
+            "type": "POST",
+            "params": {
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/NewTask/GetTaskModelDetail",
+            "summary": "获取任务模板列表",
+            "type": "POST",
+            "params": {
+	    "modelid": {
+                    "default": "",
+                    "required": true,
+                    "description": "模板ID"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/NewTask/GetCountList",
+            "summary": "获取任务中心模块数量",
+            "type": "POST",
+            "params": {
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/NewTask/GetList",
+            "summary": "获取任务列表",
+            "type": "POST",
+            "params": {
+                "status": {
+                    "default": "1",
+                    "required": true,
+                    "description": "1-进行中，2-待验收，3-已完成，4-已删除"
+                },
+                "type": {
+                    "default": "2",
+                    "required": true,
+                    "description": "1-我负责，2-我参与任务，3-我关注任务，4-我验收任务，5--待关注任务，6-下属任务"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/NewTask/GetNewStatus",
+            "summary": "获取最新负责/关注任务动态",
+            "type": "POST",
+            "params": {
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/NewTask/GetUserTaskDetailList",
+            "summary": "获取用户分工信息列表",
+            "type": "POST",
+            "params": {
+                "status": {
+                    "default": "1",
+                    "required": true,
+                    "description": "1-进行中，2-已完成，3-已验收，4-已终止"
+                },
+                "pageindex": {
+                    "default": "1",
+                    "required": false,
+                    "description": "分页"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/NewTask/Create",
+            "summary": "创建任务/编辑任务信息",
+            "type": "POST",
+            "params": {
+                "c_id": {
+                    "default": "",
+                    "required": true,
+                    "description": "任务GUID（为空时新建，否则为编辑）"
+                },
+                "begintime": {
+                    "default": "2015-11-18 12:00:01",
+                    "required": true,
+                    "description": "开始时间"
+                },
+                "endtime": {
+                    "default": "2015-11-22 13:00:02",
+                    "required": true,
+                    "description": "结束时间"
+                },
+                "priority": {
+                    "default": "1",
+                    "required": true,
+                    "description": "任务重要级别 1:紧急  2:重要  3:普通"
+                },
+                "title": {
+                    "default": "任务标题",
+                    "required": true,
+                    "description": "标题"
+                },
+                "memo": {
+                    "default": "备注内容",
+                    "required": true,
+                    "description": "备注"
+                },
+                "attachfiles": {
+                    "default": "",
+                    "required": true,
+                    "description": "附件地址(多个用分号隔开)"
+                },
+                "taskmodelid": {
+                    "default": "",
+                    "required": false,
+                    "description": "任务模板ID"
+                }
+		,
+                "autocheck": {
+                    "default": "0",
+                    "required": true,
+                    "description": "0-需要验收，1-自动验收"
+                },
+                "autodetailnotification": {
+                    "default": "0",
+                    "required": true,
+                    "description": "0-分工完成不通知负责人，1--分工完成自动通知负责人"
+                },
+                "sharelevel": {
+                    "default": "3",
+                    "required": true,
+                    "description": "1--仅自己，2--部门负责人，3--同部门人员"
+                },
+                "sourcetype": {
+                    "default": "0",
+                    "required": true,
+                    "description": "0:直接创建任务，1分工分发生成的任务，2人员评定生成的任务"
+                },
+                "sourcelink": {
+                    "default": "",
+                    "required": true,
+                    "description": "分工的id，人员评定的id或者别的id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/NewTask/TaskPublish",
+            "summary": "任务发布",
+            "type": "POST",
+            "params": {
+                "taskid": {
+                    "default": "75FE7A68-4AB9-4C15-B1EE-003A1D68314E",
+                    "required": true,
+                    "description": "任务GUID"
+                },
+                "taskdetailitemanduserids": {
+                    "default": "1",
+                    "required": true,
+                    "description": "设备清理$5b8fc651-b277-40f0-a291-9c85e8637bca;6d3b5089-c2d3-4685-91fd-4bee68a8a881;#设备更换$7a9a920c-d010-4cb5-aea2-3534f77b44a9;7abb66bd-4dcd-47d8-b293-093ed68437e8;#"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/NewTask/GetTaskInfo",
+            "summary": "得到任务分工基本信息",
+            "type": "POST",
+            "params": {
+                "taskid": {
+                    "default": "DA09C17D-0484-40C3-B46D-3D4B955EF159",
+                    "required": true,
+                    "description": "任务GUID"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/NewTask/SetUsers",
+            "summary": "设置任务负责人/验收人",
+            "type": "POST",
+            "params": {
+                "taskid": {
+                    "default": "DA09C17D-0484-40C3-B46D-3D4B955EF159",
+                    "required": true,
+                    "description": "任务GUID"
+                },
+                "settype": {
+                    "default": "1",
+                    "required": true,
+                    "description": "设置类型 1:负责人  2:验收人"
+                },
+                "userids": {
+                    "default": "",
+                    "required": true,
+                    "description": "用户的userid(多个用分号隔开)"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/NewTask/GetUsers",
+            "summary": "得到任务负责人/验收人",
+            "type": "POST",
+            "params": {
+                "taskid": {
+                    "default": "DA09C17D-0484-40C3-B46D-3D4B955EF159",
+                    "required": true,
+                    "description": "任务GUID"
+                },
+                "gettype": {
+                    "default": "1",
+                    "required": true,
+                    "description": "查询类型 0--全部;1:负责，2：验收，3--待关注，4--已关注"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/NewTask/GetTaskDetailList",
+            "summary": "得到任务分工列表（我的分工）",
+            "type": "POST",
+            "params": {
+                "taskid": {
+                    "default": "DA09C17D-0484-40C3-B46D-3D4B955EF159",
+                    "required": true,
+                    "description": "任务GUID"
+                },
+                "listype": {
+                    "default": "1",
+                    "required": true,
+                    "description": "1:自己，0：全部"
+                },
+                "taskdetailid": {
+                    "default": "",
+                    "required": true,
+                    "description": "分工id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/NewTask/ReceiveTaskDetail",
+            "summary": "确认回执任务分工",
+            "type": "POST",
+            "params": {
+                "taskdetailid": {
+                    "default": "",
+                    "required": true,
+                    "description": "任务分工的GUID，非任务ID"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/NewTask/GetTaskDetailRecordList",
+            "summary": "填写任务分工过程记录",
+            "type": "POST",
+            "params": {
+                "taskdetailid": {
+                    "default": "",
+                    "required": true,
+                    "description": "任务分工的GUID，非任务ID"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/NewTask/TaskDetailAddRecord",
+            "summary": "填写任务分工过程记录",
+            "type": "POST",
+            "params": {
+                "taskdetailid": {
+                    "default": "",
+                    "required": true,
+                    "description": "任务分工的GUID，非任务ID"
+                },
+                "addtype": {
+                    "default": "1",
+                    "required": true,
+                    "description": "1:正常记录，2：提交完成，3:撤销提交完成"
+                },
+                "memo": {
+                    "default": "",
+                    "required": true,
+                    "description": "过程说明"
+                },
+                "files": {
+                    "default": "1",
+                    "required": true,
+                    "description": "过程文件fileS (分号间隔)"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/NewTask/TaskDetailCheck",
+            "summary": "验收完成的任务分工",
+            "type": "POST",
+            "params": {
+                "taskdetailid": {
+                    "default": "DF0D207E-2E13-4153-88BD-8742655B5073",
+                    "required": true,
+                    "description": "任务分工的GUID，非任务ID"
+                },
+                "setstatus": {
+                    "default": "1",
+                    "required": true,
+                    "description": "1:继续完成，3：验收通过"
+                },
+                "memo": {
+                    "default": "",
+                    "required": true,
+                    "description": "分工验收说明（预留，分工验收暂时简单处理）"
+                },
+                "files": {
+                    "default": "1",
+                    "required": true,
+                    "description": "分工验收文件fileS (分号间隔)（预留，分工验收暂时简单处理）"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/NewTask/TaskCheck",
+            "summary": "验收完成的任务分工",
+            "type": "POST",
+            "params": {
+                "taskid": {
+                    "default": "",
+                    "required": true,
+                    "description": "任务分工的GUID，非任务ID"
+                },
+                "finishtime": {
+                    "default": "1",
+                    "required": true,
+                    "description": "完成时间"
+                },
+                "finishstar": {
+                    "default": "5",
+                    "required": true,
+                    "description": "完成评级"
+                },
+                "setstatus": {
+                    "default": "3",
+                    "required": true,
+                    "description": "3：验收通过 4:任务终止结束"
+                },
+                "memo": {
+                    "default": "",
+                    "required": true,
+                    "description": "任务验收说明"
+                },
+                "files": {
+                    "default": "1",
+                    "required": true,
+                    "description": "任务验收文件fileS (分号间隔)"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/NewTask/TaskSetFollow",
+            "summary": "设置任务关注",
+            "type": "POST",
+            "params": {
+                "taskid": {
+                    "default": "",
+                    "required": true,
+                    "description": "任务GUID"
+                },
+                "settype": {
+                    "default": "1",
+                    "required": true,
+                    "description": "操作类型--1:关注通过；2:主动直接关注;0：关注取消"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+			"NoNeed": "1",
+            "url": "UAPI/NewTask/DelTaskDetail",
+            "summary": "删除任务分工",
+            "type": "POST",
+            "params": {
+                "taskdetailid": {
+                    "default": "65F58896-629F-49D1-A507-055362C041E8",
+                    "required": true,
+                    "description": "任务分工GUID"
+                }
+            },
+            "response": {
+            }
+        }
+,
+	{
+            "url": "UAPI/NewTask/AddTaskDetail",
+            "summary": "添加任务分工",
+            "type": "POST",
+            "params": {
+                "taskid": {
+                    "default": "C1E76BCC-5F10-42F8-A225-0564944E94CE",
+                    "required": true,
+                    "description": "任务GUID"
+                },          
+		  "taskdetailtitle": {
+                    "default": "新分工添加测试标题",
+                    "required": true,
+                    "description": "新分工标题"
+                },
+            "taskdetailuserids": {
+                    "default": "7ABB66BD-4DCD-47D8-B293-093ED68437E8;9920A226-7B32-4958-B6A6-1C3BAD199CB7;7A9A920C-D010-4CB5-AEA2-3534F77B44A9",
+                    "required": true,
+                    "description": "新分工负责人，多个负责人用;分隔"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/NewTask/InviteFollow",
+            "summary": "邀请关注任务",
+            "type": "POST",
+            "params": {
+                "taskid": {
+                    "default": "C1E76BCC-5F10-42F8-A225-0564944E94CE",
+                    "required": true,
+                    "description": "任务GUID"
+                },          
+		  "inviteuserids": {
+                    "default": "6d3b5089-c2d3-4685-91fd-4bee68a8a881;0361516f-576a-431b-b581-b280abdc2f9b",
+                    "required": true,
+                    "description": "被邀请的人，多个用;分隔"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/NewTask/TaskDetailRemind",
+            "summary": "未完成分工提醒，获取通知记录时的type值为7",
+            "type": "POST",
+            "params": {
+                "taskdetailid": {
+                    "default": "DF0D207E-2E13-4153-88BD-8742655B5073",
+                    "required": true,
+                    "description": "任务分工GUID"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/NewTask/TaskDetailEdit",
+            "summary": "编辑分工",
+            "type": "POST",
+            "params": {
+                "taskdetailid": {
+                    "default": "8D5CBC65-1645-4EDB-88B4-02E946113FBD",
+                    "required": true,
+                    "description": "任务分工GUID"
+                },
+                "begintime": {
+                    "default": "2016-03-20",
+                    "required": true,
+                    "description": "任务分工开始时间"
+                },
+                "endtime": {
+                    "default": "2016-03-22",
+                    "required": true,
+                    "description": "任务分工结束时间"
+                },
+                "memo": {
+                    "default": "这个一个测试分工备注",
+                    "required": true,
+                    "description": "分工备注"
+                },
+                "title": {
+                    "default": "这个一个测试分工的标题",
+                    "required": true,
+                    "description": "分工标题"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/NewTask/Search",
+            "summary": "任务查询",
+            "type": "POST",
+            "params": {
+                "begindate": {
+                    "default": "2016-05-13",
+                    "required": true,
+                    "description": "任务开始起，默认当天"
+                },
+                "enddate": {
+                    "default": "2016-05-20",
+                    "required": true,
+                    "description": "任务开始止，默认一周"
+                },
+                "keyword": {
+                    "default": "",
+                    "required": false,
+                    "description": "任务/分工的标题、备注关键字"
+                },
+                "userids": {
+                    "default": "",
+                    "required": false,
+                    "description": "任务/分工的相关人员，用;间隔"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/NewTask/SearchForOutput",
+            "summary": "任务查询导出用",
+            "type": "POST",
+            "params": {
+                "begintime": {
+                    "default": "2016-05-13",
+                    "required": true,
+                    "description": "任务开始起，默认当天"
+                },
+                "endtime": {
+                    "default": "2016-05-20",
+                    "required": true,
+                    "description": "任务开始止，默认一周"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/NewTask/TaskModelAdd",
+            "summary": "新建修改任务模板",
+            "type": "POST",
+            "params": {
+                "taskmodename": {
+                    "default": "inroad api测试",
+                    "required": true,
+                    "description": "任务模板名称"
+                },
+                "deptid": {
+                    "default": "2",
+                    "required": true,
+                    "description": "部门id"
+                },
+                "memo": {
+                    "default": "",
+                    "required": true,
+                    "description": "备注"
+                },
+                "status": {
+                    "default": "",
+                    "required": true,
+                    "description": "状态"
+                },
+                "taskmodelid": {
+                    "default": "",
+                    "required": true,
+                    "description": "任务模板id"
+                }
+            },
+            "response": {
+            }
+        },
+		{
+            "url": "UAPI/NewTask/TaskModelDel",
+            "summary": "删除任务模板",
+            "type": "POST",
+            "params": {
+                "taskmodelid": {
+                    "default": "",
+                    "required": true,
+                    "description": "任务模板id"
+                }
+            },
+            "response": {
+            }
+        },
+		{
+            "url": "UAPI/NewTask/TaskModelGetList",
+            "summary": "读取任务模板",
+            "type": "POST",
+            "params": {
+            },
+            "response": {
+            }
+        },
+		{
+            "url": "UAPI/NewTask/TaskModelItemAdd",
+            "summary": "新建修改任务模板分工",
+            "type": "POST",
+            "params": {
+                "detailitem": {
+                    "default": "",
+                    "required": true,
+                    "description": "任务分工名称"
+                },
+                "startdelay": {
+                    "default": "",
+                    "required": true,
+                    "description": "多长时间后开始任务(分钟)"
+                },
+                "taskduration": {
+                    "default": "",
+                    "required": true,
+                    "description": "分工持续时间(分钟)"
+                },
+                "memo": {
+                    "default": "",
+                    "required": true,
+                    "description": "备注"
+                },
+                "taskmodelid": {
+                    "default": "",
+                    "required": true,
+                    "description": "任务模板id"
+                },
+                "taskmodelitemid": {
+                    "default": "",
+                    "required": true,
+                    "description": "任务模板分工id"
+                }
+            },
+            "response": {
+            }
+        },	
+		{
+            "url": "UAPI/NewTask/TaskModelItemDel",
+            "summary": "删除任务模板分工",
+            "type": "POST",
+            "params": {
+                "taskmodelitemid": {
+                    "default": "",
+                    "required": true,
+                    "description": "任务模板分工id"
+                }
+            },
+            "response": {
+            }
+        },
+		{
+            "url": "UAPI/NewTask/TaskModelItemGetList",
+            "summary": "读取任务模板分工",
+            "type": "POST",
+            "params": {
+                "taskmodelid": {
+                    "default": "",
+                    "required": true,
+                    "description": "任务模板id"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+			"NoNeed": "1",
+            "url": "UAPI/NewTask/TaskDetailReceipt",
+            "summary": "分工回执",
+            "type": "POST",
+            "params": {
+                "taskdetailid": {
+                    "default": "8D5CBC65-1645-4EDB-88B4-02E946113FBD",
+                    "required": true,
+                    "description": "任务分工GUID"
+                }
+            },
+            "response": {
+            }
+        }
+]
+}

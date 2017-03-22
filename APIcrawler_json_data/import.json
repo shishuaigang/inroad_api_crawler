@@ -1,0 +1,34 @@
+{
+    "resource": "Import",
+    "section": [
+        {
+            "name": "数据导入",
+            "value": "apis"
+        }
+    ],
+    "apis": [
+         {
+            "url": "UAPI/Import/GetImportTask",
+            "summary": "获取导入任务列表",
+            "type": "POST",
+            "params": {
+ 		"taskid": {
+                    "default": "",
+                    "required": true,
+                    "description": "导入任务的id"
+                }
+            },
+            "response": {
+            }
+        },
+	 {
+            "url": "UAPI/Import/ImportDataTest",
+            "summary": "导入测试",
+            "type": "POST",
+            "params": {
+            },
+            "response": {
+            }
+        }
+    ]
+}

@@ -1,0 +1,498 @@
+{
+    "resource": "CoreData",
+    "section": [
+        {
+            "name": "核心数据",
+            "value": "coredata"
+        }
+    ],
+    "apis": [
+        {
+            "url": "UAPI/CoreData/GetReportList",
+            "summary": "获取数据报表列表",
+            "type": "POST",
+            "params": {
+                "type": {
+                    "default": "1",
+                    "required": true,
+                    "description": "1.自己创建  2.已关注的报表 3.待关注的报表"
+                }
+
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/CoreData/GetReportResult",
+            "summary": "获取数据报表详细数据",
+            "type": "POST",
+            "params": {
+                "reportid": {
+                    "default": "6C3110D8-E00A-4438-B9E7-0DA0EDCA961F",
+                    "required": true,
+                    "description": "报表GUID"
+                },
+                "checktime": {
+                    "default": "2016-02-06 12:00:00",
+                    "required": true,
+                    "description": "查看时间"
+                }
+
+            },
+            "response": {
+                "items": {
+                    "datatype": "1-int,2-float,3-string,4...",
+                    "order": "顺序",
+                    "dataitemvalue": "值"
+                }
+            }
+        },
+
+        {
+            "url": "UAPI/CoreData/CoreReportShare",
+            "summary": "分享数据报表",
+            "type": "POST",
+            "params": {
+                "reportid": {
+                    "default": "6C3110D8-E00A-4438-B9E7-0DA0EDCA961F",
+                    "required": true,
+                    "description": "报表GUID"
+                },
+                "sharetouserids": {
+                    "default": "6D3B5089-C2D3-4685-91FD-4BEE68A8A881;6F9C9A5F-B220-4CB6-8B5A-EADCE2C9DE31;6297AF13-0CD9-4A35-A7A8-E0B4E4E5E2BD;",
+                    "required": true,
+                    "description": "被分享用户GUID(多个用分号隔开)"
+                }
+            },
+            "response": {
+            }
+        },
+         {
+	   "url": "UAPI/CoreData/CoreReportShareCheck",
+            "summary": "分享关注数据报表的处理",
+            "type": "POST",
+            "params": {
+                "reportid": {
+                    "default": "6C3110D8-E00A-4438-B9E7-0DA0EDCA961F",
+                    "required": true,
+                    "description": "报表GUID"
+                },
+                "dotype": {
+                    "default": "1",
+                    "required": true,
+                    "description": "1--同意 2 --驳回"
+                }
+            },
+            "response": {
+            }
+        },
+        {
+            "url": "UAPI/CoreData/SaveReportInfo",
+            "summary": "创建/修改报表",
+            "type": "POST",
+            "params": {
+                "reportid": {
+                    "default": "6C3110D8-E00A-4438-B9E7-0DA0EDCA961F",
+                    "required": true,
+                    "description": "报表GUID (null时为新建)"
+                },
+                "ownerid": {
+                    "default": "6D3B5089-C2D3-4685-91FD-4BEE68A8A881",
+                    "required": true,
+                    "description": "所有者GUID"
+                },
+                "title": {
+                    "default": "报表名称",
+                    "required": true,
+                    "description": "报表名称"
+                },
+                "memo": {
+                    "default": "报表备注",
+                    "required": true,
+                    "description": "报表备注"
+                },
+                "reportcode": {
+                    "default": "RPT_XXXX",
+                    "required": true,
+                    "description": "报表编码"
+                },
+                "status": {
+                    "default": "1",
+                    "required": true,
+                    "description": "1.有效  0.无效"
+                },
+                "itemids": {
+                    "default": "",
+                    "required": true,
+                    "description": "数据项GUID，按顺序用分号隔开"
+                }
+            },
+            "response": {
+            }
+        },
+        {
+            "url": "UAPI/CoreData/GetReportInfo",
+            "summary": "获取报表",
+            "type": "POST",
+            "params": {
+                "reportid": {
+                    "default": "6C3110D8-E00A-4438-B9E7-0DA0EDCA961F",
+                    "required": true,
+                    "description": "报表GUID"
+                }
+            },
+            "response": {
+            }
+        },
+        {
+            "url": "UAPI/CoreData/GetReportItem",
+            "summary": "查询报表包含项数据",
+            "type": "POST",
+            "params": {
+                "reportid": {
+                    "default": "6C3110D8-E00A-4438-B9E7-0DA0EDCA961F",
+                    "required": true,
+                    "description": "报表GUID"
+                }
+            },
+            "response": {
+            }
+        },
+        {
+            "url": "UAPI/CoreData/QueryDateItemInfo",
+            "summary": "查询数据项详细信息",
+            "type": "POST",
+            "params": {
+                "itemid": {
+                    "default": "B21F3C2D-4B63-483D-81C7-159AFA6C839C",
+                    "required": true,
+                    "description": "报表GUID"
+                }
+            },
+            "response": {
+            }
+        },
+        {
+            "url": "UAPI/CoreData/QueryReportDateItemRecored",
+            "summary": "查询数据报表的各数据项数据记录",
+            "type": "POST",
+            "params": {
+                "reportid": {
+                    "default": "812F5386-5E38-40AC-82D4-6F548ACA1A64",
+                    "required": true,
+                    "description": "数据报表ID"
+                },
+                "begintime": {
+                    "default": "2015-10-01 12:00:00",
+                    "required": true,
+                    "description": "数据查询开始时间"
+                },
+                "endtime": {
+                    "default": "2016-02-01 13:00:00",
+                    "required": true,
+                    "description": "数据查询结束时间"
+                }
+            },
+            "response": {
+            }
+        },
+        {
+            "url": "UAPI/CoreData/QueryDateItemRecored",
+            "summary": "查询数据项数据记录",
+            "type": "POST",
+            "params": {
+                "itemid": {
+                    "default": "B21F3C2D-4B63-483D-81C7-159AFA6C839C",
+                    "required": true,
+                    "description": "数据项目ID"
+                },
+                "begintime": {
+                    "default": "2015-10-01 12:00:00",
+                    "required": true,
+                    "description": "数据查询开始时间"
+                },
+                "endtime": {
+                    "default": "2016-02-01 13:00:00",
+                    "required": true,
+                    "description": "数据查询结束时间"
+                }
+            },
+            "response": {
+            }
+        },
+        {
+            "url": "UAPI/CoreData/GetDataItemList",
+            "summary": "数据录入--查询数据项",
+            "type": "POST",
+            "params": {
+		"type": {
+                    "default": "1",
+                    "required": false,
+                    "description": "1:读取; 2:编辑"
+                }
+            },
+            "response": {
+            }
+        }
+,
+        {
+            "url": "UAPI/CoreData/GetDataItemRecord",
+            "summary": "数据录入--查询最新数据(5条)",
+            "type": "POST",
+            "params": {
+                "itemid": {
+                    "default": "B21F3C2D-4B63-483D-81C7-159AFA6C839C",
+                    "required": true,
+                    "description": "数据项目ID"
+                },
+                "pageindex": {
+                    "default": "1",
+                    "required": false,
+                    "description": "页数(空或null为1)"
+                }
+            },
+            "response": {
+            }
+        },
+        {
+            "url": "UAPI/CoreData/SaveDataItemRecord",
+            "summary": "数据录入--录入数据项数据",
+            "type": "POST",
+            "params": {
+                "itemids": {
+                    "default": "B21F3C2D-4B63-483D-81C7-159AFA6C839C;",
+                    "required": true,
+                    "description": "数据项目IDs"
+                },
+                "dataitemvalues": {
+                    "default": "62;",
+                    "required": true,
+                    "description": "数据值(最多50字符)"
+                },
+                "datatime": {
+                    "default": "2016-01-11 13:00:00",
+                    "required": true,
+                    "description": "数据日期"
+                }
+            },
+            "response": {
+            }
+        },
+        {
+            "url": "UAPI/CoreData/ItemTypeGetList",
+            "summary": "获取数据项类型列表",
+            "type": "POST",
+            "params": {
+            },
+            "response": {
+            }
+        },
+        {
+            "url": "UAPI/CoreData/DataItemTypeAdd",
+            "summary": "新增数据项类型",
+            "type": "POST",
+            "params": {
+		 "itemtypename": {
+                    "default": "",
+                    "required": true,
+                    "description": "数据项分类"
+                },
+                "memo": {
+                    "default": "",
+                    "required": true,
+                    "description": "备注"
+                },
+                "itemtypeid": {
+                    "default": "",
+                    "required": true,
+                    "description": "数据项分类id"
+                }
+            },
+            "response": {
+            }
+        },
+        {
+            "url": "UAPI/CoreData/DataItemTypeDelete",
+            "summary": "删除数据项类型",
+            "type": "POST",
+            "params": {
+                "itemtypeid": {
+                    "default": "",
+                    "required": true,
+                    "description": "数据项分类id"
+                }
+            },
+            "response": {
+            }
+        },
+        {
+            "url": "UAPI/CoreData/DataItemRecordSearch",
+            "summary": "查询数据",
+            "type": "POST",
+            "params": {
+                "begintime": {
+                    "default": "2016-1-1 10:00:01",
+                    "required": true,
+                    "description": "查询开始日期"
+                },
+                "endtime": {
+                    "default": "2016-2-1 10:00:01",
+                    "required": true,
+                    "description": "查询结束日期"
+                },
+                "itemtype": {
+                    "default": "00000000-0000-0000-0000-000000000000",
+                    "required": true,
+                    "description": "数据项类型"
+                },
+                "regionids": {
+                    "default": "",
+                    "required": true,
+                    "description": "查询区域ID(多个用分号隔开)"
+                },
+                "alarmtype": {
+                    "default": "1",
+                    "required": true,
+                    "description": " 0--全部数据1--触发报警--触发联锁--正常区间--非法区间"
+                },
+                "keyword": {
+                    "default": "",
+                    "required": false,
+                    "description": "关键字"
+                }
+            },
+            "response": {
+            }
+        },
+        {
+            "url": "UAPI/CoreData/DataItemConfigSave",
+            "summary": "数据项设置编辑",
+            "type": "POST",
+            "params": {
+                "itemid": {
+                    "default": "",
+                    "required": true,
+                    "description": "空为创建，不空为更新"
+                },
+                "title": {
+                    "default": "煤浆比",
+                    "required": true,
+                    "description": "标题"
+                },
+		"itemunit": {
+                    "default": "m3/H",
+                    "required": true,
+                    "description": "单位"
+                },
+		"datatype": {
+                    "default": "2",
+                    "required": true,
+                    "description": "数据项类型1-数据 2--字符串"
+                },
+                "itemtype": {
+                    "default": "",
+                    "required": true,
+                    "description": "数据分类类型"
+                },
+                "minvalue": {
+                    "default": "0",
+                    "required": true,
+                    "description": "数据区间min"
+                },
+                "maxvalue": {
+                    "default": "0",
+                    "required": true,
+                    "description": "数据区间max"
+                },
+		"goodminvalue": {
+                    "default": "0",
+                    "required": true,
+                    "description": "数据控制区间min"
+                },
+                "goodmaxvalue": {
+                    "default": "0",
+                    "required": true,
+                    "description": "数据控制区间max"
+                },
+                "lowvalue": {
+                    "default": "0",
+                    "required": true,
+                    "description": "数据报警区间low"
+                },
+                "highvalue": {
+                    "default": "0",
+                    "required": true,
+                    "description": "数据报警区间high"
+                },
+                "lianlowvalue": {
+                    "default": "0",
+                    "required": true,
+                    "description": "数据联动区间low"
+                },
+                "lianhighvalue": {
+                    "default": "0",
+                    "required": true,
+                    "description": "数据联动区间high"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/CoreData/CoreDataitemGetRules",
+            "summary": "获取数据项目权限信息",
+            "type": "POST",
+            "params": {
+                "itemid": {
+                    "default": "B21F3C2D-4B63-483D-81C7-159AFA6C839C",
+                    "required": true,
+                    "description": "数据项目ID"
+                }
+
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/CoreData/CoreDataitemConfigRules",
+            "summary": "设置数据项目权限信息",
+            "type": "POST",
+            "params": {
+                "itemid": {
+                    "default": "B21F3C2D-4B63-483D-81C7-159AFA6C839C",
+                    "required": true,
+                    "description": "数据项目ID"
+                },
+                "entype": {
+                    "default": "1",
+                    "required": true,
+                    "description": "1.设置可读部门 2.归属区域 3.录入人员 4.设置人员"
+                },
+                "ids": {
+                    "default": " ",
+                    "required": true,
+                    "description": ";号分隔的ID字符串"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/CoreData/GetDataItemUnitList",
+            "summary": "获取数据项单位",
+            "type": "POST",
+            "params": { },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/CoreData/GetDataPlat",
+            "summary": "获取当日关键数据的工作面板异常数据内容",
+            "type": "POST",
+            "params": { },
+            "response": {
+            }
+        }
+
+    ]
+}
