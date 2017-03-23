@@ -1610,7 +1610,7 @@
             }
         },
 		{
-            "url": "UAPI/Config/RegulationDevicesBaseTroubleHowdoSave",
+            "url": "UAPI/Config/RegulationDeviceBaseTroubleHowdoSave",
             "summary": "读取基础设备的整改规程",
             "type": "POST",
             "params": {
@@ -1636,6 +1636,11 @@
                 	}
 
 		},
+            "response": {
+
+            }
+        },
+
             "response": {
 
             }
