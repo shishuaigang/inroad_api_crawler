@@ -15,6 +15,12 @@ class write_db:
 
     def write_db(self, length):
         try:  # 判定是否存在temp.csv，如没有，则抛出异常
+            os.chdir('Test_results')
+            if os.path.exists(r'temp.html'):
+                os.remove('temp.html')
+            if os.path.exists(r'temp.csv'):
+                os.remove('temp.csv')
+            os.chdir(os.path.dirname(os.getcwd()))
             shutil.move('temp.html', 'Test_results')
             shutil.move('temp.csv', 'Test_results')
             os.chdir('Test_results')

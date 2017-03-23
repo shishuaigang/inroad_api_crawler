@@ -3,8 +3,8 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.application import MIMEApplication
 import os
-import shutil
 import smtplib
+import get_git_log
 
 
 class send_mail:
@@ -15,6 +15,8 @@ class send_mail:
 
     def send_mail(self):
         try:  # 判定是否存在temp.html，如没有，则抛出异常
+            gitlog = get_git_log.gitlog()
+            os.chdir(r"Test_results")
             os.rename('temp.html', 'TestReport_' + self.t + '.html')
             # 定义发件人邮箱，密码和收件人的list
             sender = 'sgshi@in-road.com'
@@ -24,7 +26,8 @@ class send_mail:
             msg["From"] = sender
             msg["To"] = ','.join(self.receiver)  # 收件人邮箱列表，以逗号分隔
             #  邮件正文
-            part_con = MIMEText("Hi all,\nThis is the test report for Inroad API project of "+self.mail_subject, 'plain', 'utf-8')
+            part_con = MIMEText("Hi all,\nThis is the test report for Inroad API project of "+self.mail_subject +
+                                "\n\nlast commit: " + gitlog, 'plain', 'utf-8')
             msg.attach(part_con)  # 邮件添加正文
             part_attach = MIMEApplication(open('TestReport_' + self.t + '.html', 'rb').read())
             part_attach.add_header('Content-Disposition', 'attachment', filename='TestReport_' + self.t + '.html')
