@@ -358,7 +358,7 @@
                     "description": "任务分工的GUID，非任务ID"
                 },
                 "finishtime": {
-                    "default": "1",
+                    "default": "2017-01-01",
                     "required": true,
                     "description": "完成时间"
                 },

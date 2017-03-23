@@ -135,7 +135,7 @@
 				"type": "POST",
 				"params": {
 					"regulationlibraryid": {
-							"default": "",
+							"default": "C71C2BBD-6DAD-4B99-820B-93D41B14FF81",
 							"required": true,
 							"description": "规程id"
 								}	,
@@ -227,7 +227,7 @@
     "type": "POST",
     "params": {
 	"regulationid": {
-            "default": "FF6B4713-A7E4-451E-972D-9000E9DF3EB2",
+            "default": "58B55E6D-4871-49F6-9EDD-22FF50406F0C",
             "required": true,
             "description": "规程id"
         }

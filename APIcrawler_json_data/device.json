@@ -62,6 +62,7 @@
             }
         },
 	 {
+			"NoNeed": "1",
             "url": "UAPI/Device/ChangeStatus",
             "summary": "变更设备状态",
             "type": "POST",
@@ -116,7 +117,7 @@
                     "description": "备件id"
                 },
 		"changetime": {
-                    "default": "",
+                    "default": "2017-01-01",
                     "required": true,
                     "description": "更改时间"
                 },
@@ -456,7 +457,7 @@
                     "description": "设备id"
                 },
 		"afterstatus": {
-                    "default": "",
+                    "default": "2",
                     "required": true,
                     "description": "变更后状态 1运行 2备用/停止 3 热备 4 检修"
                 },

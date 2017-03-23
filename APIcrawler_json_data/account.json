@@ -163,6 +163,7 @@
             }
         },
         {
+			"NoNeed":"1",
             "url": "UAPI/Account/HeadImgUpdate",
             "summary": "用户上传头像",
             "type": "POST",
@@ -771,12 +772,12 @@
             "type": "POST",
             "params": { 	
           	"longitude": {
-                    	"default": "",
+                    	"default": "121.434024",
                     	"required": true,
                     	"description": "经度"
                 	},
 		"latitude": {
-                    	"default": "",
+                    	"default": "31.174435",
                     	"required": true,
                     	"description": "纬度"
                 	}
@@ -785,6 +786,7 @@
             }
         },
        {
+			"NoNeed": "1",
             "url": "UAPI/Account/SafeAreaAdd",
             "summary": "新增编辑安全区域",
             "type": "POST",

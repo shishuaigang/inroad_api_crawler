@@ -345,6 +345,7 @@
             }
         },
 	{
+			"NoNeed": "1",
             "url": "UAPI/Train/PeriodSort",
             "summary": "课程下课时排序",
             "type": "POST",
@@ -492,7 +493,7 @@
             "type": "POST",
             "params": {
                 "lessonid": {
-                    "default": "",
+                    "default": "0631DC9B-C0C2-4FEF-8B15-6A981C9272BF",
                     "required": false,
                     "description": "课程id"
                 },
@@ -1082,7 +1083,7 @@
                     "description": ""
                 },
 		"needminute": {
-                    "default": "",
+                    "default": "1",
                     "required": true,
                     "description": "完成课件需要的时间"
                 }

@@ -374,12 +374,12 @@
                     "description": "作业单号（审批通过之后生成)"
                 },
 		"startdate": {
-                    "default": "2017/1/1",
+                    "default": "20170101",
                     "required": true,
                     "description": "作业开始时间（大于输入值）"
                 },
 		"overdate": {
-                    "default": "",
+                    "default": "20170301",
                     "required": true,
                     "description": "作业结束时间（小于输入值）"
                 },
@@ -712,7 +712,7 @@
                     "description": "风险"
                 },
 		"ismust": {
-                    "default": "",
+                    "default": "0",
                     "required": true,
                     "description": "是否必须"
                 }

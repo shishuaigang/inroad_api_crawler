@@ -243,7 +243,7 @@
             "description": "流程id"
         },
         "targetid": {
-            "default": "78",
+            "default": "-2",
             "required": true,
             "description": "如果是部门，则是部门的id；如果是设备，则是设备的id；如果是区域，则是区域的id；如果是自选，则是自选的人员id的拼接，用分号分割"
         },
@@ -363,7 +363,7 @@
     "type": "POST",
     "params": {
 	"noderecordid": {
-            "default": "E718476E-8B39-4770-B575-83F602204D6A",
+            "default": "E73589F0-9913-428B-94C5-C98B0ADA0447",
             "required": true,
             "description": "当前节点记录id，UAPI/Flow/GetFlowNodeRecord接口返回的nodeRecordList中 最下面的那个项的nodeRecordId"
         }
@@ -414,7 +414,7 @@
             "description": "备注说明"
         },
         "processresult": {
-            "default": "1",
+            "default": "0",
             "required": true,
             "description": "处理结果 1、通过 2、驳回 3、挂起"
         },
