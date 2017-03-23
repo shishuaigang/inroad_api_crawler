@@ -1,7 +1,7 @@
 {
   "sender_mail" : "sgshi@in-road.com",
   "password" : "Shishuaigang123!",
-  "receiver_list" : ["sgshi@in-road.com", "jjxia@in-road.com"],
+  "receiver_list" : ["sgshi@in-road.com", "jjxia@in-road.com", "hhchen@in-road.com", "hchen@in-road.com"],
   "mail_subject" : "Inroad api 遍历测试",
   "api_version" : "201703230",
   "db_username" : "sgshi",
