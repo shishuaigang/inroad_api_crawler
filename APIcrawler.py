@@ -26,7 +26,6 @@ if __name__ == "__main__":
         res = api_response.api_cor_res(api_json_path).res_results(cookie, api_ver, headers)
         res_code = [res[i].status_code for i in range(api_len)]
         res_time = [float(res[i].elapsed.microseconds) / 1000 for i in range(api_len)]
-
         res_status = response_status.response_status(api_len).res_status(res)
         passrate = pass_rate.passrate(api_len).pass_rate(res_status, res_code)  # 计算成功率
         # 创建temp.html
