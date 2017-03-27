@@ -22,6 +22,7 @@
             }
         },
 	 {
+			"NoNeed":"1",
             "url": "UAPI/Import/ImportDataTest",
             "summary": "导入测试",
             "type": "POST",

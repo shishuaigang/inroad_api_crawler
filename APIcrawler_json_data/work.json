@@ -374,12 +374,12 @@
                     "description": "作业单号（审批通过之后生成)"
                 },
 		"startdate": {
-                    "default": "20170101",
+                    "default": "2017-01-01",
                     "required": true,
                     "description": "作业开始时间（大于输入值）"
                 },
 		"overdate": {
-                    "default": "20170301",
+                    "default": "2017-03-01",
                     "required": true,
                     "description": "作业结束时间（小于输入值）"
                 },

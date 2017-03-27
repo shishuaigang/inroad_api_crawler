@@ -121,6 +121,46 @@
 				}
 			},
 			{
+				"url": "UAPI/Inspection/InspectionPlanDetails",
+				"summary": "根据巡检计划设备关键数据查询巡检计划记录数据",
+				"type": "POST",
+				"params": {
+					"planids": {
+							"default": "177B24F5-55B5-4FD5-8E6F-13034201808C;80FA9BFC-A4D1-4A2C-818A-2B2641AFB847",
+							"required": true,
+							"description": "巡检计划ids"
+						}	,
+						"deviceids": {
+							"default": "1E3C4101-0467-4C47-87C9-508BC8CBCA4C;197A68ED-7EA3-481D-8377-606622444EAA;CBF22E4A-6C25-47B9-BBA7-CBF0B34D9E94",
+							"required": true,
+							"description": "具体设备ids"
+						}	,
+						"coredataitemids": {
+							"default": "50F9AD72-382F-447D-AED8-47173279EA21;FD662D46-089B-412D-8EEF-70663B8EA68D;9CECF1E8-68C3-4024-B8AA-723E873B398D;4568B42B-360E-4051-9CB9-B35C672972D6",
+							"required": true,
+							"description": "关键数据ids"
+						}	,	
+						"type": {
+							"default": "3",
+							"required": true,
+							"description": "1 根据planids 读取deviceids   --2 根据planids 和deviceids  读取@coredataitemids  3 根据planids,deviceids,@coredataitemids 查询巡检数据"
+						}	,	
+						"begintime": {
+							"default": "",
+							"required": true,
+							"description": "开始时间"
+						}	,
+						"endtime": {
+							"default": "",
+							"required": true,
+							"description": "结束时间"
+						}					
+						},
+					"response": {
+				}
+			},
+
+			{
 				"url": "UAPI/Inspection/InspectionPlanRecordPointDetailSave",
 				"summary": "巡检计划的巡检点内关键数据保存",
 				"type": "POST",
@@ -1070,10 +1110,16 @@
 							"default": "",
 							"required": true,
 							"description": "关键字"
+								},	
+					"type": {
+							"default": "",
+							"required": true,
+							"description": "0 显示所有巡检计划   1 根据用户所在部门的区域显示巡检计划"
 								}			
 						},
 					"response": {
 				}
 			}
+ 
     ]
 }

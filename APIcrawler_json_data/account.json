@@ -8,13 +8,12 @@
     ],
 	"apis": [
 		{
-			"NoNeed":"1",
 			"url": "API/Account/Register",
 			"summary": "用户注册",
 			"type": "POST",
 			"params": {
 				"phonenumber": {
-					"default": "13800000000",
+					"default": "15102100358",
 					"required": true
 				},
 				"password": {
@@ -616,6 +615,7 @@
             }
         },
        {
+			"NoNeed":"1",
             "url": "API/Account/GetUser",
             "summary": "获取用户",
             "type": "POST",

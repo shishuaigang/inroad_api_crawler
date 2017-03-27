@@ -22,7 +22,8 @@ if __name__ == "__main__":
         cn_name = api_param.api_cn_name(api_json_path).api_chinese_name()  # 获取api的中文名字
         api_len = len(inroad_url)  # 获取api的个数
         print 'Now you need test api number is ' + str(api_len)
-        res = api_response.api_cor_res(api_json_path).res_results(cookie, api_ver)
+        headers = {"Referer": "123"}
+        res = api_response.api_cor_res(api_json_path).res_results(cookie, api_ver, headers)
         res_code = [res[i].status_code for i in range(api_len)]
         res_time = [float(res[i].elapsed.microseconds) / 1000 for i in range(api_len)]
 

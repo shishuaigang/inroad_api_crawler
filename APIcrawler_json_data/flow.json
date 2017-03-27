@@ -265,7 +265,7 @@
             "required": true,
             "description": "业务子类id"
         },
-	"flowid": {
+	"flowids": {
             "default": "522A6299-9D05-47BA-A479-0C9F1304364C",
             "required": true,
             "description": "流程id"
@@ -414,7 +414,7 @@
             "description": "备注说明"
         },
         "processresult": {
-            "default": "0",
+            "default": "-2",
             "required": true,
             "description": "处理结果 1、通过 2、驳回 3、挂起"
         },
