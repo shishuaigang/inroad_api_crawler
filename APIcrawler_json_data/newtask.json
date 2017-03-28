@@ -16,6 +16,20 @@
             "response": {
             }
         },
+		{
+            "url": "UAPI/NewTask/TaskModelAddByExecuted",
+            "summary": "根据已经完成的任务生成任务模板",
+            "type": "POST",
+            "params": {
+                "taskid": {
+                    "default": "36C34CF0-5092-4DDD-992C-8FE672CE5871",
+                    "required": true,
+                    "description": "任务id"
+                }
+            },
+            "response": {
+            }
+        },
 	{
             "url": "UAPI/NewTask/GetTaskModelDetail",
             "summary": "获取任务模板列表",
