@@ -1097,6 +1097,21 @@
 				}
 			},
 			{
+				"url": "UAPI/Inspection/InspectionPlanRandomRecordStart",
+				"summary": "随机巡查不选择人员及其区域直接开始",
+				"type": "POST",
+				"params": {
+               		"planid": {
+								"default": "99999999-9999-9999-9999-999999999999",
+								"required": true,
+								"description": "巡检计划id"
+							}
+						},
+					"response": {
+				}
+			},
+
+			{
 				"url": "UAPI/Inspection/InspectionPlanGetList",
 				"summary": "读取巡检计划",
 				"type": "POST",

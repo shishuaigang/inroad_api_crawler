@@ -712,6 +712,30 @@
             },
             "response": {
             }
+        },
+		{
+            "url": "UAPI/NewTask/GetWholeTaskInfo",
+            "summary": "基本信息、分工列表",
+            "type": "POST",
+            "params": {
+                "taskid": {
+                    "default": "A8941731-3BDA-4AF6-AF1E-D673F4A5901F",
+                    "required": true,
+                    "description": "任务GUID"
+                },
+                "listype": {
+                    "default": "1",
+                    "required": true,
+                    "description": "1:自己，0：全部"
+                },
+                "taskdetailid": {
+                    "default": "",
+                    "required": true,
+                    "description": "分工id"
+                }
+            },
+            "response": {
+            }
         }
 ]
 }

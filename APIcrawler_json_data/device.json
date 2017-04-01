@@ -106,6 +106,21 @@
             "response": {
             }
         },
+		{
+            "url": "UAPI/Device/StatusChangeRecordGetList",
+            "summary": "查询设备的状态变更记录",
+            "type": "POST",
+            "params": {
+		"deviceid": {
+                    "default": "CCE3481F-4003-4E35-8A6D-029C9706E9AA",
+                    "required": true,
+                    "description": "设备id"
+                }
+            },
+            "response": {
+            }
+        },
+
 	 {
             "url": "UAPI/Device/PartChangeStatus",
             "summary": "变更备件状态",

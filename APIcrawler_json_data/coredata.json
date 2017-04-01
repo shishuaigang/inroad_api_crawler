@@ -492,7 +492,42 @@
             "params": { },
             "response": {
             }
+        },
+		{
+            "url": "UAPI/CoreData/CoreDataitemConfigRulesBatch",
+            "summary": "批量设置数据项目权限信息",
+            "type": "POST",
+            "params": {
+                "coredataitemids": {
+                    "default": "B16EA816-FF11-4471-8DDD-9852942E0AFF;FDA9576F-E0E3-4189-8AEE-05F69910A750;5B44BD31-03CC-48AE-A44B-6785E8ED3785",
+                    "required": true,
+                    "description": "关键数据项目IDs"
+                },
+                "deptids": {
+                    "default": "19;35;15",
+                    "required": true,
+                    "description": "部门ids"
+                },
+                "regionids": {
+                    "default": "82;84;85",
+                    "required": true,
+                    "description": "区域ids"
+                },
+                "writepersons": {
+                    "default": "4ff0f978-8a27-482e-9b98-f8fbe4c71f58;00E274AD-79FD-4051-BC83-2388EA2A79A4;0103D669-59F7-480D-ACE4-04896421C8AB;02e41058-63cc-4fbd-8b76-28e55f7cc940",
+                    "required": true,
+                    "description": "录入责任人ids"
+                },
+                "setpersons": {
+                    "default": "4ff0f978-8a27-482e-9b98-f8fbe4c71f58;090E4DAD-67D7-433A-8422-DBEDDE38161B;093354E0-5DAE-422A-B85A-E4821158FB53;09468E5A-EF24-4295-9CD0-29B5B1BE4C62",
+                    "required": true,
+                    "description": "设置责任人ids"
+                }
+            },
+            "response": {
+            }
         }
+
 
     ]
 }
