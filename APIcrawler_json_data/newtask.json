@@ -100,6 +100,21 @@
             "response": {
             }
         },
+		{
+            "url": "UAPI/NewTask/GetTaskDetailAllRecord",
+            "summary": "读取任务分工过程记录",
+            "type": "POST",
+            "params": {
+                "taskid": {
+                    "default": "DDDC437A-7EE7-40AB-8422-4F05625A0F51",
+                    "required": true,
+                    "description": "任务id"
+                }
+            },
+            "response": {
+            }
+        },
+
 	{
             "url": "UAPI/NewTask/Create",
             "summary": "创建任务/编辑任务信息",
@@ -327,11 +342,16 @@
                     "default": "1",
                     "required": true,
                     "description": "过程文件fileS (分号间隔)"
+                },
+                "regulationbatchid": {
+                    "default": "1",
+                    "required": true,
+                    "description": "规程记录的批次id"
                 }
             },
             "response": {
             }
-        },
+        }, 
 	{
             "url": "UAPI/NewTask/TaskDetailCheck",
             "summary": "验收完成的任务分工",
@@ -454,44 +474,22 @@
                     "default": "7ABB66BD-4DCD-47D8-B293-093ED68437E8;9920A226-7B32-4958-B6A6-1C3BAD199CB7;7A9A920C-D010-4CB5-AEA2-3534F77B44A9",
                     "required": true,
                     "description": "新分工负责人，多个负责人用;分隔"
-                }
-            },
-            "response": {
-            }
-        },
-	{
-            "url": "UAPI/NewTask/InviteFollow",
-            "summary": "邀请关注任务",
-            "type": "POST",
-            "params": {
-                "taskid": {
-                    "default": "C1E76BCC-5F10-42F8-A225-0564944E94CE",
-                    "required": true,
-                    "description": "任务GUID"
                 },          
-		  "inviteuserids": {
-                    "default": "6d3b5089-c2d3-4685-91fd-4bee68a8a881;0361516f-576a-431b-b581-b280abdc2f9b",
+		  "regulationid": {
+                    "default": "Null",
                     "required": true,
-                    "description": "被邀请的人，多个用;分隔"
+                    "description": "规程id"
+                },          
+		  "modelitemid": {
+                    "default": "Null",
+                    "required": true,
+                    "description": "模板id"
                 }
             },
             "response": {
             }
         },
-	{
-            "url": "UAPI/NewTask/TaskDetailRemind",
-            "summary": "未完成分工提醒，获取通知记录时的type值为7",
-            "type": "POST",
-            "params": {
-                "taskdetailid": {
-                    "default": "DF0D207E-2E13-4153-88BD-8742655B5073",
-                    "required": true,
-                    "description": "任务分工GUID"
-                }
-            },
-            "response": {
-            }
-        },
+
 	{
             "url": "UAPI/NewTask/TaskDetailEdit",
             "summary": "编辑分工",

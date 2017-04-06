@@ -222,6 +222,31 @@
 				}
 			},
 			{
+				"url": "UAPI/Regulation/LibraryGetListByBusiness",
+				"summary": "根据业务读取规程列表",
+				"type": "POST",
+				"params": {
+					"type": {
+							"default": "2",
+							"required": true,
+							"description": " --1 整改  2 任务"
+								}	,
+						"key": {
+							"default": "",
+							"required": true,
+							"description": "规程名称关键字"
+								}	,
+						"businessid": {
+							"default": "",
+							"required": true,
+							"description": "业务id,对应与业务的隐患id,分工id"
+								}					
+						},
+					"response": {
+				}
+			},
+
+			{
     "url": "UAPI/Regulation/Check",
     "summary": "<span style='color:#EEDFCC'>[web]</span>校验规程配置",
     "type": "POST",
