@@ -34,16 +34,16 @@ class gen_result:
             <html>
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
             <head>
-            <title>Inroad API遍历测试</title>
+            <title>Inroad API扫描</title>
             </head>
-            <body>
-            <h1 align="center" style="color:black">Inroad_All_API_test </h1>
-            <table border="1" cellspacing="0">
+            <body bgcolor="#F7F7F7">
+            <h1 align="center">Inroad_API_Scan</h1>
+            <table align="center" border="1" cellspacing="0">
             <tr>
-                <td align="center">总数</td>
-                <td align="center">成功数</td>
-                <td align="center">失败数</td>
-                <td align="center">成功率</td>
+                <th align="center" width="150">API总数</th>
+                <th align="center" width="150">成功</th>
+                <th align="center" width="150">失败</th>
+                <th align="center" width="150">成功率</th>
             </tr>
                     """
         f.write(message)
@@ -56,7 +56,7 @@ class gen_result:
         f1.write('<td align="center">' + str(passrate[2]) + '</td>')  # 以百分比显示成功率，2位小数
         f1.write('</table>')
         f1.write('<h2 align="center" style="color:black">详细信息</h2>')
-        f1.write('<table style="TABLE-LAYOUT:fixed" border="1" cellspacing="0">')
+        f1.write('<table align="center" style="TABLE-LAYOUT:fixed" border="1" cellspacing="0">')
         f1.write('<tr>')
         f1.write('<td align="center">序号</td>')
         f1.write('<td align="center">API_URL</td>')

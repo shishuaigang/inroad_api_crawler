@@ -1,0 +1,95 @@
+﻿{
+    "resource": "Log",
+    "section": [
+        {
+            "name": "日志",
+            "value": "apis"
+        }
+    ],
+    "apis": [
+        {
+            "url": "API/Log/AddLog",
+            "summary": "插入日志",
+            "type": "POST",
+            "params": {
+                "userid": {
+                    "default": "",
+                    "required": false,
+                    "description": "用户id"
+                },
+                "logtype": {
+                    "default": "INFO",
+                    "required": true,
+                    "description": "<span style='color:red'>必须*</span>日志级别：Debug、Info、Warning、Error，目前记录api请求参数的都用INFO"
+                },
+                "url": {
+                    "default": "https://xxx.in-road.com/UAPI/Account/Test",
+                    "required": false,
+                    "description": "当前请求的url"
+                },
+                "api": {
+                    "default": "UAPI/Account/Test",
+                    "required": true,
+                    "description": "<span style='color:red'>必须*</span>所调用api的地址"
+                },
+                "apiname": {
+                    "default": "",
+                    "required": false,
+                    "description": "所调用api的名字"
+                },
+                "parameter": {
+                    "default": "apiversion=201703220&name=peter&age=19",
+                    "required": true,
+                    "description": "<span style='color:red'>必须*</span>当前请求的所有参数"
+                },
+                "title": {
+                    "default": "所有uapi请求参数",
+                    "required": false,
+                    "description": "日志标题，如果是记录api请求参数的都用：所有uapi请求参数"
+                },
+                "logcontent": {
+                    "default": "",
+                    "required": false,
+                    "description": "日志内容，例如，如果日志级别是：Error，那么此字段记录了error的详细信息"
+                },
+                "currentmethod": {
+                    "default": "Test",
+                    "required": false,
+                    "description": "当前请求的方法名，根据自己代码环境，可以自己写入方便自己查找的方法名"
+                },
+                "currentthread": {
+                    "default": "",
+                    "required": false,
+                    "description": "当前线程号，当有并发时，方便查询日志"
+                },
+                "useripaddress": {
+                    "default": "",
+                    "required": false,
+                    "description": "当前用户请求的ip地址"
+                },
+                "dbname": {
+                    "default": "TestDbname",
+                    "required": true,
+                    "description": "<span style='color:red'>必须*</span>当前数据库的名字，例如在web.config中的数据库连接串中的Initial Catalog"
+                },
+                "dbLocalConn": {
+                    "default": "",
+                    "required": false,
+                    "description": "仅当logCenterType=2，即记录本地数据库时，用到，本地数据库的连接串"
+                },
+                "logCenterType": {
+                    "default": "1",
+                    "required": true,
+                    "description": "<span style='color:red'>必须*</span>1：记录在统一日志中心 2：记录本地数据库 3：两边都记录 默认值1"
+                },
+                "serveripaddress": {
+                    "default": "172.17.17.17",
+                    "required": true,
+                    "description": "<span style='color:red'>必须*</span>所连数据库服务器ip"
+                }
+            },
+            "response": {
+            }
+        }
+    ]
+}
