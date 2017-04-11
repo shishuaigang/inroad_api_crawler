@@ -2881,7 +2881,7 @@
 
             }
         },	
-        {
+         {
             "url": "UAPI/ThirdPerson/BlackListBlock",
             "summary": "将人员放入黑名单",
             "type": "POST",
@@ -2900,12 +2900,18 @@
                     "default": "",
                     "required": true,
                     "description": "备注"
+                },
+                "isclear": {
+                    "default": "1",
+                    "required": true,
+                    "description": "是否删除违章记录"
                 }
             },
             "response": {
 
             }
         }
+
 
     ]
 }

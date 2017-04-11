@@ -160,41 +160,52 @@
 				}
 			},
 
-			{
+			 {
 				"url": "UAPI/Inspection/InspectionPlanRecordPointDetailSave",
 				"summary": "巡检计划的巡检点内关键数据保存",
 				"type": "POST",
 				"params": {
 					"recordpointid": {
-						"default": "7451FCAD-DA7B-4820-99B8-04FC404DCC96",
+						"default": "177B24F5-55B5-4FD5-8E6F-13034201808C",
 						"required": true,
 						"description": "巡检计划记录对应的巡检点id"
 						},
 					"configids": {
-						"default": "f646f496-0e1f-4e4f-b91a-d94e1179115f;0631344a-a619-4123-9517-e1ca1ce4d155;25858da9-c837-4a81-800a-6985b3821bbd",
+						"default": "19498ECB-7EB6-48D8-9AB8-EAA557C72D71",
 						"required": true,
 						"description": "设备对应关键数据的配置ids"
 						},
 					"deviceids": {
-						"default": "0586639a-53b4-4d34-86b9-64eba37ea9ed;cbf22e4a-6c25-47b9-bba7-cbf0b34d9e94;0586639a-53b4-4d34-86b9-64eba37ea9ed",
+						"default": "19498ECB-7EB6-48D8-9AB8-EAA557C72D71",
 						"required": true,
 						"description": "设备ids"
 						},
 					"coredataitems": {
-						"default": "fd662d46-089b-412d-8eef-70663b8ea68d;fd662d46-089b-412d-8eef-70663b8ea68d;8419d4ca-c007-4deb-8eef-66f4d7e85bac",
+						"default": "19498ECB-7EB6-48D8-9AB8-EAA557C72D71",
 						"required": true,
 						"description": "关键数据ids"
 						},
 					"coredatavalues": {
-								"default": "3658;3668;25",
+								"default": "",
 								"required": true,
 								"description": "数据项值 s"
+							},
+					"memo": {
+								"default": "",
+								"required": true,
+								"description": "备注"
+							},
+					"files": {
+								"default": "",
+								"required": true,
+								"description": "附件地址"
 							}
 									
 						},
 					"response": {
 				}
 			},
+
 			{
 				"url": "UAPI/Inspection/InspectionPlanRecordFinish",
 				"summary": "巡检计划的记录的结束",
