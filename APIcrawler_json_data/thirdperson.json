@@ -2895,11 +2895,17 @@
                     "default": "1",
                     "required": true,
                     "description": "1.添加到黑名单  0.从黑名单中移除"
+                },
+                "memo": {
+                    "default": "",
+                    "required": true,
+                    "description": "备注"
                 }
             },
             "response": {
 
             }
         }
+
     ]
 }
