@@ -700,7 +700,38 @@
 							},
 					"response": {
 				}
+			},
+		{
+				"url": "UAPI/Regulation/FreezeRecord",
+				"updatetime":"20170413",
+				"summary": "冻结规程记录",
+				"type": "POST",
+				"params": {
+					"businessid": {
+                    "default": "EAD31426-8DAF-45B5-8D03-E5D384BBEDE7",
+                    "required": true,
+                    "description": "业务记录id"
+                }
+							},
+					"response": {
+				}
+			},
+			{
+				"url": "UAPI/Regulation/UnFreezeRecord",
+				"updatetime":"20170413",
+				"summary": "解冻规程记录",
+				"type": "POST",
+				"params": {
+					"businessid": {
+                    "default": "EAD31426-8DAF-45B5-8D03-E5D384BBEDE7",
+                    "required": true,
+                    "description": "业务记录id"
+                }
+							},
+					"response": {
+				}
 			}
+
 
 
     ]

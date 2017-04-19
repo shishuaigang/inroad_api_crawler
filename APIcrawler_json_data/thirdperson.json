@@ -2910,6 +2910,22 @@
             "response": {
 
             }
+        },
+        {
+            "url": "UAPI/ThirdPerson/EvalueTypeDel",
+            "updatetime":"20170417",
+            "summary": "删除违章种类",
+            "type": "POST",
+            "params": {
+                "optiontypeid": {
+                    "default": "53",
+                    "required": true,
+                    "description": "违章种类id"
+                }
+            },
+            "response": {
+
+            }
         }
 
 

@@ -1145,6 +1145,62 @@
 						},
 					"response": {
 				}
+			},
+		{
+				"url": "UAPI/Inspection/InspectionPointGPSCheck",
+				"updatetime":"20170419",
+				"summary": "判定巡检点数据是否异常",
+				"type": "POST",
+				"params": {
+					"lastlatitude": {
+							"default": "",
+							"required": false,
+							"description": "上一个巡检点纬度"
+								}	,
+					"lastlongitude": {
+							"default": "",
+							"required": false,
+							"description": "上一个巡检点经度"
+								},
+					"latitude ": {
+							"default": "",
+							"required": false,
+							"description": "当前巡检点纬度"
+								}	,
+					"longitude ": {
+							"default": "",
+							"required": false,
+							"description": "当前巡检点纬度"
+								}
+						},
+					"response": {
+				}
+			},
+		{
+				"url": "UAPI/Inspection/InspectionPlanToUserOfflineGetList",
+				"updatetime":"20170413",
+				"summary": "读取当前用户的离线巡检计划",
+				"type": "POST",
+				"params": {
+							},
+					"response": {
+				}
+			},
+
+		{
+				"url": "UAPI/Inspection/InspectionPlanDownloadOffline",
+				"updatetime":"20170413",
+				"summary": "离线数据下载、更新",
+				"type": "POST",
+				"params": {
+					"planid": {
+							"default": "F62C58FB-EE30-43FD-8528-7EBBFA8631AF",
+							"required": true,
+							"description": "巡检计划id"
+								}
+						},
+					"response": {
+				}
 			}
  
     ]
