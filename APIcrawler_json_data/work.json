@@ -142,6 +142,41 @@
             "response": {
             }
         },
+        {
+            "url": "UAPI/Work/SheetSearchForOutput",
+            "updatetime":"201704124","summary": "作业单搜索导出用",
+            "type": "POST",
+            "params": {
+		"deptid": {
+                    "default": "",
+                    "required": true,
+                    "description": "作业单申请单位部门id"
+                },
+		"regionid": {
+                    "default": "",
+                    "required": true,
+                    "description": "工作区域id,多个用;分隔"
+                },
+		"startdate": {
+                    "default": "",
+                    "required": true,
+                    "description": "作业开始时间（大于输入值）"
+                },
+		"overdate": {
+                    "default": "",
+                    "required": true,
+                    "description": "作业结束时间（小于输入值）"
+                },
+		"status": {
+                    "default": "",
+                    "required": true,
+                    "description": "状态"
+                }
+            },
+            "response": {
+            }
+        },
+
 	{
             "url": "UAPI/Work/SheetAppraise",
             "summary": "作业单评估",
