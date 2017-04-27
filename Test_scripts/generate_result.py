@@ -37,7 +37,7 @@ class gen_result:
             <title>Inroad API扫描</title>
             </head>
             <body bgcolor="#F7F7F7">
-            <h1 align="center">Inroad_API_Scan</h1>
+            <h1 align="center">Inroad_API_Scan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size=3>author:sgshi@in-road.com</font></h1>
             <table style="margin-left:12.5%;" width="40%" align="left-side" border="1" cellspacing="0">
             <tr>
                 <th align="center" width="150" bgcolor="#A4D3EE">API总数</th>
@@ -55,7 +55,7 @@ class gen_result:
         f1.write('<td align="center" bgcolor="#DC143C">' + str(passrate[1]) + '</td>')
         f1.write('<td align="center">' + str(passrate[2]) + '</td>')  # 以百分比显示成功率，2位小数
         f1.write('</table>')
-        f1.write('<h3 align="center" style="color:black">详细信息</h2>')
+        f1.write('<h3 align="center" style="color:black">详细信息&nbsp;&nbsp;&nbsp;<font size=3>(Response_time指的是api返回结果中backtime与sendtime的差值)</font></h3>')
         f1.write('<table width="75%" align="center" style="TABLE-LAYOUT:fixed" border="1" cellspacing="0">')
         f1.write('<tr>')
         f1.write('<td align="center" width="5%" bgcolor="#A4D3EE">序号</td>')
@@ -64,7 +64,7 @@ class gen_result:
         f1.write('<td align="center" width="10%" bgcolor="#A4D3EE">Response_Time</td>')
         f1.write('<td align="center" width="10%" bgcolor="#A4D3EE">Response_Code</td>')
         f1.write('<td align="center" width="5%" bgcolor="#A4D3EE">Status</td>')
-        f1.write('<td style="WORD-WRAP: break-word;word-break:break-all" align="center">Error message</td>')
+        f1.write('<td style="WORD-WRAP: break-word;word-break:break-all" align="center" bgcolor="#A4D3EE">Error message</td>')
         f1.write('</tr>')
         for i in range(self.api_len):
             f1.write('<tr>')

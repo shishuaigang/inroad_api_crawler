@@ -4,7 +4,8 @@ import json
 import codecs
 import time
 import platform
-from Test_scripts import api_param, api_response, getcookie, sendmail, write_database, generate_result, response_status, pass_rate
+from Test_scripts import api_param, api_response, getcookie, sendmail, write_database
+from Test_scripts import generate_result, response_status, pass_rate, calculateTime
 
 
 if __name__ == "__main__":
@@ -25,7 +26,13 @@ if __name__ == "__main__":
         headers = {"Referer": "123"}
         res = api_response.api_cor_res(api_json_path).res_results(cookie, api_ver, headers)
         res_code = [res[i].status_code for i in range(api_len)]
-        res_time = [float(res[i].elapsed.microseconds) / 1000 for i in range(api_len)]
+        res_time =[]
+        for i in range(api_len):
+            if res_code[i] != 500:
+                res_time.append(calculateTime.calculateTime(res[i]).calTime())
+            else:
+                res_time.append(99999)
+        # res_time = [float(res[i].elapsed.microseconds) / 1000 for i in range(api_len)]
         res_status = response_status.response_status(api_len).res_status(res)
         passrate = pass_rate.passrate(api_len).pass_rate(res_status, res_code)  # 计算成功率
         # 创建temp.html
