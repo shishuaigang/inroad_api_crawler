@@ -10,16 +10,16 @@
         
 			{
 				"url": "UAPI/Inspection/InspectionPlanRecordStart",
-				"summary": "选定巡检计划开始巡检，记录巡检记录",
+				"updatetime":"201704503","summary": "选定巡检计划开始巡检，记录巡检记录",
 				"type": "POST",
 				"params": {
 					"planid": {
-						"default": "00000000-0000-0000-0000-000000000000",
+						"default": "177B24F5-55B5-4FD5-8E6F-13034201808C",
 						"required": true,
 						"description": "巡检计划id"
 						},
 					"regionid": {
-								"default": "84",
+								"default": "14",
 								"required": true,
 								"description": "区域id"
 							},
@@ -27,11 +27,17 @@
 						"default": "0D7234DD-8F44-44C4-BCE4-E8FB98127BF7;200B5938-4978-4940-83CB-2B925A23ED80;0103D669-59F7-480D-ACE4-04896421C8AB;",
 						"required": true,
 						"description": "参与人员s"
+						},
+					"isoffline": {
+						"default": "0",
+						"required": true,
+						"description": "是否离线 1 为离线，当离线时不处理人员是否足够"
 						}
-					
+
 						},
 					"response": {
 				}
+
 			},
 			{
 				"url": "UAPI/Inspection/InspectionPlanRecordUserGetlist",
