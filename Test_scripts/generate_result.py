@@ -28,7 +28,7 @@ class gen_result:
         self.res_status = response_staus
 
     # 生成temp.html
-    def create_html(self, passrate):
+    def create_html(self, passrate, t):
         f = open(self.path + r'\\temp.html', 'wb')
         message = """
             <html>
@@ -37,17 +37,19 @@ class gen_result:
             <title>Inroad API扫描</title>
             </head>
             <body bgcolor="#F7F7F7">
-            <h1 align="center">Inroad_API_Scan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size=3>author:sgshi@in-road.com</font></h1>
-            <table style="margin-left:12.5%;" width="40%" align="left-side" border="1" cellspacing="0">
-            <tr>
-                <th align="center" width="150" bgcolor="#A4D3EE">API总数</th>
-                <th align="center" width="150" bgcolor="#A4D3EE">成功</th>
-                <th align="center" width="150" bgcolor="#A4D3EE">失败</th>
-                <th align="center" width="150" bgcolor="#A4D3EE">成功率</th>
-            </tr>
-                    """
+             """
         f.write(message)
         f.close()
+        fx = open(self.path + r'\\temp.html', 'a')
+        fx.write('<h1 align="center">Inroad_API_Scan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size=3>Begin: '+ t +'</font></h1>')
+        fx.write('<table style="margin-left:12.5%;" width="40%" align="left-side" border="1" cellspacing="0">')
+        fx.write('<tr>')
+        fx.write('<th align="center" width="150" bgcolor="#A4D3EE">API总数</th>')
+        fx.write('<th align="center" width="150" bgcolor="#A4D3EE">成功</th>')
+        fx.write('<th align="center" width="150" bgcolor="#A4D3EE">失败</th>')
+        fx.write('<th align="center" width="150" bgcolor="#A4D3EE">成功率</th>')
+        fx.write('</tr>')
+        fx.close()
         f1 = open(self.path + r'\\temp.html', 'a')
         f1.write('<tr>')
         f1.write('<td align="center">' + str(self.api_len) + '</td>')

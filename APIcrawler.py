@@ -10,6 +10,7 @@ from Test_scripts import generate_result, response_status, pass_rate, calculateT
 
 if __name__ == "__main__":
     print u'API遍历测试开始'
+    t = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
     if platform.system() == 'Windows':
         cur_dir = os.getcwd()
         api_json_path = cur_dir + '\\APIcrawler_json_data'
@@ -36,7 +37,7 @@ if __name__ == "__main__":
         res_status = response_status.response_status(api_len).res_status(res)
         passrate = pass_rate.passrate(api_len).pass_rate(res_status, res_code)  # 计算成功率
         # 创建temp.html
-        generate_result.gen_result(conf, cur_dir, inroad_url, api_len, cn_name, res, res_code, res_time, res_status).create_html(passrate)
+        generate_result.gen_result(conf, cur_dir, inroad_url, api_len, cn_name, res, res_code, res_time, res_status).create_html(passrate,t)
         # 创建temp.csv
         generate_result.gen_result(conf, cur_dir, inroad_url, api_len, cn_name, res, res_code, res_time, res_status).create_csv()
         time.sleep(5)
