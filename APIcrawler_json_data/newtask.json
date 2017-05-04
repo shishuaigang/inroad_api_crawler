@@ -320,7 +320,7 @@
         },
 	{
             "url": "UAPI/NewTask/TaskDetailAddRecord",
-            "summary": "填写任务分工过程记录",
+            "updatetime":"20170413","summary": "填写任务分工过程记录",
             "type": "POST",
             "params": {
                 "taskdetailid": {
@@ -344,13 +344,14 @@
                     "description": "过程文件fileS (分号间隔)"
                 },
                 "regulationbatchid": {
-                    "default": "1",
+                    "default": "",
                     "required": true,
                     "description": "规程记录的批次id"
                 }
             },
             "response": {
             }
+
         }, 
 	{
             "url": "UAPI/NewTask/TaskDetailCheck",
@@ -457,14 +458,14 @@
 ,
 	{
             "url": "UAPI/NewTask/AddTaskDetail",
-            "summary": "添加任务分工",
+            "updatetime":"20170413","summary": "添加任务分工",
             "type": "POST",
             "params": {
                 "taskid": {
-                    "default": "C1E76BCC-5F10-42F8-A225-0564944E94CE",
+                    "default": "75FE7A68-4AB9-4C15-B1EE-003A1D68314E",
                     "required": true,
                     "description": "任务GUID"
-                },          
+                },
 		  "taskdetailtitle": {
                     "default": "新分工添加测试标题",
                     "required": true,
@@ -474,20 +475,21 @@
                     "default": "7ABB66BD-4DCD-47D8-B293-093ED68437E8;9920A226-7B32-4958-B6A6-1C3BAD199CB7;7A9A920C-D010-4CB5-AEA2-3534F77B44A9",
                     "required": true,
                     "description": "新分工负责人，多个负责人用;分隔"
-                },          
+                },
 		  "regulationid": {
-                    "default": "Null",
+                    "default": "",
                     "required": true,
                     "description": "规程id"
-                },          
+                },
 		  "modelitemid": {
-                    "default": "Null",
+                    "default": "",
                     "required": true,
                     "description": "模板id"
                 }
             },
             "response": {
             }
+
         },
 
 	{
@@ -631,42 +633,43 @@
         },
 		{
             "url": "UAPI/NewTask/TaskModelItemAdd",
-            "summary": "新建修改任务模板分工",
-            "type": "POST",
-            "params": {
-                "detailitem": {
-                    "default": "",
-                    "required": true,
-                    "description": "任务分工名称"
-                },
-                "startdelay": {
-                    "default": "",
-                    "required": true,
-                    "description": "多长时间后开始任务(分钟)"
-                },
-                "taskduration": {
-                    "default": "",
-                    "required": true,
-                    "description": "分工持续时间(分钟)"
-                },
-                "memo": {
-                    "default": "",
-                    "required": true,
-                    "description": "备注"
-                },
-                "taskmodelid": {
-                    "default": "",
-                    "required": true,
-                    "description": "任务模板id"
-                },
-                "taskmodelitemid": {
-                    "default": "",
-                    "required": true,
-                    "description": "任务模板分工id"
-                }
-            },
-            "response": {
-            }
+					"updatetime": "20170413",
+					"summary": "新建修改任务模板分工",
+					"type": "POST",
+					"params": {
+						"detailitem": {
+							"default": "2.关闭阀门",
+							"required": true,
+							"description": "任务分工名称"
+						},
+						"startdelay": {
+							"default": "1440",
+							"required": true,
+							"description": "多长时间后开始任务(分钟)"
+						},
+						"taskduration": {
+							"default": "1440",
+							"required": true,
+							"description": "分工持续时间(分钟)"
+						},
+						"memo": {
+							"default": "烧嘴检查、清洗、维修、烧嘴大法兰螺栓孔优化外协外协烧嘴内部清洗脱脂并打压试漏无异常；烧嘴头部环隙符合图纸要求；大法兰螺栓孔扩大2-3mm观察、行测量",
+							"required": true,
+							"description": "备注"
+						},
+						"taskmodelid": {
+							"default": "6DB9F606-6257-4BFB-AD86-AFD54FE23EDA",
+							"required": true,
+							"description": "任务模板id"
+						},
+						"taskmodelitemid": {
+							"default": "33F407B0-2C57-4B41-8A1F-0AF81B27B228",
+							"required": true,
+							"description": "任务模板分工id"
+						}
+					},
+					"response": {}
+
         },	
 		{
             "url": "UAPI/NewTask/TaskModelItemDel",
