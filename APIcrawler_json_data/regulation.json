@@ -410,7 +410,7 @@
 
 			{
 				"url": "UAPI/Regulation/NodeOperationAdd",
-				"updatetime":"20170424","summary": "增加修改规程库节点操作",
+				"updatetime":"20170505","summary": "增加修改规程库节点操作",
 				"type": "POST",
 				"params": {
 					"nodeid": {
@@ -468,11 +468,6 @@
 							"required": true,
 							"description": "父操作id "
 								},
-					"parentoperationid   ": {
-							"default": "",
-							"required": true,
-							"description": "父操作id "
-								},
 					"showtype    ": {
 							"default": "",
 							"required": true,
@@ -503,12 +498,7 @@
 							"required": true,
 							"description": "当数据类型是数字和日期时候的最大值 "
 								},
-					"maxvalue    ": {
-							"default": "",
-							"required": true,
-							"description": "当数据类型是数字和日期时候的最大值 "
-								},
-					"optiontids   ": {
+					"optionids   ": {
 							"default": "",
 							"required": true,
 							"description": "操作的具体选择项ids "
@@ -522,12 +512,19 @@
 							"default": "",
 							"required": true,
 							"description": "操作的具体选择项选择后跳转的节点id "
+								},
+					"operationlength    ": {
+							"default": "",
+							"required": true,
+							"description": "操作值的长度"
 								}
 
 
 							},
 					"response": {
 				}
+
+
 			},
 
 			{
