@@ -29,7 +29,7 @@ if __name__ == "__main__":
         res_code = [res[i].status_code for i in range(api_len)]
         res_time =[]
         for i in range(api_len):
-            if res_code[i] != 500:
+            if res_code[i] != 500 and res_code[i] != 404:
                 res_time.append(calculateTime.calculateTime(res[i]).calTime())
             else:
                 res_time.append(99999)

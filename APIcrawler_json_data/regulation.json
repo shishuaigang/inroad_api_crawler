@@ -758,9 +758,35 @@
 							},
 					"response": {
 				}
+			},
+		{
+				"url": "UAPI/Regulation/RelationConfig",
+				"updatetime":"20170508","summary": "增删改规程节点配置",
+				"type": "POST",
+				"params": {
+					"object": {
+                    "default": "{'regulationid':'076c5230-5830-4416-b768-874b63d3669c','nodes':[{'nodeid':'B7874044-AAFB-4A74-A237-EF1B1875319C','config':{'name':'节点1','left':10,'top':10,'type':'node','width':80,'height':30,'alt':''}},{'nodeid':'4625EAE7-0842-4ABA-9E61-A470CBE20929','config':{'name':'节点2','left':30,'top':10,'type':'node','width':80,'height':30,'alt':''}}],'lines':[{'style':'','from':'B7874044-AAFB-4A74-A237-EF1B1875319C','to':'4625EAE7-0842-4ABA-9E61-A470CBE20929','name':''}]}",
+                    "required": true,
+                    "description": "application/json 方式提交的对象"
+                }
+							},
+					"response": {
+				}
+			},
+		{
+			"url": "UAPI/Regulation/GetRelationConfig",
+			"updatetime": "20170508",
+			"summary": "获取规程节点配置",
+			"type": "POST",
+			"params": {
+				"regulationid": {
+					"default": "8EADC429-8F78-4FD9-AD22-EF8AD0C06427",
+					"required": true,
+					"description": "规程id"
+				}
+			},
+			"response": {
 			}
-
-
-
+		}
     ]
 }
