@@ -690,6 +690,31 @@
 					"response": {
 				}
 			},
+		{
+				"url": "UAPI/Regulation/GetNodeLineNew",
+				"updatetime":"20170508","summary": "<span style='color:#87CEEB'>[app]</span>获取节点条新",
+				"type": "POST",
+				"params": {
+					"businessid": {
+                    "default": "3C1E8C61-F0AE-4791-A10E-C726F49ECA92",
+                    "required": true,
+                    "description": "业务记录id"
+                },
+"regulationid": {
+                    "default": "60E9C1E2-D013-4149-A5D7-08A6A64D4B86",
+                    "required": true,
+                    "description": "规程id"
+                }
+							},
+					"response": {
+	"items": {
+"currentnodeid": "当前节点id",
+                    "nodeStatus": "是否可点  0 否(即灰色) 1 是（即点亮）",
+			"nodeId": "节点id",
+"nodeName":"节点名字"
+                }
+				}
+			},
 			{
 				"url": "UAPI/Regulation/GetRegulationBatch",
 				"summary": "根据批次id 获取当时操作的规程记录",
