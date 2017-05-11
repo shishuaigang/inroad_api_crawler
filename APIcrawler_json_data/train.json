@@ -31,6 +31,49 @@
             "response": {
             }
         },
+        {
+            "url": "UAPI/Train/CredentialsTypeDel",
+			 "updatetime":"20170511","summary": "删除证书类型",
+            "type": "POST",
+            "params": {
+               	"typeid": {
+                    "default": "",
+                    "required": true,
+                    "description": "证书类型id"
+                }
+            },
+            "response": {
+            }
+        },
+			{
+            "url": "UAPI/Train/CredentialsTypeAdd",
+			 "updatetime":"20170511","summary": "增加/修改证书类型",
+            "type": "POST",
+            "params": {
+               	"typeid": {
+                    "default": "",
+                    "required": true,
+                    "description": "证书类型id"
+                },
+				"typename": {
+                    "default": "",
+                    "required": true,
+                    "description": "证书类型名称"
+                }
+            },
+            "response": {
+            }
+        },
+			{
+            "url": "UAPI/Train/CredentialsTypeGetList",
+			 "updatetime":"20170511","summary": "读取证书类型",
+            "type": "POST",
+            "params": {
+                         },
+            "response": {
+            }
+        },
+
 	{
             "url": "UAPI/Train/CollectionGetList",
             "summary": "获取收藏列表",

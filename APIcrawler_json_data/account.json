@@ -470,6 +470,14 @@
                 
             }
         },
+      {
+            "url": "UAPI/Account/CredentialsGetList",
+            "updatetime":"20170511","summary": "<span style='color:#87CEEB'>[app]</span>读取用户的证书列表",
+            "type": "POST",
+            "params": {
+					   },
+            "response": {}
+        },
         {
             "url": "UAPI/Account/GetNoticeDetail",
             "summary": "得到用户的通告通知详情",
