@@ -72,6 +72,36 @@
             "response": {
             }
         },
+      {
+            "url": "UAPI/Maintenance/RecordPeopleAdd",
+			 "updatetime":"20170511","summary": "<span style='color:#87CEEB'>[app]</span>维保记录增加人员",
+            "type": "POST",
+            "params": {
+               	"recordid": {
+                    "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
+                    "required": true,
+                    "description": "维保记录"
+                },
+					"managerids": {
+                    "default": "",
+                    "required": true,
+                    "description": "管理人员ids"
+                },
+					"participants": {
+                    "default": "",
+                    "required": true,
+                    "description": "参与人员ids"
+                },
+					"checkids": {
+                    "default": "",
+                    "required": true,
+                    "description": "审核人员ids"
+                }
+            },
+            "response": {
+            }
+        },
+
 		{
             "url": "UAPI/Maintenance/ModeDel",
             "updatetime":"20170425","summary": "删除维保的mode",
