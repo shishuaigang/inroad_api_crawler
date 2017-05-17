@@ -73,8 +73,7 @@
                     "description": "主任务Guid"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/Task/GetList",
@@ -97,8 +96,7 @@
                     "description": "对应界面：1-负责任务，2-参与任务，3-关注任务，4-系统任务，5-邀请关注任务，6-下属任务"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/Task/GetDetail",
@@ -116,8 +114,7 @@
                     "description": "主任务GUID"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/Task/GetChildList",
@@ -135,8 +132,7 @@
                     "description": "主任务GUID"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/Task/UpdateChildPercent",
@@ -159,8 +155,7 @@
                     "description": "完成百分比"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/Task/UpdateChildStatus",
@@ -188,8 +183,7 @@
                     "description": "结束说明"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/Task/UpdateChildEvalue",
@@ -217,8 +211,7 @@
                     "description": "评定备注"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/Task/UpdateStatus",
@@ -246,8 +239,7 @@
                     "description": "结束说明"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/Task/Delete",
@@ -265,8 +257,7 @@
                     "description": "任务GUID"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/Task/UpdateChildInfo",
@@ -309,8 +300,7 @@
                     "description": "附件"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/Task/CountGetList",
@@ -345,8 +335,7 @@
                     "description": "0.所有  1.已同意  2.已拒绝"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/Task/Invite",
@@ -364,8 +353,7 @@
                     "description": "邀请关注用户Guid(多个用分号隔开)"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/Task/InviteAccept",
@@ -383,21 +371,15 @@
                     "description": "1.接受关注  2.拒绝关注(或已关注时取消关注)"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
-			"NoNeed": "1",
+            "NoNeed": "1",
             "url": "UAPI/Task/GetTaskModelList",
             "summary": "获取任务模板列表",
             "type": "POST",
-            "params": {
-            },
-            "response": {
-            }
+            "params": {},
+            "response": {}
         }
-
-
-
     ]
 }

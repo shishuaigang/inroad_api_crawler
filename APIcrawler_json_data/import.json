@@ -7,29 +7,26 @@
         }
     ],
     "apis": [
-         {
+        {
             "url": "UAPI/Import/GetImportTask",
             "summary": "获取导入任务列表",
             "type": "POST",
             "params": {
- 		"taskid": {
+                "taskid": {
                     "default": "",
                     "required": true,
                     "description": "导入任务的id"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
-	 {
-			"NoNeed":"1",
+        {
+            "NoNeed": "1",
             "url": "UAPI/Import/ImportDataTest",
             "summary": "导入测试",
             "type": "POST",
-            "params": {
-            },
-            "response": {
-            }
+            "params": {},
+            "response": {}
         }
     ]
 }

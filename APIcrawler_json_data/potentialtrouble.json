@@ -6,8 +6,7 @@
             "value": "action"
         }
     ],
-    "apis": [
-
+    "action": [
         {
             "url": "UAPI/PotentialTrouble/PlanGetList",
             "summary": "获取行动计划列表",
@@ -19,8 +18,7 @@
                     "description": "1.当前参与  2.其他进行中  3.历史参与"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/PotentialTrouble/PlanEdit",
@@ -77,10 +75,8 @@
                     "required": true,
                     "description": "参与人GUID（多个用分号隔开）"
                 }
-
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/PotentialTrouble/PlanGetInfo",
@@ -93,9 +89,7 @@
                     "description": "用户GUID"
                 }
             },
-            "response": {
-            }
-
+            "response": {}
         },
         {
             "url": "UAPI/PotentialTrouble/PlanTroubleGetList",
@@ -108,18 +102,14 @@
                     "description": "用户GUID"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
-
         {
             "url": "UAPI/PotentialTrouble/PlanLevelGetList",
             "summary": "获取行动计划分级列表",
             "type": "POST",
-            "params": {
-            },
-            "response": {
-            }
+            "params": {},
+            "response": {}
         },
         {
             "url": "UAPI/PotentialTrouble/TroubleExtraCheck",
@@ -130,7 +120,7 @@
                     "default": "01E48680-4F4B-48C3-B51B-523766ED67C5",
                     "required": true,
                     "description": "Device GUID"
-		}
+                }
             },
             "response": {
                 "items": {
@@ -154,8 +144,7 @@
                     "description": "0.所有 1.新建 2.已发布 3.已整改 4.已验收"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/PotentialTrouble/TroubleSearch",
@@ -193,8 +182,7 @@
                     "description": "风险等级"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/PotentialTrouble/TroubleEdit",
@@ -257,8 +245,7 @@
                     "description": "巡检计划对应的recordid"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/PotentialTrouble/TroubleGetInfo",
@@ -272,7 +259,7 @@
                 }
             },
             "response": {
-		"items": {
+                "items": {
                     "1.新建": "troubleid, createtime, title, deviceid, devicename, planid, regionid, regionname, media, detailinfo, addfiles",
                     "2.整改中(发布后)": "allpriority, safepriority, envpriority, runproirity, firstobservation, troubleNumber, endtimeplan, deptids, deptnames, userids, usernames, acceptuserids, acceptusernames, sharetouserids, sharetousernames",
                     "3.整改完(待验收)": "",
@@ -295,10 +282,8 @@
                     "required": false,
                     "description": "不输入为1"
                 }
-
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/PotentialTrouble/TroublePublish",
@@ -360,10 +345,8 @@
                     "required": true,
                     "description": "整改验收人GUID(多个用分号隔开)"
                 }
-
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/PotentialTrouble/TroubleDorecord",
@@ -406,8 +389,7 @@
                     "description": "规程详情的批次id"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/PotentialTrouble/TroubleDorecordGetList",
@@ -419,7 +401,7 @@
                     "required": true,
                     "description": "设备隐患GUID"
                 },
-		"isasc": {
+                "isasc": {
                     "default": "1",
                     "required": false,
                     "description": "1-时间正序排 0-时间倒序排"
@@ -442,8 +424,7 @@
                     "description": "设备隐患GUID"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/PotentialTrouble/TroubleAccept",
@@ -486,8 +467,7 @@
                     "description": "是否通过: 1.通过  0.不通过"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/PotentialTrouble/TroubleAssignDept",
@@ -505,8 +485,7 @@
                     "description": "指定责任部门ID(多个用分号隔开)"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/PotentialTrouble/TroubleAssignUser",
@@ -524,8 +503,7 @@
                     "description": "(多个用分号隔开)"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/PotentialTrouble/TroubleCheckUser",
@@ -543,8 +521,7 @@
                     "description": "(多个用分号隔开)"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/PotentialTrouble/TroubleAssignShare",
@@ -562,8 +539,7 @@
                     "description": "(多个用分号隔开)"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/PotentialTrouble/TroubleShareAccept",
@@ -581,45 +557,34 @@
                     "description": "1.接受   2.拒绝"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
-
-
-
-
-
         {
             "url": "UAPI/PotentialTrouble/TroubleDeviceGetList",
             "summary": "获取设备列表",
             "type": "POST",
             "params": {
-	       "regionid": {
+                "regionid": {
                     "default": "0",
                     "required": true,
                     "description": "0 全部"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/PotentialTrouble/TroubleMediaGetList",
             "summary": "获取介质列表",
             "type": "POST",
-            "params": {
-            },
-            "response": {
-            }
+            "params": {},
+            "response": {}
         },
         {
             "url": "UAPI/PotentialTrouble/TroubleRiskGetList",
             "summary": "获取风险等级列表",
             "type": "POST",
-            "params": {
-            },
-            "response": {
-            }
+            "params": {},
+            "response": {}
         },
         {
             "url": "UAPI/PotentialTrouble/TroubleInformationGetList",
@@ -632,8 +597,7 @@
                     "description": "设备GUID"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/PotentialTrouble/TroublePerformanceGetList",
@@ -656,8 +620,7 @@
                     "description": "查询结束时间"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/PotentialTrouble/TroublePermissionGetList",
@@ -670,8 +633,7 @@
                     "description": "设备隐患GUID"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/PotentialTrouble/DeviceDetail",
@@ -684,8 +646,7 @@
                     "description": "设备id"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/PotentialTrouble/TroubleHowDoGetList",
@@ -697,14 +658,13 @@
                     "required": true,
                     "description": "隐患id"
                 },
-		"deviceid": {
+                "deviceid": {
                     "default": "50b8783d-2030-4956-acbc-0ffa2bb2e5c9",
                     "required": true,
                     "description": "隐患id"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/PotentialTrouble/TroubleHowDoDetailGetList",
@@ -717,15 +677,14 @@
                     "description": "设备整改建议id"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/PotentialTrouble/TroubleHowDoDetailDoingGetList",
             "summary": "获取设备整改建议详情进行中列表",
             "type": "POST",
             "params": {
-		 "troubleid": {
+                "troubleid": {
                     "default": "50b8783d-2030-4956-acbc-0ffa2bb2e5c9",
                     "required": true,
                     "description": "整改id"
@@ -736,15 +695,14 @@
                     "description": "设备整改建议id"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/PotentialTrouble/TroubleHowDoDetailDoingAdd",
             "summary": "新增设备整改建议详情进行中",
             "type": "POST",
             "params": {
-		 "troubleid": {
+                "troubleid": {
                     "default": "",
                     "required": true,
                     "description": "整改id"
@@ -760,10 +718,9 @@
                     "description": "设备整改建议详情ids"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
-	{
+        {
             "url": "UAPI/PotentialTrouble/ManualTroubleSearch",
             "summary": "检索手工输入的隐患",
             "type": "POST",
@@ -772,38 +729,32 @@
                     "default": "",
                     "required": true,
                     "description": "开始时间"
-							 }, 
-				"endtime": {
+                },
+                "endtime": {
                     "default": "",
                     "required": true,
                     "description": "结束时间"
-							 },
-				"key": {
+                },
+                "key": {
                     "default": "",
                     "required": true,
                     "description": "关键字"
-							 }
+                }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/PotentialTrouble/TroubleHistory",
             "summary": "设备整改历史",
             "type": "POST",
             "params": {
-		 "deviceid": {
+                "deviceid": {
                     "default": "CD913415-89A1-4D85-A630-0EFCE102F599",
                     "required": true,
                     "description": "设备id"
                 }
             },
-            "response": {
-            }
+            "response": {}
         }
-	
-
-
-
     ]
 }

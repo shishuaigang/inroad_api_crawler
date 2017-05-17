@@ -6,14 +6,13 @@
             "value": "action"
         }
     ],
-    "apis": [
-
+    "action": [
         {
-			"NoNeed": "1",
+            "NoNeed": "1",
             "url": "UAPI/Plan/Test",
             "summary": "测试",
             "type": "POST",
-            "params": { },
+            "params": {},
             "response": {
                 "items": {
                     "logo": "公司图标",
@@ -21,8 +20,5 @@
                 }
             }
         }
-
-
-
     ]
 }

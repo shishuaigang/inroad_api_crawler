@@ -7,7 +7,6 @@
         }
     ],
     "apis": [
-
         {
             "url": "API/Common/GetSysInfo",
             "summary": "获取公司信息",
@@ -26,7 +25,7 @@
                 }
             }
         },
-	{
+        {
             "url": "UAPI/Common/CleanDataBeforeAutoTest",
             "summary": "在自动操作前清除数据",
             "type": "POST",
@@ -37,14 +36,13 @@
                     "description": "操作说明 :人员评定表扬;"
                 }
             },
-            "response": { }
+            "response": {}
         },
-
-       {
+        {
             "url": "API/Common/GetDeptList",
             "summary": "获取部门列表",
             "type": "GET",
-            "params": { },
+            "params": {},
             "response": {
                 "items": [
                     {
@@ -55,156 +53,141 @@
                 ]
             }
         },
-
         {
-			"NoNeed": "1",
+            "NoNeed": "1",
             "url": "API/Common/AppCheckLastVersion",
             "summary": "App端检查升级版本信息",
             "type": "GET",
-            "params": {
-	    },
+            "params": {},
             "response": {}
-        }
-	,
-
+        },
         {
             "url": "API/Common/TempAPIEdit",
             "summary": "更新某个临时API",
             "type": "POST",
             "params": {
-	    "apiname": {
+                "apiname": {
                     "default": "",
                     "required": true,
                     "description": "API名称"
                 },
-	    "apijsondata": {
+                "apijsondata": {
                     "default": "",
                     "required": false,
                     "description": "JSON数据"
                 },
-	    "description": {
+                "description": {
                     "default": "",
                     "required": false,
                     "description": "备注"
                 }
-	    },
+            },
             "response": {}
-        }
-	,
-
+        },
         {
-			"NoNeed": "1",
+            "NoNeed": "1",
             "url": "API/Common/TempAPIGet",
             "summary": "调用某个临时API",
             "type": "POST",
             "params": {
-	    "apiname": {
+                "apiname": {
                     "default": "",
                     "required": true,
                     "description": "API名称"
-                }},
+                }
+            },
             "response": {}
-        }
-	,
-
+        },
         {
             "url": "API/Common/TestPushMsg",
             "summary": "测试第三方推送",
             "type": "POST",
             "params": {
-		"devicetype": {
+                "devicetype": {
                     "default": "1",
                     "required": true,
                     "description": "1-安卓，2--IOS"
                 },
-		"isdebug": {
+                "isdebug": {
                     "default": "0",
                     "required": true,
                     "description": "0-IOS生产推送，1--IOS开发调试推送"
                 },
-		"messagetype": {
+                "messagetype": {
                     "default": "1",
                     "required": true,
                     "description": "1-通知，2--透传"
                 },
-		"pushfindtype": {
+                "pushfindtype": {
                     "default": "3",
                     "required": true,
                     "description": "1--单设备token，2--批量设备3---单用户id，4--批量用户，5--指定TAG，6--所有设备"
                 },
-		"devicetoken": {
+                "devicetoken": {
                     "default": "8fd7979a6f0187fc48b4bba0fb62e9f36574b79e",
                     "required": false,
                     "description": "单设备token/批量token (例如：111,222,333)"
                 },
-		"userid": {
+                "userid": {
                     "default": "6d3b5089-c2d3-4685-91fd-4bee68a8a881",
                     "required": false,
                     "description": "单用户id/批量用户id (例如：XX,YY,ZZZ)"
                 },
-		"tag": {
+                "tag": {
                     "default": "",
                     "required": false,
                     "description": "单tag/批量tag(例如：XX,YY,ZZZ)"
                 },
-		"title": {
+                "title": {
                     "default": "推送测试",
                     "required": false,
                     "description": "标题"
                 },
-		"body": {
+                "body": {
                     "default": "推送测试内容",
                     "required": false,
                     "description": "内容"
                 },
-		"tags_op": {
+                "tags_op": {
                     "default": "AND",
                     "required": false,
                     "description": "tag的AND/OR"
                 },
-		"customekeyvalue": {
+                "customekeyvalue": {
                     "default": "{'type':'1','link':'da14170e0784091fa01534cbcc9a0a23'}",
                     "required": false,
                     "description": "自定义KEY-VALUE"
                 }
-	     },
+            },
             "response": {}
         },
-
         {
-			"NoNeed": "1",
+            "NoNeed": "1",
             "url": "UAPI/Common/DeviceGetList",
             "summary": "获取设备列表",
             "type": "POST",
-            "params": { },
-            "response": { }
+            "params": {},
+            "response": {}
         },
         {
             "url": "UAPI/Common/InfoGetList",
             "summary": "获取下拉配置数据列表",
             "type": "POST",
             "params": {
-	    "infotype": {
+                "infotype": {
                     "default": "介质明细",
                     "required": true,
                     "description": "下拉数据类型"
                 }
-	    },
-            "response": { }
+            },
+            "response": {}
         },
         {
             "url": "UAPI/Common/RegionGetList",
             "summary": "获取区域列表",
             "type": "POST",
-            "params": {
-            },
-            "response": {
-
-            }
+            "params": {},
+            "response": {}
         }
-
-
-        
     ]
 }
-

@@ -32,7 +32,7 @@
                     "required": true,
                     "description": "要设置的状态，0-正常，1-超时，2-500异常"
                 }
-		
+
             },
             "response": {
 
@@ -85,7 +85,7 @@
                     "required": true,
                     "description": "api的版本号"
                 }
-               
+
             },
             "response": {
 
@@ -102,7 +102,7 @@
                     "required": true,
                     "description": "api的名称"
                 }
-               
+
             },
             "response": {
 
@@ -115,7 +115,7 @@
 		"params": {},
 		"response": {}
 	},
-		
+
 
         {
             "url": "UAPI/Config/RoleGetList",
@@ -206,7 +206,7 @@
 
             }
         },
-	{	
+	{
 			"NoNeed": "1",
             "url": "UAPI/Config/RolePadMenuEdit",
             "summary": "编辑权限APP菜单列表",
@@ -587,7 +587,7 @@
             "summary": "获取我管理的部门列表",
             "type": "POST",
             "params": {
- 
+
             },
             "response": {
 
@@ -597,7 +597,7 @@
             "url": "UAPI/Config/NoticeAdd",
             "summary": "新增删除通知通告",
             "type": "POST",
-            "params": { 
+            "params": {
 			"addtype": {
                     	"default": "1",
                     	"required": true,
@@ -835,7 +835,7 @@
                     	"required": false,
                     	"description": "常见隐患ID"
                 	}
-		
+
             },
             "response": {
 
@@ -1185,7 +1185,7 @@
             "url": "UAPI/Config/AccountGetList",
             "summary": "获取系统用户列表",
             "type": "POST",
-            "params": { 
+            "params": {
                 "deptid": {
                     "default": "1",
                     "required": true,
@@ -1208,14 +1208,14 @@
                 }
             },
             "response": {
-                
+
             }
         },
         {
             "url": "UAPI/Config/NoticeManagerAdd",
             "summary": "新增部门通知跟人员对应关系",
             "type": "POST",
-            "params": { 
+            "params": {
                 "deptids": {
                     "default": "1",
                     "required": true,
@@ -1228,7 +1228,7 @@
                 }
             },
             "response": {
-                
+
             }
         },
 {
@@ -1236,7 +1236,7 @@
             "url": "UAPI/Config/AccountRoleToActionSet",
             "summary": "增加人员权限和行为对应关系",
             "type": "POST",
-            "params": { 
+            "params": {
                 "roleid": {
                     "default": "00000000-0000-0000-0000-000000000000",
                     "required": true,
@@ -1249,14 +1249,14 @@
                 }
             },
             "response": {
-                
+
             }
         },
         {
             "url": "UAPI/Config/NoticeManagerGetList",
             "summary": "获取部门通知跟人员对应关系",
             "type": "POST",
-            "params": { 
+            "params": {
                 "deptids": {
                     "default": "1",
                     "required": true,
@@ -1269,7 +1269,7 @@
                 }
             },
             "response": {
-                
+
             }
         },
         {
@@ -1277,7 +1277,7 @@
             "url": "UAPI/Config/DataRoleGroupAdd",
             "summary": "新增编辑数据权限组",
             "type": "POST",
-            "params": { 
+            "params": {
                 "datarolegroupid": {
                     "default": "1",
                     "required": true,
@@ -1300,7 +1300,7 @@
                 }
             },
             "response": {
-                
+
             }
         },
         {
@@ -1311,7 +1311,7 @@
             "params": {
             },
             "response": {
-                
+
             }
         },
         {
@@ -1319,7 +1319,7 @@
             "url": "UAPI/Config/DataRoleGroupDelete",
             "summary": "删除数据权限组",
             "type": "POST",
-            "params": { 
+            "params": {
                 "datarolegroupid": {
                     "default": "1",
                     "required": true,
@@ -1327,7 +1327,7 @@
                 }
             },
             "response": {
-                
+
             }
         },
         {
@@ -1335,7 +1335,7 @@
             "url": "UAPI/Config/DataRoleAdd",
             "summary": "新增编辑数据权限",
             "type": "POST",
-            "params": { 
+            "params": {
                 "dataroleid": {
                     "default": "1",
                     "required": true,
@@ -1353,7 +1353,7 @@
                 }
             },
             "response": {
-                
+
             }
         },
         {
@@ -1361,7 +1361,7 @@
             "url": "UAPI/Config/DataRoleGetList",
             "summary": "获取数据权限列表",
             "type": "POST",
-            "params": { 
+            "params": {
                 "datarolegroupid": {
                     "default": "1",
                     "required": true,
@@ -1369,7 +1369,7 @@
                 }
             },
             "response": {
-                
+
             }
         },
         {
@@ -1377,7 +1377,7 @@
             "url": "UAPI/Config/DataRoleDelete",
             "summary": "删除数据权限",
             "type": "POST",
-            "params": { 
+            "params": {
                 "dataroleid": {
                     "default": "1",
                     "required": true,
@@ -1385,7 +1385,7 @@
                 }
             },
             "response": {
-                
+
             }
         },
         {
@@ -1393,7 +1393,7 @@
             "url": "UAPI/Config/SetAccountDataRoleGroup",
             "summary": "设置账号数据权限组",
             "type": "POST",
-            "params": { 
+            "params": {
                 "datarolegroupid": {
                     "default": "1",
                     "required": true,
@@ -1406,7 +1406,7 @@
                 }
             },
             "response": {
-                
+
             }
         },
 	{
@@ -1647,7 +1647,7 @@
             "url": "UAPI/Config/DataRoleGroupBind",
             "summary": "数据权限组权限绑定",
             "type": "POST",
-            "params": { 
+            "params": {
                 "datarolegroupid": {
                     "default": "1",
                     "required": true,
@@ -1660,7 +1660,7 @@
                 }
             },
             "response": {
-                
+
             }
         }
     ]

@@ -1,0 +1,257 @@
+{
+    "resource": "Knowledge",
+    "section": [
+        {
+            "name": "知识库",
+            "value": "apis"
+        }
+    ],
+    "apis": [
+        {
+            "url": "UAPI/Knowledge/demo",
+            "updatetime": "20170511",
+            "summary": "demo",
+            "type": "POST",
+            "params": {
+                "id": {
+                    "default": "0292496F-D4A0-43EE-A5BE-8ECF58D16634",
+                    "required": true,
+                    "description": "id"
+                }
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Knowledge/PointGetList",
+            "updatetime": "20170511",
+            "summary": "<span style='color:#87CEEB'>[app]</span>查询知识点列表",
+            "type": "POST",
+            "params": {
+                "catalogid": {
+                    "default": "1",
+                    "required": true,
+                    "description": "知识库目录id"
+                }
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Knowledge/PointSearch",
+            "updatetime": "20170512",
+            "summary": "<span style='color:#87CEEB'>[app]</span>知识点检索",
+            "type": "POST",
+            "params": {
+                "catalogid": {
+                    "default": "1",
+                    "required": true,
+                    "description": "知识库目录id"
+                },
+                "labelids": {
+                    "default": "",
+                    "required": true,
+                    "description": "标签ids"
+                },
+                "key": {
+                    "default": "",
+                    "required": true,
+                    "description": "关键字                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   "
+                }
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Knowledge/CatalogAdd",
+            "updatetime": "20170511",
+            "summary": "增加/修改知识库目录",
+            "type": "POST",
+            "params": {
+                "catalogid": {
+                    "default": "1",
+                    "required": true,
+                    "description": "知识库目录id"
+                },
+                "parentid": {
+                    "default": "0",
+                    "required": true,
+                    "description": "知识库目录的父目录id"
+                },
+                "title": {
+                    "default": "",
+                    "required": true,
+                    "description": "目录的标题"
+                }
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Knowledge/CatalogGetList",
+            "updatetime": "20170511",
+            "summary": "<span style='color:#87CEEB'>[app]</span>读取知识库目录",
+            "type": "POST",
+            "params": {},
+            "response": {}
+        },
+        {
+            "url": "UAPI/Knowledge/PointRead",
+            "updatetime": "20170512",
+            "summary": "<span style='color:#87CEEB'>[app]</span>知识点阅读/签阅",
+            "type": "POST",
+            "params": {
+                "pointid": {
+                    "default": "",
+                    "required": true,
+                    "description": "知识点id"
+                },
+                "type": {
+                    "default": "1",
+                    "required": true,
+                    "description": "1 阅读 2 签阅"
+                }
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Knowledge/PointSearchByDeviceid",
+            "updatetime": "20170515",
+            "summary": "<span style='color:#87CEEB'>[app]</span>按照设备查找对应的知识点",
+            "type": "POST",
+            "params": {
+                "deviceid": {
+                    "default": "9CD528E6-E068-40BF-86EA-C740D4A3ECDE",
+                    "required": true,
+                    "description": "具体设备id"
+                }
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Knowledge/GetPointReadRecord",
+            "updatetime": "20170512",
+            "summary": "<span style='color:#87CEEB'>[app]</span>知识点阅读签阅记录",
+            "type": "POST",
+            "params": {
+                "pointid": {
+                    "default": "",
+                    "required": true,
+                    "description": "知识点id"
+                }
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Knowledge/LabelDel",
+            "updatetime": "20170511",
+            "summary": "删除知识库库标签",
+            "type": "POST",
+            "params": {
+                "labelid": {
+                    "default": "",
+                    "required": true,
+                    "description": "标签id"
+                }
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Knowledge/LabelGetList",
+            "updatetime": "20170511",
+            "summary": "读取知识库库标签",
+            "type": "POST",
+            "params": {},
+            "response": {}
+        },
+        {
+            "url": "UAPI/Knowledge/LabelAdd",
+            "updatetime": "20170511",
+            "summary": "新增/修改知识库库标签",
+            "type": "POST",
+            "params": {
+                "labelid": {
+                    "default": "",
+                    "required": true,
+                    "description": "标签id"
+                },
+                "labelname": {
+                    "default": "",
+                    "required": true,
+                    "description": "标签名称"
+                }
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Knowledge/PointDetail",
+            "updatetime": "20170512",
+            "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>打开知识点页面",
+            "type": "POST",
+            "params": {
+                "pointId": {
+                    "default": "A21005CD-EE5B-4B39-93BD-94BA7ECDEDB2",
+                    "required": true,
+                    "description": "知识点id"
+                },
+                "type": {
+                    "default": "1",
+                    "required": true,
+                    "description": "1：app打开 ； 2：web打开"
+                }
+            },
+            "response": {
+                "items": {
+                    "catalog": "目录层次的集合列表，list集合，接口已经排序好，调用端直接按照顺序拼接目录层次",
+                    "labels": "标签中文的集合列表",
+                    "signUsers": "已签用户列表 对象包含：姓名、时间",
+                    "readUsers": "已读用户列表 对象包含：姓名、时间",
+                    "isRead": "当前用户是否已读 1、是，则在页面上显示下； 0 不用显示",
+                    "isSign": "当前用户是否已签 1、是，则在页面上显示下； 0 不用显示",
+                    "files": "文件集合列表，对象包含：名字、url",
+                    "memo": "仅web端用到，app调用时候为空",
+                    "url": "仅app端用，app内容的web控件中调用的url",
+                    "title": "标题"
+                }
+            }
+        },
+        {
+            "url": "UAPI/Knowledge/Operate",
+            "updatetime": "20170515",
+            "summary": "<span style='color:#EEDFCC'>[web]</span>新增、编辑 知识点（基础块、内容块）",
+            "type": "POST",
+            "params": {
+                "obj": {
+                    "default": "{'pointId':null,'title':'测试标题','catalogid':6,'labels':[{'labelId':'89153218-31E4-49B9-AC3E-A3E0A2A6809E','name':'安全'},{'labelId':'7E69CEDF-5D0B-4374-9054-DA41D0CCF0CA','name':'消防'}],'flies':[{'name':'1.pdf','url':'http://www.baidu.com'},{'name':'2.pdf','url':'http://www.baidu.com'}],'isRecordRead':1,'isRecordSign':1,'content':'富文本html内容……','type':1}",
+                    "required": true,
+                    "description": "请求data 对象"
+                }
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Knowledge/OperateRead",
+            "updatetime": "20170515",
+            "summary": "<span style='color:#EEDFCC'>[web]</span>编辑知识点 返回angular数据模型",
+            "type": "POST",
+            "params": {
+                "pointId": {
+                    "default": "4CB60217-3B01-4097-B7DB-238944A33EC3",
+                    "required": true,
+                    "description": "知识点id"
+                }
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Knowledge/Invalid",
+            "updatetime": "20170516",
+            "summary": "<span style='color:#EEDFCC'>[web]</span>知识点作废",
+            "type": "POST",
+            "params": {
+                "pointId": {
+                    "default": "4CB60217-3B01-4097-B7DB-238944A33EC3",
+                    "required": true,
+                    "description": "知识点id"
+                }
+            },
+            "response": {}
+        }
+    ]
+}

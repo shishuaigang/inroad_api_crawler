@@ -68,8 +68,7 @@
                     "description": "重复类型"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/Schedule/Share",
@@ -92,8 +91,7 @@
                     "description": "删除分享（1:删除分享  0或其他:分享）"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/Schedule/GetList",
@@ -121,10 +119,9 @@
                     "description": "分页页数"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
-	{
+        {
             "url": "UAPI/Schedule/GetDetail",
             "summary": "获取日程详情",
             "type": "POST",
@@ -135,8 +132,7 @@
                     "description": "日程Guid"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/Schedule/CountGetList",
@@ -154,8 +150,7 @@
                     "description": "结束时间"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/Schedule/ShareGetList",
@@ -168,8 +163,7 @@
                     "description": "用户Guid"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/Schedule/Delete",
@@ -182,8 +176,7 @@
                     "description": "日程Guid"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/Schedule/ShareReceipt",
@@ -196,8 +189,7 @@
                     "description": "日程Guid"
                 }
             },
-            "response": {
-            }
+            "response": {}
         }
     ]
 }

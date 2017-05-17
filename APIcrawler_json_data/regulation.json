@@ -30,13 +30,13 @@
             },
             "response": {
                 "items": {
-"preNodeId": "上一节点id",
-"nodeEditor": "该节点的编辑人",
-"isEnable": "整个节点是否可以编辑（只有同一人能操作一个节点，可以理解为是否同一人打开此节点） 1：是 0：否",
-"totalFinishStep": "已完成几步",
-"currentStep": "当前第几步",
-"nodeId":"<span style='color:red'>2017-2-22新增属性：</span>当前节点的id",
-"nodeName": "当前节点名字",
+                    "preNodeId": "上一节点id",
+                    "nodeEditor": "该节点的编辑人",
+                    "isEnable": "整个节点是否可以编辑（只有同一人能操作一个节点，可以理解为是否同一人打开此节点） 1：是 0：否",
+                    "totalFinishStep": "已完成几步",
+                    "currentStep": "当前第几步",
+                    "nodeId": "<span style='color:red'>2017-2-22新增属性：</span>当前节点的id",
+                    "nodeName": "当前节点名字",
                     "------以下是operations的属性-------": "每一个operation，其实就是一个节点页面上的一个操作对象的概念",
                     "operationid": "操作对象id",
                     "operatetitle": "操作描述，<span style='color:red'>如对于下拉框，则此字段是下拉框前面的描述，如果是打钩确认、输入值、纯文本类型的，则此字段可能为空，描述内容用option属性中的title</span>",
@@ -57,8 +57,8 @@
                     "sort": "排列顺序",
                     "option": "操作对应操作内容详细数组集合，见下表，对option字段的展开",
                     "optionvalue": "如果已经有过操作的，返回操作记录的值，如果该字段有值，页面上显示的默认都是置灰，分如下情况，1、下拉框：下拉框对应的项id 2、输入值：输入值的内容3、打钩确认：1或0",
-"attachmenturl": "<span style='color:red'>2017-2-21新增属性：</span>如果已经有过操作的，并且对应操作带有附件，则此字段为附件url地址，多个地址用分号分割",
-"isCompleted": "<span style='color:red'>2017-2-22新增属性：</span>是否已完全完成该操作，如果是全完成，那么对应该项操作不管showtype属性是什么值，都不允许再修改了 1：是 0：否",
+                    "attachmenturl": "<span style='color:red'>2017-2-21新增属性：</span>如果已经有过操作的，并且对应操作带有附件，则此字段为附件url地址，多个地址用分号分割",
+                    "isCompleted": "<span style='color:red'>2017-2-22新增属性：</span>是否已完全完成该操作，如果是全完成，那么对应该项操作不管showtype属性是什么值，都不允许再修改了 1：是 0：否",
                     "----------以下option对象的属性----------": "",
                     "optionid": "项主键",
                     "title": "描述",
@@ -66,576 +66,546 @@
                 }
             }
         },
-			
-			{
-				"url": "UAPI/Regulation/CommonTroubleHowdoLibraryAdd",
-				"summary": "整改建议绑定规程",
-				"type": "POST",
-				"params": {
-					"commonhowdoid": {
-							"default": "",
-							"required": true,
-							"description": "整改id"
-								}	,
-					"troubleinfoid": {
-							"default": "BCA70593-FCEF-472F-B611-0148EB6C9784",
-							"required": true,
-							"description": "隐患id"
-								},
-					"regulationlibraryid": {
-							"default": "FF6B4713-A7E4-451E-972D-9000E9DF3EB2",
-							"required": true,
-							"description": "规程id"
-								},
-					"howdotitle": {
-							"default": "",
-							"required": true,
-							"description": "整改名称"
-								}					
-						},
-					"response": {
-				}
-			},
-			{
-				"url": "UAPI/Regulation/CommonTroubleHowdoLibraryDel",
-				"summary": "删除整改建议",
-				"type": "POST",
-				"params": {
-					"commontroublehowdoid": {
-							"default": "",
-							"required": true,
-							"description": "整改id"
-								}					
-						},
-					"response": {
-				}
-			},
-			{
-				"url": "UAPI/Regulation/CommonTroubleHowdoLibraryGetList",
-				"summary": "读取整改建议",
-				"type": "POST",
-				"params": {
-					"troubleinfoid": {
-							"default": "",
-							"required": true,
-							"description": "隐患id"
-								}	,
-						"commonhowdoid": {
-							"default": "",
-							"required": true,
-							"description": "整改id"
-								}				
-						},
-					"response": {
-				}
-			},
-			{
-				"url": "UAPI/Regulation/LibraryAdd",
-				"summary": "增加修改规程库",
-				"type": "POST",
-				"params": {
-					"regulationlibraryid": {
-							"default": "C71C2BBD-6DAD-4B99-820B-93D41B14FF81",
-							"required": true,
-							"description": "规程id"
-								}	,
-					"regulationlibraryname": {
-							"default": "异常抖动的整改规程",
-							"required": true,
-							"description": "规程名称"
-								},
-					"type ": {
-							"default": "1",
-							"required": true,
-							"description": "规程类型 1 整改  2 阀体检修"
-								},
-					"memo": {
-							"default": "",
-							"required": true,
-							"description": "规程备注"
-								}	,	
-					"managerid": {
-							"default": "",
-							"required": true,
-							"description": "规程负责人"
-								}	,	
-					"status": {
-							"default": "1",
-							"required": true,
-							"description": "规程状态  1 启用 0停用"
-								}			
-						},
-					"response": {
-				}
-			},
-			{
-				"url": "UAPI/Regulation/LibraryDel",
-				"summary": "删除规程",
-				"type": "POST",
-				"params": {
-					"regulationlibraryid": {
-							"default": "",
-							"required": true,
-							"description": "整改id"
-								}					
-						},
-					"response": {
-				}
-			},
-			{
-				"url": "UAPI/Regulation/LibraryGetList",
-				"summary": "读取规程列表",
-				"type": "POST",
-				"params": {
-					"regulationlibraryid": {
-							"default": "",
-							"required": true,
-							"description": "规程id"
-								}	,
-						"key": {
-							"default": "",
-							"required": true,
-							"description": "规程名称关键字"
-								}	,
-						"troubleinfoid": {
-							"default": "",
-							"required": true,
-							"description": "隐患id"
-								}	,
-						"status": {
-							"default": "",
-							"required": true,
-							"description": "规程状态 1 有效 0 无效"
-								}	,
-						"devicebaseid": {
-							"default": "",
-							"required": true,
-							"description": "基础设备id"
-								}	,
-						"type": {
-							"default": "1",
-							"required":false,
-							"description": "1、整改 2、阀门检修"
-								}					
-						},
-					"response": {
-				}
-			},
-			{
-				"url": "UAPI/Regulation/LibraryGetListByBusiness",
-				"summary": "根据业务读取规程列表",
-				"type": "POST",
-				"params": {
-					"type": {
-							"default": "2",
-							"required": true,
-							"description": " --1 整改  2 任务"
-								}	,
-						"key": {
-							"default": "",
-							"required": true,
-							"description": "规程名称关键字"
-								}	,
-						"businessid": {
-							"default": "",
-							"required": true,
-							"description": "业务id,对应与业务的隐患id,分工id"
-								}					
-						},
-					"response": {
-				}
-			},
-
-			{
-    "url": "UAPI/Regulation/Check",
-    "summary": "<span style='color:#EEDFCC'>[web]</span>校验规程配置",
-    "type": "POST",
-    "params": {
-	"regulationid": {
-            "default": "58B55E6D-4871-49F6-9EDD-22FF50406F0C",
-            "required": true,
-            "description": "规程id"
-        }
-    },
-    "response": {
-}
-},
-			{
-				"url": "UAPI/Regulation/LibrarySummaryGetList",
-				"summary": "读取规程大纲",
-				"type": "POST",
-				"params": {
-					"regulationlibraryid": {
-							"default": "FF6B4713-A7E4-451E-972D-9000E9DF3EB2",
-							"required": true,
-							"description": "规程id"
-								}						
-						},
-					"response": {
-				}
-			},
-			{
-				"url": "UAPI/Regulation/NodeAdd",
-				"summary": "增加修改规程库节点",
-				"type": "POST",
-				"params": {
-					"regulationlibraryid": {
-							"default": "",
-							"required": true,
-							"description": "规程id"
-								}	,
-					"nodeid": {
-							"default": "",
-							"required": true,
-							"description": "规程节点id"
-								},
-					"nodename ": {
-							"default": "节点1",
-							"required": true,
-							"description": "节点名称"
-								}
-							},
-					"response": {
-				}
-			},
-			{
-				"url": "UAPI/Regulation/NodeDel",
-				"summary": "删除节点",
-				"type": "POST",
-				"params": {
-					"nodeid": {
-							"default": "",
-							"required": true,
-							"description": "节点id"
-								}					
-						},
-					"response": {
-				}
-			},
-			{
-				"url": "UAPI/Regulation/NodeGetList",
-				"summary": "删除节点",
-				"type": "POST",
-				"params": {
-					"regulationlibraryid": {
-							"default": "",
-							"required": true,
-							"description": "规程库id"
-								}					
-						},
-					"response": {
-				}
-			},
-			{
-				"url": "UAPI/Regulation/NodeSort",
-				"summary": "节点排序",
-				"type": "POST",
-				"params": {
-					"regulationlibraryid": {
-							"default": "",
-							"required": true,
-							"description": "规程库id"
-								}	,
-					"nodeids": {
-							"default": "",
-							"required": true,
-							"description": "节点ids"
-								}				
-						},
-					"response": {
-				}
-			},
-{
-    "url": "UAPI/Regulation/RecordInsert",
-    "summary": "插入规程记录",
-    "type": "POST",
-    "params": {
-        "businessid": {
-            "default": "",
-            "required": true,
-            "description": "业务流程id"
+        {
+            "url": "UAPI/Regulation/CommonTroubleHowdoLibraryAdd",
+            "summary": "整改建议绑定规程",
+            "type": "POST",
+            "params": {
+                "commonhowdoid": {
+                    "default": "",
+                    "required": true,
+                    "description": "整改id"
+                },
+                "troubleinfoid": {
+                    "default": "BCA70593-FCEF-472F-B611-0148EB6C9784",
+                    "required": true,
+                    "description": "隐患id"
+                },
+                "regulationlibraryid": {
+                    "default": "FF6B4713-A7E4-451E-972D-9000E9DF3EB2",
+                    "required": true,
+                    "description": "规程id"
+                },
+                "howdotitle": {
+                    "default": "",
+                    "required": true,
+                    "description": "整改名称"
+                }
+            },
+            "response": {}
         },
-        "businesstype": {
-            "default": "",
-            "required": true,
-            "description": "业务说明  现为整改"
+        {
+            "url": "UAPI/Regulation/CommonTroubleHowdoLibraryDel",
+            "summary": "删除整改建议",
+            "type": "POST",
+            "params": {
+                "commontroublehowdoid": {
+                    "default": "",
+                    "required": true,
+                    "description": "整改id"
+                }
+            },
+            "response": {}
         },
-        "regulationlibraryids ": {
-            "default": "",
-            "required": true,
-            "description": "规程ids"
+        {
+            "url": "UAPI/Regulation/CommonTroubleHowdoLibraryGetList",
+            "summary": "读取整改建议",
+            "type": "POST",
+            "params": {
+                "troubleinfoid": {
+                    "default": "",
+                    "required": true,
+                    "description": "隐患id"
+                },
+                "commonhowdoid": {
+                    "default": "",
+                    "required": true,
+                    "description": "整改id"
+                }
+            },
+            "response": {}
         },
-        "type ": {
-            "default": "",
-            "required": true,
-            "description": "1 新增  0 删除"
+        {
+            "url": "UAPI/Regulation/LibraryAdd",
+            "summary": "增加修改规程库",
+            "type": "POST",
+            "params": {
+                "regulationlibraryid": {
+                    "default": "C71C2BBD-6DAD-4B99-820B-93D41B14FF81",
+                    "required": true,
+                    "description": "规程id"
+                },
+                "regulationlibraryname": {
+                    "default": "异常抖动的整改规程",
+                    "required": true,
+                    "description": "规程名称"
+                },
+                "type ": {
+                    "default": "1",
+                    "required": true,
+                    "description": "规程类型 1 整改  2 阀体检修"
+                },
+                "memo": {
+                    "default": "",
+                    "required": true,
+                    "description": "规程备注"
+                },
+                "managerid": {
+                    "default": "",
+                    "required": true,
+                    "description": "规程负责人"
+                },
+                "status": {
+                    "default": "1",
+                    "required": true,
+                    "description": "规程状态  1 启用 0停用"
+                }
+            },
+            "response": {}
         },
-        "regulationrecordid ": {
-            "default": "",
-            "required": true,
-            "description": "规程记录id"
-        }
-    },
-    "response": {}
-}
-			,
-			{
-				"url": "UAPI/Regulation/TypeGetList",
-				"summary": "规程类型",
-				"type": "POST",
-				"params": {	
-					},
-					"response": {
-				}
-			},
-			{
-				"url": "UAPI/Regulation/TroubleHowDoGetList",
-				"summary": "读取整改建议",
-				"type": "POST",
-				"params": {
-					"troubleid": {
-							"default": "C8786594-FAC2-4D99-907E-06440B893E14",
-							"required": true,
-							"description": "业务流程id"
-								}	,
-					"deviceid": {
-							"default": "",
-							"required": true,
-							"description": "设备id"
-								}		
-						},
-					"response": {
-				}
-			},
-
-			{
-				"url": "UAPI/Regulation/NodeOperationAdd",
-				"updatetime":"20170505","summary": "增加修改规程库节点操作",
-				"type": "POST",
-				"params": {
-					"nodeid": {
-							"default": "",
-							"required": true,
-							"description": "节点id"
-								}	,
-					"nodeoperationid": {
-							"default": "",
-							"required": true,
-							"description": "规程节点操作id"
-								},
-					"title ": {
-							"default": "",
-							"required": true,
-							"description": "操作描述"
-								},
-					"summary  ": {
-							"default": "",
-							"required": true,
-							"description": "大纲说明"
-								},
-					"indentvalue  ": {
-							"default": "",
-							"required": true,
-							"description": "缩进值  0,1,2"
-								},
-					"type  ": {
-							"default": "",
-							"required": true,
-							"description": "操作类型 1 下拉框  2 打钩确认 3 输入值 4 纯文本"
-								},
-					"datatype  ": {
-							"default": "",
-							"required": true,
-							"description": "数据类型 1 数字 2 文本 3 日期 "
-								},
-					"needattachment  ": {
-							"default": "",
-							"required": true,
-							"description": "需要附件 "
-								},
-					"attachmentpreoperationid  ": {
-							"default": "",
-							"required": true,
-							"description": "附件需要的前置操作 "
-								},
-					"attachmentpreoperationvalue  ": {
-							"default": "",
-							"required": true,
-							"description": "附件需要的前置操作的值 "
-								},
-					"parentoperationid   ": {
-							"default": "",
-							"required": true,
-							"description": "父操作id "
-								},
-					"showtype    ": {
-							"default": "",
-							"required": true,
-							"description": "显示类型  1 显示 2 隐藏 3 可见不可动 "
-								},
-					"operationprepositionid    ": {
-							"default": "",
-							"required": true,
-							"description": "当前操作的的前置操作 "
-								},
-					"operationprepositionvalue    ": {
-							"default": "",
-							"required": true,
-							"description": "当前操作的的前置操作值 "
-								},
-					"ismust    ": {
-							"default": "",
-							"required": true,
-							"description": "是否必须 "
-								},
-					"minvalue    ": {
-							"default": "",
-							"required": true,
-							"description": "当数据类型是数字和日期时候的最小值 "
-								},
-					"maxvalue    ": {
-							"default": "",
-							"required": true,
-							"description": "当数据类型是数字和日期时候的最大值 "
-								},
-					"optionids   ": {
-							"default": "",
-							"required": true,
-							"description": "操作的具体选择项ids "
-								},
-					"optiontitles    ": {
-							"default": "",
-							"required": true,
-							"description": "操作的具体选择项标题 "
-								},
-					"nextnodeids    ": {
-							"default": "",
-							"required": true,
-							"description": "操作的具体选择项选择后跳转的节点id "
-								},
-					"operationlength    ": {
-							"default": "",
-							"required": true,
-							"description": "操作值的长度"
-								}
-
-
-							},
-					"response": {
-				}
-
-
-			},
-
-			{
-				"url": "UAPI/Regulation/NodeOperationDel",
-				"summary": "删除节点操作",
-				"type": "POST",
-				"params": {
-					"nodeoperationid": {
-							"default": "",
-							"required": true,
-							"description": "节点操作id"
-								}	
-							},
-					"response": {
-				}
-			},
-			{
-				"url": "UAPI/Regulation/RecordGetList",
-				"summary": "读取规程记录",
-				"type": "POST",
-				"params": {
-					"businessid": {
-							"default": "0292496F-D4A0-43EE-A5BE-8ECF58D16634",
-							"required": true,
-							"description": "业务id"
-								}	
-							},
-					"response": {
-				}
-			},	
-			{
-				"url": "UAPI/Regulation/NodeOperationGetList",
-				"summary": "读取节点操作类表",
-				"type": "POST",
-				"params": {
-					"nodeid": {
-							"default": "FD05B5F3-5DA1-4863-AA63-AFBF4CD11055",
-							"required": true,
-							"description": "节点id"
-								},
-"nodeoperationid": {
-							"default": "",
-							"required": false,
-							"description": "<span style='color:red'>2017-2-23新增属性：</span>节点操作id，如果此项有值，则只查询该节点对应此操作id的记录"
-								}	
-							},
-					"response": {
-				}
-			},
-			{
-				"url": "UAPI/Regulation/NodeOperationSort",
-				"summary": "节点操作排序",
-				"type": "POST",
-				"params": {
-					"nodeoperationids": {
-							"default": "",
-							"required": true,
-							"description": "操作ids"
-								}	
-							},
-					"response": {
-				}
-			},
-			{
-				"url": "UAPI/Regulation/TempSave",
-				"summary": "暂存并且返回下一步节点ID",
-				"type": "POST",
-				"params": {
-					"businessid": {
-							"default": "0292496F-D4A0-43EE-A5BE-8ECF58D16634",
-							"required": true,
-							"description": "业务流程id"
-								}	,
-					"regulationid": {
-							"default": "60E9C1E2-D013-4149-A5D7-08A6A64D4B86",
-							"required": true,
-							"description": "规程id"
-								}	,
-"operationlist": {
-							"default": "[{'operationid':'69583F0D-D303-4414-8835-5BDDBC379251','optionvalue':1,'attachmenturl':''},{'operationid':'25EA7C35-77CA-4705-BA5C-8DCD18EBC115','optionvalue':0,'attachmenturl':''},{'operationid':'898A978D-D0D1-4E70-A8CB-FF427E5880EB','optionvalue':1,'attachmenturl':''},{'operationid':'28D976D9-DD80-4C98-A8DB-432281F4EE94','optionvalue':'C85408D6-FB3A-4825-8DD2-7F98D9C2336A','attachmenturl':''},{'operationid':'FAFE91B2-E34D-4297-8758-C7FE35F17EB3','optionvalue':'456381BB-52DB-4E7D-B99F-9E6B2D377DF8','attachmenturl':''},{'operationid':'2A679F4A-C596-40B4-9D9F-844F4E3F407C','optionvalue':'0','attachmenturl':''},{'operationid':'DE8DA197-9B9E-46BB-94A3-7B765D47858C','optionvalue':'0','attachmenturl':''},{'operationid':'F8E9DB8C-6BD2-45DC-B206-287618F6BAAA','optionvalue':'0','attachmenturl':''},{'operationid':'4CEE2B8F-240F-471E-BE81-AF04B55A33BE','optionvalue':'33','attachmenturl':''},{'operationid':'3F11D061-93C0-4E52-8EA2-B95FB5610A68','optionvalue':'2017-2-21','attachmenturl':''},{'operationid':'CBB4A7D7-C167-4350-8349-4000501E6D31','optionvalue':'','attachmenturl':''},{'operationid':'9C380485-23A6-46A6-A0E4-B194DC8466D9','optionvalue':'1','attachmenturl':''},{'operationid':'356231C6-E15B-44F4-B88B-2A807BAB3BB8','optionvalue':'1','attachmenturl':''},{'operationid':'F9A47761-FCEF-4808-AEE8-E29EAF84B708','optionvalue':'0','attachmenturl':''}]",
-							"required": true,
-							"description": "每次提交，把当前页面所有操作都需要提交给我,每个对象有三个属性，operationid 、optionvalue、attachmenturl，其中attachmenturl是附件的url地址，多个用分号分割"
-								}	
-						},
-					"response": {
-"items": {
+        {
+            "url": "UAPI/Regulation/LibraryDel",
+            "summary": "删除规程",
+            "type": "POST",
+            "params": {
+                "regulationlibraryid": {
+                    "default": "",
+                    "required": true,
+                    "description": "整改id"
+                }
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Regulation/LibraryGetList",
+            "summary": "读取规程列表",
+            "type": "POST",
+            "params": {
+                "regulationlibraryid": {
+                    "default": "",
+                    "required": true,
+                    "description": "规程id"
+                },
+                "key": {
+                    "default": "",
+                    "required": true,
+                    "description": "规程名称关键字"
+                },
+                "troubleinfoid": {
+                    "default": "",
+                    "required": true,
+                    "description": "隐患id"
+                },
+                "status": {
+                    "default": "",
+                    "required": true,
+                    "description": "规程状态 1 有效 0 无效"
+                },
+                "devicebaseid": {
+                    "default": "",
+                    "required": true,
+                    "description": "基础设备id"
+                },
+                "type": {
+                    "default": "1",
+                    "required": false,
+                    "description": "1、整改 2、阀门检修"
+                }
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Regulation/LibraryGetListByBusiness",
+            "summary": "根据业务读取规程列表",
+            "type": "POST",
+            "params": {
+                "type": {
+                    "default": "2",
+                    "required": true,
+                    "description": " --1 整改  2 任务"
+                },
+                "key": {
+                    "default": "",
+                    "required": true,
+                    "description": "规程名称关键字"
+                },
+                "businessid": {
+                    "default": "",
+                    "required": true,
+                    "description": "业务id,对应与业务的隐患id,分工id"
+                }
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Regulation/Check",
+            "summary": "<span style='color:#EEDFCC'>[web]</span>校验规程配置",
+            "type": "POST",
+            "params": {
+                "regulationid": {
+                    "default": "58B55E6D-4871-49F6-9EDD-22FF50406F0C",
+                    "required": true,
+                    "description": "规程id"
+                }
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Regulation/LibrarySummaryGetList",
+            "summary": "读取规程大纲",
+            "type": "POST",
+            "params": {
+                "regulationlibraryid": {
+                    "default": "FF6B4713-A7E4-451E-972D-9000E9DF3EB2",
+                    "required": true,
+                    "description": "规程id"
+                }
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Regulation/NodeAdd",
+            "summary": "增加修改规程库节点",
+            "type": "POST",
+            "params": {
+                "regulationlibraryid": {
+                    "default": "",
+                    "required": true,
+                    "description": "规程id"
+                },
+                "nodeid": {
+                    "default": "",
+                    "required": true,
+                    "description": "规程节点id"
+                },
+                "nodename ": {
+                    "default": "节点1",
+                    "required": true,
+                    "description": "节点名称"
+                }
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Regulation/NodeDel",
+            "summary": "删除节点",
+            "type": "POST",
+            "params": {
+                "nodeid": {
+                    "default": "",
+                    "required": true,
+                    "description": "节点id"
+                }
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Regulation/NodeGetList",
+            "summary": "删除节点",
+            "type": "POST",
+            "params": {
+                "regulationlibraryid": {
+                    "default": "",
+                    "required": true,
+                    "description": "规程库id"
+                }
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Regulation/NodeSort",
+            "summary": "节点排序",
+            "type": "POST",
+            "params": {
+                "regulationlibraryid": {
+                    "default": "",
+                    "required": true,
+                    "description": "规程库id"
+                },
+                "nodeids": {
+                    "default": "",
+                    "required": true,
+                    "description": "节点ids"
+                }
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Regulation/RecordInsert",
+            "summary": "插入规程记录",
+            "type": "POST",
+            "params": {
+                "businessid": {
+                    "default": "",
+                    "required": true,
+                    "description": "业务流程id"
+                },
+                "businesstype": {
+                    "default": "",
+                    "required": true,
+                    "description": "业务说明  现为整改"
+                },
+                "regulationlibraryids ": {
+                    "default": "",
+                    "required": true,
+                    "description": "规程ids"
+                },
+                "type ": {
+                    "default": "",
+                    "required": true,
+                    "description": "1 新增  0 删除"
+                },
+                "regulationrecordid ": {
+                    "default": "",
+                    "required": true,
+                    "description": "规程记录id"
+                }
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Regulation/TypeGetList",
+            "summary": "规程类型",
+            "type": "POST",
+            "params": {},
+            "response": {}
+        },
+        {
+            "url": "UAPI/Regulation/TroubleHowDoGetList",
+            "summary": "读取整改建议",
+            "type": "POST",
+            "params": {
+                "troubleid": {
+                    "default": "C8786594-FAC2-4D99-907E-06440B893E14",
+                    "required": true,
+                    "description": "业务流程id"
+                },
+                "deviceid": {
+                    "default": "",
+                    "required": true,
+                    "description": "设备id"
+                }
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Regulation/NodeOperationAdd",
+            "updatetime": "20170505",
+            "summary": "增加修改规程库节点操作",
+            "type": "POST",
+            "params": {
+                "nodeid": {
+                    "default": "",
+                    "required": true,
+                    "description": "节点id"
+                },
+                "nodeoperationid": {
+                    "default": "",
+                    "required": true,
+                    "description": "规程节点操作id"
+                },
+                "title ": {
+                    "default": "",
+                    "required": true,
+                    "description": "操作描述"
+                },
+                "summary  ": {
+                    "default": "",
+                    "required": true,
+                    "description": "大纲说明"
+                },
+                "indentvalue  ": {
+                    "default": "",
+                    "required": true,
+                    "description": "缩进值  0,1,2"
+                },
+                "type  ": {
+                    "default": "",
+                    "required": true,
+                    "description": "操作类型 1 下拉框  2 打钩确认 3 输入值 4 纯文本"
+                },
+                "datatype  ": {
+                    "default": "",
+                    "required": true,
+                    "description": "数据类型 1 数字 2 文本 3 日期 "
+                },
+                "needattachment  ": {
+                    "default": "",
+                    "required": true,
+                    "description": "需要附件 "
+                },
+                "attachmentpreoperationid  ": {
+                    "default": "",
+                    "required": true,
+                    "description": "附件需要的前置操作 "
+                },
+                "attachmentpreoperationvalue  ": {
+                    "default": "",
+                    "required": true,
+                    "description": "附件需要的前置操作的值 "
+                },
+                "parentoperationid   ": {
+                    "default": "",
+                    "required": true,
+                    "description": "父操作id "
+                },
+                "showtype    ": {
+                    "default": "",
+                    "required": true,
+                    "description": "显示类型  1 显示 2 隐藏 3 可见不可动 "
+                },
+                "operationprepositionid    ": {
+                    "default": "",
+                    "required": true,
+                    "description": "当前操作的的前置操作 "
+                },
+                "operationprepositionvalue    ": {
+                    "default": "",
+                    "required": true,
+                    "description": "当前操作的的前置操作值 "
+                },
+                "ismust    ": {
+                    "default": "",
+                    "required": true,
+                    "description": "是否必须 "
+                },
+                "minvalue    ": {
+                    "default": "",
+                    "required": true,
+                    "description": "当数据类型是数字和日期时候的最小值 "
+                },
+                "maxvalue    ": {
+                    "default": "",
+                    "required": true,
+                    "description": "当数据类型是数字和日期时候的最大值 "
+                },
+                "optionids   ": {
+                    "default": "",
+                    "required": true,
+                    "description": "操作的具体选择项ids "
+                },
+                "optiontitles    ": {
+                    "default": "",
+                    "required": true,
+                    "description": "操作的具体选择项标题 "
+                },
+                "nextnodeids    ": {
+                    "default": "",
+                    "required": true,
+                    "description": "操作的具体选择项选择后跳转的节点id "
+                },
+                "operationlength    ": {
+                    "default": "",
+                    "required": true,
+                    "description": "操作值的长度"
+                }
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Regulation/NodeOperationDel",
+            "summary": "删除节点操作",
+            "type": "POST",
+            "params": {
+                "nodeoperationid": {
+                    "default": "",
+                    "required": true,
+                    "description": "节点操作id"
+                }
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Regulation/RecordGetList",
+            "summary": "读取规程记录",
+            "type": "POST",
+            "params": {
+                "businessid": {
+                    "default": "0292496F-D4A0-43EE-A5BE-8ECF58D16634",
+                    "required": true,
+                    "description": "业务id"
+                }
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Regulation/NodeOperationGetList",
+            "summary": "读取节点操作类表",
+            "type": "POST",
+            "params": {
+                "nodeid": {
+                    "default": "FD05B5F3-5DA1-4863-AA63-AFBF4CD11055",
+                    "required": true,
+                    "description": "节点id"
+                },
+                "nodeoperationid": {
+                    "default": "",
+                    "required": false,
+                    "description": "<span style='color:red'>2017-2-23新增属性：</span>节点操作id，如果此项有值，则只查询该节点对应此操作id的记录"
+                }
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Regulation/NodeOperationSort",
+            "summary": "节点操作排序",
+            "type": "POST",
+            "params": {
+                "nodeoperationids": {
+                    "default": "",
+                    "required": true,
+                    "description": "操作ids"
+                }
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Regulation/TempSave",
+            "summary": "暂存并且返回下一步节点ID",
+            "type": "POST",
+            "params": {
+                "businessid": {
+                    "default": "0292496F-D4A0-43EE-A5BE-8ECF58D16634",
+                    "required": true,
+                    "description": "业务流程id"
+                },
+                "regulationid": {
+                    "default": "60E9C1E2-D013-4149-A5D7-08A6A64D4B86",
+                    "required": true,
+                    "description": "规程id"
+                },
+                "operationlist": {
+                    "default": "[{'operationid':'69583F0D-D303-4414-8835-5BDDBC379251','optionvalue':1,'attachmenturl':''},{'operationid':'25EA7C35-77CA-4705-BA5C-8DCD18EBC115','optionvalue':0,'attachmenturl':''},{'operationid':'898A978D-D0D1-4E70-A8CB-FF427E5880EB','optionvalue':1,'attachmenturl':''},{'operationid':'28D976D9-DD80-4C98-A8DB-432281F4EE94','optionvalue':'C85408D6-FB3A-4825-8DD2-7F98D9C2336A','attachmenturl':''},{'operationid':'FAFE91B2-E34D-4297-8758-C7FE35F17EB3','optionvalue':'456381BB-52DB-4E7D-B99F-9E6B2D377DF8','attachmenturl':''},{'operationid':'2A679F4A-C596-40B4-9D9F-844F4E3F407C','optionvalue':'0','attachmenturl':''},{'operationid':'DE8DA197-9B9E-46BB-94A3-7B765D47858C','optionvalue':'0','attachmenturl':''},{'operationid':'F8E9DB8C-6BD2-45DC-B206-287618F6BAAA','optionvalue':'0','attachmenturl':''},{'operationid':'4CEE2B8F-240F-471E-BE81-AF04B55A33BE','optionvalue':'33','attachmenturl':''},{'operationid':'3F11D061-93C0-4E52-8EA2-B95FB5610A68','optionvalue':'2017-2-21','attachmenturl':''},{'operationid':'CBB4A7D7-C167-4350-8349-4000501E6D31','optionvalue':'','attachmenturl':''},{'operationid':'9C380485-23A6-46A6-A0E4-B194DC8466D9','optionvalue':'1','attachmenturl':''},{'operationid':'356231C6-E15B-44F4-B88B-2A807BAB3BB8','optionvalue':'1','attachmenturl':''},{'operationid':'F9A47761-FCEF-4808-AEE8-E29EAF84B708','optionvalue':'0','attachmenturl':''}]",
+                    "required": true,
+                    "description": "每次提交，把当前页面所有操作都需要提交给我,每个对象有三个属性，operationid 、optionvalue、attachmenturl，其中attachmenturl是附件的url地址，多个用分号分割"
+                }
+            },
+            "response": {
+                "items": {
                     "isEnableNextNode": "是否满足进入下一节点的条件 0：否 1：是 在APP上用于判断是否显示下一步",
                     "nextNodeId": "下一步的nodeid，如果isEnableNextNode的值是 1 则此项有值 否则没有"
                 }
-				}
-			},
-{
-				"url": "UAPI/Regulation/TranslateList",
-				"summary": "获取操作翻译列表",
-				"type": "POST",
-				"params": {
-"businessid": {
-							"default": "0292496F-D4A0-43EE-A5BE-8ECF58D16634",
-							"required": true,
-							"description": "业务id"
-								}	
-						},
-					"response": {
-				}
-			},
-			{
-				"url": "UAPI/Regulation/RelativeNodes",
-				"summary": "根据当前节点id，获取左右滑动节点id",
-				"type": "POST",
-				"params": {
-					"businessid": {
+            }
+        },
+        {
+            "url": "UAPI/Regulation/TranslateList",
+            "summary": "获取操作翻译列表",
+            "type": "POST",
+            "params": {
+                "businessid": {
+                    "default": "0292496F-D4A0-43EE-A5BE-8ECF58D16634",
+                    "required": true,
+                    "description": "业务id"
+                }
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Regulation/RelativeNodes",
+            "summary": "根据当前节点id，获取左右滑动节点id",
+            "type": "POST",
+            "params": {
+                "businessid": {
                     "default": "1BEE5BA6-EB05-4D60-9595-508CBCABBAB9",
                     "required": true,
                     "description": "业务记录id"
@@ -650,143 +620,138 @@
                     "required": true,
                     "description": "当前节点id"
                 }
-							},
-					"response": {
-				}
-			},
-			{
-    "url": "UAPI/Regulation/RealSave",
-    "summary": "真正保存，对当前用户的所有暂存操作进行保存",
-    "type": "POST",
-    "params": {
-        "businessid": {
-            "default": "0292496F-D4A0-43EE-A5BE-8ECF58D16634",
-            "required": true,
-            "description": "业务记录id"
-        }
-    },
-    "response": {
-        "items": {
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Regulation/RealSave",
+            "summary": "真正保存，对当前用户的所有暂存操作进行保存",
+            "type": "POST",
+            "params": {
+                "businessid": {
+                    "default": "0292496F-D4A0-43EE-A5BE-8ECF58D16634",
+                    "required": true,
+                    "description": "业务记录id"
+                }
+            },
+            "response": {
+                "items": {
                     "regulationbatchid": "<span style='color:red'>2017-2-27新增返回属性：</span>规程批次id，用于记录提交批次，在查询业务记录时再次打开规程详细时使用,若此参数为空，表示该次真正保存没有任何有效规程操作"
                 }
-    }
-},
-			{
-				"url": "UAPI/Regulation/GetNodeLine",
-				"summary": "获取节点条",
-				"type": "POST",
-				"params": {
-					"businessid": {
+            }
+        },
+        {
+            "url": "UAPI/Regulation/GetNodeLine",
+            "summary": "获取节点条",
+            "type": "POST",
+            "params": {
+                "businessid": {
                     "default": "0292496F-D4A0-43EE-A5BE-8ECF58D16634",
                     "required": true,
                     "description": "业务记录id"
                 },
-"regulationid": {
+                "regulationid": {
                     "default": "60E9C1E2-D013-4149-A5D7-08A6A64D4B86",
                     "required": true,
                     "description": "规程id"
                 }
-							},
-					"response": {
-				}
-			},
-		{
-				"url": "UAPI/Regulation/GetNodeLineNew",
-				"updatetime":"20170508","summary": "<span style='color:#87CEEB'>[app]</span>获取节点条新",
-				"type": "POST",
-				"params": {
-					"businessid": {
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Regulation/GetNodeLineNew",
+            "updatetime": "20170508",
+            "summary": "<span style='color:#87CEEB'>[app]</span>获取节点条新",
+            "type": "POST",
+            "params": {
+                "businessid": {
                     "default": "3C1E8C61-F0AE-4791-A10E-C726F49ECA92",
                     "required": true,
                     "description": "业务记录id"
                 },
-"regulationid": {
+                "regulationid": {
                     "default": "60E9C1E2-D013-4149-A5D7-08A6A64D4B86",
                     "required": true,
                     "description": "规程id"
                 }
-							},
-					"response": {
-	"items": {
-"currentnodeid": "当前节点id",
+            },
+            "response": {
+                "items": {
+                    "currentnodeid": "当前节点id",
                     "nodeStatus": "是否可点  0 否(即灰色) 1 是（即点亮）",
-			"nodeId": "节点id",
-"nodeName":"节点名字"
+                    "nodeId": "节点id",
+                    "nodeName": "节点名字"
                 }
-				}
-			},
-			{
-				"url": "UAPI/Regulation/GetRegulationBatch",
-				"summary": "根据批次id 获取当时操作的规程记录",
-				"type": "POST",
-				"params": {
-					"regulationbatchid": {
+            }
+        },
+        {
+            "url": "UAPI/Regulation/GetRegulationBatch",
+            "summary": "根据批次id 获取当时操作的规程记录",
+            "type": "POST",
+            "params": {
+                "regulationbatchid": {
                     "default": "5365BF88-74C0-4F98-92C4-46CBDC6D2A0D",
                     "required": true,
                     "description": "真正保存时提交的批次id"
                 }
-							},
-					"response": {
-				}
-			},
-		{
-				"url": "UAPI/Regulation/FreezeRecord",
-				"updatetime":"20170413",
-				"summary": "冻结规程记录",
-				"type": "POST",
-				"params": {
-					"businessid": {
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Regulation/FreezeRecord",
+            "updatetime": "20170413",
+            "summary": "冻结规程记录",
+            "type": "POST",
+            "params": {
+                "businessid": {
                     "default": "EAD31426-8DAF-45B5-8D03-E5D384BBEDE7",
                     "required": true,
                     "description": "业务记录id"
                 }
-							},
-					"response": {
-				}
-			},
-			{
-				"url": "UAPI/Regulation/UnFreezeRecord",
-				"updatetime":"20170413",
-				"summary": "解冻规程记录",
-				"type": "POST",
-				"params": {
-					"businessid": {
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Regulation/UnFreezeRecord",
+            "updatetime": "20170413",
+            "summary": "解冻规程记录",
+            "type": "POST",
+            "params": {
+                "businessid": {
                     "default": "EAD31426-8DAF-45B5-8D03-E5D384BBEDE7",
                     "required": true,
                     "description": "业务记录id"
                 }
-							},
-					"response": {
-				}
-			},
-		{
-				"url": "UAPI/Regulation/RelationConfig",
-				"updatetime":"20170508","summary": "增删改规程节点配置",
-				"type": "POST",
-				"params": {
-					"object": {
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Regulation/RelationConfig",
+            "updatetime": "20170508",
+            "summary": "增删改规程节点配置",
+            "type": "POST",
+            "params": {
+                "object": {
                     "default": "{'regulationid':'076c5230-5830-4416-b768-874b63d3669c','nodes':[{'nodeid':'B7874044-AAFB-4A74-A237-EF1B1875319C','config':{'name':'节点1','left':10,'top':10,'type':'node','width':80,'height':30,'alt':''}},{'nodeid':'4625EAE7-0842-4ABA-9E61-A470CBE20929','config':{'name':'节点2','left':30,'top':10,'type':'node','width':80,'height':30,'alt':''}}],'lines':[{'style':'','from':'B7874044-AAFB-4A74-A237-EF1B1875319C','to':'4625EAE7-0842-4ABA-9E61-A470CBE20929','name':''}]}",
                     "required": true,
                     "description": "application/json 方式提交的对象"
                 }
-							},
-					"response": {
-				}
-			},
-		{
-			"url": "UAPI/Regulation/GetRelationConfig",
-			"updatetime": "20170508",
-			"summary": "获取规程节点配置",
-			"type": "POST",
-			"params": {
-				"regulationid": {
-					"default": "8EADC429-8F78-4FD9-AD22-EF8AD0C06427",
-					"required": true,
-					"description": "规程id"
-				}
-			},
-			"response": {
-			}
-		}
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Regulation/GetRelationConfig",
+            "updatetime": "20170508",
+            "summary": "获取规程节点配置",
+            "type": "POST",
+            "params": {
+                "regulationid": {
+                    "default": "8EADC429-8F78-4FD9-AD22-EF8AD0C06427",
+                    "required": true,
+                    "description": "规程id"
+                }
+            },
+            "response": {}
+        }
     ]
 }

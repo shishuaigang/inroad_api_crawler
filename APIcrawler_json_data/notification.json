@@ -7,13 +7,11 @@
         }
     ],
     "apis": [
-
         {
             "url": "UAPI/Notification/LatestGet",
             "summary": "获取最新提醒信息数量及信息",
             "type": "POST",
-            "params": {
-            },
+            "params": {},
             "response": {
                 "items": {
                     "createtime": "创建时间",
@@ -60,8 +58,7 @@
             "url": "UAPI/Notification/GetUnreadByType",
             "summary": "获取不同类型未读提醒信息",
             "type": "POST",
-            "params": {
-            },
+            "params": {},
             "response": {
                 "items": {
                     "type": "1-日程 2-任务 3-对话消息 4-承包商 5-设备隐患 6-核心数据.......（更多系统内部定义扩展业务）",
@@ -84,8 +81,7 @@
                 }
             },
             "response": {
-                "items": {
-                }
+                "items": {}
             }
         }
     ]

@@ -7,16 +7,14 @@
         }
     ],
     "apis": [
-         {
+        {
             "url": "UAPI/NewTask/GetTaskModelList",
             "summary": "获取任务模板列表",
             "type": "POST",
-            "params": {
-            },
-            "response": {
-            }
+            "params": {},
+            "response": {}
         },
-		{
+        {
             "url": "UAPI/NewTask/TaskModelAddByExecuted",
             "summary": "根据已经完成的任务生成任务模板",
             "type": "POST",
@@ -27,33 +25,29 @@
                     "description": "任务id"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
-	{
+        {
             "url": "UAPI/NewTask/GetTaskModelDetail",
             "summary": "获取任务模板列表",
             "type": "POST",
             "params": {
-	    "modelid": {
+                "modelid": {
                     "default": "",
                     "required": true,
                     "description": "模板ID"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
-	{
+        {
             "url": "UAPI/NewTask/GetCountList",
             "summary": "获取任务中心模块数量",
             "type": "POST",
-            "params": {
-            },
-            "response": {
-            }
+            "params": {},
+            "response": {}
         },
-	{
+        {
             "url": "UAPI/NewTask/GetList",
             "summary": "获取任务列表",
             "type": "POST",
@@ -69,19 +63,16 @@
                     "description": "1-我负责，2-我参与任务，3-我关注任务，4-我验收任务，5--待关注任务，6-下属任务"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
-	{
+        {
             "url": "UAPI/NewTask/GetNewStatus",
             "summary": "获取最新负责/关注任务动态",
             "type": "POST",
-            "params": {
-            },
-            "response": {
-            }
+            "params": {},
+            "response": {}
         },
-	{
+        {
             "url": "UAPI/NewTask/GetUserTaskDetailList",
             "summary": "获取用户分工信息列表",
             "type": "POST",
@@ -97,10 +88,9 @@
                     "description": "分页"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
-		{
+        {
             "url": "UAPI/NewTask/GetTaskDetailAllRecord",
             "summary": "读取任务分工过程记录",
             "type": "POST",
@@ -111,11 +101,9 @@
                     "description": "任务id"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
-
-	{
+        {
             "url": "UAPI/NewTask/Create",
             "summary": "创建任务/编辑任务信息",
             "type": "POST",
@@ -159,8 +147,7 @@
                     "default": "",
                     "required": false,
                     "description": "任务模板ID"
-                }
-		,
+                },
                 "autocheck": {
                     "default": "0",
                     "required": true,
@@ -187,10 +174,9 @@
                     "description": "分工的id，人员评定的id或者别的id"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
-	{
+        {
             "url": "UAPI/NewTask/TaskPublish",
             "summary": "任务发布",
             "type": "POST",
@@ -206,10 +192,9 @@
                     "description": "设备清理$5b8fc651-b277-40f0-a291-9c85e8637bca;6d3b5089-c2d3-4685-91fd-4bee68a8a881;#设备更换$7a9a920c-d010-4cb5-aea2-3534f77b44a9;7abb66bd-4dcd-47d8-b293-093ed68437e8;#"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
-	{
+        {
             "url": "UAPI/NewTask/GetTaskInfo",
             "summary": "得到任务分工基本信息",
             "type": "POST",
@@ -220,10 +205,9 @@
                     "description": "任务GUID"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
-	{
+        {
             "url": "UAPI/NewTask/SetUsers",
             "summary": "设置任务负责人/验收人",
             "type": "POST",
@@ -244,10 +228,9 @@
                     "description": "用户的userid(多个用分号隔开)"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
-	{
+        {
             "url": "UAPI/NewTask/GetUsers",
             "summary": "得到任务负责人/验收人",
             "type": "POST",
@@ -263,10 +246,9 @@
                     "description": "查询类型 0--全部;1:负责，2：验收，3--待关注，4--已关注"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
-	{
+        {
             "url": "UAPI/NewTask/GetTaskDetailList",
             "summary": "得到任务分工列表（我的分工）",
             "type": "POST",
@@ -287,10 +269,9 @@
                     "description": "分工id"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
-	{
+        {
             "url": "UAPI/NewTask/ReceiveTaskDetail",
             "summary": "确认回执任务分工",
             "type": "POST",
@@ -301,10 +282,9 @@
                     "description": "任务分工的GUID，非任务ID"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
-	{
+        {
             "url": "UAPI/NewTask/GetTaskDetailRecordList",
             "summary": "填写任务分工过程记录",
             "type": "POST",
@@ -315,12 +295,12 @@
                     "description": "任务分工的GUID，非任务ID"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
-	{
+        {
             "url": "UAPI/NewTask/TaskDetailAddRecord",
-            "updatetime":"20170413","summary": "填写任务分工过程记录",
+            "updatetime": "20170413",
+            "summary": "填写任务分工过程记录",
             "type": "POST",
             "params": {
                 "taskdetailid": {
@@ -349,11 +329,9 @@
                     "description": "规程记录的批次id"
                 }
             },
-            "response": {
-            }
-
-        }, 
-	{
+            "response": {}
+        },
+        {
             "url": "UAPI/NewTask/TaskDetailCheck",
             "summary": "验收完成的任务分工",
             "type": "POST",
@@ -379,10 +357,9 @@
                     "description": "分工验收文件fileS (分号间隔)（预留，分工验收暂时简单处理）"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
-	{
+        {
             "url": "UAPI/NewTask/TaskCheck",
             "summary": "验收完成的任务分工",
             "type": "POST",
@@ -418,10 +395,9 @@
                     "description": "任务验收文件fileS (分号间隔)"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
-	{
+        {
             "url": "UAPI/NewTask/TaskSetFollow",
             "summary": "设置任务关注",
             "type": "POST",
@@ -437,11 +413,10 @@
                     "description": "操作类型--1:关注通过；2:主动直接关注;0：关注取消"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
-	{
-			"NoNeed": "1",
+        {
+            "NoNeed": "1",
             "url": "UAPI/NewTask/DelTaskDetail",
             "summary": "删除任务分工",
             "type": "POST",
@@ -452,13 +427,12 @@
                     "description": "任务分工GUID"
                 }
             },
-            "response": {
-            }
-        }
-,
-	{
+            "response": {}
+        },
+        {
             "url": "UAPI/NewTask/AddTaskDetail",
-            "updatetime":"20170413","summary": "添加任务分工",
+            "updatetime": "20170413",
+            "summary": "添加任务分工",
             "type": "POST",
             "params": {
                 "taskid": {
@@ -466,33 +440,30 @@
                     "required": true,
                     "description": "任务GUID"
                 },
-		  "taskdetailtitle": {
+                "taskdetailtitle": {
                     "default": "新分工添加测试标题",
                     "required": true,
                     "description": "新分工标题"
                 },
-            "taskdetailuserids": {
+                "taskdetailuserids": {
                     "default": "7ABB66BD-4DCD-47D8-B293-093ED68437E8;9920A226-7B32-4958-B6A6-1C3BAD199CB7;7A9A920C-D010-4CB5-AEA2-3534F77B44A9",
                     "required": true,
                     "description": "新分工负责人，多个负责人用;分隔"
                 },
-		  "regulationid": {
+                "regulationid": {
                     "default": "",
                     "required": true,
                     "description": "规程id"
                 },
-		  "modelitemid": {
+                "modelitemid": {
                     "default": "",
                     "required": true,
                     "description": "模板id"
                 }
             },
-            "response": {
-            }
-
+            "response": {}
         },
-
-	{
+        {
             "url": "UAPI/NewTask/TaskDetailEdit",
             "summary": "编辑分工",
             "type": "POST",
@@ -523,10 +494,9 @@
                     "description": "分工标题"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
-	{
+        {
             "url": "UAPI/NewTask/Search",
             "summary": "任务查询",
             "type": "POST",
@@ -552,10 +522,9 @@
                     "description": "任务/分工的相关人员，用;间隔"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
-	{
+        {
             "url": "UAPI/NewTask/SearchForOutput",
             "summary": "任务查询导出用",
             "type": "POST",
@@ -571,10 +540,9 @@
                     "description": "任务开始止，默认一周"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
-	{
+        {
             "url": "UAPI/NewTask/TaskModelAdd",
             "summary": "新建修改任务模板",
             "type": "POST",
@@ -605,10 +573,9 @@
                     "description": "任务模板id"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
-		{
+        {
             "url": "UAPI/NewTask/TaskModelDel",
             "summary": "删除任务模板",
             "type": "POST",
@@ -619,59 +586,55 @@
                     "description": "任务模板id"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
-		{
+        {
             "url": "UAPI/NewTask/TaskModelGetList",
             "summary": "读取任务模板",
             "type": "POST",
-            "params": {
-            },
-            "response": {
-            }
+            "params": {},
+            "response": {}
         },
-		{
+        {
             "url": "UAPI/NewTask/TaskModelItemAdd",
-					"updatetime": "20170413",
-					"summary": "新建修改任务模板分工",
-					"type": "POST",
-					"params": {
-						"detailitem": {
-							"default": "2.关闭阀门",
-							"required": true,
-							"description": "任务分工名称"
-						},
-						"startdelay": {
-							"default": "1440",
-							"required": true,
-							"description": "多长时间后开始任务(分钟)"
-						},
-						"taskduration": {
-							"default": "1440",
-							"required": true,
-							"description": "分工持续时间(分钟)"
-						},
-						"memo": {
-							"default": "烧嘴检查、清洗、维修、烧嘴大法兰螺栓孔优化外协外协烧嘴内部清洗脱脂并打压试漏无异常；烧嘴头部环隙符合图纸要求；大法兰螺栓孔扩大2-3mm观察、行测量",
-							"required": true,
-							"description": "备注"
-						},
-						"taskmodelid": {
-							"default": "6DB9F606-6257-4BFB-AD86-AFD54FE23EDA",
-							"required": true,
-							"description": "任务模板id"
-						},
-						"taskmodelitemid": {
-							"default": "33F407B0-2C57-4B41-8A1F-0AF81B27B228",
-							"required": true,
-							"description": "任务模板分工id"
-						}
-					},
-					"response": {}
-
-        },	
-		{
+            "updatetime": "20170413",
+            "summary": "新建修改任务模板分工",
+            "type": "POST",
+            "params": {
+                "detailitem": {
+                    "default": "2.关闭阀门",
+                    "required": true,
+                    "description": "任务分工名称"
+                },
+                "startdelay": {
+                    "default": "1440",
+                    "required": true,
+                    "description": "多长时间后开始任务(分钟)"
+                },
+                "taskduration": {
+                    "default": "1440",
+                    "required": true,
+                    "description": "分工持续时间(分钟)"
+                },
+                "memo": {
+                    "default": "烧嘴检查、清洗、维修、烧嘴大法兰螺栓孔优化外协外协烧嘴内部清洗脱脂并打压试漏无异常；烧嘴头部环隙符合图纸要求；大法兰螺栓孔扩大2-3mm观察、行测量",
+                    "required": true,
+                    "description": "备注"
+                },
+                "taskmodelid": {
+                    "default": "6DB9F606-6257-4BFB-AD86-AFD54FE23EDA",
+                    "required": true,
+                    "description": "任务模板id"
+                },
+                "taskmodelitemid": {
+                    "default": "33F407B0-2C57-4B41-8A1F-0AF81B27B228",
+                    "required": true,
+                    "description": "任务模板分工id"
+                }
+            },
+            "response": {}
+        },
+        {
             "url": "UAPI/NewTask/TaskModelItemDel",
             "summary": "删除任务模板分工",
             "type": "POST",
@@ -682,10 +645,9 @@
                     "description": "任务模板分工id"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
-		{
+        {
             "url": "UAPI/NewTask/TaskModelItemGetList",
             "summary": "读取任务模板分工",
             "type": "POST",
@@ -696,11 +658,10 @@
                     "description": "任务模板id"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
-	{
-			"NoNeed": "1",
+        {
+            "NoNeed": "1",
             "url": "UAPI/NewTask/TaskDetailReceipt",
             "summary": "分工回执",
             "type": "POST",
@@ -711,10 +672,9 @@
                     "description": "任务分工GUID"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
-		{
+        {
             "url": "UAPI/NewTask/GetWholeTaskInfo",
             "summary": "基本信息、分工列表",
             "type": "POST",
@@ -735,8 +695,7 @@
                     "description": "分工id"
                 }
             },
-            "response": {
-            }
+            "response": {}
         }
-]
+    ]
 }

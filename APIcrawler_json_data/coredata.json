@@ -6,7 +6,7 @@
             "value": "coredata"
         }
     ],
-    "apis": [
+    "coredata": [
         {
             "url": "UAPI/CoreData/GetReportList",
             "summary": "获取数据报表列表",
@@ -17,12 +17,10 @@
                     "required": true,
                     "description": "1.自己创建  2.已关注的报表 3.待关注的报表"
                 }
-
             },
-            "response": {
-            }
+            "response": {}
         },
-	{
+        {
             "url": "UAPI/CoreData/GetReportResult",
             "summary": "获取数据报表详细数据",
             "type": "POST",
@@ -37,7 +35,6 @@
                     "required": true,
                     "description": "查看时间"
                 }
-
             },
             "response": {
                 "items": {
@@ -47,7 +44,6 @@
                 }
             }
         },
-
         {
             "url": "UAPI/CoreData/CoreReportShare",
             "summary": "分享数据报表",
@@ -64,12 +60,12 @@
                     "description": "被分享用户GUID(多个用分号隔开)"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/CoreData/DataItemConfigSave",
-            "updatetime":"20170413","summary": "数据项设置编辑",
+            "updatetime": "20170413",
+            "summary": "数据项设置编辑",
             "type": "POST",
             "params": {
                 "itemid": {
@@ -82,12 +78,12 @@
                     "required": true,
                     "description": "标题"
                 },
-		"itemunit": {
+                "itemunit": {
                     "default": "m3/H",
                     "required": true,
                     "description": "单位"
                 },
-		"datatype": {
+                "datatype": {
                     "default": "2",
                     "required": true,
                     "description": "数据项类型1-数据 2--字符串"
@@ -107,7 +103,7 @@
                     "required": true,
                     "description": "数据区间max"
                 },
-		"goodminvalue": {
+                "goodminvalue": {
                     "default": "0",
                     "required": true,
                     "description": "数据控制区间min"
@@ -148,11 +144,10 @@
                     "description": "单位类型"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
-         {
-	   "url": "UAPI/CoreData/CoreReportShareCheck",
+        {
+            "url": "UAPI/CoreData/CoreReportShareCheck",
             "summary": "分享关注数据报表的处理",
             "type": "POST",
             "params": {
@@ -167,8 +162,7 @@
                     "description": "1--同意 2 --驳回"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/CoreData/SaveReportInfo",
@@ -211,8 +205,7 @@
                     "description": "数据项GUID，按顺序用分号隔开"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/CoreData/GetReportInfo",
@@ -225,8 +218,7 @@
                     "description": "报表GUID"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/CoreData/GetReportItem",
@@ -239,8 +231,7 @@
                     "description": "报表GUID"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/CoreData/QueryDateItemInfo",
@@ -253,8 +244,7 @@
                     "description": "报表GUID"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/CoreData/QueryReportDateItemRecored",
@@ -277,8 +267,7 @@
                     "description": "数据查询结束时间"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/CoreData/QueryDateItemRecored",
@@ -301,24 +290,21 @@
                     "description": "数据查询结束时间"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/CoreData/GetDataItemList",
             "summary": "数据录入--查询数据项",
             "type": "POST",
             "params": {
-		"type": {
+                "type": {
                     "default": "1",
                     "required": false,
                     "description": "1:读取; 2:编辑"
                 }
             },
-            "response": {
-            }
-        }
-,
+            "response": {}
+        },
         {
             "url": "UAPI/CoreData/GetDataItemRecord",
             "summary": "数据录入--查询最新数据(5条)",
@@ -335,8 +321,7 @@
                     "description": "页数(空或null为1)"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/CoreData/SaveDataItemRecord",
@@ -359,24 +344,21 @@
                     "description": "数据日期"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/CoreData/ItemTypeGetList",
             "summary": "获取数据项类型列表",
             "type": "POST",
-            "params": {
-            },
-            "response": {
-            }
+            "params": {},
+            "response": {}
         },
         {
             "url": "UAPI/CoreData/DataItemTypeAdd",
             "summary": "新增数据项类型",
             "type": "POST",
             "params": {
-		 "itemtypename": {
+                "itemtypename": {
                     "default": "",
                     "required": true,
                     "description": "数据项分类"
@@ -392,8 +374,7 @@
                     "description": "数据项分类id"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/CoreData/DataItemTypeDelete",
@@ -406,8 +387,21 @@
                     "description": "数据项分类id"
                 }
             },
-            "response": {
-            }
+            "response": {}
+        },
+        {
+            "url": "UAPI/CoreData/DataItemConfigDel",
+            "updatetime": "20170516",
+            "summary": "删除关键数据",
+            "type": "POST",
+            "params": {
+                "itemid": {
+                    "default": "D0EDE92E-EADF-4DEA-9EF1-0028192862BB",
+                    "required": true,
+                    "description": "关键数据ids"
+                }
+            },
+            "response": {}
         },
         {
             "url": "UAPI/CoreData/DataItemRecordSearch",
@@ -445,8 +439,7 @@
                     "description": "关键字"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
         {
             "url": "UAPI/CoreData/DataItemConfigSave",
@@ -463,12 +456,12 @@
                     "required": true,
                     "description": "标题"
                 },
-		"itemunit": {
+                "itemunit": {
                     "default": "m3/H",
                     "required": true,
                     "description": "单位"
                 },
-		"datatype": {
+                "datatype": {
                     "default": "2",
                     "required": true,
                     "description": "数据项类型1-数据 2--字符串"
@@ -488,7 +481,7 @@
                     "required": true,
                     "description": "数据区间max"
                 },
-		"goodminvalue": {
+                "goodminvalue": {
                     "default": "0",
                     "required": true,
                     "description": "数据控制区间min"
@@ -519,10 +512,9 @@
                     "description": "数据联动区间high"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
-	{
+        {
             "url": "UAPI/CoreData/CoreDataitemGetRules",
             "summary": "获取数据项目权限信息",
             "type": "POST",
@@ -532,12 +524,10 @@
                     "required": true,
                     "description": "数据项目ID"
                 }
-
             },
-            "response": {
-            }
+            "response": {}
         },
-	{
+        {
             "url": "UAPI/CoreData/CoreDataitemConfigRules",
             "summary": "设置数据项目权限信息",
             "type": "POST",
@@ -558,26 +548,23 @@
                     "description": ";号分隔的ID字符串"
                 }
             },
-            "response": {
-            }
+            "response": {}
         },
-	{
+        {
             "url": "UAPI/CoreData/GetDataItemUnitList",
             "summary": "获取数据项单位",
             "type": "POST",
-            "params": { },
-            "response": {
-            }
+            "params": {},
+            "response": {}
         },
-	{
+        {
             "url": "UAPI/CoreData/GetDataPlat",
             "summary": "获取当日关键数据的工作面板异常数据内容",
             "type": "POST",
-            "params": { },
-            "response": {
-            }
+            "params": {},
+            "response": {}
         },
-		{
+        {
             "url": "UAPI/CoreData/CoreDataitemConfigRulesBatch",
             "summary": "批量设置数据项目权限信息",
             "type": "POST",
@@ -608,10 +595,7 @@
                     "description": "设置责任人ids"
                 }
             },
-            "response": {
-            }
+            "response": {}
         }
-
-
     ]
 }

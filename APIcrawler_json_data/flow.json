@@ -25,7 +25,7 @@
                 }
             }
         },
-{
+        {
             "url": "UAPI/Flow/GetFlowList",
             "summary": "<span style='color:#87CEEB'>[app]</span><span style='color:#EEDFCC'>[web]</span>获取业务绑定流程库列表",
             "type": "POST",
@@ -48,7 +48,7 @@
                 }
             }
         },
-{
+        {
             "url": "UAPI/Flow/SearchFlowLibraryList",
             "summary": "<span style='color:#EEDFCC'>[web]</span>获取业务绑定流程库列表",
             "type": "POST",
@@ -58,12 +58,12 @@
                     "required": false,
                     "description": "业务父类code，如果不传，则返回所有业务类型的，如果不为空，则返回对应业务类型下的"
                 },
-"keyword": {
+                "keyword": {
                     "default": "",
                     "required": false,
                     "description": "流程标题关键字"
                 },
-"deptid": {
+                "deptid": {
                     "default": "",
                     "required": false,
                     "description": "部门id"
@@ -80,7 +80,7 @@
                 }
             }
         },
-{
+        {
             "url": "UAPI/Flow/FlowLibraryAdd",
             "summary": "<span style='color:#EEDFCC'>[web]</span>添加流程库",
             "type": "POST",
@@ -89,47 +89,41 @@
                     "default": "",
                     "required": false,
                     "description": "流程id"
-						},
-				"title": {
+                },
+                "title": {
                     "default": "",
                     "required": false,
                     "description": "流程名称"
-						},
-				"deptid": {
+                },
+                "deptid": {
                     "default": "",
                     "required": false,
                     "description": "部门id"
-						},
-				"memo": {
+                },
+                "memo": {
                     "default": "",
                     "required": false,
                     "description": "备注"
-						},
-				"managerid": {
+                },
+                "managerid": {
                     "default": "",
                     "required": false,
                     "description": "管理人"
-						},
-				"businesscode": {
+                },
+                "businesscode": {
                     "default": "",
                     "required": false,
                     "description": "业务code"
-						},
-				"businesscode": {
-                    "default": "",
-                    "required": false,
-                    "description": "业务code"
-						},
-				"addtype": {
+                },
+                "addtype": {
                     "default": "1",
                     "required": false,
                     "description": " --1 添加  2 复制新增"
-						}
+                }
             },
-            "response": {
-                        }
+            "response": {}
         },
-		{
+        {
             "url": "UAPI/Flow/FlowLibraryChangeStatus",
             "summary": "<span style='color:#EEDFCC'>[web]</span>添加流程库",
             "type": "POST",
@@ -138,17 +132,16 @@
                     "default": "",
                     "required": false,
                     "description": "流程id"
-						},
-				"status": {
+                },
+                "status": {
                     "default": "",
                     "required": false,
                     "description": "状态 0 停用 1启用"
-						}
+                }
             },
-            "response": {
-                        }
+            "response": {}
         },
-		{
+        {
             "url": "UAPI/Flow/FlowLibraryDel",
             "summary": "<span style='color:#EEDFCC'>[web]</span>删除流程库",
             "type": "POST",
@@ -157,12 +150,11 @@
                     "default": "",
                     "required": false,
                     "description": "流程id"
-						}
+                }
             },
-            "response": {
-                        }
+            "response": {}
         },
-	{
+        {
             "url": "UAPI/Flow/FlowBusinessRelationDel",
             "summary": "<span style='color:#EEDFCC'>[web]</span>删除流程与业务的关联关系",
             "type": "POST",
@@ -171,12 +163,11 @@
                     "default": "",
                     "required": false,
                     "description": "业务与流程关联id"
-						}			
+                }
             },
-            "response": {
-                        }
+            "response": {}
         },
-		{
+        {
             "url": "UAPI/Flow/FlowBusinessRelationAdd",
             "summary": "<span style='color:#EEDFCC'>[web]</span>增加流程与业务的关联关系",
             "type": "POST",
@@ -185,17 +176,16 @@
                     "default": "ZYD_YS",
                     "required": false,
                     "description": "业务代码"
-				}	,
-		"flowlibraryids": {
+                },
+                "flowlibraryids": {
                     "default": "",
                     "required": false,
                     "description": "流程ids"
-						}			
+                }
             },
-            "response": {
-                        }
+            "response": {}
         },
-	{
+        {
             "url": "UAPI/Flow/GetFlowConfig",
             "summary": "<span style='color:#87CEEB'>[app]</span>获取指定流程的全部配置",
             "type": "POST",
@@ -206,107 +196,105 @@
                     "description": "流程id"
                 }
             },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Flow/CheckGetTarget",
+            "summary": "<span style='color:#87CEEB'>[app]</span>校验选择的部门、设备、区域是否有对应的管理员",
+            "type": "POST",
+            "params": {
+                "decisiontarget": {
+                    "default": "1",
+                    "required": true,
+                    "description": "决策目标 1、部门 2、设备 3、区域 "
+                },
+                "targetid": {
+                    "default": "78",
+                    "required": true,
+                    "description": "决策目标 对应的值"
+                }
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Flow/CreateFlowRecord",
+            "summary": "<span style='color:#87CEEB'>[app]</span>创建流程记录",
+            "type": "POST",
+            "params": {
+                "businessid": {
+                    "default": "CD3B8CA8-8ECB-49D4-86E6-E85EED648AAF",
+                    "required": true,
+                    "description": "业务id"
+                },
+                "flowid": {
+                    "default": "C15DAE92-9E36-40B9-814A-DC8621D428EE",
+                    "required": true,
+                    "description": "流程id"
+                },
+                "targetid": {
+                    "default": "-2",
+                    "required": true,
+                    "description": "如果是部门，则是部门的id；如果是设备，则是设备的id；如果是区域，则是区域的id；如果是自选，则是自选的人员id的拼接，用分号分割"
+                },
+                "jsonParm": {
+                    "default": "{'appraisememo':'我是备注','appraisedanger':'我是危害'}",
+                    "required": false,
+                    "description": "原业务对应接口的提交参数，例如：作业单完成评估时的接口参数有：备注和危害"
+                }
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Flow/Check",
+            "summary": "<span style='color:#EEDFCC'>[web]</span>在做流程绑定的时候，校验流程是否符合当前业务接口",
+            "type": "POST",
+            "params": {
+                "businesscode": {
+                    "default": "ZYD_SP",
+                    "required": true,
+                    "description": "业务子类id"
+                },
+                "flowids": {
+                    "default": "522A6299-9D05-47BA-A479-0C9F1304364C",
+                    "required": true,
+                    "description": "流程id"
+                }
+            },
+            "response": {}
+        },
+        {
+            "url": "UAPI/Flow/FlowCenterList",
+            "summary": "<span style='color:#87CEEB'>[app]</span>流程中心列表",
+            "type": "POST",
+            "params": {
+                "status": {
+                    "default": "0",
+                    "required": true,
+                    "description": " 0、我的全部 1、我的待处理 2、我的已完成"
+                },
+                "businesscode": {
+                    "default": "ZYD",
+                    "required": false,
+                    "description": "业务主类id，没有下划线那种，可通过接口GetBusinessCode（不传任何参数） 获取，此参数为空，则获取所有业务类型的"
+                },
+                "fromdate": {
+                    "default": "2017-03-08",
+                    "required": false,
+                    "description": "流程时间搜索的起始范围"
+                },
+                "todate": {
+                    "default": "2018-03-08",
+                    "required": false,
+                    "description": "流程时间搜索的结束范围"
+                },
+                "keyword": {
+                    "default": "",
+                    "required": false,
+                    "description": "标题关键字"
+                }
+            },
             "response": {
-            }
-        },
-{
-    "url": "UAPI/Flow/CheckGetTarget",
-    "summary": "<span style='color:#87CEEB'>[app]</span>校验选择的部门、设备、区域是否有对应的管理员",
-    "type": "POST",
-    "params": {
-        "decisiontarget": {
-            "default": "1",
-            "required": true,
-            "description": "决策目标 1、部门 2、设备 3、区域 "
-        },
-        "targetid": {
-            "default": "78",
-            "required": true,
-            "description": "决策目标 对应的值"
-        }
-    },
-    "response": {}
-},
-{
-    "url": "UAPI/Flow/CreateFlowRecord",
-    "summary": "<span style='color:#87CEEB'>[app]</span>创建流程记录",
-    "type": "POST",
-    "params": {
-        "businessid": {
-            "default": "CD3B8CA8-8ECB-49D4-86E6-E85EED648AAF",
-            "required": true,
-            "description": "业务id"
-        },
-        "flowid": {
-            "default": "C15DAE92-9E36-40B9-814A-DC8621D428EE",
-            "required": true,
-            "description": "流程id"
-        },
-        "targetid": {
-            "default": "-2",
-            "required": true,
-            "description": "如果是部门，则是部门的id；如果是设备，则是设备的id；如果是区域，则是区域的id；如果是自选，则是自选的人员id的拼接，用分号分割"
-        },
-        "jsonParm": {
-            "default": "{'appraisememo':'我是备注','appraisedanger':'我是危害'}",
-            "required": false,
-            "description": "原业务对应接口的提交参数，例如：作业单完成评估时的接口参数有：备注和危害"
-        }
-    },
-    "response": {}
-},
-{
-    "url": "UAPI/Flow/Check",
-    "summary": "<span style='color:#EEDFCC'>[web]</span>在做流程绑定的时候，校验流程是否符合当前业务接口",
-    "type": "POST",
-    "params": {
-        "businesscode": {
-            "default": "ZYD_SP",
-            "required": true,
-            "description": "业务子类id"
-        },
-	"flowids": {
-            "default": "522A6299-9D05-47BA-A479-0C9F1304364C",
-            "required": true,
-            "description": "流程id"
-        }
-    },
-    "response": {
-}
-},
-{
-    "url": "UAPI/Flow/FlowCenterList",
-    "summary": "<span style='color:#87CEEB'>[app]</span>流程中心列表",
-    "type": "POST",
-    "params": {
-	"status": {
-            "default": "0",
-            "required": true,
-            "description": " 0、我的全部 1、我的待处理 2、我的已完成"
-        },
-        "businesscode": {
-            "default": "ZYD",
-            "required": false,
-            "description": "业务主类id，没有下划线那种，可通过接口GetBusinessCode（不传任何参数） 获取，此参数为空，则获取所有业务类型的"
-        },
-        "fromdate": {
-            "default": "2017-03-08",
-            "required": false,
-            "description": "流程时间搜索的起始范围"
-        },
-        "todate": {
-            "default": "2018-03-08",
-            "required": false,
-            "description": "流程时间搜索的结束范围"
-        },
-        "keyword": {
-            "default": "",
-            "required": false,
-            "description": "标题关键字"
-        }
-    },
-    "response": {
-	                "items": {
+                "items": {
                     "businessName": "流程名称",
                     "stage": "阶段描述",
                     "deptName": "部门",
@@ -315,21 +303,21 @@
                     "flowrecordid": "流程记录id",
                     "c_createtime": "流程记录时间"
                 }
-}
-},
-{
-    "url": "UAPI/Flow/GetFlowNodeRecord",
-    "summary": "<span style='color:#87CEEB'>[app]</span>获取流程中心节点记录页面",
-    "type": "POST",
-    "params": {
-	"flowrecordid": {
-            "default": "D3C35951-4A8E-4B45-9EE0-FAA81822538E",
-            "required": true,
-            "description": " 流程中心记录id"
-        }
-    },
-    "response": {
-	                "items": {
+            }
+        },
+        {
+            "url": "UAPI/Flow/GetFlowNodeRecord",
+            "summary": "<span style='color:#87CEEB'>[app]</span>获取流程中心节点记录页面",
+            "type": "POST",
+            "params": {
+                "flowrecordid": {
+                    "default": "D3C35951-4A8E-4B45-9EE0-FAA81822538E",
+                    "required": true,
+                    "description": " 流程中心记录id"
+                }
+            },
+            "response": {
+                "items": {
                     "flowrecordid": "流程名称",
                     "businessName": "阶段描述",
                     "toBusinessid": "转到业务页面，对应的业务id",
@@ -347,29 +335,28 @@
                     "processResult": "处理结果 0、未处理 1、通过 2、驳回 3、挂起",
                     "deptName": "部门名称"
                 }
-}
-},
-{
-    "url": "UAPI/Flow/FlowConstraint",
-    "summary": "<span style='color:#87CEEB'>[app]</span><span style='color:blue'>流程全局参数约定</span>",
-    "type": "POST",
-    "params": {
-    },
-    "response": {}
-},
-{
-    "url": "UAPI/Flow/OperatePageOnLoad",
-    "summary": "<span style='color:#87CEEB'>[app]</span>打开处理页面加载事件",
-    "type": "POST",
-    "params": {
-	"noderecordid": {
-            "default": "E73589F0-9913-428B-94C5-C98B0ADA0447",
-            "required": true,
-            "description": "当前节点记录id，UAPI/Flow/GetFlowNodeRecord接口返回的nodeRecordList中 最下面的那个项的nodeRecordId"
-        }
-    },
-    "response": {
-	                "items": {
+            }
+        },
+        {
+            "url": "UAPI/Flow/FlowConstraint",
+            "summary": "<span style='color:#87CEEB'>[app]</span><span style='color:blue'>流程全局参数约定</span>",
+            "type": "POST",
+            "params": {},
+            "response": {}
+        },
+        {
+            "url": "UAPI/Flow/OperatePageOnLoad",
+            "summary": "<span style='color:#87CEEB'>[app]</span>打开处理页面加载事件",
+            "type": "POST",
+            "params": {
+                "noderecordid": {
+                    "default": "E73589F0-9913-428B-94C5-C98B0ADA0447",
+                    "required": true,
+                    "description": "当前节点记录id，UAPI/Flow/GetFlowNodeRecord接口返回的nodeRecordList中 最下面的那个项的nodeRecordId"
+                }
+            },
+            "response": {
+                "items": {
                     "businessid": "当前业务的id，在提交的时候会用到",
                     "Checktype": "1 短信验证 2 电子签名  3 重新输入登录密码 ",
                     "NeedCheck": "是否需要验证,1 需要 0 不需要 ",
@@ -384,119 +371,119 @@
                     "isFix": "是否需要固定 1：是 0：否",
                     "fixSelectedValue": "下拉节点列表固定值",
                     "fixDecisiontarget": "固定的决策类型",
-                   "fixList": "固定的决策内容，键值对形式：如果是部门，则是[{'id':'3','name':'硝苯装置'}],如果是自选的，则是多个对象[{'id':'xxxxx','name':'陈浩'},{'id':'xxxxx','name':'陈豪骅'}]"
+                    "fixList": "固定的决策内容，键值对形式：如果是部门，则是[{'id':'3','name':'硝苯装置'}],如果是自选的，则是多个对象[{'id':'xxxxx','name':'陈浩'},{'id':'xxxxx','name':'陈豪骅'}]"
                 }
-}
-},
-{
-    "url": "UAPI/Flow/FlowCommit",
-    "summary": "<span style='color:#87CEEB'>[app]</span>流程流转",
-    "type": "POST",
-    "params": {
-        "noderecordid": {
-            "default": "",
-            "required": true,
-            "description": "当前节点记录id，与UAPI/Flow/OperatePageOnLoad 接口打开时用到的那个noderecordid一致"
+            }
         },
-        "nextnodeid": {
-            "default": "",
-            "required": false,
-            "description": "用户选择的下一个节点id"
+        {
+            "url": "UAPI/Flow/FlowCommit",
+            "summary": "<span style='color:#87CEEB'>[app]</span>流程流转",
+            "type": "POST",
+            "params": {
+                "noderecordid": {
+                    "default": "",
+                    "required": true,
+                    "description": "当前节点记录id，与UAPI/Flow/OperatePageOnLoad 接口打开时用到的那个noderecordid一致"
+                },
+                "nextnodeid": {
+                    "default": "",
+                    "required": false,
+                    "description": "用户选择的下一个节点id"
+                },
+                "nexttargetid": {
+                    "default": "",
+                    "required": false,
+                    "description": "用户选择的下一个节点后，对应的决策目标的值"
+                },
+                "memo": {
+                    "default": "",
+                    "required": false,
+                    "description": "备注说明"
+                },
+                "processresult": {
+                    "default": "-2",
+                    "required": true,
+                    "description": "处理结果 1、通过 2、驳回 3、挂起"
+                },
+                "checktarget": {
+                    "default": "",
+                    "required": false,
+                    "description": "验证内容 密码、验证码、图片,<span style='color:red'>注：如果是密码，请先加密，加密方式同以前登录一致</span>"
+                },
+                "businessid": {
+                    "default": "",
+                    "required": false,
+                    "description": "当前业务id(当前节点是最后一个节点，并且当存在下一流程时传入)"
+                },
+                "flowid": {
+                    "default": "",
+                    "required": false,
+                    "description": "下一个流程的id(当前节点是最后一个节点，并且当存在下一流程时传入)"
+                },
+                "targetid": {
+                    "default": "",
+                    "required": false,
+                    "description": "下一个流程的决策mubiaoid(当前节点是最后一个节点，并且当存在下一流程时传入)"
+                }
+            },
+            "response": {}
         },
-        "nexttargetid": {
-            "default": "",
-            "required": false,
-            "description": "用户选择的下一个节点后，对应的决策目标的值"
+        {
+            "url": "UAPI/Flow/GetFlowUserRecord",
+            "summary": "<span style='color:#87CEEB'>[app]</span>获取流程节点记录处理人列表",
+            "type": "POST",
+            "params": {
+                "noderecordid": {
+                    "default": "E718476E-8B39-4770-B575-83F602204D6A",
+                    "required": true,
+                    "description": "当前节点记录id"
+                }
+            },
+            "response": {}
         },
-        "memo": {
-            "default": "",
-            "required": false,
-            "description": "备注说明"
+        {
+            "url": "UAPI/Flow/GetFlowWebConfig",
+            "summary": "<span style='color:#EEDFCC'>[web]</span>后端配置页面，读取流程所有配置",
+            "type": "POST",
+            "params": {
+                "flowid": {
+                    "default": "522A6299-9D05-47BA-A479-0C9F1304364C",
+                    "required": true,
+                    "description": "流程id"
+                }
+            },
+            "response": {}
         },
-        "processresult": {
-            "default": "-2",
-            "required": true,
-            "description": "处理结果 1、通过 2、驳回 3、挂起"
+        {
+            "url": "UAPI/Flow/CUDFlowWebConfig",
+            "summary": "<span style='color:#EEDFCC'>[web]</span>操作流程节点 新增、修改、删除",
+            "type": "POST",
+            "params": {
+                "object": {
+                    "default": "{'flowid':'0cb02849-bf16-4fce-9ca3-20da9071b3fa','nodes':[{'nodeid':'guid1','config':{'name':'节点名字1','left':'11','top':'21','type':'chat','width':'31','height':'41','alt':''},'property':{'decisiontype':1,'decisiontarget':2,'memo':'xxxxddd','locationType':1},'events':[{'bindType':1,'eventLibraryid':'fdfasfa','eventName':'作业单审批通过'}]},{'nodeid':'guid2','config':{'name':'节点名字2','left':'11','top':'21','type':'chat','width':'31','height':'41','alt':''},'property':{'decisiontype':1,'decisiontarget':2,'memo':'xxxxddd','locationType':1},'events':[{'bindType':1,'eventLibraryid':'fdfasfa','eventName':'作业单审批驳回'}]}],'lines':[{'style':'sl','from':'guid1','to':'guid2','name':''}]}",
+                    "required": true,
+                    "description": "一个大对象，包含所有节点、连线、事件"
+                }
+            },
+            "response": {}
         },
-        "checktarget": {
-            "default": "",
-            "required": false,
-            "description": "验证内容 密码、验证码、图片,<span style='color:red'>注：如果是密码，请先加密，加密方式同以前登录一致</span>"
-        },
-        "businessid": {
-            "default": "",
-            "required": false,
-            "description": "当前业务id(当前节点是最后一个节点，并且当存在下一流程时传入)"
-        },
-        "flowid": {
-            "default": "",
-            "required": false,
-            "description": "下一个流程的id(当前节点是最后一个节点，并且当存在下一流程时传入)"
-        },
-        "targetid": {
-            "default": "",
-            "required": false,
-            "description": "下一个流程的决策mubiaoid(当前节点是最后一个节点，并且当存在下一流程时传入)"
-        }
-    },
-    "response": {}
-},
-{
-    "url": "UAPI/Flow/GetFlowUserRecord",
-    "summary": "<span style='color:#87CEEB'>[app]</span>获取流程节点记录处理人列表",
-    "type": "POST",
-    "params": {
-        "noderecordid": {
-            "default": "E718476E-8B39-4770-B575-83F602204D6A",
-            "required": true,
-            "description": "当前节点记录id"
-        }
-    },
-    "response": {}
-},
-{
-    "url": "UAPI/Flow/GetFlowWebConfig",
-    "summary": "<span style='color:#EEDFCC'>[web]</span>后端配置页面，读取流程所有配置",
-    "type": "POST",
-    "params": {
-        "flowid": {
-            "default": "522A6299-9D05-47BA-A479-0C9F1304364C",
-            "required": true,
-            "description": "流程id"
-        }
-    },
-    "response": {}
-},
-{
-    "url": "UAPI/Flow/CUDFlowWebConfig",
-    "summary": "<span style='color:#EEDFCC'>[web]</span>操作流程节点 新增、修改、删除",
-    "type": "POST",
-    "params": {
-        "object": {
-            "default": "{'flowid':'0cb02849-bf16-4fce-9ca3-20da9071b3fa','nodes':[{'nodeid':'guid1','config':{'name':'节点名字1','left':'11','top':'21','type':'chat','width':'31','height':'41','alt':''},'property':{'decisiontype':1,'decisiontarget':2,'memo':'xxxxddd','locationType':1},'events':[{'bindType':1,'eventLibraryid':'fdfasfa','eventName':'作业单审批通过'}]},{'nodeid':'guid2','config':{'name':'节点名字2','left':'11','top':'21','type':'chat','width':'31','height':'41','alt':''},'property':{'decisiontype':1,'decisiontarget':2,'memo':'xxxxddd','locationType':1},'events':[{'bindType':1,'eventLibraryid':'fdfasfa','eventName':'作业单审批驳回'}]}],'lines':[{'style':'sl','from':'guid1','to':'guid2','name':''}]}",
-            "required": true,
-            "description": "一个大对象，包含所有节点、连线、事件"
-        }
-    },
-    "response": {}
-},
-{
-    "url": "UAPI/Flow/GetEventsList",
-    "summary": "<span style='color:#EEDFCC'>[web]</span>获取事件列表",
-    "type": "POST",
-    "params": {
-        "businesscode": {
-            "default": "ZYD",
-            "required": false,
-            "description": "业务父类id，例如ZYD、RW，传空则获取所有"
-        }
-    },
-    "response": {
-			"items": {
+        {
+            "url": "UAPI/Flow/GetEventsList",
+            "summary": "<span style='color:#EEDFCC'>[web]</span>获取事件列表",
+            "type": "POST",
+            "params": {
+                "businesscode": {
+                    "default": "ZYD",
+                    "required": false,
+                    "description": "业务父类id，例如ZYD、RW，传空则获取所有"
+                }
+            },
+            "response": {
+                "items": {
                     "eventLibraryid": "事件id",
                     "eventName": "事件名称"
                 }
-}
-}
+            }
+        }
     ]
 }

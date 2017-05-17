@@ -1368,21 +1368,40 @@
             }
         },
         {
-            "url": "UAPI/ThirdPerson/LearnGetList",
-            "summary": "获取学习培训记录列表",
-            "type": "POST",
-            "params": {
+				"url": "UAPI/ThirdPerson/LearnGetList",
+				"updatetime": "20170516",
+				"summary": "获取学习培训记录列表",
+				"type": "POST",
+				"params": {
+					"lessonid": {
+						"default": "85fed6cd-7ee0-4316-962f-7b14a273bcbd",
+						"required": false,
+						"description": "课程Guid"
+					},
+					"deptid": {
+						"default": "",
+						"required": false,
+						"description": "部门id"
+					},
+					"trainbegintime": {
+						"default": "",
+						"required": false,
+						"description": "培训开始时间"
+					},
+					"trainendtime": {
+						"default": "",
+						"required": false,
+						"description": "培训结束时间"
+					},
+					"personname": {
+						"default": "",
+						"required": false,
+						"description": "培训人员名称"
+					}
+				},
+				"response": {}
+			}
 
-                "lessonid": {
-                    "default": "85fed6cd-7ee0-4316-962f-7b14a273bcbd",
-                    "required": false,
-                    "description": "课程Guid"
-                }
-            },
-            "response": {
-
-            }
-        }
     ],
     "apiDept": [
         {
@@ -1938,6 +1957,7 @@
             }
         },
         {
+            "NoNeed": "1",
             "url": "UAPI/ThirdPerson/WorkTypeGetList",
             "summary": "获取工种列表",
             "type": "POST",

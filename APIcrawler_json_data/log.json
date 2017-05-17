@@ -88,8 +88,7 @@
                     "description": "<span style='color:red'>必须*</span>所连数据库服务器ip"
                 }
             },
-            "response": {
-            }
+            "response": {}
         }
     ]
 }
