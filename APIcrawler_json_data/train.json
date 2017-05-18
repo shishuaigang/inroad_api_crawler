@@ -37,7 +37,7 @@
             "type": "POST",
             "params": {
                 "typeid": {
-                    "default": "",
+                    "default": "52770E91-6E8E-460F-93DF-0173BF849C67",
                     "required": true,
                     "description": "证书类型id"
                 }
@@ -65,12 +65,12 @@
             "type": "POST",
             "params": {
                 "typeid": {
-                    "default": "",
+                    "default": "52770E91-6E8E-460F-93DF-0173BF849C67",
                     "required": true,
                     "description": "证书类型id"
                 },
                 "typename": {
-                    "default": "",
+                    "default": "师傅的说法",
                     "required": true,
                     "description": "证书类型名称"
                 }

@@ -839,73 +839,73 @@
         },
         {
             "url": "UAPI/Inspection/InspectionPlanRecordPointStart",
-            "summary": "校验巡检点nfc或者二维码，通过后插入巡检点记录",
-            "type": "POST",
-            "params": {
-                "pointid": {
-                    "default": "FCDD9787-940D-4D69-8FF2-3F8BBA95459B",
-                    "required": true,
-                    "description": "巡检点id"
+				"updatetime":"20170413","summary": "校验巡检点nfc或者二维码，通过后插入巡检点记录",
+				"type": "POST",
+				"params": {
+					"pointid": {
+						"default": "5E274C25-BD3E-4AE8-851F-236BE958A410",
+						"required": true,
+						"description": "巡检点id"
+						},
+					"nfcid": {
+								"default": "",
+								"required": true,
+								"description": "nfcid"
+							},
+					"qrcode": {
+						"default": "GZD-XJ-00292",
+						"required": true,
+						"description": "二维码id"
+						},
+					"recordid": {
+						"default": "BD0EF6BA-D773-4F82-A688-2CDC2E58F6BF",
+						"required": true,
+						"description": "巡检计划的记录id"
+						},
+					"longitude": {
+						"default": "",
+						"required": true,
+						"description": "经度"
+						},
+					"latitude": {
+						"default": "",
+						"required": true,
+						"description": "纬度"
+						}
                 },
-                "nfcid": {
-                    "default": "",
-                    "required": true,
-                    "description": "nfcid"
-                },
-                "qrcode": {
-                    "default": "20170222131727697",
-                    "required": true,
-                    "description": "二维码id"
-                },
-                "recordid": {
-                    "default": "",
-                    "required": true,
-                    "description": "巡检计划的记录id"
-                },
-                "longitude": {
-                    "default": "",
-                    "required": true,
-                    "description": "经度"
-                },
-                "latitude": {
-                    "default": "",
-                    "required": true,
-                    "description": "纬度"
-                }
-            },
             "response": {}
         },
         {
             "url": "UAPI/Inspection/InspectionPlanRecordRandomPointAdd",
-            "summary": "增加随机巡检的巡检点",
-            "type": "POST",
-            "params": {
-                "nfcid": {
-                    "default": "",
-                    "required": true,
-                    "description": "nfcid"
+				"updatetime":"20170413","summary": "增加随机巡检的巡检点",
+				"type": "POST",
+				"params": {
+					"nfcid": {
+								"default": "",
+								"required": true,
+								"description": "nfcid"
+							},
+					"qrcode": {
+						"default": "GZD-XJ-00292",
+						"required": true,
+						"description": "二维码id"
+						},
+					"recordid": {
+						"default": "BD0EF6BA-D773-4F82-A688-2CDC2E58F6BF",
+						"required": true,
+						"description": "巡检计划的记录id"
+						},
+					"longitude": {
+						"default": "",
+						"required": true,
+						"description": "经度"
+						},
+					"latitude": {
+						"default": "",
+						"required": true,
+						"description": "纬度"
+						}
                 },
-                "qrcode": {
-                    "default": "20170222131727697",
-                    "required": true,
-                    "description": "二维码id"
-                },
-                "recordid": {
-                    "default": "",
-                    "required": true,
-                    "description": "巡检计划的记录id"
-                },
-                "longitude": {
-                    "default": "",
-                    "required": true,
-                    "description": "经度"
-                },
-                "latitude": {
-                    "default": "",
-                    "required": true,
-                    "description": "纬度"
-                }
-            },
             "response": {}
         },
         {

@@ -267,55 +267,59 @@
             "response": {}
         },
         {
-            "url": "UAPI/Maintenance/RecordRegister",
-            "updatetime": "20170425",
-            "summary": "<span style='color:#87CEEB'>[app]</span>维保记录登记",
+             "url": "UAPI/Maintenance/RecordRegister",
+            "updatetime":"20170425","summary": "<span style='color:#87CEEB'>[app]</span>维保记录登记",
             "type": "POST",
             "params": {
-                "registerno": {
+               	"registerno": {
                     "default": "11111",
                     "required": true,
                     "description": "登记号"
                 },
-                "regionid": {
+				"regionid": {
                     "default": "80",
                     "required": true,
                     "description": "区域id"
                 },
-                "deviceid": {
+				"deviceid": {
                     "default": "3DCB730D-3032-4827-90EF-032F73C28655",
                     "required": true,
                     "description": "设备id"
                 },
-                "modeid": {
+				"modeid": {
                     "default": "EBB71C92-F0F8-4F32-8762-EE94E3BF15B8",
                     "required": true,
                     "description": "维保modeid"
                 },
-                "maintenancename": {
+				"maintenancename": {
                     "default": "",
                     "required": true,
                     "description": "维保标题"
                 },
-                "begintime": {
-                    "default": "",
+				"begintime": {
+                    "default": "2017-01-01",
                     "required": true,
                     "description": "开始时间"
                 },
-                "managerids": {
+				"managerids": {
                     "default": "efcc720c-a498-4b07-b674-9c7b6019c2ae",
                     "required": true,
                     "description": "管理人ids"
                 },
-                "participants": {
+				"participants": {
                     "default": "efcc720c-a498-4b07-b674-9c7b6019c2ae",
                     "required": true,
                     "description": "参与人ids"
                 },
-                "checkids": {
+				"checkids": {
                     "default": "efcc720c-a498-4b07-b674-9c7b6019c2ae",
                     "required": true,
                     "description": "审核人ids"
+                },
+				"followids": {
+                    "default": "",
+                    "required": true,
+                    "description": "关注人ids"
                 }
             },
             "response": {}
@@ -383,8 +387,8 @@
             "summary": "<span style='color:#87CEEB'>[app]</span>获取设备维保记录节点条",
             "type": "POST",
             "params": {
-                "businessid": {
-                    "default": "",
+               	"businessid": {
+                    "default": "39614CF8-6D13-4304-90B2-00515B54C2A9",
                     "required": true,
                     "description": "维保记录id"
                 }
@@ -432,7 +436,7 @@
             "type": "POST",
             "params": {
                 "noderecordid": {
-                    "default": "",
+                    "default": "94D94B13-6429-42A4-AAC7-B3227BED0A51",
                     "required": true,
                     "description": "节点记录id"
                 }

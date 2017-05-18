@@ -395,7 +395,7 @@
             "type": "POST",
             "params": {
                 "nodeid": {
-                    "default": "",
+                    "default": "5770FA30-0696-4CBE-84D4-6ACA450F4F82",
                     "required": true,
                     "description": "节点id"
                 },
@@ -405,7 +405,7 @@
                     "description": "规程节点操作id"
                 },
                 "title ": {
-                    "default": "",
+                    "default": "操作名字1",
                     "required": true,
                     "description": "操作描述"
                 },
@@ -415,22 +415,22 @@
                     "description": "大纲说明"
                 },
                 "indentvalue  ": {
-                    "default": "",
+                    "default": "1",
                     "required": true,
                     "description": "缩进值  0,1,2"
                 },
                 "type  ": {
-                    "default": "",
+                    "default": "3",
                     "required": true,
                     "description": "操作类型 1 下拉框  2 打钩确认 3 输入值 4 纯文本"
                 },
                 "datatype  ": {
-                    "default": "",
+                    "default": "1",
                     "required": true,
                     "description": "数据类型 1 数字 2 文本 3 日期 "
                 },
                 "needattachment  ": {
-                    "default": "",
+                    "default": "0",
                     "required": true,
                     "description": "需要附件 "
                 },
@@ -465,7 +465,7 @@
                     "description": "当前操作的的前置操作值 "
                 },
                 "ismust    ": {
-                    "default": "",
+                    "default": "0",
                     "required": true,
                     "description": "是否必须 "
                 },
@@ -485,17 +485,17 @@
                     "description": "操作的具体选择项ids "
                 },
                 "optiontitles    ": {
-                    "default": "",
+                    "default": "舒服舒服",
                     "required": true,
                     "description": "操作的具体选择项标题 "
                 },
                 "nextnodeids    ": {
-                    "default": "",
+                    "default": "NULL",
                     "required": true,
                     "description": "操作的具体选择项选择后跳转的节点id "
                 },
                 "operationlength    ": {
-                    "default": "",
+                    "default": "10",
                     "required": true,
                     "description": "操作值的长度"
                 }
