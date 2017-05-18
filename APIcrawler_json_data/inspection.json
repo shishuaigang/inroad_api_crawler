@@ -160,6 +160,7 @@
         },
         {
             "url": "UAPI/Inspection/InspectionPlanRecordPointDetailSave",
+            "updatetime":"20170413",
             "summary": "巡检计划的巡检点内关键数据保存",
             "type": "POST",
             "params": {
@@ -184,7 +185,7 @@
                     "description": "关键数据ids"
                 },
                 "coredatavalues": {
-                    "default": "",
+                    "default": "1",
                     "required": true,
                     "description": "数据项值 s"
                 },

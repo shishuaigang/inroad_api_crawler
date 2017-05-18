@@ -166,12 +166,12 @@
             "type": "POST",
             "params": {
                 "labelid": {
-                    "default": "",
+                    "default": "94D94B13-6429-42A4-AAC7-B3227BED0A51",
                     "required": true,
                     "description": "标签id"
                 },
                 "labelname": {
-                    "default": "",
+                    "default": "测试专用",
                     "required": true,
                     "description": "标签名称"
                 }
