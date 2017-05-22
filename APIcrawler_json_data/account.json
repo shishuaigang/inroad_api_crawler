@@ -829,6 +829,7 @@
         },
         {
             "url": "UAPI/Account/PositionLastGetList",
+            "updatetime":"20170413",
             "summary": "获取人员最后位置",
             "type": "POST",
             "params": {
@@ -841,6 +842,11 @@
                     "default": "",
                     "required": true,
                     "description": "人员ids"
+                },
+                "area": {
+                    "default": "",
+                    "required": true,
+                    "description": "安全区域"
                 }
             },
             "response": {}
