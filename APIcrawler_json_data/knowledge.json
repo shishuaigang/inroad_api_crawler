@@ -179,6 +179,20 @@
             "response": {}
         },
         {
+            "url": "UAPI/Knowledge/CatalogDel",
+            "updatetime":"20170511",
+            "summary": "删除知识库目录",
+            "type": "POST",
+            "params": {
+               	"catalogid": {
+                    "default": "1",
+                    "required": true,
+                    "description": "知识库目录id"
+                }
+            },
+            "response": {}
+        },
+        {
             "url": "UAPI/Knowledge/PointDetail",
             "updatetime": "20170512",
             "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>打开知识点页面",
