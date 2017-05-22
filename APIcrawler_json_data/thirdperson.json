@@ -760,6 +760,7 @@
             }
         },
         {
+            "NoNeed": "1",
             "url": "UAPI/ThirdPerson/Create",
             "summary": "新建承包商人员信息",
             "type": "POST",
@@ -821,6 +822,7 @@
             }
         },
         {
+            "NoNeed": "1",
             "url": "UAPI/ThirdPerson/Edit",
             "summary": "编辑承包商人员信息",
             "type": "POST",
@@ -887,6 +889,7 @@
             }
         },
         {
+            "NoNeed": "1",
             "url": "UAPI/ThirdPerson/PersonDelete",
             "summary": "删除承包商人员",
             "type": "POST",
