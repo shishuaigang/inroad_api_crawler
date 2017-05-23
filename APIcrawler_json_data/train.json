@@ -696,6 +696,20 @@
             "response": {}
         },
         {
+            "url": "UAPI/Train/GetCredentialsByType",
+            "updatetime":"20170413",
+            "summary": "根据证书的类型查找证书名称",
+            "type": "POST",
+            "params": {
+		        "typeid": {
+                    "default": "",
+                    "required": true,
+                    "description": "证书类型"
+                }
+            },
+            "response": {}
+        },
+        {
             "url": "UAPI/Train/TestpaperSend",
             "summary": "测验派发",
             "type": "POST",
