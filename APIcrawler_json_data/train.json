@@ -695,16 +695,54 @@
             },
             "response": {}
         },
-        {
-            "url": "UAPI/Train/GetCredentialsByType",
-            "updatetime":"20170413",
+      {
+            "url": "UAPI/Train/CredentialsNameGetList",
+            "updatetime":"20170523",
             "summary": "根据证书的类型查找证书名称",
             "type": "POST",
             "params": {
-		        "typeid": {
-                    "default": "",
+		      "typeid": {
+                "default": "",
+                  "required": true,
+                  "description": "证书类型"
+                }
+            },
+            "response": {}
+        },
+		{
+            "url": "UAPI/Train/CredentialsNameAdd",
+            "updatetime":"20170523",
+            "summary": "添加/编辑证书的名称",
+            "type": "POST",
+            "params": {
+		      "typeid": {
+                    "default": "9A80020E-0589-4435-AEBC-68E3D1CADEBB",
                     "required": true,
                     "description": "证书类型"
+                },
+		      "credentialsname": {
+                    "default": "测试",
+                    "required": true,
+                    "description": "证书名称"
+                },
+		      "credentialsnameid": {
+                    "default": "",
+                    "required": true,
+                    "description": "证书名称id"
+                }
+            },
+            "response": {}
+        },
+		{
+            "url": "UAPI/Train/CredentialsNameDel",
+            "updatetime":"20170523",
+            "summary": "删除证书的名称",
+            "type": "POST",
+            "params": {
+				"credentialsnameid": {
+                    "default": "45A1128C-ECD4-44CC-9896-6B4552C1845A",
+                    "required": true,
+                    "description": "证书名称id"
                 }
             },
             "response": {}
