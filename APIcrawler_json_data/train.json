@@ -1089,10 +1089,11 @@
         },
         {
             "url": "UAPI/Train/CoursewareAdd",
+            "updatetime":"20170413",
             "summary": "添加课件",
             "type": "POST",
-            "params": {
-                "title": {
+            "params":{
+		        "title": {
                     "default": "一个课件的名字",
                     "required": true,
                     "description": "一个课件的名字"
@@ -1107,8 +1108,8 @@
                     "required": true,
                     "description": "课件链接"
                 },
-                "size": {
-                    "default": "",
+		        "size": {
+                    "default": "1",
                     "required": true,
                     "description": "课件大小"
                 },
@@ -1142,10 +1143,15 @@
                     "required": true,
                     "description": ""
                 },
-                "needminute": {
-                    "default": "1",
+		    "needminute": {
+                    "default": "",
                     "required": true,
                     "description": "完成课件需要的时间"
+                },
+		    "knowledgepointid": {
+                    "default": "",
+                    "required": true,
+                    "description": "知识点id"
                 }
             },
             "response": {}

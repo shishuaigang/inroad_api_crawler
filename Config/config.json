@@ -8,7 +8,7 @@
         "hchen@in-road.com"
     ],
     "mail_subject": "Inroad api 扫描",
-    "api_version": "201803230",
+    "api_version": "999999999",
     "db_username": "sgshi",
     "db_userpasswd": "ssg12345!",
     "db_name": "Inroad_Test_Result",
