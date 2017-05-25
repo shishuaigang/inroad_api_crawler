@@ -1515,7 +1515,7 @@
             "type": "POST",
             "params": {
 		"roleid": {
-                    	"default": "",
+                    	"default": "DC4722DE-EC62-4B0C-A941-01B6E19FC348",
                     	"required": true,
                     	"description": "权限组id"
                 	}
@@ -1530,12 +1530,12 @@
             "type": "POST",
             "params": {
 				"roleid": {
-                    	"default": "",
+                    	"default": "DC4722DE-EC62-4B0C-A941-01B6E19FC348",
                     	"required": true,
                     	"description": "权限组id"
                 	},
 				"actionapi": {
-                    	"default": "",
+                    	"default": "UAPI/Device/StatusChangeRecordSave",
                     	"required": true,
                     	"description": "权限组id"
                 	}
