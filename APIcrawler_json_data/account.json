@@ -1,1026 +1,1114 @@
 {
-    "resource": "Account",
-    "section": [
-        {
-            "name": "账号",
-            "value": "apis"
+  "resource": "Account",
+  "section": [
+    {
+      "name": "账号",
+      "value": "apis"
+    }
+  ],
+  "apis": [
+    {
+      "url": "API/Account/Register",
+      "summary": "用户注册",
+      "type": "POST",
+      "params": {
+        "phonenumber": {
+          "default": "15102100358",
+          "required": true
+        },
+        "password": {
+          "default": "123456",
+          "required": true
+        },
+        "confirmpassword": {
+          "default": "123456",
+          "required": true
+        },
+        "username": {
+          "default": "新用户",
+          "required": false
+        },
+        "deptid": {
+          "default": "1",
+          "required": true
         }
-    ],
-    "apis": [
-        {
-            "url": "API/Account/Register",
-            "summary": "用户注册",
-            "type": "POST",
-            "params": {
-                "phonenumber": {
-                    "default": "15102100358",
-                    "required": true
-                },
-                "password": {
-                    "default": "123456",
-                    "required": true
-                },
-                "confirmpassword": {
-                    "default": "123456",
-                    "required": true
-                },
-                "username": {
-                    "default": "新用户",
-                    "required": false
-                },
-                "deptid": {
-                    "default": "1",
-                    "required": true
-                }
-            },
-            "response": {
-                "description": {}
-            }
+      },
+      "response": {
+        "description": {}
+      }
+    },
+    {
+      "url": "API/Account/Login",
+      "summary": "用户登录",
+      "type": "POST",
+      "params": {
+        "phonenumber": {
+          "default": "18121225109",
+          "required": true
         },
-        {
-            "url": "API/Account/Login",
-            "summary": "用户登录",
-            "type": "POST",
-            "params": {
-                "phonenumber": {
-                    "default": "18121225109",
-                    "required": true
-                },
-                "password": {
-                    "default": "123456",
-                    "required": true
-                },
-                "rememberme": {
-                    "default": "True",
-                    "required": false
-                }
-            },
-            "response": {}
+        "password": {
+          "default": "123456",
+          "required": true
         },
-        {
-            "NoNeed": "1",
-            "url": "UAPI/Account/LogOff",
-            "summary": "用户退出登录",
-            "type": "POST",
-            "params": {},
-            "response": {}
-        },
-        {
-            "url": "API/Account/GetMobCode",
-            "summary": "获取短信验证码",
-            "type": "GET",
-            "params": {
-                "phonenumber": {
-                    "default": "18121225109",
-                    "required": true
-                }
-            },
-            "response": {}
-        },
-        {
-            "NoNeed": "1",
-            "url": "API/Account/CheckMobCode",
-            "summary": "检验短信验证码",
-            "type": "POST",
-            "params": {
-                "phonenumber": {
-                    "default": "18121225109",
-                    "required": true
-                },
-                "mobcode": {
-                    "default": "8888",
-                    "required": true,
-                    "description": "手机验证码"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Account/GetAppMenus",
-            "summary": "获取用户APP菜单",
-            "type": "POST",
-            "params": {
-                "parentmenuid": {
-                    "default": "0",
-                    "required": true
-                }
-            },
-            "response": {
-                "items": {
-                    "menuid": "菜单ID",
-                    "menuname": "菜单名",
-                    "menuvalue": "菜单值",
-                    "menuparentid": "菜单父ID",
-                    "menutype": "菜单类型",
-                    "menuicon": "菜单图片地址",
-                    "menudesc": "菜单描述",
-                    "rules": "权限"
-                }
-            }
-        },
-        {
-            "NoNeed": "1",
-            "url": "UAPI/Account/GetPadMenus",
-            "summary": "获取用户Pad菜单",
-            "type": "POST",
-            "params": {
-                "parentmenuid": {
-                    "default": "0",
-                    "required": true
-                }
-            },
-            "response": {
-                "items": {
-                    "menuid": "菜单ID",
-                    "menuname": "菜单名",
-                    "menuvalue": "菜单值",
-                    "menuparentid": "菜单父ID",
-                    "menutype": "菜单类型",
-                    "menuicon": "菜单图片地址",
-                    "menudesc": "菜单描述",
-                    "rules": "权限"
-                }
-            }
-        },
-        {
-            "url": "UAPI/Account/GetWebMenus",
-            "summary": "获取用户Web菜单",
-            "type": "POST",
-            "params": {},
-            "response": {
-                "items": {
-                    "menuid": "菜单ID",
-                    "menuname": "菜单名",
-                    "menuvalue": "菜单值",
-                    "menuparentid": "菜单父ID",
-                    "menutype": "菜单类型",
-                    "menuicon": "菜单图片地址",
-                    "menudesc": "菜单描述",
-                    "rules": "权限"
-                }
-            }
-        },
-        {
-            "NoNeed": "1",
-            "url": "UAPI/Account/HeadImgUpdate",
-            "summary": "用户上传头像",
-            "type": "POST",
-            "params": {
-                "touserid": {
-                    "default": "",
-                    "required": false,
-                    "description": "为空指当前用户，App编辑自己时可为空，Web指定编辑他人时不为空"
-                },
-                "headimg": {
-                    "default": "http://work.in-road.com/files/useruploadfiles3/244/20150623040140073857.jpg",
-                    "required": true,
-                    "description": "头像地址"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Account/ChangePassword",
-            "summary": "用户修改密码（只能让当前用户修改自己密码）",
-            "type": "POST",
-            "params": {
-                "oldpass": {
-                    "default": "123456",
-                    "required": true,
-                    "description": "原密码"
-                },
-                "newpass": {
-                    "default": "123456",
-                    "required": true,
-                    "description": "新密码"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Account/DetailInfoGet",
-            "summary": "获取用户信息以供修改",
-            "type": "POST",
-            "params": {
-                "touserid": {
-                    "default": "1d673224-0f21-4592-ad44-03959475a948",
-                    "required": true,
-                    "description": "用户Guid"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Account/DetailInfoEdit",
-            "summary": "修改用户信息",
-            "type": "POST",
-            "params": {
-                "touserid": {
-                    "default": "1d673224-0f21-4592-ad44-03959475a948",
-                    "required": true,
-                    "description": "用户Guid"
-                },
-                "email": {
-                    "default": "Test@test.com",
-                    "required": true,
-                    "description": "电子邮箱"
-                },
-                "gender": {
-                    "default": "男",
-                    "required": true,
-                    "description": "性别(男或女)"
-                },
-                "birthday": {
-                    "default": "1990-01-02",
-                    "required": true,
-                    "description": "出生日期"
-                },
-                "edulevel": {
-                    "default": "12",
-                    "required": true,
-                    "description": "教育级别"
-                },
-                "workno": {
-                    "default": "12",
-                    "required": true,
-                    "description": "工号"
-                },
-                "worktype": {
-                    "default": "12",
-                    "required": true,
-                    "description": "工种类型"
-                },
-                "sales": {
-                    "default": "12",
-                    "required": true,
-                    "description": "销售人员代码"
-                },
-                "salesarea": {
-                    "default": "12",
-                    "required": true,
-                    "description": "销售大区代码"
-                }
-            },
-            "response": {}
-        },
-        {
-            "NoNeed": "1",
-            "url": "API/Account/ResetPassword",
-            "summary": "重置用户密码",
-            "type": "POST",
-            "params": {
-                "phonenumber": {
-                    "default": "13585508770",
-                    "required": true,
-                    "description": "用户Guid"
-                },
-                "mobcode": {
-                    "default": "",
-                    "required": true,
-                    "description": "手机验证码"
-                },
-                "newpassword": {
-                    "default": "",
-                    "required": true,
-                    "description": "新密码"
-                }
-            },
-            "response": {}
-        },
-        {
-            "NoNeed": "1",
-            "url": "UAPI/Account/AccountChangeLoginname",
-            "summary": "修改用户登录名(手机号)",
-            "type": "POST",
-            "params": {
-                "c_id": {
-                    "default": "0a4cf4da-201c-4846-a080-e4daf6e88bd5",
-                    "required": true,
-                    "description": "刘丽 15968047540"
-                },
-                "loginname": {
-                    "default": "15968047540",
-                    "required": true,
-                    "description": "原始手机号 15968047540"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Account/GetNeedCheckRegUserList",
-            "summary": "获取当前账号可审批的注册用户",
-            "type": "POST",
-            "params": {},
-            "response": {}
-        },
-        {
-            "url": "UAPI/Account/AccountSwitchStatus",
-            "summary": "设置账号是否启用",
-            "type": "POST",
-            "params": {
-                "c_id": {
-                    "default": "0a4cf4da-201c-4846-a080-e4daf6e88bd5",
-                    "required": true,
-                    "description": "刘丽 15968047540"
-                },
-                "status": {
-                    "default": "",
-                    "required": true,
-                    "description": "true / false"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Account/AccountGetList",
-            "summary": "获取系统用户列表",
-            "type": "POST",
-            "params": {
-                "deptid": {
-                    "default": "1",
-                    "required": true,
-                    "description": "部门名称(0标示全部)"
-                },
-                "name": {
-                    "default": "",
-                    "required": true,
-                    "description": "姓名"
-                },
-                "mobile": {
-                    "default": "",
-                    "required": false,
-                    "description": "手机号"
-                }
-            },
-            "response": {}
-        },
-        {
-            "NoNeed": "1",
-            "url": "UAPI/Account/NfcBind",
-            "summary": "用户绑定nfc",
-            "type": "POST",
-            "params": {
-                "personid": {
-                    "default": "",
-                    "required": true,
-                    "description": "用户id"
-                },
-                "settype": {
-                    "default": "",
-                    "required": true,
-                    "description": "1绑定，1解除绑定"
-                },
-                "nfcno": {
-                    "default": "",
-                    "required": true,
-                    "description": ""
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Account/AccountChangeRole",
-            "summary": "更改系统用户权限",
-            "type": "POST",
-            "params": {
-                "touserid": {
-                    "default": "6D3B5089-C2D3-4685-91FD-4BEE68A8A881",
-                    "required": true,
-                    "description": "用户Guid"
-                },
-                "roleid": {
-                    "default": "22C579F0-F340-4E61-A1FE-1BE843ABF9DD",
-                    "required": true,
-                    "description": "权限组Guid"
-                },
-                "settype": {
-                    "default": "",
-                    "required": true,
-                    "description": "0菜单权限，1数据权限"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Account/AccountChangeDept",
-            "summary": "更改系统用户部门",
-            "type": "POST",
-            "params": {
-                "touserid": {
-                    "default": "6D3B5089-C2D3-4685-91FD-4BEE68A8A881",
-                    "required": true,
-                    "description": "用户Guid"
-                },
-                "deptid": {
-                    "default": "33",
-                    "required": true,
-                    "description": "部门id"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Account/GetWorkPlat",
-            "summary": "得到用户工作面板配置",
-            "type": "POST",
-            "params": {
-                "allplat": {
-                    "default": "",
-                    "required": true,
-                    "description": "1全部工作面板 0 用户工作面板"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Account/GetNoticeList",
-            "summary": "得到用户的通告通知",
-            "type": "POST",
-            "params": {},
-            "response": {}
-        },
-        {
-            "url": "UAPI/Account/CredentialsGetList",
-            "updatetime": "20170511",
-            "summary": "<span style='color:#87CEEB'>[app]</span>读取用户的证书列表",
-            "type": "POST",
-            "params": {},
-            "response": {}
-        },
-        {
-            "url": "UAPI/Account/GetNoticeDetail",
-            "summary": "得到用户的通告通知详情",
-            "type": "POST",
-            "params": {
-                "noticeid": {
-                    "default": "63d664d6-e8a8-477c-92ef-828be86f02f5",
-                    "required": true,
-                    "description": "用户通知通告Id"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Account/GetDeptList",
-            "summary": "获取部门列表",
-            "type": "GET",
-            "params": {},
-            "response": {
-                "items": [
-                    {
-                        "id": "部门ID",
-                        "pId": "部门父ID",
-                        "name": "部门名称"
-                    }
-                ]
-            }
-        },
-        {
-            "NoNeed": "1",
-            "url": "UAPI/Account/RsaDecrypt",
-            "summary": "RSA解密",
-            "type": "POST",
-            "params": {
-                "data": {
-                    "default": "",
-                    "required": true,
-                    "description": "加密之后的byte数组的base64字符串形式"
-                }
-            },
-            "response": {}
-        },
-        {
-            "NoNeed": "1",
-            "url": "UAPI/Account/RsaEncrtpt",
-            "summary": "RSA加密",
-            "type": "POST",
-            "params": {
-                "data": {
-                    "default": "",
-                    "required": true,
-                    "description": "需要加密的字符串"
-                }
-            },
-            "response": {}
-        },
-        {
-            "NoNeed": "1",
-            "url": "API/Account/RegisterNew",
-            "summary": "RSA加密注册",
-            "type": "POST",
-            "params": {
-                "data": {
-                    "default": "",
-                    "required": true,
-                    "description": "PhoneNumber#Password#confirmPassword#Username#Deptid#Timespan  ps:Timespan格式为20160427151312"
-                }
-            },
-            "response": {}
-        },
-        {
-            "NoNeed": "1",
-            "url": "API/Account/LoginNew",
-            "summary": "RSA加密登录",
-            "type": "POST",
-            "params": {
-                "data": {
-                    "default": "",
-                    "required": true,
-                    "description": "PhoneNumber#Password#Timespan   ps:Timespan格式为20160427151312"
-                },
-                "rememberMe": {
-                    "default": "true",
-                    "required": false,
-                    "description": "是否记住密码"
-                },
-                "padid": {
-                    "default": "123454444",
-                    "required": false,
-                    "description": "padid"
-                }
-            },
-            "response": {}
-        },
-        {
-            "NoNeed": "1",
-            "url": "UAPI/Account/ChangePasswordNew",
-            "summary": "RSA加密修改密码",
-            "type": "POST",
-            "params": {
-                "data": {
-                    "default": "",
-                    "required": true,
-                    "description": "oldpass#newpass#Timespan   ps:Timespan格式为20160427151312"
-                }
-            },
-            "response": {}
-        },
-        {
-            "NoNeed": "1",
-            "url": "API/Account/ResetPasswordNew",
-            "summary": "RSA加密重置密码",
-            "type": "POST",
-            "params": {
-                "data": {
-                    "default": "",
-                    "required": true,
-                    "description": "phonenumber#newpass#Timespan   ps:Timespan格式为20160427151312"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "API/Account/VerifyUser",
-            "summary": "验证用户",
-            "type": "POST",
-            "params": {
-                "touserid": {
-                    "default": "6d3b5089-c2d3-4685-91fd-4bee68a8a881",
-                    "required": true,
-                    "description": ""
-                }
-            },
-            "response": {}
-        },
-        {
-            "NoNeed": "1",
-            "url": "API/Account/GetUser",
-            "summary": "获取用户",
-            "type": "POST",
-            "params": {
-                "nfcno": {
-                    "default": "",
-                    "required": true,
-                    "description": ""
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Account/ActionVerify",
-            "summary": "用户按钮权限",
-            "type": "POST",
-            "params": {
-                "action": {
-                    "default": "",
-                    "required": true,
-                    "description": ""
-                }
-            },
-            "response": {}
-        },
-        {
-            "NoNeed": "1",
-            "url": "UAPI/Account/GetAccountList",
-            "summary": "查询用户列表测试",
-            "type": "POST",
-            "params": {},
-            "response": {}
-        },
-        {
-            "NoNeed": "1",
-            "url": "UAPI/Account/PadMenuAdd",
-            "summary": "新增编辑pad菜单",
-            "type": "POST",
-            "params": {
-                "menuid": {
-                    "default": "0",
-                    "required": true,
-                    "description": "菜单id"
-                },
-                "menuname": {
-                    "default": "",
-                    "required": true,
-                    "description": "菜单name"
-                },
-                "parentmenuid": {
-                    "default": "0",
-                    "required": true,
-                    "description": "父菜单id"
-                },
-                "menuvalue": {
-                    "default": "",
-                    "required": true,
-                    "description": "菜单value"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Account/AppMenuAdd",
-            "summary": "新增编辑App菜单",
-            "type": "POST",
-            "params": {
-                "menuid": {
-                    "default": "0",
-                    "required": true,
-                    "description": "菜单id"
-                },
-                "menuname": {
-                    "default": "",
-                    "required": true,
-                    "description": "菜单name"
-                },
-                "parentmenuid": {
-                    "default": "0",
-                    "required": true,
-                    "description": "父菜单id"
-                },
-                "menuvalue": {
-                    "default": "",
-                    "required": true,
-                    "description": "菜单value"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Account/WebMenuAdd",
-            "summary": "新增编辑web菜单",
-            "type": "POST",
-            "params": {
-                "menuid": {
-                    "default": "0",
-                    "required": true,
-                    "description": "菜单id"
-                },
-                "menuname": {
-                    "default": "",
-                    "required": true,
-                    "description": "菜单name"
-                },
-                "parentmenuid": {
-                    "default": "0",
-                    "required": true,
-                    "description": "父菜单id"
-                },
-                "menuvalue": {
-                    "default": "",
-                    "required": true,
-                    "description": "菜单value"
-                }
-            },
-            "response": {}
-        },
-        {
-            "NoNeed": "1",
-            "url": "UAPI/Account/MenuSort",
-            "summary": "web菜单排序",
-            "type": "POST",
-            "params": {
-                "menuids": {
-                    "default": "",
-                    "required": true,
-                    "description": "菜单ids"
-                },
-                "parentmenuid": {
-                    "default": "",
-                    "required": true,
-                    "description": "父菜单id"
-                },
-                "menutype": {
-                    "default": "",
-                    "required": true,
-                    "description": "1-webmenu，2padmenu"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Account/SetPosition",
-            "summary": "上报位置",
-            "type": "POST",
-            "params": {
-                "longitude": {
-                    "default": "121.434024",
-                    "required": true,
-                    "description": "经度"
-                },
-                "latitude": {
-                    "default": "31.174435",
-                    "required": true,
-                    "description": "纬度"
-                }
-            },
-            "response": {}
-        },
-        {
-            "NoNeed": "1",
-            "url": "UAPI/Account/SafeAreaAdd",
-            "summary": "新增编辑安全区域",
-            "type": "POST",
-            "params": {
-                "areaid": {
-                    "default": "",
-                    "required": true,
-                    "description": "区域id"
-                },
-                "areaString": {
-                    "default": "",
-                    "required": true,
-                    "description": "区域坐标字符串"
-                },
-                "title": {
-                    "default": "",
-                    "required": true,
-                    "description": "区域名"
-                },
-                "isglobal": {
-                    "default": "",
-                    "required": true,
-                    "description": "是否全局-1是，0不是"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Account/SafeAreaDelete",
-            "summary": "删除安全区域",
-            "type": "POST",
-            "params": {
-                "areaid": {
-                    "default": "",
-                    "required": true,
-                    "description": "区域id"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Account/SafeAreaGetList",
-            "summary": "获取安全区域列表",
-            "type": "POST",
-            "params": {
-                "isglobal": {
-                    "default": "",
-                    "required": true,
-                    "description": "是否全局-1是，0不是"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Account/PositionGetList",
-            "summary": "获取人员轨迹列表",
-            "type": "POST",
-            "params": {
-                "personid": {
-                    "default": "",
-                    "required": true,
-                    "description": "人员id"
-                },
-                "areaid": {
-                    "default": "",
-                    "required": true,
-                    "description": "安全区域id"
-                },
-                "starttime": {
-                    "default": "",
-                    "required": true,
-                    "description": "开始时间"
-                },
-                "endtime": {
-                    "default": "",
-                    "required": true,
-                    "description": "结束时间"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Account/PositionLastGetList",
-            "updatetime":"20170413",
-            "summary": "获取人员最后位置",
-            "type": "POST",
-            "params": {
-                "deptid": {
-                    "default": "",
-                    "required": true,
-                    "description": "部门id"
-                },
-                "personids": {
-                    "default": "",
-                    "required": true,
-                    "description": "人员ids"
-                },
-                "area": {
-                    "default": "",
-                    "required": true,
-                    "description": "安全区域"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Account/AreaChangedGetList",
-            "summary": "人员区域变动记录",
-            "type": "POST",
-            "params": {
-                "deptid": {
-                    "default": "",
-                    "required": true,
-                    "description": "部门id"
-                },
-                "personids": {
-                    "default": "",
-                    "required": true,
-                    "description": "人员ids"
-                },
-                "changetype": {
-                    "default": "",
-                    "required": true,
-                    "description": "0离开，1进入"
-                },
-                "starttime": {
-                    "default": "",
-                    "required": true,
-                    "description": "开始时间"
-                },
-                "endtime": {
-                    "default": "",
-                    "required": true,
-                    "description": "结束时间"
-                },
-                "areaid": {
-                    "default": "",
-                    "required": true,
-                    "description": "区域id"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Account/CleanPosition",
-            "summary": "删除人员位置数据",
-            "type": "POST",
-            "params": {},
-            "response": {}
-        },
-        {
-            "NoNeed": "1",
-            "url": "UAPI/Account/ActionGetList",
-            "summary": "获取操作列表",
-            "type": "POST",
-            "params": {},
-            "response": {}
-        },
-        {
-            "NoNeed": "1",
-            "url": "UAPI/Account/ActionDel",
-            "summary": "删除人员行为",
-            "type": "POST",
-            "params": {
-                "Actionid": {
-                    "default": "00000000-0000-0000-0000-000000000000",
-                    "required": true,
-                    "description": "行为"
-                }
-            },
-            "response": {}
-        },
-        {
-            "NoNeed": "1",
-            "url": "UAPI/Account/RoleActionGetList",
-            "summary": "获取角色行为列表",
-            "type": "POST",
-            "params": {
-                "roleid": {
-                    "default": "00000000-0000-0000-0000-000000000000",
-                    "required": true,
-                    "description": "角色id"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Account/CheckAccountRoleAction",
-            "summary": "检查用户是否拒用使用当前api的权限",
-            "type": "POST",
-            "params": {
-                "actionapi": {
-                    "default": "UAPI/Device/StatusChangeRecordSave",
-                    "required": true,
-                    "description": "api的名字"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Account/UserWorkPlatSave",
-            "summary": "保存用户的工作面板",
-            "type": "POST",
-            "params": {
-                "workplatids": {
-                    "default": "",
-                    "required": true,
-                    "description": "工作面板ids"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Account/WorkMenuToUserAdd",
-            "summary": "用户个人常用菜单增加和删除",
-            "type": "POST",
-            "params": {
-                "appmenuids": {
-                    "default": "",
-                    "required": true,
-                    "description": "@type=1 时为新增的id @type=2 时为删除的id "
-                },
-                "type": {
-                    "default": "",
-                    "required": true,
-                    "description": "1 增加  2 删除 "
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Account/WorkMenuToUserGetList",
-            "summary": "读取个人常用菜单",
-            "type": "POST",
-            "params": {},
-            "response": {}
-        },
-        {
-            "url": "UAPI/Account/WorkMenuToUserSetOrder",
-            "summary": "用户个人常用菜单排序",
-            "type": "POST",
-            "params": {
-                "menuvalues": {
-                    "default": "",
-                    "required": true,
-                    "description": "菜单ids"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Account/RoleAppMenuGetList",
-            "summary": "根据用户权限组读取用户菜单",
-            "type": "POST",
-            "params": {},
-            "response": {}
-        },
-        {
-            "NoNeed": "1",
-            "url": "UAPI/Account/ActionAdd",
-            "summary": "获取操作列表",
-            "type": "POST",
-            "params": {
-                "title": {
-                    "default": "",
-                    "required": true,
-                    "description": "标题"
-                },
-                "memo": {
-                    "default": "",
-                    "required": true,
-                    "description": "备注"
-                }
-            },
-            "response": {}
+        "rememberme": {
+          "default": "True",
+          "required": false
         }
-    ]
+      },
+      "response": {}
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Account/LogOff",
+      "summary": "用户退出登录",
+      "type": "POST",
+      "params": {},
+      "response": {}
+    },
+    {
+      "url": "API/Account/GetMobCode",
+      "summary": "获取短信验证码",
+      "type": "GET",
+      "params": {
+        "phonenumber": {
+          "default": "18121225109",
+          "required": true
+        }
+      },
+      "response": {}
+    },
+    {
+      "NoNeed": "1",
+      "url": "API/Account/CheckMobCode",
+      "summary": "检验短信验证码",
+      "type": "POST",
+      "params": {
+        "phonenumber": {
+          "default": "18121225109",
+          "required": true
+        },
+        "mobcode": {
+          "default": "8888",
+          "required": true,
+          "description": "手机验证码"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/GetAppMenus",
+      "summary": "获取用户APP菜单",
+      "type": "POST",
+      "params": {
+        "parentmenuid": {
+          "default": "0",
+          "required": true
+        }
+      },
+      "response": {
+        "items": {
+          "menuid": "菜单ID",
+          "menuname": "菜单名",
+          "menuvalue": "菜单值",
+          "menuparentid": "菜单父ID",
+          "menutype": "菜单类型",
+          "menuicon": "菜单图片地址",
+          "menudesc": "菜单描述",
+          "rules": "权限"
+        }
+      }
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Account/GetPadMenus",
+      "summary": "获取用户Pad菜单",
+      "type": "POST",
+      "params": {
+        "parentmenuid": {
+          "default": "0",
+          "required": true
+        }
+      },
+      "response": {
+        "items": {
+          "menuid": "菜单ID",
+          "menuname": "菜单名",
+          "menuvalue": "菜单值",
+          "menuparentid": "菜单父ID",
+          "menutype": "菜单类型",
+          "menuicon": "菜单图片地址",
+          "menudesc": "菜单描述",
+          "rules": "权限"
+        }
+      }
+    },
+    {
+      "url": "UAPI/Account/GetWebMenus",
+      "summary": "获取用户Web菜单",
+      "type": "POST",
+      "params": {},
+      "response": {
+        "items": {
+          "menuid": "菜单ID",
+          "menuname": "菜单名",
+          "menuvalue": "菜单值",
+          "menuparentid": "菜单父ID",
+          "menutype": "菜单类型",
+          "menuicon": "菜单图片地址",
+          "menudesc": "菜单描述",
+          "rules": "权限"
+        }
+      }
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Account/HeadImgUpdate",
+      "summary": "用户上传头像",
+      "type": "POST",
+      "params": {
+        "touserid": {
+          "default": "",
+          "required": false,
+          "description": "为空指当前用户，App编辑自己时可为空，Web指定编辑他人时不为空"
+        },
+        "headimg": {
+          "default": "http://work.in-road.com/files/useruploadfiles3/244/20150623040140073857.jpg",
+          "required": true,
+          "description": "头像地址"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/ChangePassword",
+      "summary": "用户修改密码（只能让当前用户修改自己密码）",
+      "type": "POST",
+      "params": {
+        "oldpass": {
+          "default": "123456",
+          "required": true,
+          "description": "原密码"
+        },
+        "newpass": {
+          "default": "123456",
+          "required": true,
+          "description": "新密码"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/DetailInfoGet",
+      "summary": "获取用户信息以供修改",
+      "type": "POST",
+      "params": {
+        "touserid": {
+          "default": "1d673224-0f21-4592-ad44-03959475a948",
+          "required": true,
+          "description": "用户Guid"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/DetailInfoEdit",
+      "summary": "修改用户信息",
+      "type": "POST",
+      "params": {
+        "touserid": {
+          "default": "1d673224-0f21-4592-ad44-03959475a948",
+          "required": true,
+          "description": "用户Guid"
+        },
+        "email": {
+          "default": "Test@test.com",
+          "required": true,
+          "description": "电子邮箱"
+        },
+        "gender": {
+          "default": "男",
+          "required": true,
+          "description": "性别(男或女)"
+        },
+        "birthday": {
+          "default": "1990-01-02",
+          "required": true,
+          "description": "出生日期"
+        },
+        "edulevel": {
+          "default": "12",
+          "required": true,
+          "description": "教育级别"
+        },
+        "workno": {
+          "default": "12",
+          "required": true,
+          "description": "工号"
+        },
+        "worktype": {
+          "default": "12",
+          "required": true,
+          "description": "工种类型"
+        },
+        "sales": {
+          "default": "12",
+          "required": true,
+          "description": "销售人员代码"
+        },
+        "salesarea": {
+          "default": "12",
+          "required": true,
+          "description": "销售大区代码"
+        }
+      },
+      "response": {}
+    },
+    {
+      "NoNeed": "1",
+      "url": "API/Account/ResetPassword",
+      "summary": "重置用户密码",
+      "type": "POST",
+      "params": {
+        "phonenumber": {
+          "default": "13585508770",
+          "required": true,
+          "description": "用户Guid"
+        },
+        "mobcode": {
+          "default": "",
+          "required": true,
+          "description": "手机验证码"
+        },
+        "newpassword": {
+          "default": "",
+          "required": true,
+          "description": "新密码"
+        }
+      },
+      "response": {}
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Account/AccountChangeLoginname",
+      "summary": "修改用户登录名(手机号)",
+      "type": "POST",
+      "params": {
+        "c_id": {
+          "default": "0a4cf4da-201c-4846-a080-e4daf6e88bd5",
+          "required": true,
+          "description": "刘丽 15968047540"
+        },
+        "loginname": {
+          "default": "15968047540",
+          "required": true,
+          "description": "原始手机号 15968047540"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/GetNeedCheckRegUserList",
+      "summary": "获取当前账号可审批的注册用户",
+      "type": "POST",
+      "params": {},
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/AccountSwitchStatus",
+      "summary": "设置账号是否启用",
+      "type": "POST",
+      "params": {
+        "c_id": {
+          "default": "0a4cf4da-201c-4846-a080-e4daf6e88bd5",
+          "required": true,
+          "description": "刘丽 15968047540"
+        },
+        "status": {
+          "default": "",
+          "required": true,
+          "description": "true / false"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/AccountGetList",
+      "summary": "获取系统用户列表",
+      "type": "POST",
+      "params": {
+        "deptid": {
+          "default": "1",
+          "required": true,
+          "description": "部门名称(0标示全部)"
+        },
+        "name": {
+          "default": "",
+          "required": true,
+          "description": "姓名"
+        },
+        "mobile": {
+          "default": "",
+          "required": false,
+          "description": "手机号"
+        }
+      },
+      "response": {}
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Account/NfcBind",
+      "summary": "用户绑定nfc",
+      "type": "POST",
+      "params": {
+        "personid": {
+          "default": "",
+          "required": true,
+          "description": "用户id"
+        },
+        "settype": {
+          "default": "",
+          "required": true,
+          "description": "1绑定，1解除绑定"
+        },
+        "nfcno": {
+          "default": "",
+          "required": true,
+          "description": ""
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/AccountChangeRole",
+      "summary": "更改系统用户权限",
+      "type": "POST",
+      "params": {
+        "touserid": {
+          "default": "6D3B5089-C2D3-4685-91FD-4BEE68A8A881",
+          "required": true,
+          "description": "用户Guid"
+        },
+        "roleid": {
+          "default": "22C579F0-F340-4E61-A1FE-1BE843ABF9DD",
+          "required": true,
+          "description": "权限组Guid"
+        },
+        "settype": {
+          "default": "",
+          "required": true,
+          "description": "0菜单权限，1数据权限"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/AccountChangeDept",
+      "summary": "更改系统用户部门",
+      "type": "POST",
+      "params": {
+        "touserid": {
+          "default": "6D3B5089-C2D3-4685-91FD-4BEE68A8A881",
+          "required": true,
+          "description": "用户Guid"
+        },
+        "deptid": {
+          "default": "33",
+          "required": true,
+          "description": "部门id"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/GetWorkPlat",
+      "summary": "得到用户工作面板配置",
+      "type": "POST",
+      "params": {
+        "allplat": {
+          "default": "",
+          "required": true,
+          "description": "1全部工作面板 0 用户工作面板"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/GetNoticeList",
+      "summary": "得到用户的通告通知",
+      "type": "POST",
+      "params": {},
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/CredentialsGetList",
+      "updatetime": "20170511",
+      "summary": "<span style='color:#87CEEB'>[app]</span>读取用户的证书列表",
+      "type": "POST",
+      "params": {},
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/GetNoticeDetail",
+      "summary": "得到用户的通告通知详情",
+      "type": "POST",
+      "params": {
+        "noticeid": {
+          "default": "63d664d6-e8a8-477c-92ef-828be86f02f5",
+          "required": true,
+          "description": "用户通知通告Id"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/GetDeptList",
+      "summary": "获取部门列表",
+      "type": "GET",
+      "params": {},
+      "response": {
+        "items": [
+          {
+            "id": "部门ID",
+            "pId": "部门父ID",
+            "name": "部门名称"
+          }
+        ]
+      }
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Account/RsaDecrypt",
+      "summary": "RSA解密",
+      "type": "POST",
+      "params": {
+        "data": {
+          "default": "",
+          "required": true,
+          "description": "加密之后的byte数组的base64字符串形式"
+        }
+      },
+      "response": {}
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Account/RsaEncrtpt",
+      "summary": "RSA加密",
+      "type": "POST",
+      "params": {
+        "data": {
+          "default": "",
+          "required": true,
+          "description": "需要加密的字符串"
+        }
+      },
+      "response": {}
+    },
+    {
+      "NoNeed": "1",
+      "url": "API/Account/RegisterNew",
+      "summary": "RSA加密注册",
+      "type": "POST",
+      "params": {
+        "data": {
+          "default": "",
+          "required": true,
+          "description": "PhoneNumber#Password#confirmPassword#Username#Deptid#Timespan  ps:Timespan格式为20160427151312"
+        }
+      },
+      "response": {}
+    },
+    {
+      "NoNeed": "1",
+      "url": "API/Account/LoginNew",
+      "summary": "RSA加密登录",
+      "type": "POST",
+      "params": {
+        "data": {
+          "default": "",
+          "required": true,
+          "description": "PhoneNumber#Password#Timespan   ps:Timespan格式为20160427151312"
+        },
+        "rememberMe": {
+          "default": "true",
+          "required": false,
+          "description": "是否记住密码"
+        },
+        "padid": {
+          "default": "123454444",
+          "required": false,
+          "description": "padid"
+        }
+      },
+      "response": {}
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Account/ChangePasswordNew",
+      "summary": "RSA加密修改密码",
+      "type": "POST",
+      "params": {
+        "data": {
+          "default": "",
+          "required": true,
+          "description": "oldpass#newpass#Timespan   ps:Timespan格式为20160427151312"
+        }
+      },
+      "response": {}
+    },
+    {
+      "NoNeed": "1",
+      "url": "API/Account/ResetPasswordNew",
+      "summary": "RSA加密重置密码",
+      "type": "POST",
+      "params": {
+        "data": {
+          "default": "",
+          "required": true,
+          "description": "phonenumber#newpass#Timespan   ps:Timespan格式为20160427151312"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "API/Account/VerifyUser",
+      "summary": "验证用户",
+      "type": "POST",
+      "params": {
+        "touserid": {
+          "default": "6d3b5089-c2d3-4685-91fd-4bee68a8a881",
+          "required": true,
+          "description": ""
+        }
+      },
+      "response": {}
+    },
+    {
+      "NoNeed": "1",
+      "url": "API/Account/GetUser",
+      "summary": "获取用户",
+      "type": "POST",
+      "params": {
+        "nfcno": {
+          "default": "",
+          "required": true,
+          "description": ""
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/ActionVerify",
+      "summary": "用户按钮权限",
+      "type": "POST",
+      "params": {
+        "action": {
+          "default": "",
+          "required": true,
+          "description": ""
+        }
+      },
+      "response": {}
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Account/GetAccountList",
+      "summary": "查询用户列表测试",
+      "type": "POST",
+      "params": {},
+      "response": {}
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Account/PadMenuAdd",
+      "summary": "新增编辑pad菜单",
+      "type": "POST",
+      "params": {
+        "menuid": {
+          "default": "0",
+          "required": true,
+          "description": "菜单id"
+        },
+        "menuname": {
+          "default": "",
+          "required": true,
+          "description": "菜单name"
+        },
+        "parentmenuid": {
+          "default": "0",
+          "required": true,
+          "description": "父菜单id"
+        },
+        "menuvalue": {
+          "default": "",
+          "required": true,
+          "description": "菜单value"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/AppMenuAdd",
+      "summary": "新增编辑App菜单",
+      "type": "POST",
+      "params": {
+        "menuid": {
+          "default": "0",
+          "required": true,
+          "description": "菜单id"
+        },
+        "menuname": {
+          "default": "",
+          "required": true,
+          "description": "菜单name"
+        },
+        "parentmenuid": {
+          "default": "0",
+          "required": true,
+          "description": "父菜单id"
+        },
+        "menuvalue": {
+          "default": "",
+          "required": true,
+          "description": "菜单value"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/WebMenuAdd",
+      "summary": "新增编辑web菜单",
+      "type": "POST",
+      "params": {
+        "menuid": {
+          "default": "0",
+          "required": true,
+          "description": "菜单id"
+        },
+        "menuname": {
+          "default": "",
+          "required": true,
+          "description": "菜单name"
+        },
+        "parentmenuid": {
+          "default": "0",
+          "required": true,
+          "description": "父菜单id"
+        },
+        "menuvalue": {
+          "default": "",
+          "required": true,
+          "description": "菜单value"
+        }
+      },
+      "response": {}
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Account/MenuSort",
+      "summary": "web菜单排序",
+      "type": "POST",
+      "params": {
+        "menuids": {
+          "default": "",
+          "required": true,
+          "description": "菜单ids"
+        },
+        "parentmenuid": {
+          "default": "",
+          "required": true,
+          "description": "父菜单id"
+        },
+        "menutype": {
+          "default": "",
+          "required": true,
+          "description": "1-webmenu，2padmenu"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/SetPosition",
+      "summary": "上报位置",
+      "type": "POST",
+      "params": {
+        "longitude": {
+          "default": "121.434024",
+          "required": true,
+          "description": "经度"
+        },
+        "latitude": {
+          "default": "31.174435",
+          "required": true,
+          "description": "纬度"
+        }
+      },
+      "response": {}
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Account/SafeAreaAdd",
+      "summary": "新增编辑安全区域",
+      "type": "POST",
+      "params": {
+        "areaid": {
+          "default": "",
+          "required": true,
+          "description": "区域id"
+        },
+        "areaString": {
+          "default": "",
+          "required": true,
+          "description": "区域坐标字符串"
+        },
+        "title": {
+          "default": "",
+          "required": true,
+          "description": "区域名"
+        },
+        "isglobal": {
+          "default": "",
+          "required": true,
+          "description": "是否全局-1是，0不是"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/SafeAreaDelete",
+      "summary": "删除安全区域",
+      "type": "POST",
+      "params": {
+        "areaid": {
+          "default": "",
+          "required": true,
+          "description": "区域id"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/SafeAreaGetList",
+      "summary": "获取安全区域列表",
+      "type": "POST",
+      "params": {
+        "isglobal": {
+          "default": "",
+          "required": true,
+          "description": "是否全局-1是，0不是"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/PositionGetList",
+      "summary": "获取人员轨迹列表",
+      "type": "POST",
+      "params": {
+        "personid": {
+          "default": "",
+          "required": true,
+          "description": "人员id"
+        },
+        "areaid": {
+          "default": "",
+          "required": true,
+          "description": "安全区域id"
+        },
+        "starttime": {
+          "default": "",
+          "required": true,
+          "description": "开始时间"
+        },
+        "endtime": {
+          "default": "",
+          "required": true,
+          "description": "结束时间"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/PositionLastGetList",
+      "updatetime": "20170413",
+      "summary": "获取人员最后位置",
+      "type": "POST",
+      "params": {
+        "deptid": {
+          "default": "",
+          "required": true,
+          "description": "部门id"
+        },
+        "personids": {
+          "default": "",
+          "required": true,
+          "description": "人员ids"
+        },
+        "area": {
+          "default": "",
+          "required": true,
+          "description": "安全区域"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/AreaChangedGetList",
+      "summary": "人员区域变动记录",
+      "type": "POST",
+      "params": {
+        "deptid": {
+          "default": "",
+          "required": true,
+          "description": "部门id"
+        },
+        "personids": {
+          "default": "",
+          "required": true,
+          "description": "人员ids"
+        },
+        "changetype": {
+          "default": "",
+          "required": true,
+          "description": "0离开，1进入"
+        },
+        "starttime": {
+          "default": "",
+          "required": true,
+          "description": "开始时间"
+        },
+        "endtime": {
+          "default": "",
+          "required": true,
+          "description": "结束时间"
+        },
+        "areaid": {
+          "default": "",
+          "required": true,
+          "description": "区域id"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/CleanPosition",
+      "summary": "删除人员位置数据",
+      "type": "POST",
+      "params": {},
+      "response": {}
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Account/ActionGetList",
+      "summary": "获取操作列表",
+      "type": "POST",
+      "params": {},
+      "response": {}
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Account/ActionDel",
+      "summary": "删除人员行为",
+      "type": "POST",
+      "params": {
+        "Actionid": {
+          "default": "00000000-0000-0000-0000-000000000000",
+          "required": true,
+          "description": "行为"
+        }
+      },
+      "response": {}
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Account/RoleActionGetList",
+      "summary": "获取角色行为列表",
+      "type": "POST",
+      "params": {
+        "roleid": {
+          "default": "00000000-0000-0000-0000-000000000000",
+          "required": true,
+          "description": "角色id"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/CheckAccountRoleAction",
+      "summary": "检查用户是否拒用使用当前api的权限",
+      "type": "POST",
+      "params": {
+        "actionapi": {
+          "default": "UAPI/Device/StatusChangeRecordSave",
+          "required": true,
+          "description": "api的名字"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/UserWorkPlatSave",
+      "summary": "保存用户的工作面板",
+      "type": "POST",
+      "params": {
+        "workplatids": {
+          "default": "",
+          "required": true,
+          "description": "工作面板ids"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/WorkMenuToUserAdd",
+      "summary": "用户个人常用菜单增加和删除",
+      "type": "POST",
+      "params": {
+        "appmenuids": {
+          "default": "",
+          "required": true,
+          "description": "@type=1 时为新增的id @type=2 时为删除的id "
+        },
+        "type": {
+          "default": "",
+          "required": true,
+          "description": "1 增加  2 删除 "
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/WorkMenuToUserGetList",
+      "summary": "读取个人常用菜单",
+      "type": "POST",
+      "params": {},
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/WorkMenuToUserSetOrder",
+      "summary": "用户个人常用菜单排序",
+      "type": "POST",
+      "params": {
+        "menuvalues": {
+          "default": "",
+          "required": true,
+          "description": "菜单ids"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/RoleAppMenuGetList",
+      "summary": "根据用户权限组读取用户菜单",
+      "type": "POST",
+      "params": {},
+      "response": {}
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Account/ActionAdd",
+      "summary": "获取操作列表",
+      "type": "POST",
+      "params": {
+        "title": {
+          "default": "",
+          "required": true,
+          "description": "标题"
+        },
+        "memo": {
+          "default": "",
+          "required": true,
+          "description": "备注"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/GroupCreate",
+      "updatetime": "20170601",
+      "summary": "创建群组",
+      "type": "POST",
+      "params": {
+        "title": {
+          "default": "新成立的群组",
+          "required": true,
+          "description": "群组的标题"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/GroupDismiss",
+      "updatetime": "20170601",
+      "summary": "解散群组",
+      "type": "POST",
+      "params": {
+        "groupid": {
+          "default": "B2FF20DE-63AE-409A-AC81-4DC28B95D9ED",
+          "required": true,
+          "description": "解散的群组的id"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/GroupMemberAdd",
+      "updatetime": "20170601",
+      "summary": "添加群组人员",
+      "type": "POST",
+      "params": {
+        "groupid": {
+          "default": "B2FF20DE-63AE-409A-AC81-4DC28B95D9ED",
+          "required": true,
+          "description": "群组的id"
+        },
+        "memberids": {
+          "default": "0103D669-59F7-480D-ACE4-04896421C8AB",
+          "required": true,
+          "description": "群组人员ids"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/GroupMemberDel",
+      "updatetime": "20170601",
+      "summary": "删除群组人员",
+      "type": "POST",
+      "params": {
+        "groupmemberid": {
+          "default": "B2FF20DE-63AE-409A-AC81-4DC28B95D9ED",
+          "required": true,
+          "description": "群组内人员id"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/MyCreateGroupGetList",
+      "updatetime": "20170601",
+      "summary": "我创建的群组",
+      "type": "POST",
+      "params": {
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/MyJoinGroupGetList",
+      "updatetime": "20170601",
+      "summary": "我加入的群组",
+      "type": "POST",
+      "params": {
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/GroupGetList",
+      "updatetime": "20170601",
+      "summary": "所有的群组列表",
+      "type": "POST",
+      "params": {
+      },
+      "response": {}
+    }
+  ]
 }
