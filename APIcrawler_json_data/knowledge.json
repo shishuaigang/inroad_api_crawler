@@ -528,6 +528,36 @@
       },
       "response": {
       }
+    },
+    {
+      "url": "UAPI/Knowledge/PointCheck",
+      "updatetime": "20170605",
+      "summary": "知识点考核",
+      "type": "POST",
+      "params": {
+        "catalogid": {
+          "default": "1",
+          "required": true,
+          "description": "知识库目录id"
+        },
+        "type": {
+          "default": "1",
+          "required": true,
+          "description": "1 按照发布人统计， 2 按照发布目录统计"
+        },
+        "begintime": {
+          "default": "",
+          "required": true,
+          "description": "发布开始时间"
+        },
+        "endtime": {
+          "default": "",
+          "required": true,
+          "description": "发布结束时间"
+        }
+      },
+      "response": {
+      }
     }
   ]
 }
