@@ -43,7 +43,7 @@
     },
     {
       "url": "UAPI/Knowledge/PointSearch",
-      "updatetime": "20170512",
+      "updatetime": "20170605",
       "summary": "<span style='color:#87CEEB'>[app]</span>知识点检索",
       "type": "POST",
       "params": {
@@ -66,9 +66,30 @@
           "default": "",
           "required": true,
           "description": "知识点状态s       -- 0 未发布  1 已发布  2已废除                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            "
+        },
+        "publishbegintime": {
+          "default": "",
+          "required": true,
+          "description": " 发布开始时间 "
+        },
+        "publishendtime": {
+          "default": "",
+          "required": true,
+          "description": " 发布结束时间 "
+        },
+        "organizationbegintime": {
+          "default": "",
+          "required": true,
+          "description": " 编制开始时间 "
+        },
+        "organizationendtime": {
+          "default": "",
+          "required": true,
+          "description": " 编制结束时间 "
         }
       },
-      "response": {}
+      "response": {
+      }
     },
     {
       "url": "UAPI/Knowledge/CatalogAdd",
@@ -184,6 +205,11 @@
         },
         "labelname": {
           "default": "测试专用",
+          "required": true,
+          "description": "标签名称"
+        },
+        "labeltype": {
+          "default": "标签种类",
           "required": true,
           "description": "标签名称"
         }
@@ -373,6 +399,131 @@
           "default": "1",
           "required": true,
           "description": "知识库目录id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Knowledge/PointLevelDel",
+      "updatetime": "20170605",
+      "summary": "删除知识点等级",
+      "type": "POST",
+      "params": {
+        "levelid": {
+          "default": "A4589D81-A3FB-4324-89FE-DB454FA516CF",
+          "required": true,
+          "description": "知识点等级id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Knowledge/PointLevelGetList",
+      "updatetime": "20170605",
+      "summary": "读取知识点等级",
+      "type": "POST",
+      "params": {
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Knowledge/PointLevelAdd",
+      "updatetime": "20170605",
+      "summary": "新增/修改知识库等级",
+      "type": "POST",
+      "params": {
+        "levelid": {
+          "default": "94D94B13-6429-42A4-AAC7-B3227BED0A51",
+          "required": true,
+          "description": "知识点等级id"
+        },
+        "leveltitle": {
+          "default": "重要",
+          "required": true,
+          "description": "知识点等级名称"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Knowledge/LabelTypeDel",
+      "updatetime": "20170605",
+      "summary": "删除知识库库标签类型",
+      "type": "POST",
+      "params": {
+        "typeid": {
+          "default": "A4589D81-A3FB-4324-89FE-DB454FA516CF",
+          "required": true,
+          "description": "标签类型id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Knowledge/LabelTypeGetList",
+      "updatetime": "20170605",
+      "summary": "读取知识库库标签类型",
+      "type": "POST",
+      "params": {
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Knowledge/LabelTypeAdd",
+      "updatetime": "20170605",
+      "summary": "新增/修改知识库库标签类型",
+      "type": "POST",
+      "params": {
+        "typeid": {
+          "default": "94D94B13-6429-42A4-AAC7-B3227BED0A51",
+          "required": true,
+          "description": "标签类型id"
+        },
+        "typename": {
+          "default": "安全",
+          "required": true,
+          "description": "标签名称"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Knowledge/PointSearchOther",
+      "updatetime": "20170605",
+      "summary": "<span style='color:#87CEEB'>[app]</span>知识点检索其他",
+      "type": "POST",
+      "params": {
+        "type": {
+          "default": "1",
+          "required": true,
+          "description": "搜索类型 1 我的收藏  2 最近20个  3 最热门"
+        },
+        "days": {
+          "default": "7",
+          "required": true,
+          "description": "当最热门时，查询最近的天数"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Knowledge/PointFollowDel",
+      "updatetime": "20170605",
+      "summary": "取消关注",
+      "type": "POST",
+      "params": {
+        "pointid": {
+          "default": "17B5F5BF-80D6-4D2A-BCB6-4C7EA6ECF24B",
+          "required": true,
+          "description": "知识点id"
         }
       },
       "response": {
