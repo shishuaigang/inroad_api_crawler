@@ -1109,6 +1109,134 @@
       "params": {
       },
       "response": {}
+    },
+    {
+      "url": "UAPI/Account/OndutyAdd",
+      "updatetime": "20170602",
+      "summary": "<span style='color:#87CEEB'>[app]选定日期值班",
+      "type": "POST",
+      "params": {
+        "deptid": {
+          "default": "3",
+          "required": true,
+          "description": "部门id"
+        },
+        "ondutyuserid": {
+          "default": "00E274AD-79FD-4051-BC83-2388EA2A79A4",
+          "required": true,
+          "description": "值班人员id"
+        },
+        "dates": {
+          "default": "2017-01-01;2017-01-03;2017-01-05",
+          "required": true,
+          "description": "值班的日期，当type为1时日期只能是单天的"
+        },
+        "type": {
+          "default": "1",
+          "required": true,
+          "description": "值班类型  1 正常的值班   2 中途加入的值班 "
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/OndutyDel",
+      "updatetime": "20170602",
+      "summary": "<span style='color:#87CEEB'>[app][Web]取消值班",
+      "type": "POST",
+      "params": {
+        "ondutyid": {
+          "default": "39237F25-2D7D-4EF2-87A1-F07759F0C8CA",
+          "required": true,
+          "description": "部门值班id"
+        },
+        "type": {
+          "default": "1",
+          "required": true,
+          "description": "1 app端 只允许取消自己   2 web端 可以取消他人"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/OndutyGetList",
+      "updatetime": "20170602",
+      "summary": "<span style='color:#87CEEB'>[app][Web]值班人一栏表",
+      "type": "POST",
+      "params": {
+        "deptid": {
+          "default": "3",
+          "required": true,
+          "description": "部门id"
+        },
+        "begintime": {
+          "default": "2017-06-01",
+          "required": true,
+          "description": "值班开始日期"
+        },
+        "endtime": {
+          "default": "2017-07-01",
+          "required": true,
+          "description": "值班结束日期"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/OndutyOneDay",
+      "updatetime": "20170602",
+      "summary": "<span style='color:#87CEEB'>[app]某一天上的值班人员情况",
+      "type": "POST",
+      "params": {
+        "deptid": {
+          "default": "3",
+          "required": true,
+          "description": "部门id"
+        },
+        "date": {
+          "default": "2017-06-01",
+          "required": true,
+          "description": "值班日期"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/OndutyStop",
+      "updatetime": "20170602",
+      "summary": "<span style='color:#87CEEB'>[app]提前结束值班",
+      "type": "POST",
+      "params": {
+        "ondutyid": {
+          "default": "39237F25-2D7D-4EF2-87A1-F07759F0C8CA",
+          "required": true,
+          "description": "部门值班id"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/HandoverRecordGetlist",
+      "updatetime": "20170602",
+      "summary": "<span style='color:#87CEEB'>[app]交接班记录表",
+      "type": "POST",
+      "params": {
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/HandoverRecordDetailGetlist",
+      "updatetime": "20170602",
+      "summary": "<span style='color:#87CEEB'>[app]交接班记录详情",
+      "type": "POST",
+      "params": {
+        "recordid": {
+          "default": "39237F25-2D7D-4EF2-87A1-F07759F0C8CA",
+          "required": true,
+          "description": "交接班记录id"
+        }
+      },
+      "response": {}
     }
   ]
 }
