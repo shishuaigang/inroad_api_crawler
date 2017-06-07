@@ -46,8 +46,9 @@ class write_db:
             print u"开始写入数据库"
             for i in range(length):  # 循环写入数据库
                 sql = 'insert into Inroad_Crawler_Test(TestNo, API_URL, API_ChineseName, Response_code, Response_time, ' \
-                  'Response_status, Error_Message) values(' + self.t + ',\'' + url[i] + '\',\'' + cnname[i] + '\',' +\
-                  res_code[i] + ',\'' + res_tim[i] + '\',' + res_status[i] + ',\'' + error_mes[i] + '\')'
+                      'Response_status, Error_Message) values(' + self.t + ',\'' + url[i] + '\',\'' + cnname[
+                          i] + '\',' + \
+                      res_code[i] + ',\'' + res_tim[i] + '\',' + res_status[i] + ',\'' + error_mes[i] + '\')'
                 cur.execute(sql)
             conn.commit()
             cur.close()
@@ -57,5 +58,3 @@ class write_db:
         except Exception:
             print u"写入失败"
             return 0
-
-

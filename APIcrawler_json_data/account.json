@@ -1237,6 +1237,39 @@
         }
       },
       "response": {}
+    },
+    {
+      "url": "UAPI/Account/GroupMemberGetList",
+      "updatetime": "20170606",
+      "summary": "群组人员列表",
+      "type": "POST",
+      "params": {
+        "groupid": {
+          "default": "B2FF20DE-63AE-409A-AC81-4DC28B95D9ED",
+          "required": true,
+          "description": "群组的id"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/GroupEdit",
+      "updatetime": "20170606",
+      "summary": "修改群组名称",
+      "type": "POST",
+      "params": {
+        "title": {
+          "default": "新成立的群组",
+          "required": true,
+          "description": "群组的标题"
+        },
+        "groupid": {
+          "default": "6F078D8F-9705-4C9E-8A34-2EDBCEED8684",
+          "required": true,
+          "description": "群组id"
+        }
+      },
+      "response": {}
     }
   ]
 }

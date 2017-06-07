@@ -5,6 +5,7 @@ import json
 import sys
 import copy
 from more_itertools import chunked
+
 reload(sys)
 sys.setdefaultencoding('utf8')
 
@@ -55,7 +56,8 @@ class api_url(api_num):
             if "NoNeed" not in dict_json.keys() or dict_json["NoNeed"] == str(0):
                 for n in range(len(num[m])):  # num[m]是一个list
                     for k in range(num[m][n]):
-                        if "NoNeed" not in dict_json[array_name[m][n]][k] or dict_json[array_name[m][n]][k]["NoNeed"] == str(0):
+                        if "NoNeed" not in dict_json[array_name[m][n]][k] or dict_json[array_name[m][n]][k][
+                            "NoNeed"] == str(0):
                             url.append(dict_json[array_name[m][n]][k]["url"])
         return url
 
@@ -71,7 +73,8 @@ class api_cn_name(api_num):
             if "NoNeed" not in dict_json.keys() or dict_json["NoNeed"] == str(0):
                 for n in range(len(num[m])):
                     for k in range(num[m][n]):
-                        if "NoNeed" not in dict_json[array_name[m][n]][k] or dict_json[array_name[m][n]][k]["NoNeed"] == str(0):
+                        if "NoNeed" not in dict_json[array_name[m][n]][k] or dict_json[array_name[m][n]][k][
+                            "NoNeed"] == str(0):
                             api_chinese_name.append(dict_json[array_name[m][n]][k]["summary"])  # api的中文名字
         return api_chinese_name
 
@@ -87,7 +90,8 @@ class api_cor_params(api_url):
             if "NoNeed" not in dict_json.keys() or dict_json["NoNeed"] == str(0):
                 for n in range(len(num[m])):
                     for k in range(num[m][n]):
-                        if "NoNeed" not in dict_json[array_name[m][n]][k] or dict_json[array_name[m][n]][k]["NoNeed"] == str(0):
+                        if "NoNeed" not in dict_json[array_name[m][n]][k] or dict_json[array_name[m][n]][k][
+                            "NoNeed"] == str(0):
                             param_all_details.append(dict_json[array_name[m][n]][k]["params"])
         return param_all_details
 
@@ -120,5 +124,5 @@ class api_err_params(api_cor_params):
             error_values.append(copy.deepcopy(VALUE))
             for j in range(len(p_c[i].keys())):
                 for k in range(len(error_list)):
-                    error_values[i][j][len(p_c[i].keys())*k+j] = error_list[k]
+                    error_values[i][j][len(p_c[i].keys()) * k + j] = error_list[k]
         return [error_keys, error_values]

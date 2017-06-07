@@ -7,10 +7,9 @@ import platform
 from Test_scripts import api_param, api_response, getcookie, sendmail, write_database
 from Test_scripts import generate_result, response_status, pass_rate, calculateTime
 
-
 if __name__ == "__main__":
     print u'API遍历测试开始'
-    t = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
+    t = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
     if platform.system() == 'Windows':
         cur_dir = os.getcwd()
         api_json_path = cur_dir + '\\APIcrawler_json_data'
@@ -27,7 +26,7 @@ if __name__ == "__main__":
         headers = {"Referer": "123"}
         res = api_response.api_cor_res(api_json_path).res_results(cookie, api_ver, headers)
         res_code = [res[i].status_code for i in range(api_len)]
-        res_time =[]
+        res_time = []
         for i in range(api_len):
             if res_code[i] != 500 and res_code[i] != 404:
                 res_time.append(calculateTime.calculateTime(res[i]).calTime())
@@ -37,14 +36,17 @@ if __name__ == "__main__":
         res_status = response_status.response_status(api_len).res_status(res)
         passrate = pass_rate.passrate(api_len).pass_rate(res_status, res_code)  # 计算成功率
         # 创建temp.html
-        generate_result.gen_result(conf, cur_dir, inroad_url, api_len, cn_name, res, res_code, res_time, res_status).create_html(passrate,t)
+        generate_result.gen_result(conf, cur_dir, inroad_url, api_len, cn_name, res, res_code, res_time,
+                                   res_status).create_html(passrate, t)
         # 创建temp.csv
-        generate_result.gen_result(conf, cur_dir, inroad_url, api_len, cn_name, res, res_code, res_time, res_status).create_csv()
+        generate_result.gen_result(conf, cur_dir, inroad_url, api_len, cn_name, res, res_code, res_time,
+                                   res_status).create_csv()
         time.sleep(5)
         t = time.strftime('%Y%m%d%H%M', time.localtime())
         os.chdir(cur_dir)
         print u'尝试将测试结果写入数据库...'
-        if write_database.write_db(conf['db_name'], conf['db_host'], conf['db_username'], conf['db_userpasswd'], t).write_db(api_len) == 1:
+        if write_database.write_db(conf['db_name'], conf['db_host'], conf['db_username'], conf['db_userpasswd'],
+                                   t).write_db(api_len) == 1:
             print u'尝试发送测试报告...'
             sendmail.send_mail(conf['receiver_list'], conf['mail_subject'], t).send_mail()
             print u'测试报告发送成功,API遍历测试完成'

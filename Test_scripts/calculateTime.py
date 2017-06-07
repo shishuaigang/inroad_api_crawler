@@ -3,7 +3,6 @@ import json
 
 
 class calculateTime:
-
     def __init__(self, response):
 
         self.res = response
@@ -16,8 +15,8 @@ class calculateTime:
         send = send_time.split(" ")
         back = back_time.split(" ")
 
-        timeArray_send = time.strptime(send[0]+" "+send[1], "%Y-%m-%d %H:%M:%S")
-        timeArray_back = time.strptime(back[0]+" "+back[1], "%Y-%m-%d %H:%M:%S")
+        timeArray_send = time.strptime(send[0] + " " + send[1], "%Y-%m-%d %H:%M:%S")
+        timeArray_back = time.strptime(back[0] + " " + back[1], "%Y-%m-%d %H:%M:%S")
 
         timeStamp_send = int(time.mktime(timeArray_send) * 1000 + int(send[2]))
         timeStamp_back = int(time.mktime(timeArray_back) * 1000 + int(back[2]))

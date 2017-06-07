@@ -26,7 +26,9 @@ class send_mail:
             msg["From"] = sender
             msg["To"] = ','.join(self.receiver)  # 收件人邮箱列表，以逗号分隔
             #  邮件正文
-            part_con = MIMEText("Hi all,\nThis is the test report for "+self.mail_subject + "\n\nlast commit: " + gitlog, 'plain', 'utf-8')
+            part_con = MIMEText(
+                "Hi all,\nThis is the test report for " + self.mail_subject + "\n\nlast commit: " + gitlog, 'plain',
+                'utf-8')
             msg.attach(part_con)  # 邮件添加正文
             part_attach = MIMEApplication(open('TestReport_' + self.t + '.html', 'rb').read())
             part_attach.add_header('Content-Disposition', 'attachment', filename='TestReport_' + self.t + '.html')

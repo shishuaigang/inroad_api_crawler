@@ -18,4 +18,3 @@ def gecookie(api_ver):
     request = urllib2.Request(url, post_info)
     html = opener.open(request).read()
     return c
-

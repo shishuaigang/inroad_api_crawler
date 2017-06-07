@@ -4,6 +4,7 @@ from api_param import api_err_params as error
 from more_itertools import chunked
 import requests
 import sys
+
 reload(sys)
 sys.setdefaultencoding('utf8')
 
@@ -49,7 +50,8 @@ class api_err_res(error):
                 _VALUE = list(chunked(p_e[1][i][j], len(p_e[0][i])))
                 _result_min = []
                 for k in range(len(error_list)):
-                    results = requests.post("http://192.168.31.99:8088/" + api_url[i], params={"APIVersion": api_version},
+                    results = requests.post("http://192.168.31.99:8088/" + api_url[i],
+                                            params={"APIVersion": api_version},
                                             data=dict(zip(_KEY[k], _VALUE[k])), cookies=cookie, headers=headers)
                     _result_min.append(results)
                 result.append(_result_min)
