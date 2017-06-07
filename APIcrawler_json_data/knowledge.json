@@ -204,12 +204,12 @@
           "description": "标签id"
         },
         "labelname": {
-          "default": "测试专用",
+          "default": "安全",
           "required": true,
           "description": "标签名称"
         },
         "labeltype": {
-          "default": "标签种类",
+          "default": "2352B9F7-A7FA-4109-8777-C6C13E5E72E7",
           "required": true,
           "description": "标签名称"
         }
