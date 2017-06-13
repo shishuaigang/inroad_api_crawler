@@ -1184,7 +1184,7 @@
     },
     {
       "url": "UAPI/Account/OndutyOneDay",
-      "updatetime": "20170602",
+      "updatetime": "201706012",
       "summary": "<span style='color:#87CEEB'>[app]某一天上的值班人员情况",
       "type": "POST",
       "params": {
@@ -1197,9 +1197,18 @@
           "default": "2017-06-01",
           "required": true,
           "description": "值班日期"
+        },
+        "type": {
+          "default": "1",
+          "required": true,
+          "description": "--1 app端 只允许取消自己   2 web端 可以取消他人"
         }
       },
-      "response": {}
+      "response": {
+        "items": {
+          "candel": "  1 可以取消，2 可以停止  0 不能取消或停止"
+        }
+      }
     },
     {
       "url": "UAPI/Account/OndutyStop",
@@ -1270,6 +1279,36 @@
         }
       },
       "response": {}
+    },
+    {
+      "url": "UAPI/Account/HandoverRecordTaskSearch",
+      "updatetime": "20170613",
+      "summary": "读取交班时候需要交班的任务",
+      "type": "POST",
+      "params": {
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Account/HandoverRecordCoredataSearch",
+      "updatetime": "20170613",
+      "summary": "读取交班时候需要关注的关键数据",
+      "type": "POST",
+      "params": {
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Account/HandoverRecordTroubleSearch",
+      "updatetime": "20170613",
+      "summary": "读取交班时候需要交班的整改",
+      "type": "POST",
+      "params": {
+      },
+      "response": {
+      }
     }
   ]
 }
