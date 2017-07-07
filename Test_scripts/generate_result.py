@@ -61,7 +61,7 @@ class gen_result:
         f1.write('</tr>')
         f1.write('</table>')
         f1.write(
-            '<h3 align="center" style="color:black">详细信息&nbsp;&nbsp;&nbsp;<font size=3>(Response_time指的是api返回结果中backtime与sendtime的差值)</font></h3>')
+            '<h3 align="center" style="color:black">详细信息&nbsp;&nbsp;</h3>')
         f1.write('<table width="75%" align="center" style="TABLE-LAYOUT:fixed" border="1" cellspacing="0">')
         f1.write('<tr>')
         f1.write('<td align="center" width="5%" bgcolor="#A4D3EE">序号</td>')
