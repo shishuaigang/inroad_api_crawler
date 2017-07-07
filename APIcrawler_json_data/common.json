@@ -1,193 +1,393 @@
 {
-    "resource": "Common",
-    "section": [
-        {
-            "name": "通用",
-            "value": "apis"
+  "resource": "Common",
+  "section": [
+    {
+      "name": "通用",
+      "value": "apis"
+    }
+  ],
+  "apis": [
+    {
+      "url": "API/Common/GetSysInfo",
+      "summary": "获取公司信息",
+      "type": "GET",
+      "params": {
+        "devicetoken": {
+          "default": "",
+          "required": false,
+          "description": "得到的推送设备TOKEN"
         }
-    ],
-    "apis": [
-        {
-            "url": "API/Common/GetSysInfo",
-            "summary": "获取公司信息",
-            "type": "GET",
-            "params": {
-                "devicetoken": {
-                    "default": "",
-                    "required": false,
-                    "description": "得到的推送设备TOKEN"
-                }
-            },
-            "response": {
-                "items": {
-                    "logo": "公司图标",
-                    "companyName": "公司名称"
-                }
-            }
-        },
-        {
-            "url": "UAPI/Common/CleanDataBeforeAutoTest",
-            "summary": "在自动操作前清除数据",
-            "type": "POST",
-            "params": {
-                "operationexplain": {
-                    "default": "",
-                    "required": false,
-                    "description": "操作说明 :人员评定表扬;"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "API/Common/GetDeptList",
-            "summary": "获取部门列表",
-            "type": "GET",
-            "params": {},
-            "response": {
-                "items": [
-                    {
-                        "id": "部门ID",
-                        "pId": "部门父ID",
-                        "name": "部门名称"
-                    }
-                ]
-            }
-        },
-        {
-            "NoNeed": "1",
-            "url": "API/Common/AppCheckLastVersion",
-            "summary": "App端检查升级版本信息",
-            "type": "GET",
-            "params": {},
-            "response": {}
-        },
-        {
-            "url": "API/Common/TempAPIEdit",
-            "summary": "更新某个临时API",
-            "type": "POST",
-            "params": {
-                "apiname": {
-                    "default": "",
-                    "required": true,
-                    "description": "API名称"
-                },
-                "apijsondata": {
-                    "default": "",
-                    "required": false,
-                    "description": "JSON数据"
-                },
-                "description": {
-                    "default": "",
-                    "required": false,
-                    "description": "备注"
-                }
-            },
-            "response": {}
-        },
-        {
-            "NoNeed": "1",
-            "url": "API/Common/TempAPIGet",
-            "summary": "调用某个临时API",
-            "type": "POST",
-            "params": {
-                "apiname": {
-                    "default": "",
-                    "required": true,
-                    "description": "API名称"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "API/Common/TestPushMsg",
-            "summary": "测试第三方推送",
-            "type": "POST",
-            "params": {
-                "devicetype": {
-                    "default": "1",
-                    "required": true,
-                    "description": "1-安卓，2--IOS"
-                },
-                "isdebug": {
-                    "default": "0",
-                    "required": true,
-                    "description": "0-IOS生产推送，1--IOS开发调试推送"
-                },
-                "messagetype": {
-                    "default": "1",
-                    "required": true,
-                    "description": "1-通知，2--透传"
-                },
-                "pushfindtype": {
-                    "default": "3",
-                    "required": true,
-                    "description": "1--单设备token，2--批量设备3---单用户id，4--批量用户，5--指定TAG，6--所有设备"
-                },
-                "devicetoken": {
-                    "default": "8fd7979a6f0187fc48b4bba0fb62e9f36574b79e",
-                    "required": false,
-                    "description": "单设备token/批量token (例如：111,222,333)"
-                },
-                "userid": {
-                    "default": "6d3b5089-c2d3-4685-91fd-4bee68a8a881",
-                    "required": false,
-                    "description": "单用户id/批量用户id (例如：XX,YY,ZZZ)"
-                },
-                "tag": {
-                    "default": "",
-                    "required": false,
-                    "description": "单tag/批量tag(例如：XX,YY,ZZZ)"
-                },
-                "title": {
-                    "default": "推送测试",
-                    "required": false,
-                    "description": "标题"
-                },
-                "body": {
-                    "default": "推送测试内容",
-                    "required": false,
-                    "description": "内容"
-                },
-                "tags_op": {
-                    "default": "AND",
-                    "required": false,
-                    "description": "tag的AND/OR"
-                },
-                "customekeyvalue": {
-                    "default": "{'type':'1','link':'da14170e0784091fa01534cbcc9a0a23'}",
-                    "required": false,
-                    "description": "自定义KEY-VALUE"
-                }
-            },
-            "response": {}
-        },
-        {
-            "NoNeed": "1",
-            "url": "UAPI/Common/DeviceGetList",
-            "summary": "获取设备列表",
-            "type": "POST",
-            "params": {},
-            "response": {}
-        },
-        {
-            "url": "UAPI/Common/InfoGetList",
-            "summary": "获取下拉配置数据列表",
-            "type": "POST",
-            "params": {
-                "infotype": {
-                    "default": "介质明细",
-                    "required": true,
-                    "description": "下拉数据类型"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Common/RegionGetList",
-            "summary": "获取区域列表",
-            "type": "POST",
-            "params": {},
-            "response": {}
+      },
+      "response": {
+        "items": {
+          "logo": "公司图标",
+          "companyName": "公司名称"
         }
-    ]
+      }
+    },
+    {
+      "url": "UAPI/Common/CleanDataBeforeAutoTest",
+      "summary": "在自动操作前清除数据",
+      "type": "POST",
+      "params": {
+        "operationexplain": {
+          "default": "",
+          "required": false,
+          "description": "操作说明 :人员评定表扬;"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "API/Common/GetDeptList",
+      "summary": "获取部门列表",
+      "type": "GET",
+      "params": {},
+      "response": {
+        "items": [
+          {
+            "id": "部门ID",
+            "pId": "部门父ID",
+            "name": "部门名称"
+          }
+        ]
+      }
+    },
+    {
+      "NoNeed": "1",
+      "url": "API/Common/AppCheckLastVersion",
+      "summary": "App端检查升级版本信息",
+      "type": "GET",
+      "params": {},
+      "response": {}
+    },
+    {
+      "url": "API/Common/TempAPIEdit",
+      "summary": "更新某个临时API",
+      "type": "POST",
+      "params": {
+        "apiname": {
+          "default": "",
+          "required": true,
+          "description": "API名称"
+        },
+        "apijsondata": {
+          "default": "",
+          "required": false,
+          "description": "JSON数据"
+        },
+        "description": {
+          "default": "",
+          "required": false,
+          "description": "备注"
+        }
+      },
+      "response": {}
+    },
+    {
+      "NoNeed": "1",
+      "url": "API/Common/TempAPIGet",
+      "summary": "调用某个临时API",
+      "type": "POST",
+      "params": {
+        "apiname": {
+          "default": "",
+          "required": true,
+          "description": "API名称"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "API/Common/TestPushMsg",
+      "summary": "测试第三方推送",
+      "type": "POST",
+      "params": {
+        "devicetype": {
+          "default": "1",
+          "required": true,
+          "description": "1-安卓，2--IOS"
+        },
+        "isdebug": {
+          "default": "0",
+          "required": true,
+          "description": "0-IOS生产推送，1--IOS开发调试推送"
+        },
+        "messagetype": {
+          "default": "1",
+          "required": true,
+          "description": "1-通知，2--透传"
+        },
+        "pushfindtype": {
+          "default": "3",
+          "required": true,
+          "description": "1--单设备token，2--批量设备3---单用户id，4--批量用户，5--指定TAG，6--所有设备"
+        },
+        "devicetoken": {
+          "default": "8fd7979a6f0187fc48b4bba0fb62e9f36574b79e",
+          "required": false,
+          "description": "单设备token/批量token (例如：111,222,333)"
+        },
+        "userid": {
+          "default": "6d3b5089-c2d3-4685-91fd-4bee68a8a881",
+          "required": false,
+          "description": "单用户id/批量用户id (例如：XX,YY,ZZZ)"
+        },
+        "tag": {
+          "default": "",
+          "required": false,
+          "description": "单tag/批量tag(例如：XX,YY,ZZZ)"
+        },
+        "title": {
+          "default": "推送测试",
+          "required": false,
+          "description": "标题"
+        },
+        "body": {
+          "default": "推送测试内容",
+          "required": false,
+          "description": "内容"
+        },
+        "tags_op": {
+          "default": "AND",
+          "required": false,
+          "description": "tag的AND/OR"
+        },
+        "customekeyvalue": {
+          "default": "{'type':'1','link':'da14170e0784091fa01534cbcc9a0a23'}",
+          "required": false,
+          "description": "自定义KEY-VALUE"
+        }
+      },
+      "response": {}
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Common/DeviceGetList",
+      "summary": "获取设备列表",
+      "type": "POST",
+      "params": {},
+      "response": {}
+    },
+    {
+      "url": "UAPI/Common/InfoGetList",
+      "summary": "获取下拉配置数据列表",
+      "type": "POST",
+      "params": {
+        "infotype": {
+          "default": "介质明细",
+          "required": true,
+          "description": "下拉数据类型"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Common/RegionGetList",
+      "summary": "获取区域列表",
+      "type": "POST",
+      "params": {},
+      "response": {}
+    },
+    {
+      "url": "API/Common/MenuCustomAdd",
+      "updatetime": "20170627",
+      "summary": "添加用户的模块菜单",
+      "type": "POST",
+      "params": {
+        "menuids": {
+          "default": "1",
+          "required": true,
+          "description": "菜单ids"
+        },
+        "type": {
+          "default": "1",
+          "required": true,
+          "description": "--1 appmenu  2 webmenu "
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "API/Common/AccountGetList",
+      "updatetime": "20170627",
+      "summary": "读取注册用户的信息",
+      "type": "POST",
+      "params": {
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "API/Common/MenuCustomDel",
+      "updatetime": "20170627",
+      "summary": "删除用户的菜单模块",
+      "type": "POST",
+      "params": {
+        "menucustomid": {
+          "default": "467D8A05-9614-4DBC-8855-26125F9FD62B",
+          "required": true,
+          "description": "自定义菜单id"
+        },
+        "type": {
+          "default": "1",
+          "required": true,
+          "description": "--1 appmenu  2 webmenu "
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "API/Common/MenuCustomGetList",
+      "updatetime": "20170627",
+      "summary": "用户的菜单模块列表",
+      "type": "POST",
+      "params": {
+        "type": {
+          "default": "1",
+          "required": true,
+          "description": "--1 appmenu  2 webmenu "
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "API/Common/InitManagerTransfer",
+      "updatetime": "20170627",
+      "summary": "初始化管理员手机号转移",
+      "type": "POST",
+      "params": {
+        "mobilenumber": {
+          "default": "21365478912",
+          "required": true,
+          "description": "当前人的手机号码"
+        },
+        "transfermobile": {
+          "default": "11365478912",
+          "required": true,
+          "description": "被转移的管理员的手机号码"
+        },
+        "checkcode": {
+          "default": "1912",
+          "required": true,
+          "description": "验证码"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "API/Common/InitManagerRoleSet",
+      "updatetime": "20170627",
+      "summary": "设置系统管理员",
+      "type": "POST",
+      "params": {
+        "mobilenumber": {
+          "default": "21365478912",
+          "required": true,
+          "description": "当前人的手机号码"
+        },
+        "c_id": {
+          "default": "EBF88746-B600-4073-A1E4-665FFC0E3575",
+          "required": true,
+          "description": "需要被授权的用户的userid"
+        },
+        "checkcode": {
+          "default": "1912",
+          "required": true,
+          "description": "验证码"
+        },
+        "roleid": {
+          "default": "EBF88746-B600-4073-A1E4-665FFC0E3575",
+          "required": true,
+          "description": "权限组id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "API/Common/InitGetAllRole",
+      "updatetime": "20170627",
+      "summary": "读取所有的权限组id",
+      "type": "POST",
+      "params": {
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "API/Common/GetSkipTypeValue",
+      "updatetime": "20170627",
+      "summary": "编辑用户的模块菜单",
+      "type": "POST",
+      "params": {
+        "type": {
+          "default": "3",
+          "required": true,
+          "description": "3 知识点  4 台账 "
+        },
+        "key": {
+          "default": "台账",
+          "required": true,
+          "description": "关键字 "
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "API/Common/GetSkipType",
+      "updatetime": "20170627",
+      "summary": "读取用户菜单跳转的类型",
+      "type": "POST",
+      "params": {
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "API/Common/MenuCustomEdit",
+      "updatetime": "20170627",
+      "summary": "编辑用户的模块菜单",
+      "type": "POST",
+      "params": {
+        "menucustomid": {
+          "default": "467D8A05-9614-4DBC-8855-26125F9FD62B",
+          "required": true,
+          "description": "自定义菜单id"
+        },
+        "alias": {
+          "default": "1",
+          "required": true,
+          "description": "菜单别名 "
+        },
+        "icon": {
+          "default": "1",
+          "required": true,
+          "description": "菜单图标 "
+        },
+        "skiptype": {
+          "default": "1",
+          "required": true,
+          "description": "1  原菜单  2 链接  3 知识点  4 台账 "
+        },
+        "skiptypevalue": {
+          "default": "1",
+          "required": true,
+          "description": "跳转的参数,用原菜单的话为原始的menuid "
+        },
+        "type": {
+          "default": "1",
+          "required": true,
+          "description": "--1 appmenu  2 webmenu "
+        }
+      },
+      "response": {
+      }
+    }
+  ]
 }

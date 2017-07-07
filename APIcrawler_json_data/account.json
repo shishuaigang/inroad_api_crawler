@@ -1211,6 +1211,49 @@
       }
     },
     {
+      "url": "UAPI/Account/OndutyTransfer",
+      "updatetime": "20170626",
+      "summary": "<span style='color:#87CEEB'>[app]值班移交",
+      "type": "POST",
+      "params": {
+        "ondutyid": {
+          "default": "8297FF65-1A36-418C-86C1-7F24165B446F",
+          "required": true,
+          "description": "值班记录id"
+        },
+        "transfertime": {
+          "default": "2017-06-15 16:30:18.730",
+          "required": true,
+          "description": "移交值班的时间"
+        },
+        "transferuserid": {
+          "default": "B0BE3D25-B9DA-4997-8DCC-5613792ED216",
+          "required": true,
+          "description": "移交的值班人的userid "
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/OndutyTransferConfirm",
+      "updatetime": "20170626",
+      "summary": "<span style='color:#87CEEB'>[app]值班移交确认",
+      "type": "POST",
+      "params": {
+        "ondutyid": {
+          "default": "8297FF65-1A36-418C-86C1-7F24165B446F",
+          "required": true,
+          "description": "值班记录id"
+        },
+        "isconfirm": {
+          "default": "1",
+          "required": true,
+          "description": "确认移交值班记录 1  同意   2拒绝"
+        }
+      },
+      "response": {}
+    },
+    {
       "url": "UAPI/Account/OndutyStop",
       "updatetime": "20170602",
       "summary": "<span style='color:#87CEEB'>[app]提前结束值班",
@@ -1294,6 +1337,74 @@
       "url": "UAPI/Account/HandoverRecordCoredataSearch",
       "updatetime": "20170613",
       "summary": "读取交班时候需要关注的关键数据",
+      "type": "POST",
+      "params": {
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Account/HandoverRecordSearch",
+      "updatetime": "20170620",
+      "summary": "<span style='color:#87CEEB'>[app]交接班记录表",
+      "type": "POST",
+      "params": {
+        "pageIndex": {
+          "default": "1",
+          "required": true,
+          "description": "页码"
+        },
+        "pageSize": {
+          "default": "20",
+          "required": false,
+          "description": "每页大小"
+        },
+        "begintime": {
+          "default": "2017-06-01",
+          "required": false,
+          "description": "开始时间"
+        },
+        "endtime": {
+          "default": "2017-07-01",
+          "required": false,
+          "description": "结束时间"
+        },
+        "deptid": {
+          "default": "14",
+          "required": true,
+          "description": "部门id"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/OndutyGetListWeb",
+      "updatetime": "20170616",
+      "summary": "<span style='color:#87CEEB'>[app][Web]值班人一栏表",
+      "type": "POST",
+      "params": {
+        "deptid": {
+          "default": "3",
+          "required": true,
+          "description": "部门id"
+        },
+        "begintime": {
+          "default": "2017-06-01",
+          "required": true,
+          "description": "值班开始日期"
+        },
+        "endtime": {
+          "default": "2017-07-01",
+          "required": true,
+          "description": "值班结束日期"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/MyTransferedOnduty",
+      "updatetime": "20170620",
+      "summary": "<span style='color:#87CEEB'>[app]</span>读取转移给我的所有的值班",
       "type": "POST",
       "params": {
       },

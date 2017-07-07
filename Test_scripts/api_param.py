@@ -74,7 +74,7 @@ class api_cn_name(api_num):
                 for n in range(len(num[m])):
                     for k in range(num[m][n]):
                         if "NoNeed" not in dict_json[array_name[m][n]][k] or dict_json[array_name[m][n]][k][
-                            "NoNeed"] == str(0):
+                                "NoNeed"] == str(0):
                             api_chinese_name.append(dict_json[array_name[m][n]][k]["summary"])  # api的中文名字
         return api_chinese_name
 

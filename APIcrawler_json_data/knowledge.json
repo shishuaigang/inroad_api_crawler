@@ -86,6 +86,11 @@
           "default": "",
           "required": true,
           "description": " 编制结束时间 "
+        },
+        "includecomment": {
+          "default": "0",
+          "required": true,
+          "description": " 关键字是否匹配评论  0 不包含评论  1 包含评论"
         }
       },
       "response": {
@@ -525,6 +530,115 @@
           "required": true,
           "description": "知识点id"
         }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Knowledge/CommentGetList",
+      "updatetime": "20170620",
+      "summary": "<span style='color:#EEDFCC'>[web]</span>知识点评论列表",
+      "type": "POST",
+      "params": {
+        "pointid": {
+          "default": "A200965D-D3E5-4151-9731-02C678447C0C",
+          "required": true,
+          "description": "知识点id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Knowledge/CommentAdd",
+      "updatetime": "20170620",
+      "summary": "<span style='color:#EEDFCC'>[web]</span>添加知识点评论",
+      "type": "POST",
+      "params": {
+        "pointid": {
+          "default": "A200965D-D3E5-4151-9731-02C678447C0C",
+          "required": true,
+          "description": "知识点id"
+        },
+        "comment": {
+          "default": "",
+          "required": true,
+          "description": "评论内容"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Knowledge/CommentDel",
+      "updatetime": "20170620",
+      "summary": "<span style='color:#EEDFCC'>[web]</span>删除知识点评论",
+      "type": "POST",
+      "params": {
+        "pointcommentid": {
+          "default": "A200965D-D3E5-4151-9731-02C678447C0C",
+          "required": true,
+          "description": "知识点评论id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Knowledge/PointSearch",
+      "updatetime": "20170620",
+      "summary": "<span style='color:#87CEEB'>[app]</span>知识点检索附件",
+      "type": "POST",
+      "params": {
+        "catalogid": {
+          "default": "1",
+          "required": true,
+          "description": "知识库目录id"
+        },
+        "filetypes": {
+          "default": "",
+          "required": true,
+          "description": "文件类型"
+        },
+        "key": {
+          "default": "",
+          "required": true,
+          "description": "关键字"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Knowledge/FileSearch",
+      "updatetime": "20170620",
+      "summary": "<span style='color:#87CEEB'>[app]</span>知识点检索附件",
+      "type": "POST",
+      "params": {
+        "catalogid": {
+          "default": "1",
+          "required": true,
+          "description": "知识库目录id"
+        },
+        "filetypes": {
+          "default": "",
+          "required": true,
+          "description": "文件类型"
+        },
+        "key": {
+          "default": "",
+          "required": true,
+          "description": "关键字                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   "
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Knowledge/FilesTypeGetList",
+      "updatetime": "20170620",
+      "summary": "<span style='color:#87CEEB'>[app]</span>上传附件文件列表",
+      "type": "POST",
+      "params": {
       },
       "response": {
       }

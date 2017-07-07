@@ -142,6 +142,11 @@
           "default": "1",
           "required": true,
           "description": "单位类型"
+        },
+        "dataoption": {
+          "default": "",
+          "required": false,
+          "description": "当数据类型不为数值型时候，关键数据值的选择项"
         }
       },
       "response": {}
