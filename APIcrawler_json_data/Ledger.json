@@ -1,0 +1,632 @@
+﻿{
+  "resource": "Ledger",
+  "section": [
+    {
+      "name": "台账",
+      "value": "apis"
+    }
+  ],
+  "apis": [
+    {
+      "url": "UAPI/Ledger/OperateLedger",
+      "updatetime": "20170626",
+      "summary": "<span style='color:#EEDFCC'>[web]</span>新增、编辑台账配置",
+      "type": "POST",
+      "params": {
+        "ledgerid": {
+          "default": "",
+          "required": false,
+          "description": "台账id，如果是编辑台账，必传"
+        },
+        "title": {
+          "default": "人员信息台账",
+          "required": true,
+          "description": "台账名称"
+        },
+        "applicationtype": {
+          "default": "1",
+          "required": true,
+          "description": "应用类型 0 默认  1 部门  2区域"
+        },
+        "type": {
+          "default": "1",
+          "required": true,
+          "description": "台账类型 1 汇总  2明细"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Ledger/InvalidAndRecovery",
+      "updatetime": "20170626",
+      "summary": "<span style='color:#EEDFCC'>[web]</span>台账配置作废与恢复",
+      "type": "POST",
+      "params": {
+        "ledgerid": {
+          "default": "",
+          "required": true,
+          "description": "台账id"
+        },
+        "type": {
+          "default": "1",
+          "required": true,
+          "description": "1、删除  2、恢复"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Ledger/LedgerList",
+      "updatetime": "20170626",
+      "summary": "<span style='color:#EEDFCC'>[web]</span>台账配置列表查询",
+      "type": "POST",
+      "params": {
+        "status": {
+          "default": "",
+          "required": true,
+          "description": "0 作废 1 正常 2 所有"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Ledger/LedgerSearch",
+      "updatetime": "20170626",
+      "summary": "<span style='color:#87CEEB'>[app]</span>app端台账配置列表",
+      "type": "POST",
+      "params": {
+        "keywords": {
+          "default": "",
+          "required": false,
+          "description": "台账标题关键字"
+        },
+        "applicationtype": {
+          "default": "",
+          "required": false,
+          "description": "（可不传，查所有）应用类型   1 部门  2区域"
+        },
+        "type": {
+          "default": "",
+          "required": false,
+          "description": "（可不传，查所有）台账类型 1 汇总  2明细"
+        },
+        "pageIndex": {
+          "default": "1",
+          "required": true,
+          "description": "分页页码"
+        },
+        "pageSize": {
+          "default": "20",
+          "required": true,
+          "description": "每页大小，不传默认则20"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Ledger/LedgerPropertyList",
+      "updatetime": "20170626",
+      "summary": "<span style='color:#EEDFCC'>[web]</span>读取台账属性列表",
+      "type": "POST",
+      "params": {
+        "ledgerid": {
+          "default": "",
+          "required": true,
+          "description": "台账id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Ledger/OperateLedgerProperty",
+      "updatetime": "20170626",
+      "summary": "<span style='color:#EEDFCC'>[web]</span>新增、编辑台账属性配置",
+      "type": "POST",
+      "params": {
+        "json": {
+          "default": "{'ledgerid':'C6751896-8CEB-4D73-84BF-2F61BA7E3177','columnList':[{'columnid':'5d721932-61f9-459e-b23f-690f476cf973','name':'xingming','chinesename':'姓名','sort':1,'type':2,'defaultvalue':'喔喔','memo':'枚举','isvisible':1,'coredataid':'','coredataname':'','dataoption':''},{'columnid':'aa3631bc-e600-4b84-8760-4b1c0f7f0bea','name':'xingqu','chinesename':'兴趣','sort':2,'type':2,'defaultvalue':'','memo':'兴趣的备注','isvisible':1,'coredataid':'','coredataname':'','dataoption':'唱歌;篮球;旅游'},{'columnid':'3493f869-1f5e-4499-954a-b0cddcc4ac3e','name':'qita','chinesename':'其他','sort':3,'type':2,'defaultvalue':'','memo':'关联关键数据','isvisible':1,'coredataid':'d0ede92e-eadf-4dea-9ef1-0028192862bb','coredataname':'闪蒸槽一TR13029A/B','dataoption':''},{'columnid':'db27aa02-600d-464c-b93d-12c126892575','name':'nianling','chinesename':'年龄','sort':4,'type':1,'defaultvalue':'18','memo':'整数','isvisible':1,'coredataid':'','coredataname':'','dataoption':''},{'columnid':'2cc41501-0734-4844-85df-ea5aefcbd95a','name':'shengri','chinesename':'生日','sort':5,'type':3,'defaultvalue':'1990-07-31','memo':'日期','isvisible':1,'coredataid':'','coredataname':'','dataoption':''},{'columnid':'','name':'dizhi','chinesename':'地址','sort':6,'type':2,'defaultvalue':'上海','memo':'我是新增属性，columnid传空','isvisible':1,'coredataid':'','coredataname':'','dataoption':''}]}",
+          "required": true,
+          "description": "<span style='color:red'>使用对象方式提交 application/json</span> 请求参数json格式"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Ledger/LedgerInfo",
+      "updatetime": "20170627",
+      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>台账录入读取台账配置信息、编辑时记录信息",
+      "type": "POST",
+      "params": {
+        "ledgerid": {
+          "default": "C6751896-8CEB-4D73-84BF-2F61BA7E3177",
+          "required": true,
+          "description": "台账id"
+        },
+        "batchid": {
+          "default": "-1",
+          "required": false,
+          "description": "当编辑任何台账一条记录的时候都需要传，值会放在default中"
+        },
+        "recordid": {
+          "default": "",
+          "required": false,
+          "description": "当编辑（非快照类型）台账一条记录的时候需要传，值会放在default中"
+        }
+      },
+      "response": {
+        "items": {
+          "ledgerid": "台账id",
+          "title": "台账标题",
+          "applicationtype": "应用类型 0 默认  1 部门  2区域 ",
+          "type": "台账类型 1 汇总  2明细",
+          "deptid": "部门id",
+          "deptname": "部门名字",
+          "regionid": "区域id",
+          "regionname": "区域名字",
+          "isactive": "台账是否有效",
+          "columnList下columnid": "台账属性id",
+          "columnList下name": "台账属性英文字段名",
+          "columnList下chinesename": "台账属性中文字段名",
+          "columnList下sort": "属性排序",
+          "columnList下type": "数据类型  1 整型    2 字符串  3  日期型  4 枚举",
+          "columnList下ismust": "是否必填项",
+          "columnList下defaultvalue": "默认值",
+          "columnList下memo": "备注",
+          "columnList下isvisible": "是否可见1、是 0、否 这个接口都只会返回1的属性",
+          "columnList下coredataid": "关键数据id",
+          "columnList下coredataname": "关键数据名字",
+          "columnList下dataoption": "枚举类型时选择项,用;区分"
+        }
+      }
+    },
+    {
+      "url": "UAPI/Ledger/RecordSave",
+      "updatetime": "20170627",
+      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>台账录入",
+      "type": "POST",
+      "params": {
+        "json": {
+          "default": "{'recordid':'','applicationtype':1,'batchid':0,'iscopy':0,'ledgerid':'C6751896-8CEB-4D73-84BF-2F61BA7E3177','deptid':14,'deptname':'气化办公室','regionid':80,'regionname':'生产装置','ledgerdate':'2017-6-1','columnList':[{'columnid':'07bf61ec-02fe-4796-a8cc-2f29bf0c1b34','columnvalue':''},{'columnid':'5d721932-61f9-459e-b23f-690f476cf973','columnvalue':''},{'columnid':'c7bfc950-a080-493e-9583-474e4cb5b46a','columnvalue':''},{'columnid':'aa3631bc-e600-4b84-8760-4b1c0f7f0bea','columnvalue':''},{'columnid':'79a859f0-ece4-4553-b477-2c326c63be1e','columnvalue':''},{'columnid':'3493f869-1f5e-4499-954a-b0cddcc4ac3e','columnvalue':''},{'columnid':'23cf0773-8033-4683-aeec-e6f00df89edd','columnvalue':''},{'columnid':'db27aa02-600d-464c-b93d-12c126892575','columnvalue':''},{'columnid':'2cc41501-0734-4844-85df-ea5aefcbd95a','columnvalue':''},{'columnid':'f060cbc3-ff12-4568-9ad4-e4616b0b8e53','columnvalue':''},{'columnid':'69db3b67-39d6-403b-82d1-d8bc083b2c11','columnvalue':''}]}",
+          "required": true,
+          "description": "请求参数json格式"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Ledger/SummaryRecordSearch",
+      "updatetime": "20170627",
+      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>台账汇总记录查询",
+      "type": "POST",
+      "params": {
+        "ledgerid": {
+          "default": "C6751896-8CEB-4D73-84BF-2F61BA7E3177",
+          "required": true,
+          "description": "台账id"
+        },
+        "begintime": {
+          "default": "",
+          "required": false,
+          "description": "查询条件开始时间"
+        },
+        "endtime": {
+          "default": "",
+          "required": false,
+          "description": "查询条件结束时间"
+        },
+        "deptid": {
+          "default": "",
+          "required": false,
+          "description": "如果是部门类型台账，可以输入的部门id"
+        },
+        "regionid": {
+          "default": "",
+          "required": false,
+          "description": "如果是区域类型台账，可以输入的区域id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Ledger/LastestCoreDataValue",
+      "updatetime": "20170627",
+      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>获取最新关键数据值",
+      "type": "POST",
+      "params": {
+        "coredataid": {
+          "default": "",
+          "required": true,
+          "description": "关键数据id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Ledger/ColumnDataTypeGetList",
+      "updatetime": "20170627",
+      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>获取字段能够选取的数据类型",
+      "type": "POST",
+      "params": {
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Ledger/LedgerColumnList",
+      "updatetime": "20170627",
+      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>台账字段记录查询",
+      "type": "POST",
+      "params": {
+        "recordid": {
+          "default": "A82F665A-AAED-4AD1-8B13-353DACC72C2C",
+          "required": true,
+          "description": "汇总/明细 第一层查询的时候 记录id"
+        },
+        "chinesename": {
+          "default": "",
+          "required": false,
+          "description": "查询属性的中文名（下拉列表中的中文）"
+        },
+        "keywords": {
+          "default": "",
+          "required": false,
+          "description": "查询属性的关键字"
+        },
+        "ledgerid": {
+          "default": "",
+          "required": false,
+          "description": "如果是菜单直接打开的，那么传入台账id，recordid可以为空"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Ledger/DetailRecordSearch",
+      "updatetime": "20170627",
+      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>台账明细记录查询",
+      "type": "POST",
+      "params": {
+        "ledgerid": {
+          "default": "",
+          "required": true,
+          "description": "台账id"
+        },
+        "begintime": {
+          "default": "",
+          "required": false,
+          "description": "查询条件开始时间"
+        },
+        "endtime": {
+          "default": "",
+          "required": false,
+          "description": "查询条件结束时间"
+        },
+        "deptid": {
+          "default": "",
+          "required": false,
+          "description": "如果是部门类型台账，可以输入的部门id"
+        },
+        "regionid": {
+          "default": "",
+          "required": false,
+          "description": "如果是区域类型台账，可以输入的区域id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Ledger/ExportModel",
+      "updatetime": "20170628",
+      "summary": "<span style='color:#EEDFCC'>[web]</span>台账模板导出",
+      "type": "POST",
+      "params": {
+        "ledgerid": {
+          "default": "",
+          "required": true,
+          "description": "台账id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Ledger/ImportExcelData",
+      "updatetime": "20170628",
+      "summary": "<span style='color:#EEDFCC'>[web]</span>台账数据导入接口",
+      "type": "POST",
+      "params": {
+        "file": {
+          "default": "",
+          "required": true,
+          "description": "文件流"
+        },
+        "ledgerid": {
+          "default": "",
+          "required": false,
+          "description": "当recordid为空时必传 台账id"
+        },
+        "recordid": {
+          "default": "",
+          "required": false,
+          "description": "记录id"
+        },
+        "ledgerdate": {
+          "default": "",
+          "required": false,
+          "description": "当recordid为空时必传 台账记录日期yyyy-MM-dd HH:mm"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Ledger/DeleteLedgerRecord",
+      "updatetime": "20170628",
+      "summary": "<span style='color:#EEDFCC'>[web]</span>删除台账记录",
+      "type": "POST",
+      "params": {
+        "recordid": {
+          "default": "",
+          "required": true,
+          "description": "记录id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Ledger/DeleteLedgerBatch",
+      "updatetime": "20170630",
+      "summary": "<span style='color:#EEDFCC'>[web]</span>删除台账字段记录",
+      "type": "POST",
+      "params": {
+        "recordid": {
+          "default": "",
+          "required": true,
+          "description": "记录id"
+        },
+        "batchid": {
+          "default": "",
+          "required": true,
+          "description": "批次id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Ledger/CalcLedgerRecord",
+      "updatetime": "20170628",
+      "summary": "<span style='color:#EEDFCC'>[web]</span></span><span style='color:#87CEEB'>[app]</span>复制、向下（一层）继承汇总台账",
+      "type": "POST",
+      "params": {
+        "type": {
+          "default": "",
+          "required": true,
+          "description": "1、复制同台账的最新一条记录 2、向下汇总（部门、区域）的下一层的记录和，目前只汇总：整数、小数、字符串、大文本"
+        },
+        "ledgerid": {
+          "default": "",
+          "required": true,
+          "description": "台账id"
+        },
+        "deptid": {
+          "default": "",
+          "required": false,
+          "description": "如果是向下汇总且台账类型是部门，必传"
+        },
+        "regionid": {
+          "default": "",
+          "required": false,
+          "description": "如果是向下汇总且台账类型是区域，必传"
+        }
+      },
+      "response": {
+        "items": {
+          "返回结果": "同接口UAPI/Ledger/LedgerInfo模型一致，计算好的值会放在default中"
+        }
+      }
+    },
+    {
+      "url": "UAPI/Ledger/ExportLedgerColumnList",
+      "updatetime": "20170630",
+      "summary": "<span style='color:#EEDFCC'>[web]</span>导出字段记录excel",
+      "type": "POST",
+      "params": {
+        "recordid": {
+          "default": "D8F0CC49-C815-4D5C-AB9F-C7C08E2529BF",
+          "required": true,
+          "description": "记录id"
+        },
+        "chinesename": {
+          "default": "",
+          "required": false,
+          "description": "查询属性的中文名（下拉列表中的中文）"
+        },
+        "keywords": {
+          "default": "",
+          "required": false,
+          "description": "查询属性的关键字"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Ledger/SnapshotGetList",
+      "updatetime": "20170705",
+      "summary": "<span style='color:#EEDFCC'>[web]</span>快照型台账列表",
+      "type": "POST",
+      "params": {
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Ledger/RollAccountAdd",
+      "updatetime": "20170705",
+      "summary": "<span style='color:#EEDFCC'>[web]</span>增加快照型台账人员能查看的区域或者部门",
+      "type": "POST",
+      "params": {
+        "personid": {
+          "default": "6d3b5089-c2d3-4685-91fd-4bee68a8a881",
+          "required": true,
+          "description": "授予权限的用户id"
+        },
+        "configid": {
+          "default": "6d3b5089-c2d3-4685-91fd-4bee68a8a881",
+          "required": true,
+          "description": "台账的配置id"
+        },
+        "typevalue": {
+          "default": "1",
+          "required": true,
+          "description": "部门或者区域id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Ledger/RollAccountDel",
+      "updatetime": "20170705",
+      "summary": "<span style='color:#EEDFCC'>[web]</span>删除快照型台账人员能查看的区域或者部门",
+      "type": "POST",
+      "params": {
+        "rollaccountid": {
+          "default": "6d3b5089-c2d3-4685-91fd-4bee68a8a881",
+          "required": true,
+          "description": " 用户查看权限id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Ledger/RollAccountGetList",
+      "updatetime": "20170705",
+      "summary": "<span style='color:#EEDFCC'>[web]</span>查看快照型台账人员能查看的区域或者部门",
+      "type": "POST",
+      "params": {
+        "personid": {
+          "default": "6d3b5089-c2d3-4685-91fd-4bee68a8a881",
+          "required": true,
+          "description": "授予权限的用户id"
+        },
+        "configid": {
+          "default": "6d3b5089-c2d3-4685-91fd-4bee68a8a881",
+          "required": true,
+          "description": "台账的配置id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Ledger/GetAllRegionAndDept",
+      "updatetime": "20170705",
+      "summary": "<span style='color:#EEDFCC'>[web][App]</span>查看快照型台账人员能查看的所有区域或者部门（包括下级子部门）",
+      "type": "POST",
+      "params": {
+        "personid": {
+          "default": "6d3b5089-c2d3-4685-91fd-4bee68a8a881",
+          "required": true,
+          "description": "授予权限的用户id"
+        },
+        "configid": {
+          "default": "6d3b5089-c2d3-4685-91fd-4bee68a8a881",
+          "required": true,
+          "description": "台账的配置id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Ledger/LogGetListOneRecord",
+      "updatetime": "20170705",
+      "summary": "<span style='color:#EEDFCC'>[web][App]</span>根据台账记录和批次号查看日志",
+      "type": "POST",
+      "params": {
+        "recordid": {
+          "default": "6d3b5089-c2d3-4685-91fd-4bee68a8a881",
+          "required": true,
+          "description": "台账记录id"
+        },
+        "batchid": {
+          "default": "1",
+          "required": true,
+          "description": "台账的记录的批次id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Ledger/LogGetListAll",
+      "updatetime": "20170705",
+      "summary": "<span style='color:#EEDFCC'>[web][App]</span>根据台账记录查看日志",
+      "type": "POST",
+      "params": {
+        "recordid": {
+          "default": "6d3b5089-c2d3-4685-91fd-4bee68a8a881",
+          "required": true,
+          "description": "台账记录id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Ledger/ConditionColumns",
+      "updatetime": "20170630",
+      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>台账可以作为查询条件的属性列表",
+      "type": "POST",
+      "params": {
+        "ledgerid": {
+          "default": "",
+          "required": false,
+          "description": "台账id 和记录id只需要传一个就行"
+        },
+        "recordid": {
+          "default": "",
+          "required": false,
+          "description": "记录id 和台账id只需要传一个就行"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Ledger/GetLedgerBatch",
+      "updatetime": "20170705",
+      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>读取台账字段记录(不用)",
+      "type": "POST",
+      "params": {
+        "batchid": {
+          "default": "1",
+          "required": true,
+          "description": ""
+        },
+        "recordid": {
+          "default": "1967BB33-ADAA-45E7-A4E9-89655A896AA7",
+          "required": true,
+          "description": "记录id "
+        }
+      },
+      "response": {
+      }
+    }
+  ]
+}
