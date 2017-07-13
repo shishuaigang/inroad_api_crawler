@@ -1,0 +1,258 @@
+{
+    "resource": "StrictlyControl",
+    "section": [
+        {
+            "name": "严控物品",
+            "value": "apis"
+        }
+    ],
+    "apis": [
+        {
+            "url": "UAPI/StrictlyControl/ArticlesCirculationGetList",
+            "updatetime":"20170710","summary": "读取严控物品流转记录",
+            "type": "POST",
+            "params": {
+                "regionid": {
+                    "default": "80",
+                    "required": true,
+                    "description": "区域id"
+                },
+                "controlarticlesid": {
+                    "default": "BC736B54-03EC-4BC6-B72B-2F6D7AA8CB53",
+                    "required": true,
+                    "description": "严控物品id"
+                },
+                "roomid": {
+                    "default": "",
+                    "required": true,
+                    "description": "房间id"
+                },
+                "begintime": {
+                    "default": "",
+                    "required": true,
+                    "description": "开始时间"
+                },
+                "endtime": {
+                    "default": "",
+                    "required": true,
+                    "description": "结束时间"
+                },
+                "deptid": {
+                    "default": "36",
+                    "required": true,
+                    "description": "供应商id"
+                },
+                "key": {
+                    "default": "",
+                    "required": true,
+                    "description": "查询关键字"
+                },
+                "type": {
+                    "default": "1",
+                    "required": true,
+                    "description": "管控物品类型 1 钢瓶"
+                }
+            },
+            "response": {
+            }
+        },
+		{
+            "url": "UAPI/StrictlyControl/ArticlesCount",
+            "updatetime":"20170710","summary": "统计区域严控物品数量",
+            "type": "POST",
+            "params": {
+                "regionid": {
+                    "default": "80",
+                    "required": true,
+                    "description": "区域id"
+                },
+                "deptid": {
+                    "default": "36",
+                    "required": true,
+                    "description": "供应商id"
+                },
+                "key": {
+                    "default": "",
+                    "required": true,
+                    "description": "查询关键字"
+                },
+                "type": {
+                    "default": "1",
+                    "required": true,
+                    "description": "严控物品类型  1 钢瓶"
+                }
+            },
+            "response": {
+            }
+        },
+		{
+            "url": "UAPI/StrictlyControl/ArticlesSearch",
+            "updatetime":"20170710","summary": "搜索严控物品",
+            "type": "POST",
+            "params": {
+                "regionid": {
+                    "default": "80",
+                    "required": true,
+                    "description": "区域id"
+                },
+                "roomid": {
+                    "default": "",
+                    "required": true,
+                    "description": "房间id"
+                },
+                "deptid": {
+                    "default": "36",
+                    "required": true,
+                    "description": "供应商id"
+                },
+                "key": {
+                    "default": "",
+                    "required": true,
+                    "description": "查询关键字"
+                },
+                "type": {
+                    "default": "1",
+                    "required": true,
+                    "description": "严控物品类型  1  钢瓶"
+                }
+            },
+            "response": {
+            }
+        },
+		{
+            "url": "UAPI/StrictlyControl/ArticlesAdd",
+            "updatetime":"20170710","summary": "增加严控物品",
+            "type": "POST",
+            "params": {
+                "articleno": {
+                    "default": "69521515",
+                    "required": true,
+                    "description": "编号 不可重复"
+                },
+                "title": {
+                    "default": "钢瓶99号",
+                    "required": true,
+                    "description": "说明"
+                },
+                "articles": {
+                    "default": "",
+                    "required": true,
+                    "description": "钢瓶内装的气体"
+                },
+                "articles": {
+                    "default": "",
+                    "required": true,
+                    "description": "钢瓶内装的气体"
+                },
+                "deptid": {
+                    "default": "",
+                    "required": true,
+                    "description": "供应商id "
+                },
+                "nfcid": {
+                    "default": "",
+                    "required": true,
+                    "description": "nfcid"
+                },
+                "qrcode": {
+                    "default": "",
+                    "required": true,
+                    "description": "二维码"
+                },
+                "memo": {
+                    "default": "",
+                    "required": true,
+                    "description": "备注"
+                },
+                "files": {
+                    "default": "",
+                    "required": true,
+                    "description": "图片,附件"
+                },
+                "controlarticlesid": {
+                    "default": "",
+                    "required": true,
+                    "description": "严控物品id,当空时为新增,有时为修改"
+                },
+                "type": {
+                    "default": "",
+                    "required": true,
+                    "description": "严控物品类型 1 钢瓶"
+                }
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/StrictlyControl/ArticlesDel",
+            "updatetime":"20170711","summary": "删除严控物品",
+            "type": "POST",
+            "params": {
+                "controlarticlesid": {
+                    "default": "BC736B54-03EC-4BC6-B72B-2F6D7AA8CB53",
+                    "required": true,
+                    "description": "严控物品id"
+                }
+            },
+            "response": {
+            }
+        },
+		{
+            "url": "UAPI/StrictlyControl/ArticlesScan",
+            "updatetime":"20170711","summary": "扫描读取严控物品",
+            "type": "POST",
+            "params": {
+                "scancode": {
+                    "default": "",
+                    "required": true,
+                    "description": "扫描的二维码或者nfc卡"
+                }
+            },
+            "response": {
+            }
+        },
+		{
+            "url": "UAPI/StrictlyControl/ArticlesTypeGetList",
+            "updatetime":"20170711","summary": "读取严控物品的类型 当前都是1 钢瓶",
+            "type": "POST",
+            "params": {
+            },
+            "response": {
+            }
+        },
+		{
+            "url": "UAPI/StrictlyControl/ArticlesCirculationAdd",
+            "updatetime":"20170710","summary": "增加严控物品进出记录",
+            "type": "POST",
+            "params": {
+                "regionid": {
+                    "default": "80",
+                    "required": true,
+                    "description": "区域id"
+                },
+                "roomid": {
+                    "default": "6F331A1E-812A-4777-A3E3-70BA621B33B4",
+                    "required": true,
+                    "description": "房间id"
+                },
+                "outintype": {
+                    "default": "1",
+                    "required": true,
+                    "description": "进出类型  1 进入  2 出门"
+                },
+                "operationtime": {
+                    "default": "",
+                    "required": true,
+                    "description": "出入时间"
+                },
+                "controlarticlesid": {
+                    "default": "",
+                    "required": true,
+                    "description": "严控物品id,当空时为新增,有时为修改"
+                }
+            },
+            "response": {
+            }
+        }
+    ]
+}

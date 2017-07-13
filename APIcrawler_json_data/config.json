@@ -1,1667 +1,1686 @@
 {
-    "resource": "Config",
-    "section": [
-        {
-            "name": "设置",
-            "value": "apis"
+  "resource": "Config",
+  "section": [
+    {
+      "name": "设置",
+      "value": "apis"
+    }
+  ],
+  "apis": [
+    {
+      "url": "UAPI/Config/SetApiStatus",
+      "summary": "设置api状态",
+      "type": "POST",
+      "params": {
+        "area": {
+          "default": "",
+          "required": true,
+          "description": "区域"
+        },
+        "controller": {
+          "default": "",
+          "required": true,
+          "description": "控制器（系统模块）"
+        },
+        "name": {
+          "default": "",
+          "required": true,
+          "description": "api名字"
+        },
+        "status": {
+          "default": "",
+          "required": true,
+          "description": "要设置的状态，0-正常，1-超时，2-500异常"
         }
-    ],
-    "apis": [
-	{
-            "url": "UAPI/Config/SetApiStatus",
-            "summary": "设置api状态",
-            "type": "POST",
-            "params": {
-		 "area": {
-                    "default": "",
-                    "required": true,
-                    "description": "区域"
-                },
-                "controller": {
-                    "default": "",
-                    "required": true,
-                    "description": "控制器（系统模块）"
-                },
-                "name": {
-                    "default": "",
-                    "required": true,
-                    "description": "api名字"
-                },
-                "status": {
-                    "default": "",
-                    "required": true,
-                    "description": "要设置的状态，0-正常，1-超时，2-500异常"
-                }
-
-            },
-            "response": {
-
-            }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/RoleEdit",
+      "summary": "权限编辑/创建",
+      "type": "POST",
+      "params": {
+        "roleid": {
+          "default": "22C579F0-F340-4E61-A1FE-1BE843ABF9DD",
+          "required": false,
+          "description": "权限Guid(没有时为新建)"
         },
-        {
-            "url": "UAPI/Config/RoleEdit",
-            "summary": "权限编辑/创建",
-            "type": "POST",
-            "params": {
-                "roleid": {
-                    "default": "22C579F0-F340-4E61-A1FE-1BE843ABF9DD",
-                    "required": false,
-                    "description": "权限Guid(没有时为新建)"
-                },
-                "rolename": {
-                    "default": "超级管理员",
-                    "required": true,
-                    "description": "权限名称"
-                },
-                "roledescription": {
-                    "default": "所有功能菜单",
-                    "required": true,
-                    "description": "权限描述"
-                },
-                "orderby": {
-                    "default": "1",
-                    "required": true,
-                    "description": "排序"
-                }
-            },
-            "response": {
-
-            }
+        "rolename": {
+          "default": "超级管理员",
+          "required": true,
+          "description": "权限名称"
         },
-
-	{
-			"NoNeed": "1",
-            "url": "UAPI/Config/CommonApiVersionAdd",
-            "summary": "添加特殊处理的api版本号",
-            "type": "POST",
-            "params": {
-                "api": {
-                    "default": "",
-                    "required": true,
-                    "description": "api的名称"
-                },
-                "version": {
-                    "default": "",
-                    "required": true,
-                    "description": "api的版本号"
-                }
-
-            },
-            "response": {
-
-            }
+        "roledescription": {
+          "default": "所有功能菜单",
+          "required": true,
+          "description": "权限描述"
         },
-	{
-			"NoNeed": "1",
-            "url": "UAPI/Config/CommonApiVersionDel",
-            "summary": "添加特殊处理的api版本号",
-            "type": "POST",
-            "params": {
-                "api": {
-                    "default": "",
-                    "required": true,
-                    "description": "api的名称"
-                }
-
-            },
-            "response": {
-
-            }
-        },
-	{
-		"url": "UAPI/Config/CommonApiVersionGetList",
-		"summary": "读取api版本号",
-		"type": "POST",
-		"params": {},
-		"response": {}
-	},
-
-
-        {
-            "url": "UAPI/Config/RoleGetList",
-            "summary": "获取权限列表",
-            "type": "POST",
-            "params": {
-            },
-            "response": {
-
-            }
-        },
-        {
-            "url": "UAPI/Config/GetAppMenuList",
-            "summary": "获取可用APP菜单列表",
-            "type": "POST",
-            "params": {
-            },
-            "response": {
-
-            }
-        },
- 	{
-			"NoNeed": "1",
-            "url": "UAPI/Config/GetPadMenuList",
-            "summary": "获取可用Pad菜单列表",
-            "type": "POST",
-            "params": {
-            },
-            "response": {
-
-            }
-        },
-        {
-            "url": "UAPI/Config/GetWebMenuList",
-            "summary": "获取可用WEB菜单列表",
-            "type": "POST",
-            "params": {
-            },
-            "response": {
-
-            }
-        },
-        {
-			"NoNeed": "1",
-            "url": "UAPI/Config/RoleDelete",
-            "summary": "删除权限",
-            "type": "POST",
-            "params": {
-            },
-            "response": {
-
-            }
-        },
-
-        {
-            "url": "UAPI/Config/RoleAppMenuGet",
-            "summary": "获取权限APP菜单列表",
-            "type": "POST",
-            "params": {
-                "roleid": {
-                    "default": "22C579F0-F340-4E61-A1FE-1BE843ABF9DD",
-                    "required": true,
-                    "description": "权限Guid"
-                }
-            },
-            "response": {
-
-            }
-        },
-        {
-			"NoNeed": "1",
-            "url": "UAPI/Config/RoleAppMenuEdit",
-            "summary": "编辑权限APP菜单列表",
-            "type": "POST",
-            "params": {
-                "roleid": {
-                    "default": "22C579F0-F340-4E61-A1FE-1BE843ABF9DD",
-                    "required": true,
-                    "description": "权限Guid"
-                },
-                "appmenuids": {
-                    "default": "2;29;30;31;32;33;34;35;36;37;38;39;",
-                    "required": true,
-                    "description": "启用的APP menu id(分号隔开)"
-                }
-            },
-            "response": {
-
-            }
-        },
-	{
-			"NoNeed": "1",
-            "url": "UAPI/Config/RolePadMenuEdit",
-            "summary": "编辑权限APP菜单列表",
-            "type": "POST",
-            "params": {
-                "roleid": {
-                    "default": "22C579F0-F340-4E61-A1FE-1BE843ABF9DD",
-                    "required": true,
-                    "description": "权限Guid"
-                },
-                "padmenuids": {
-                    "default": "#129-111#;#129-10101#;#634-0#;#213-10100#;",
-                    "required": true,
-                    "description": "启用的APP menu id(分号隔开)"
-                }
-            },
-            "response": {
-
-            }
-        },
-        {
-            "url": "UAPI/Config/RoleWebMenuGet",
-            "summary": "获取权限Web菜单列表",
-            "type": "POST",
-            "params": {
-                "roleid": {
-                    "default": "22C579F0-F340-4E61-A1FE-1BE843ABF9DD",
-                    "required": true,
-                    "description": "权限Guid"
-                }
-            },
-            "response": {
-
-            }
-        },
-	{
-			"NoNeed": "1",
-            "url": "UAPI/Config/RolePadMenuGet",
-            "summary": "获取权限Web菜单列表",
-            "type": "POST",
-            "params": {
-                "roleid": {
-                    "default": "22C579F0-F340-4E61-A1FE-1BE843ABF9DD",
-                    "required": true,
-                    "description": "权限Guid"
-                }
-            },
-            "response": {
-
-            }
-        },
-        {
-			"NoNeed": "1",
-            "url": "UAPI/Config/RoleWebMenuEdit",
-            "summary": "编辑权限Web菜单列表",
-            "type": "POST",
-            "params": {
-                "roleid": {
-                    "default": "22C579F0-F340-4E61-A1FE-1BE843ABF9DD",
-                    "required": true,
-                    "description": "权限Guid"
-                },
-                "webmenuids": {
-                    "default": "1;2;3;4;5;6;7;8;9;11;12;13;14;15;16;17;18;19;20;21;22;23;24;25;26;27;28;29;30;",
-                    "required": true,
-                    "description": "启用的WEB menu id(分号隔开)"
-                }
-            },
-            "response": {
-
-            }
-        },
-        {
-			"NoNeed": "1",
-            "url": "UAPI/Config/RoleButtonEdit",
-            "summary": "编辑权限按钮",
-            "type": "POST",
-            "params": {
-                "roleid": {
-                    "default": "22C579F0-F340-4E61-A1FE-1BE843ABF9DD",
-                    "required": true,
-                    "description": "权限Guid"
-                },
-                "buttonids": {
-                    "default": "",
-                    "required": true,
-                    "description": "启用的WEB menu id(分号隔开)"
-                }
-            },
-            "response": {
-
-            }
-        },
-        {
-			"NoNeed": "1",
-            "url": "UAPI/Config/RoleButtonGet",
-            "summary": "获取权限button列表",
-            "type": "POST",
-            "params": {
-                "roleid": {
-                    "default": "22C579F0-F340-4E61-A1FE-1BE843ABF9DD",
-                    "required": true,
-                    "description": "权限Guid"
-                },
-                "nfcno": {
-                    "default": "",
-                    "required": true,
-                    "description": ""
-                }
-            },
-            "response": {
-
-            }
-        },
-        {
-			"NoNeed": "1",
-            "url": "UAPI/Config/DeptGetList",
-            "summary": "获取单位列表",
-            "type": "POST",
-            "params": {
-            },
-            "response": {
-
-            }
-        },
-        {
-            "url": "UAPI/Config/DeptManagerAdd",
-            "summary": "添加单位管理员",
-            "type": "POST",
-            "params": {
-                "deptid": {
-                    "default": "2",
-                    "required": true,
-                    "description": ""
-                },
-                "managerids": {
-                    "default": "BC44C8AB-4437-4CCD-982E-D0DC009AF132;9CA7FED2-DEF5-4E89-9996-A25739BF9CB1;932E0815-C8A7-41D9-889D-698AA4B4F0A1;",
-                    "required": true,
-                    "description": "管理员guid（分号隔开）"
-                },
-                "remove": {
-                    "default": "0",
-                    "required": true,
-                    "description": "0:添加管理员   1:移除管理员"
-                }
-            },
-            "response": {
-
-            }
-        },
-        {
-            "url": "UAPI/Config/DeptSetNameAndRole",
-            "summary": "设置单位名称和权限",
-            "type": "POST",
-            "params": {
-                "deptid": {
-                    "default": "14",
-                    "required": true,
-                    "description": ""
-                },
-                "deptname": {
-                    "default": "经理室",
-                    "required": true,
-                    "description": ""
-                },
-                "roleid": {
-                    "default": "3ed84c51-b9fa-42b1-b8db-197ad972fcf3",
-                    "required": true,
-                    "description": ""
-                }
-            },
-            "response": {
-
-            }
-        },
-        {
-            "url": "UAPI/Config/RegionEdit",
-            "summary": "创建/编辑区域",
-            "type": "POST",
-            "params": {
-                "regionid": {
-                    "default": "1",
-                    "required": true,
-                    "description": "区域id"
-                },
-                "regioncode": {
-                    "default": "Z01",
-                    "required": true,
-                    "description": "区域代码"
-                },
-                "regionname": {
-                    "default": "造气",
-                    "required": true,
-                    "description": "区域名称"
-                },
-                "regionallcode": {
-                    "default": "Z01",
-                    "required": true,
-                    "description": "区域完整代码"
-                },
-                "regionallname": {
-                    "default": "造气",
-                    "required": true,
-                    "description": "区域完整名称"
-                },
-                "regionlevel": {
-                    "default": "1",
-                    "required": true,
-                    "description": "区域级别"
-                },
-                "regiondescription": {
-                    "default": "",
-                    "required": true,
-                    "description": "区域描述"
-                },
-                "regionparentid": {
-                    "default": "",
-                    "required": true,
-                    "description": "父级区域id"
-                }
-            },
-            "response": {
-
-            }
-        },
-        {
-            "url": "UAPI/Config/RegionGetList",
-            "summary": "获取区域列表",
-            "type": "POST",
-            "params": {
-            },
-            "response": {
-
-            }
-        },
-        {
-            "url": "UAPI/Config/RegionManagerAdd",
-            "summary": "添加区域管理员",
-            "type": "POST",
-            "params": {
-                "regionid": {
-                    "default": "1",
-                    "required": true,
-                    "description": ""
-                },
-                "managerids": {
-                    "default": "BC44C8AB-4437-4CCD-982E-D0DC009AF132;9CA7FED2-DEF5-4E89-9996-A25739BF9CB1;932E0815-C8A7-41D9-889D-698AA4B4F0A1;",
-                    "required": true,
-                    "description": "管理员guid（分号隔开）"
-                },
-                "remove": {
-                    "default": "0",
-                    "required": true,
-                    "description": "0:添加管理员   1:移除管理员"
-                }
-            },
-            "response": {
-
-            }
-        },
-        {
-            "url": "UAPI/Config/RegionDelete",
-            "summary": "删除区域",
-            "type": "POST",
-            "params": {
-                "regionid": {
-                    "default": "1",
-                    "required": true,
-                    "description": ""
-                }
-            },
-            "response": {
-
-            }
-        },
-        {
-            "url": "UAPI/Config/RegionOrder",
-            "summary": "区域重新排序",
-            "type": "POST",
-            "params": {
-                "regionid": {
-                    "default": "6",
-                    "required": true,
-                    "description": "当前要重新排序的所有区域所在的父区域id"
-                },
-		"regionorders": {
-                    "default": "25;26;27",
-                    "required": true,
-                    "description": "当前要重新排序的所有区域,多个用;分隔"
-                }
-            },
-            "response": {
-
-            }
-        },
-        {
-            "url": "UAPI/Config/DeptAdd",
-            "summary": "添加修改部门",
-            "type": "POST",
-            "params": {
-                "deptid": {
-                    "default": "",
-                    "required": true,
-                    "description": "部门id，新增部门不传"
-                },
-		"parentid": {
-                    "default": "1",
-                    "required": true,
-                    "description": "新增的部门所属的父部门"
-                },
-		"deptname": {
-                    "default": "",
-                    "required": true,
-                    "description": "部门名字"
-                },
-		"deptcode": {
-                    "default": "",
-                    "required": true,
-                    "description": "部门编号"
-                },
-		"deptdesc": {
-                    "default": "",
-                    "required": true,
-                    "description": "部门描述"
-                },
-		"defaultroleid": {
-                    "default": "",
-                    "required": true,
-                    "description": "部门拥有的权限id"
-                },
-		"defaultregionid": {
-                    "default": "",
-                    "required": true,
-                    "description": "部门所在区域id"
-                }
-            },
-            "response": {
-
-            }
-        },
-        {
-            "url": "UAPI/Config/DeptOrder",
-            "summary": "部门重新排序",
-            "type": "POST",
-            "params": {
-                "deptid": {
-                    "default": "1",
-                    "required": true,
-                    "description": "当前要重新排序的所有部门所在的父部门id"
-                },
-		"deptorders": {
-                    "default": "2;3;4;5;6;7;8;9;10;11;12;13",
-                    "required": true,
-                    "description": "当前要重新排序的所有部门,多个用;分隔"
-                }
-            },
-            "response": {
-
-            }
-        },
-        {
-            "url": "UAPI/Config/DeptDelete",
-            "summary": "删除部门",
-            "type": "POST",
-            "params": {
-                "deptid": {
-                    "default": "2",
-                    "required": true,
-                    "description": "部门id"
-                }
-            },
-            "response": {
-
-            }
-        },
-        {
-            "url": "UAPI/Config/MyDeptGetList",
-            "summary": "获取我管理的部门列表",
-            "type": "POST",
-            "params": {
-
-            },
-            "response": {
-
-            }
-        },
-       {
-            "url": "UAPI/Config/NoticeAdd",
-            "summary": "新增删除通知通告",
-            "type": "POST",
-            "params": {
-			"addtype": {
-                    	"default": "1",
-                    	"required": true,
-                    	"description": "1新增2删除"
-                	},
-			"deptids": {
-                    	"default": "14",
-                    	"required": true,
-                    	"description": "部门ids"
-                	},
-			"title": {
-                    	"default": "通知标题",
-                    	"required": true,
-                    	"description": "通知标题"
-                	},
-			"memo": {
-                    	"default": "通知备注",
-                    	"required": true,
-                    	"description": "通知备注"
-                	},
-			"endtime": {
-                    	"default": "2016-05-12",
-                    	"required": true,
-                    	"description": "通知结束时间"
-                	},
-			"noticeid": {
-                    	"default": "0C1889B6-2939-4ADB-984B-B120244E5BAF",
-                    	"required": true,
-                    	"description": "通告id"
-                	},
-			"files": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "附件"
-                	},
-			"personids": {
-                    	"default": "00E274AD-79FD-4051-BC83-2388EA2A79A4;02e41058-63cc-4fbd-8b76-28e55f7cc940;",
-                    	"required": true,
-                    	"description": "人员ids"
-                	},
-			"priority": {
-                    	"default": "1",
-                    	"required": true,
-                    	"description": "重要性"
-                	}
-			},
-            "response": {
-            }
-        },
-        {
-            "url": "UAPI/Config/NoticeGetList",
-            "summary": "获取通知通告列表",
-            "type": "POST",
-            "params": {
- 		"deptid": {
-                    	"default": "33",
-                    	"required": true,
-                    	"description": "部门id"
-                	}
-            },
-            "response": {
-
-            }
-        },
-        {
-            "url": "UAPI/Config/CommonDeviceTypeGetList",
-            "summary": "获取设备分类列表",
-            "type": "POST",
-            "params": {
-            },
-            "response": {
-
-            }
+        "orderby": {
+          "default": "1",
+          "required": true,
+          "description": "排序"
         }
-	,
-        {
-            "url": "UAPI/Config/CommonDeviceTypeGetDetail",
-            "summary": "获取设备分类详情",
-            "type": "POST",
-            "params": {
- 		"devicetypeid": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "设备分类id"
-                	}
-            },
-            "response": {
-
-            }
+      },
+      "response": {
+      }
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Config/CommonApiVersionAdd",
+      "summary": "添加特殊处理的api版本号",
+      "type": "POST",
+      "params": {
+        "api": {
+          "default": "",
+          "required": true,
+          "description": "api的名称"
+        },
+        "version": {
+          "default": "",
+          "required": true,
+          "description": "api的版本号"
         }
-	,
-        {
-			"NoNeed": "1",
-            "url": "UAPI/Config/CommonDeviceTypeSave",
-            "summary": "创建/编辑设备分类",
-            "type": "POST",
-            "params": {
- 		"devicetypeid": {
-                    	"default": "",
-                    	"required": false,
-                    	"description": "设备分类id，不传则为新增"
-                	}
-		,"typename": {
-                    	"default": "泵类",
-                    	"required": true,
-                    	"description": "设备分类名称"
-                	}
-		,"typecode": {
-                    	"default": "M",
-                    	"required": true,
-                    	"description": "简写代码"
-                	}
-		,"typedesc": {
-                    	"default": "",
-                    	"required": false,
-                    	"description": "备注"
-                	}
-            },
-            "response": {
-
-            }
-        },
-        {
-            "url": "UAPI/Config/CommonDeviceTypeDelete",
-            "summary": "删除设备分类",
-            "type": "POST",
-            "params": {
- 		"devicetypeid": {
-                    	"default": "",
-                    	"required": false,
-                    	"description": "设备分类id，不传则为新增"
-                	}
-            },
-            "response": {
-
-            }
+      },
+      "response": {
+      }
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Config/CommonApiVersionDel",
+      "summary": "添加特殊处理的api版本号",
+      "type": "POST",
+      "params": {
+        "api": {
+          "default": "",
+          "required": true,
+          "description": "api的名称"
         }
-	,
-	{
-            "url": "UAPI/Config/CommonDeviceTypeDefaultItemGetList",
-            "summary": "获取设备分类默认属性列表",
-            "type": "POST",
-            "params": {
-		"devicetypeid": {
-                    	"default": "d0958f27-db82-4d9b-8e94-dd734752811b",
-                    	"required": true,
-                    	"description": "设备分类id"
-                	}
-            },
-            "response": {
-
-            }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/CommonApiVersionGetList",
+      "summary": "读取api版本号",
+      "type": "POST",
+      "params": {},
+      "response": {}
+    },
+    {
+      "url": "UAPI/Config/RoleGetList",
+      "summary": "获取权限列表",
+      "type": "POST",
+      "params": {
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/GetAppMenuList",
+      "summary": "获取可用APP菜单列表",
+      "type": "POST",
+      "params": {
+      },
+      "response": {
+      }
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Config/GetPadMenuList",
+      "summary": "获取可用Pad菜单列表",
+      "type": "POST",
+      "params": {
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/GetWebMenuList",
+      "summary": "获取可用WEB菜单列表",
+      "type": "POST",
+      "params": {
+      },
+      "response": {
+      }
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Config/RoleDelete",
+      "summary": "删除权限",
+      "type": "POST",
+      "params": {
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/RoleAppMenuGet",
+      "summary": "获取权限APP菜单列表",
+      "type": "POST",
+      "params": {
+        "roleid": {
+          "default": "22C579F0-F340-4E61-A1FE-1BE843ABF9DD",
+          "required": true,
+          "description": "权限Guid"
         }
-	,
-        {
-            "url": "UAPI/Config/CommonDeviceTypeDefaultItemSetOrder",
-            "summary": "设置设备分类默认属性次序",
-            "type": "POST",
-            "params": {
- 		"devicetypeid": {
-                    	"default": "d0958f27-db82-4d9b-8e94-dd734752811b",
-                    	"required": true,
-                    	"description": "设备分类id"
-                	}
-		,"defaultitemids": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "已有属性项目ID，按次序按;间隔"
-                	}
-            },
-            "response": {
-
-            }
+      },
+      "response": {
+      }
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Config/RoleAppMenuEdit",
+      "summary": "编辑权限APP菜单列表",
+      "type": "POST",
+      "params": {
+        "roleid": {
+          "default": "22C579F0-F340-4E61-A1FE-1BE843ABF9DD",
+          "required": true,
+          "description": "权限Guid"
+        },
+        "appmenuids": {
+          "default": "2;29;30;31;32;33;34;35;36;37;38;39;",
+          "required": true,
+          "description": "启用的APP menu id(分号隔开)"
         }
-	,
-        {
-            "url": "UAPI/Config/CommonDeviceTypeDefaultItemSave",
-            "summary": "创建/编辑设备分类默认属性",
-            "type": "POST",
-            "params": {
- 		"devicetypeid": {
-                    	"default": "d0958f27-db82-4d9b-8e94-dd734752811b",
-                    	"required": true,
-                    	"description": "设备分类id，不传则为新增"
-                	}
-		,"defaultitemid": {
-                    	"default": "",
-                    	"required": false,
-                    	"description": "默认属性ID，空为创建"
-                	}
-		,"itemtitle": {
-                    	"default": "额定功率",
-                    	"required": true,
-                    	"description": "属性名称"
-                	}
-		,"itemunit": {
-                    	"default": "千瓦",
-                    	"required": true,
-                    	"description": "属性单位"
-                	}
-            },
-            "response": {
-
-            }
+      },
+      "response": {
+      }
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Config/RolePadMenuEdit",
+      "summary": "编辑权限APP菜单列表",
+      "type": "POST",
+      "params": {
+        "roleid": {
+          "default": "22C579F0-F340-4E61-A1FE-1BE843ABF9DD",
+          "required": true,
+          "description": "权限Guid"
+        },
+        "padmenuids": {
+          "default": "#129-111#;#129-10101#;#634-0#;#213-10100#;",
+          "required": true,
+          "description": "启用的APP menu id(分号隔开)"
         }
-	,
-        {
-            "url": "UAPI/Config/CommonDeviceTypeTroubleInfoGetList",
-            "summary": "设备分类默认隐患信息",
-            "type": "POST",
-            "params": {
- 		"devicetypeid": {
-                    	"default": "d0958f27-db82-4d9b-8e94-dd734752811b",
-                    	"required": true,
-                    	"description": "设备分类id"
-                	}
-            },
-            "response": {
-
-            }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/RoleWebMenuGet",
+      "summary": "获取权限Web菜单列表",
+      "type": "POST",
+      "params": {
+        "roleid": {
+          "default": "22C579F0-F340-4E61-A1FE-1BE843ABF9DD",
+          "required": true,
+          "description": "权限Guid"
         }
-	,
-        {
-            "url": "UAPI/Config/CommonDeviceTypeTroubleInfoCreate",
-            "summary": "设备分类添加常见隐患",
-            "type": "POST",
-            "params": {
- 		"devicetypeid": {
-                    	"default": "d0958f27-db82-4d9b-8e94-dd734752811b",
-                    	"required": true,
-                    	"description": "设备分类id"
-                	}
-		,"troubleinfoid": {
-                    	"default": "",
-                    	"required": false,
-                    	"description": "常见隐患ID"
-                	}
-
-            },
-            "response": {
-
-            }
+      },
+      "response": {
+      }
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Config/RolePadMenuGet",
+      "summary": "获取权限Web菜单列表",
+      "type": "POST",
+      "params": {
+        "roleid": {
+          "default": "22C579F0-F340-4E61-A1FE-1BE843ABF9DD",
+          "required": true,
+          "description": "权限Guid"
         }
-	,
-        {
-            "url": "UAPI/Config/CommonDeviceTypeTroubleInfoDel",
-            "summary": "设备分类删除常见隐患",
-            "type": "POST",
-            "params": {
- 		"devicetypeid": {
-                    	"default": "d0958f27-db82-4d9b-8e94-dd734752811b",
-                    	"required": true,
-                    	"description": "设备分类id"
-                	}
-		,"troubleinfoid": {
-                    	"default": "",
-                    	"required": false,
-                    	"description": "常见隐患ID"
-                	}
-            },
-            "response": {
-
-            }
+      },
+      "response": {
+      }
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Config/RoleWebMenuEdit",
+      "summary": "编辑权限Web菜单列表",
+      "type": "POST",
+      "params": {
+        "roleid": {
+          "default": "22C579F0-F340-4E61-A1FE-1BE843ABF9DD",
+          "required": true,
+          "description": "权限Guid"
+        },
+        "webmenuids": {
+          "default": "1;2;3;4;5;6;7;8;9;11;12;13;14;15;16;17;18;19;20;21;22;23;24;25;26;27;28;29;30;",
+          "required": true,
+          "description": "启用的WEB menu id(分号隔开)"
         }
-	,
-       {
-            "url": "UAPI/Config/CommonTroubleInfoGetList",
-            "summary": "常见隐患列表信息",
-            "type": "POST",
-            "params": {
-            },
-            "response": {
-
-            }
+      },
+      "response": {
+      }
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Config/RoleButtonEdit",
+      "summary": "编辑权限按钮",
+      "type": "POST",
+      "params": {
+        "roleid": {
+          "default": "22C579F0-F340-4E61-A1FE-1BE843ABF9DD",
+          "required": true,
+          "description": "权限Guid"
+        },
+        "buttonids": {
+          "default": "",
+          "required": true,
+          "description": "启用的WEB menu id(分号隔开)"
         }
-	,
-        {
-            "url": "UAPI/Config/CommonTroubleInfoSave",
-            "summary": "添加编辑常见隐患",
-            "type": "POST",
-            "params": {
- 		"troubleinfoid": {
-                    	"default": "",
-                    	"required": false,
-                    	"description": "常见隐患ID，空位新增"
-                	}
-		,"troubleinfotitle": {
-                    	"default": "停止工作",
-                    	"required": true,
-                    	"description": "常见隐患标题"
-                	}
-		,"allpriority": {
-                    	"default": "3",
-                    	"required": false,
-                    	"description": "综合影响重要程度"
-                	}
-		,"envpriority": {
-                    	"default": "3",
-                    	"required": false,
-                    	"description": "环境影响重要程度"
-                	}
-		,"safepriority": {
-                    	"default": "3",
-                    	"required": false,
-                    	"description": "安全影响重要程度"
-                	}
-		,"runpriority": {
-                    	"default": "3",
-                    	"required": false,
-                    	"description": "运行影响重要程度"
-                	}
-
-            },
-            "response": {
-
-            }
+      },
+      "response": {
+      }
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Config/RoleButtonGet",
+      "summary": "获取权限button列表",
+      "type": "POST",
+      "params": {
+        "roleid": {
+          "default": "22C579F0-F340-4E61-A1FE-1BE843ABF9DD",
+          "required": true,
+          "description": "权限Guid"
         },
-        {
-            "url": "UAPI/Config/CommonTroubleInfoDel",
-            "summary": "删除常见隐患",
-            "type": "POST",
-            "params": {
-		"troubleinfoid": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "常见隐患ID"
-                	}
-            },
-            "response": {
-
-            }
-        },
-        {
-            "url": "UAPI/Config/CommonDeviceItemGetList",
-            "summary": "具体设备详细属性列表",
-            "type": "POST",
-            "params": {
-		"deviceid": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "具体设备ID"
-                	}
-            },
-            "response": {
-
-            }
-        },
-        {
-            "url": "UAPI/Config/CommonDeviceItemSave",
-            "summary": "添加更新具体设备详细属性",
-            "type": "POST",
-            "params": {
-		"itemid": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "属性id"
-                	},
-		"deviceid": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "具体设备ID"
-                	},
-		"itembaseid": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "具体设备所属基础设备属性ID"
-                	},
-		"itemtitle": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "属性标题"
-                	},
-		"itemvalue": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "属性值"
-                	},
-		"itemunit": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "属性值单位"
-                	},
-		"itemmemo": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "备注"
-                	},
-		"files": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "附件"
-                	}
-            },
-            "response": {
-
-            }
-        },
-        {
-            "url": "UAPI/Config/CommonDeviceGetList",
-            "summary": "设备列表",
-            "type": "POST",
-            "params": {
-		"devicetypeid": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "设备类型id"
-                	},
-		"deviceid": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "设备id，获取详情用"
-                	},
-		"regionid": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "区域id"
-                	},
-		"keyword": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "关键字"
-                	},
-		"pageindex": {
-                    	"default": "0",
-                    	"required": true,
-                    	"description": "分页"
-                	},
-		"ismachine": {
-                    	"default": "1",
-                    	"required": true,
-                    	"description": "是否是特殊设备"
-                	}
-
-            },
-            "response": {
-
-            }
-        },
-        {
-            "url": "UAPI/Config/CommonDeviceItemDel",
-            "summary": "删除具体设备附加属性",
-            "type": "POST",
-            "params": {
-		"deviceid": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "设备id，获取详情用"
-                	},
-		"itemid": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "属性id"
-                	}
-		},
-            "response": {
-
-            }
-        },
-        {
-            "url": "UAPI/Config/CommonDeviceItemSetOrder",
-            "summary": "具体设备附加属性排序",
-            "type": "POST",
-            "params": {
-		"deviceid": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "设备id，获取详情用"
-                	},
-		"itemids": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "属性ids"
-                	}
-		},
-            "response": {
-
-            }
-        },
-        {
-            "url": "UAPI/Config/CommonDeviceBaseTroubleHowdoSave",
-            "summary": "基础设备整改建议新增修改",
-            "type": "POST",
-            "params": {
-		"howdoid": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "整改建议id"
-                	},
-		"devicebaseid": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "基础设备id"
-                	},
-		"howdotitle": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "整改建议内容"
-                	},
-		"troubleinfoid": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "隐患id"
-                	},
-		"commonhowdoid": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "通用整改建议id"
-                	}
-		},
-            "response": {
-
-            }
-        },
-        {
-            "url": "UAPI/Config/CommonDeviceBaseTroubleHowdoCopy",
-            "summary": "基础设备整改建议新增修改",
-            "type": "POST",
-            "params": {
-		"devicebasefrom": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "被复制的基础设备id"
-                	},
-		"devicebaseto": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": ""
-                	}
-		},
-            "response": {
-
-            }
-        },
-        {
-            "url": "UAPI/Config/CommonDeviceBaseTroubleHowdoGetList",
-            "summary": "基础设备整改建议列表",
-            "type": "POST",
-            "params": {
-		"devicebaseid": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "基础设备id"
-                	}
-		},
-            "response": {
-
-            }
-        },
-        {
-            "url": "UAPI/Config/CommonTroubleHowdoGetList",
-            "summary": "通用整改建议列表",
-            "type": "POST",
-            "params": {
-		"devicebaseid": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "基础设备id"
-                	}
-		},
-            "response": {
-
-            }
-        },
-        {
-            "url": "UAPI/Config/CommonDeviceBaseTroubleHowdoDetailDel",
-            "summary": "基础设备整改建议详情删除",
-            "type": "POST",
-            "params": {
-		"howdodetailid": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "整改建议详情id"
-                	},
-		"howdoid": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "整改建议id"
-                	}
-		},
-            "response": {
-
-            }
-        },
-        {
-            "url": "UAPI/Config/AccountGetList",
-            "summary": "获取系统用户列表",
-            "type": "POST",
-            "params": {
-                "deptid": {
-                    "default": "1",
-                    "required": true,
-                    "description": "部门名称(0标示全部)"
-                },
-                "name": {
-                    "default": "",
-                    "required": true,
-                    "description": "姓名"
-                },
-                "mobile": {
-                    "default": "",
-                    "required": false,
-                    "description": "手机号"
-                },
-                "nfcno": {
-                    "default": "",
-                    "required": false,
-                    "description": ""
-                }
-            },
-            "response": {
-
-            }
-        },
-        {
-            "url": "UAPI/Config/NoticeManagerAdd",
-            "summary": "新增部门通知跟人员对应关系",
-            "type": "POST",
-            "params": {
-                "deptids": {
-                    "default": "1",
-                    "required": true,
-                    "description": "部门名称ids"
-                },
-                "personids": {
-                    "default": "",
-                    "required": true,
-                    "description": "人员ids"
-                }
-            },
-            "response": {
-
-            }
-        },
-{
-			"NoNeed": "1",
-            "url": "UAPI/Config/AccountRoleToActionSet",
-            "summary": "增加人员权限和行为对应关系",
-            "type": "POST",
-            "params": {
-                "roleid": {
-                    "default": "00000000-0000-0000-0000-000000000000",
-                    "required": true,
-                    "description": "权限组id"
-                },
-                "actionids": {
-                    "default": "00000000-0000-0000-0000-000000000000",
-                    "required": true,
-                    "description": "行为ids"
-                }
-            },
-            "response": {
-
-            }
-        },
-        {
-            "url": "UAPI/Config/NoticeManagerGetList",
-            "summary": "获取部门通知跟人员对应关系",
-            "type": "POST",
-            "params": {
-                "deptids": {
-                    "default": "1",
-                    "required": true,
-                    "description": "部门名称ids"
-                },
-                "personids": {
-                    "default": "",
-                    "required": true,
-                    "description": "人员ids"
-                }
-            },
-            "response": {
-
-            }
-        },
-        {
-			"NoNeed": "1",
-            "url": "UAPI/Config/DataRoleGroupAdd",
-            "summary": "新增编辑数据权限组",
-            "type": "POST",
-            "params": {
-                "datarolegroupid": {
-                    "default": "1",
-                    "required": true,
-                    "description": "数据权限组id"
-                },
-                "rolename": {
-                    "default": "",
-                    "required": true,
-                    "description": "权限组名称"
-                },
-                "roledescription": {
-                    "default": "",
-                    "required": true,
-                    "description": "描述"
-                },
-                "orderby": {
-                    "default": "",
-                    "required": true,
-                    "description": ""
-                }
-            },
-            "response": {
-
-            }
-        },
-        {
-			"NoNeed": "1",
-            "url": "UAPI/Config/DataRoleGroupGetList",
-            "summary": "获取数据权限组列表",
-            "type": "POST",
-            "params": {
-            },
-            "response": {
-
-            }
-        },
-        {
-			"NoNeed": "1",
-            "url": "UAPI/Config/DataRoleGroupDelete",
-            "summary": "删除数据权限组",
-            "type": "POST",
-            "params": {
-                "datarolegroupid": {
-                    "default": "1",
-                    "required": true,
-                    "description": "数据权限组id"
-                }
-            },
-            "response": {
-
-            }
-        },
-        {
-			"NoNeed": "1",
-            "url": "UAPI/Config/DataRoleAdd",
-            "summary": "新增编辑数据权限",
-            "type": "POST",
-            "params": {
-                "dataroleid": {
-                    "default": "1",
-                    "required": true,
-                    "description": "数据权限组id"
-                },
-                "rolename": {
-                    "default": "",
-                    "required": true,
-                    "description": "权限组名称"
-                },
-                "roledesc": {
-                    "default": "",
-                    "required": true,
-                    "description": "描述"
-                }
-            },
-            "response": {
-
-            }
-        },
-        {
-			"NoNeed": "1",
-            "url": "UAPI/Config/DataRoleGetList",
-            "summary": "获取数据权限列表",
-            "type": "POST",
-            "params": {
-                "datarolegroupid": {
-                    "default": "1",
-                    "required": true,
-                    "description": "数据权限组id"
-                }
-            },
-            "response": {
-
-            }
-        },
-        {
-			"NoNeed": "1",
-            "url": "UAPI/Config/DataRoleDelete",
-            "summary": "删除数据权限",
-            "type": "POST",
-            "params": {
-                "dataroleid": {
-                    "default": "1",
-                    "required": true,
-                    "description": "数据权限id"
-                }
-            },
-            "response": {
-
-            }
-        },
-        {
-			"NoNeed": "1",
-            "url": "UAPI/Config/SetAccountDataRoleGroup",
-            "summary": "设置账号数据权限组",
-            "type": "POST",
-            "params": {
-                "datarolegroupid": {
-                    "default": "1",
-                    "required": true,
-                    "description": "数据权限组id"
-                },
-		   "personid": {
-                    "default": "1",
-                    "required": true,
-                    "description": "用户id"
-                }
-            },
-            "response": {
-
-            }
-        },
-	{
-            "url": "UAPI/Config/CommonDeviceRegularCheckGetList",
-            "summary": "读取具体设备的定检信息",
-            "type": "POST",
-            "params": {
-		"deviceid": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "具体设备id"
-                	}
-		},
-            "response": {
-
-            }
-        },
-	{
-            "url": "UAPI/Config/CommonDeviceRegularCheckSave",
-            "summary": "保存具体设备的定检信息",
-            "type": "POST",
-            "params": {
-		"deviceid": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "具体设备id"
-                	},
-		"regularcheckid": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "定检信息id"
-                	},
-		"title": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "定检信息内容"
-                	}
-		},
-            "response": {
-
-            }
-        },
-	{
-            "url": "UAPI/Config/CommonDeviceRegularCheckDel",
-            "summary": "删除具体设备的定检信息",
-            "type": "POST",
-            "params": {
-		"regularcheckid": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "定检信息id"
-                	}
-		},
-            "response": {
-
-            }
-        },
-	{
-            "url": "UAPI/Config/CommonDeviceStandbyAdd",
-            "summary": "添加设备为备车设备",
-            "type": "POST",
-            "params": {
-		"deviceids": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "设备ids"
-                	}
-		},
-            "response": {
-
-            }
-        },
-	{
-            "url": "UAPI/Config/CommonDeviceStandbyRemove",
-            "summary": "去除备车设备",
-            "type": "POST",
-            "params": {
-		"deviceid": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "设备id"
-                	}
-		},
-            "response": {
-
-            }
-        },
-	{
-            "url": "UAPI/Config/RoleActionGetList",
-            "summary": "读取权限组控制的api列表",
-            "type": "POST",
-            "params": {
-		"key": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "关键字"
-                	}
-		},
-            "response": {
-
-            }
-        },
-	{
-            "url": "UAPI/Config/AccountRoleActionGetList",
-            "summary": "读取用户权限组控制的api列表",
-            "type": "POST",
-            "params": {
-		"roleid": {
-                    	"default": "DC4722DE-EC62-4B0C-A941-01B6E19FC348",
-                    	"required": true,
-                    	"description": "权限组id"
-                	}
-		},
-            "response": {
-
-            }
-        },
-	{
-            "url": "UAPI/Config/AccountRoleActionAdd",
-            "summary": "增加用户权限组控制的api",
-            "type": "POST",
-            "params": {
-				"roleid": {
-                    	"default": "DC4722DE-EC62-4B0C-A941-01B6E19FC348",
-                    	"required": true,
-                    	"description": "权限组id"
-                	},
-				"actionapi": {
-                    	"default": "UAPI/Device/StatusChangeRecordSave",
-                    	"required": true,
-                    	"description": "权限组id"
-                	}
-		},
-            "response": {
-
-            }
-        },
-	{
-            "url": "UAPI/Config/AccountRoleActionDel",
-            "summary": "增加用户权限组控制的api",
-            "type": "POST",
-            "params": {
-				"roleactionid": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "权限组id"
-                	}
-		},
-            "response": {
-
-            }
-        },
-	{
-            "url": "UAPI/Config/RegulationDeviceBaseTroubleHowdoCopy",
-            "summary": "从同一类型下的基础设备复制整改规程到另外一个基础设备",
-            "type": "POST",
-            "params": {
-				"devicebasefrom": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "被复制的基础设备id"
-                	},
-				"devicebaseto": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "需要设置整改建议的基础设备id"
-                	}
-		},
-            "response": {
-
-            }
-        },
-		{
-            "url": "UAPI/Config/RegulationDeviceBaseTroubleHowdoDel",
-            "summary": "删除基础设备的整改规程",
-            "type": "POST",
-            "params": {
-				"howdoid": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "需要删除的基础设备整改规程id"
-                	}
-		},
-            "response": {
-
-            }
-        },
-		{
-            "url": "UAPI/Config/RegulationDeviceBaseTroubleHowdoGetList",
-            "summary": "读取基础设备的整改规程",
-            "type": "POST",
-            "params": {
-				"devicebaseid": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "基础设备id"
-                	}
-		},
-            "response": {
-
-            }
-        },
-		{
-            "url": "UAPI/Config/RegulationDeviceBaseTroubleHowdoSave",
-            "summary": "读取基础设备的整改规程",
-            "type": "POST",
-            "params": {
-				"devicebaseid": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "基础设备id"
-                	},
-				"troubleinfoids": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "隐患ids"
-                	},
-				"regulationlibraryids": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "规程ids"
-                	},
-				"howdoids": {
-                    	"default": "",
-                    	"required": true,
-                    	"description": "整改ids"
-                	}
-
-		},
-            "response": {
-
-            }
-        },
-
-
-        {
-			"NoNeed": "1",
-            "url": "UAPI/Config/DataRoleGroupBind",
-            "summary": "数据权限组权限绑定",
-            "type": "POST",
-            "params": {
-                "datarolegroupid": {
-                    "default": "1",
-                    "required": true,
-                    "description": "数据权限组id"
-                },
-		   "dataroleids": {
-                    "default": "1",
-                    "required": true,
-                    "description": "数据权限ids"
-                }
-            },
-            "response": {
-
-            }
+        "nfcno": {
+          "default": "",
+          "required": true,
+          "description": ""
         }
-    ]
+      },
+      "response": {
+      }
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Config/DeptGetList",
+      "summary": "获取单位列表",
+      "type": "POST",
+      "params": {
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/DeptManagerAdd",
+      "summary": "添加单位管理员",
+      "type": "POST",
+      "params": {
+        "deptid": {
+          "default": "2",
+          "required": true,
+          "description": ""
+        },
+        "managerids": {
+          "default": "BC44C8AB-4437-4CCD-982E-D0DC009AF132;9CA7FED2-DEF5-4E89-9996-A25739BF9CB1;932E0815-C8A7-41D9-889D-698AA4B4F0A1;",
+          "required": true,
+          "description": "管理员guid（分号隔开）"
+        },
+        "remove": {
+          "default": "0",
+          "required": true,
+          "description": "0:添加管理员   1:移除管理员"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/DeptSetNameAndRole",
+      "summary": "设置单位名称和权限",
+      "type": "POST",
+      "params": {
+        "deptid": {
+          "default": "14",
+          "required": true,
+          "description": ""
+        },
+        "deptname": {
+          "default": "经理室",
+          "required": true,
+          "description": ""
+        },
+        "roleid": {
+          "default": "3ed84c51-b9fa-42b1-b8db-197ad972fcf3",
+          "required": true,
+          "description": ""
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/RegionEdit",
+      "summary": "创建/编辑区域",
+      "type": "POST",
+      "params": {
+        "regionid": {
+          "default": "1",
+          "required": true,
+          "description": "区域id"
+        },
+        "regioncode": {
+          "default": "Z01",
+          "required": true,
+          "description": "区域代码"
+        },
+        "regionname": {
+          "default": "造气",
+          "required": true,
+          "description": "区域名称"
+        },
+        "regionallcode": {
+          "default": "Z01",
+          "required": true,
+          "description": "区域完整代码"
+        },
+        "regionallname": {
+          "default": "造气",
+          "required": true,
+          "description": "区域完整名称"
+        },
+        "regionlevel": {
+          "default": "1",
+          "required": true,
+          "description": "区域级别"
+        },
+        "regiondescription": {
+          "default": "",
+          "required": true,
+          "description": "区域描述"
+        },
+        "regionparentid": {
+          "default": "",
+          "required": true,
+          "description": "父级区域id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/RegionGetList",
+      "summary": "获取区域列表",
+      "type": "POST",
+      "params": {
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/RegionManagerAdd",
+      "summary": "添加区域管理员",
+      "type": "POST",
+      "params": {
+        "regionid": {
+          "default": "1",
+          "required": true,
+          "description": ""
+        },
+        "managerids": {
+          "default": "BC44C8AB-4437-4CCD-982E-D0DC009AF132;9CA7FED2-DEF5-4E89-9996-A25739BF9CB1;932E0815-C8A7-41D9-889D-698AA4B4F0A1;",
+          "required": true,
+          "description": "管理员guid（分号隔开）"
+        },
+        "remove": {
+          "default": "0",
+          "required": true,
+          "description": "0:添加管理员   1:移除管理员"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/RegionDelete",
+      "summary": "删除区域",
+      "type": "POST",
+      "params": {
+        "regionid": {
+          "default": "1",
+          "required": true,
+          "description": ""
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/RegionOrder",
+      "summary": "区域重新排序",
+      "type": "POST",
+      "params": {
+        "regionid": {
+          "default": "6",
+          "required": true,
+          "description": "当前要重新排序的所有区域所在的父区域id"
+        },
+        "regionorders": {
+          "default": "25;26;27",
+          "required": true,
+          "description": "当前要重新排序的所有区域,多个用;分隔"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/DeptAdd",
+      "updatetime": "20170413",
+      "summary": "添加修改部门",
+      "type": "POST",
+      "params": {
+        "deptid": {
+          "default": "",
+          "required": true,
+          "description": "部门id，新增部门不传"
+        },
+        "parentid": {
+          "default": "1",
+          "required": true,
+          "description": "新增的部门所属的父部门"
+        },
+        "deptname": {
+          "default": "",
+          "required": true,
+          "description": "部门名字"
+        },
+        "deptcode": {
+          "default": "",
+          "required": true,
+          "description": "部门编号"
+        },
+        "deptdesc": {
+          "default": "",
+          "required": true,
+          "description": "部门描述"
+        },
+        "defaultroleid": {
+          "default": "",
+          "required": true,
+          "description": "部门拥有的权限id"
+        },
+        "defaultregionid": {
+          "default": "",
+          "required": true,
+          "description": "部门所在区域id"
+        },
+        "typeid": {
+          "default": "1",
+          "required": true,
+          "description": "部门类型"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Account/GetDeptListByType",
+      "updatetime": "20170712",
+      "summary": "根据类型获取部门列表",
+      "type": "GET",
+      "params": {
+        "types": {
+          "default": "1",
+          "required": true,
+          "description": "部门的类型ids "
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/DeptTypeGetList",
+      "updatetime": "20170712",
+      "summary": "获取单位类型列表",
+      "type": "POST",
+      "params": {
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/DeptOrder",
+      "summary": "部门重新排序",
+      "type": "POST",
+      "params": {
+        "deptid": {
+          "default": "1",
+          "required": true,
+          "description": "当前要重新排序的所有部门所在的父部门id"
+        },
+        "deptorders": {
+          "default": "2;3;4;5;6;7;8;9;10;11;12;13",
+          "required": true,
+          "description": "当前要重新排序的所有部门,多个用;分隔"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/DeptDelete",
+      "summary": "删除部门",
+      "type": "POST",
+      "params": {
+        "deptid": {
+          "default": "2",
+          "required": true,
+          "description": "部门id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/MyDeptGetList",
+      "summary": "获取我管理的部门列表",
+      "type": "POST",
+      "params": {
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/RegionToRoomAdd",
+      "updatetime": "20170711",
+      "summary": "增加区域对应的房间",
+      "type": "POST",
+      "params": {
+        "regionid": {
+          "default": "80",
+          "required": true,
+          "description": "区域id"
+        },
+        "roomid": {
+          "default": "",
+          "required": true,
+          "description": "房间id"
+        },
+        "title": {
+          "default": "实验大楼303",
+          "required": true,
+          "description": "房间名称"
+        },
+        "memo": {
+          "default": "",
+          "required": true,
+          "description": "备注"
+        },
+        "managerids": {
+          "default": "",
+          "required": true,
+          "description": "管理人ids"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/RegionToRoomGetList",
+      "updatetime": "20170710",
+      "summary": "读取区域对应的房间",
+      "type": "POST",
+      "params": {
+        "regionid ": {
+          "default": "80",
+          "required": true,
+          "description": "区域id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/RegionToRoomDel",
+      "updatetime": "20170711",
+      "summary": "删除区域对应的房间",
+      "type": "POST",
+      "params": {
+        "roomid": {
+          "default": "",
+          "required": true,
+          "description": "房间id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/RegionSetPosition",
+      "updatetime": "20170710",
+      "summary": "区域的gps位置打点",
+      "type": "POST",
+      "params": {
+        "regionid": {
+          "default": "80",
+          "required": true,
+          "description": "区域id"
+        },
+        "longitude": {
+          "default": "121.434041",
+          "required": true,
+          "description": "经度"
+        },
+        "latitude": {
+          "default": "31.174418",
+          "required": true,
+          "description": "纬度"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/NoticeAdd",
+      "summary": "新增删除通知通告",
+      "type": "POST",
+      "params": {
+        "addtype": {
+          "default": "1",
+          "required": true,
+          "description": "1新增2删除"
+        },
+        "deptids": {
+          "default": "14",
+          "required": true,
+          "description": "部门ids"
+        },
+        "title": {
+          "default": "通知标题",
+          "required": true,
+          "description": "通知标题"
+        },
+        "memo": {
+          "default": "通知备注",
+          "required": true,
+          "description": "通知备注"
+        },
+        "endtime": {
+          "default": "2016-05-12",
+          "required": true,
+          "description": "通知结束时间"
+        },
+        "noticeid": {
+          "default": "0C1889B6-2939-4ADB-984B-B120244E5BAF",
+          "required": true,
+          "description": "通告id"
+        },
+        "files": {
+          "default": "",
+          "required": true,
+          "description": "附件"
+        },
+        "personids": {
+          "default": "00E274AD-79FD-4051-BC83-2388EA2A79A4;02e41058-63cc-4fbd-8b76-28e55f7cc940;",
+          "required": true,
+          "description": "人员ids"
+        },
+        "priority": {
+          "default": "1",
+          "required": true,
+          "description": "重要性"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/NoticeGetList",
+      "summary": "获取通知通告列表",
+      "type": "POST",
+      "params": {
+        "deptid": {
+          "default": "33",
+          "required": true,
+          "description": "部门id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/CommonDeviceTypeGetList",
+      "summary": "获取设备分类列表",
+      "type": "POST",
+      "params": {
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/CommonDeviceTypeGetDetail",
+      "summary": "获取设备分类详情",
+      "type": "POST",
+      "params": {
+        "devicetypeid": {
+          "default": "",
+          "required": true,
+          "description": "设备分类id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Config/CommonDeviceTypeSave",
+      "summary": "创建/编辑设备分类",
+      "type": "POST",
+      "params": {
+        "devicetypeid": {
+          "default": "",
+          "required": false,
+          "description": "设备分类id，不传则为新增"
+        },
+        "typename": {
+          "default": "泵类",
+          "required": true,
+          "description": "设备分类名称"
+        },
+        "typecode": {
+          "default": "M",
+          "required": true,
+          "description": "简写代码"
+        },
+        "typedesc": {
+          "default": "",
+          "required": false,
+          "description": "备注"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/CommonDeviceTypeDelete",
+      "summary": "删除设备分类",
+      "type": "POST",
+      "params": {
+        "devicetypeid": {
+          "default": "",
+          "required": false,
+          "description": "设备分类id，不传则为新增"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/CommonDeviceTypeDefaultItemGetList",
+      "summary": "获取设备分类默认属性列表",
+      "type": "POST",
+      "params": {
+        "devicetypeid": {
+          "default": "d0958f27-db82-4d9b-8e94-dd734752811b",
+          "required": true,
+          "description": "设备分类id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/CommonDeviceTypeDefaultItemSetOrder",
+      "summary": "设置设备分类默认属性次序",
+      "type": "POST",
+      "params": {
+        "devicetypeid": {
+          "default": "d0958f27-db82-4d9b-8e94-dd734752811b",
+          "required": true,
+          "description": "设备分类id"
+        },
+        "defaultitemids": {
+          "default": "",
+          "required": true,
+          "description": "已有属性项目ID，按次序按;间隔"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/CommonDeviceTypeDefaultItemSave",
+      "summary": "创建/编辑设备分类默认属性",
+      "type": "POST",
+      "params": {
+        "devicetypeid": {
+          "default": "d0958f27-db82-4d9b-8e94-dd734752811b",
+          "required": true,
+          "description": "设备分类id，不传则为新增"
+        },
+        "defaultitemid": {
+          "default": "",
+          "required": false,
+          "description": "默认属性ID，空为创建"
+        },
+        "itemtitle": {
+          "default": "额定功率",
+          "required": true,
+          "description": "属性名称"
+        },
+        "itemunit": {
+          "default": "千瓦",
+          "required": true,
+          "description": "属性单位"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/CommonDeviceTypeTroubleInfoGetList",
+      "summary": "设备分类默认隐患信息",
+      "type": "POST",
+      "params": {
+        "devicetypeid": {
+          "default": "d0958f27-db82-4d9b-8e94-dd734752811b",
+          "required": true,
+          "description": "设备分类id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/CommonDeviceTypeTroubleInfoCreate",
+      "summary": "设备分类添加常见隐患",
+      "type": "POST",
+      "params": {
+        "devicetypeid": {
+          "default": "d0958f27-db82-4d9b-8e94-dd734752811b",
+          "required": true,
+          "description": "设备分类id"
+        },
+        "troubleinfoid": {
+          "default": "",
+          "required": false,
+          "description": "常见隐患ID"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/CommonDeviceTypeTroubleInfoDel",
+      "summary": "设备分类删除常见隐患",
+      "type": "POST",
+      "params": {
+        "devicetypeid": {
+          "default": "d0958f27-db82-4d9b-8e94-dd734752811b",
+          "required": true,
+          "description": "设备分类id"
+        },
+        "troubleinfoid": {
+          "default": "",
+          "required": false,
+          "description": "常见隐患ID"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/CommonTroubleInfoGetList",
+      "summary": "常见隐患列表信息",
+      "type": "POST",
+      "params": {
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/CommonTroubleInfoSave",
+      "summary": "添加编辑常见隐患",
+      "type": "POST",
+      "params": {
+        "troubleinfoid": {
+          "default": "",
+          "required": false,
+          "description": "常见隐患ID，空位新增"
+        },
+        "troubleinfotitle": {
+          "default": "停止工作",
+          "required": true,
+          "description": "常见隐患标题"
+        },
+        "allpriority": {
+          "default": "3",
+          "required": false,
+          "description": "综合影响重要程度"
+        },
+        "envpriority": {
+          "default": "3",
+          "required": false,
+          "description": "环境影响重要程度"
+        },
+        "safepriority": {
+          "default": "3",
+          "required": false,
+          "description": "安全影响重要程度"
+        },
+        "runpriority": {
+          "default": "3",
+          "required": false,
+          "description": "运行影响重要程度"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/CommonTroubleInfoDel",
+      "summary": "删除常见隐患",
+      "type": "POST",
+      "params": {
+        "troubleinfoid": {
+          "default": "",
+          "required": true,
+          "description": "常见隐患ID"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/CommonDeviceItemGetList",
+      "summary": "具体设备详细属性列表",
+      "type": "POST",
+      "params": {
+        "deviceid": {
+          "default": "",
+          "required": true,
+          "description": "具体设备ID"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/CommonDeviceItemSave",
+      "summary": "添加更新具体设备详细属性",
+      "type": "POST",
+      "params": {
+        "itemid": {
+          "default": "",
+          "required": true,
+          "description": "属性id"
+        },
+        "deviceid": {
+          "default": "",
+          "required": true,
+          "description": "具体设备ID"
+        },
+        "itembaseid": {
+          "default": "",
+          "required": true,
+          "description": "具体设备所属基础设备属性ID"
+        },
+        "itemtitle": {
+          "default": "",
+          "required": true,
+          "description": "属性标题"
+        },
+        "itemvalue": {
+          "default": "",
+          "required": true,
+          "description": "属性值"
+        },
+        "itemunit": {
+          "default": "",
+          "required": true,
+          "description": "属性值单位"
+        },
+        "itemmemo": {
+          "default": "",
+          "required": true,
+          "description": "备注"
+        },
+        "files": {
+          "default": "",
+          "required": true,
+          "description": "附件"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/CommonDeviceGetList",
+      "summary": "设备列表",
+      "type": "POST",
+      "params": {
+        "devicetypeid": {
+          "default": "",
+          "required": true,
+          "description": "设备类型id"
+        },
+        "deviceid": {
+          "default": "",
+          "required": true,
+          "description": "设备id，获取详情用"
+        },
+        "regionid": {
+          "default": "",
+          "required": true,
+          "description": "区域id"
+        },
+        "keyword": {
+          "default": "",
+          "required": true,
+          "description": "关键字"
+        },
+        "pageindex": {
+          "default": "0",
+          "required": true,
+          "description": "分页"
+        },
+        "ismachine": {
+          "default": "1",
+          "required": true,
+          "description": "是否是特殊设备"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/CommonDeviceItemDel",
+      "summary": "删除具体设备附加属性",
+      "type": "POST",
+      "params": {
+        "deviceid": {
+          "default": "",
+          "required": true,
+          "description": "设备id，获取详情用"
+        },
+        "itemid": {
+          "default": "",
+          "required": true,
+          "description": "属性id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/CommonDeviceItemSetOrder",
+      "summary": "具体设备附加属性排序",
+      "type": "POST",
+      "params": {
+        "deviceid": {
+          "default": "",
+          "required": true,
+          "description": "设备id，获取详情用"
+        },
+        "itemids": {
+          "default": "",
+          "required": true,
+          "description": "属性ids"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/CommonDeviceBaseTroubleHowdoSave",
+      "summary": "基础设备整改建议新增修改",
+      "type": "POST",
+      "params": {
+        "howdoid": {
+          "default": "",
+          "required": true,
+          "description": "整改建议id"
+        },
+        "devicebaseid": {
+          "default": "",
+          "required": true,
+          "description": "基础设备id"
+        },
+        "howdotitle": {
+          "default": "",
+          "required": true,
+          "description": "整改建议内容"
+        },
+        "troubleinfoid": {
+          "default": "",
+          "required": true,
+          "description": "隐患id"
+        },
+        "commonhowdoid": {
+          "default": "",
+          "required": true,
+          "description": "通用整改建议id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/CommonDeviceBaseTroubleHowdoCopy",
+      "summary": "基础设备整改建议新增修改",
+      "type": "POST",
+      "params": {
+        "devicebasefrom": {
+          "default": "",
+          "required": true,
+          "description": "被复制的基础设备id"
+        },
+        "devicebaseto": {
+          "default": "",
+          "required": true,
+          "description": ""
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/CommonDeviceBaseTroubleHowdoGetList",
+      "summary": "基础设备整改建议列表",
+      "type": "POST",
+      "params": {
+        "devicebaseid": {
+          "default": "",
+          "required": true,
+          "description": "基础设备id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/CommonTroubleHowdoGetList",
+      "summary": "通用整改建议列表",
+      "type": "POST",
+      "params": {
+        "devicebaseid": {
+          "default": "",
+          "required": true,
+          "description": "基础设备id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/CommonDeviceBaseTroubleHowdoDetailDel",
+      "summary": "基础设备整改建议详情删除",
+      "type": "POST",
+      "params": {
+        "howdodetailid": {
+          "default": "",
+          "required": true,
+          "description": "整改建议详情id"
+        },
+        "howdoid": {
+          "default": "",
+          "required": true,
+          "description": "整改建议id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/AccountGetList",
+      "summary": "获取系统用户列表",
+      "type": "POST",
+      "params": {
+        "deptid": {
+          "default": "1",
+          "required": true,
+          "description": "部门名称(0标示全部)"
+        },
+        "name": {
+          "default": "",
+          "required": true,
+          "description": "姓名"
+        },
+        "mobile": {
+          "default": "",
+          "required": false,
+          "description": "手机号"
+        },
+        "nfcno": {
+          "default": "",
+          "required": false,
+          "description": ""
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/NoticeManagerAdd",
+      "summary": "新增部门通知跟人员对应关系",
+      "type": "POST",
+      "params": {
+        "deptids": {
+          "default": "1",
+          "required": true,
+          "description": "部门名称ids"
+        },
+        "personids": {
+          "default": "",
+          "required": true,
+          "description": "人员ids"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Config/AccountRoleToActionSet",
+      "summary": "增加人员权限和行为对应关系",
+      "type": "POST",
+      "params": {
+        "roleid": {
+          "default": "00000000-0000-0000-0000-000000000000",
+          "required": true,
+          "description": "权限组id"
+        },
+        "actionids": {
+          "default": "00000000-0000-0000-0000-000000000000",
+          "required": true,
+          "description": "行为ids"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/NoticeManagerGetList",
+      "summary": "获取部门通知跟人员对应关系",
+      "type": "POST",
+      "params": {
+        "deptids": {
+          "default": "1",
+          "required": true,
+          "description": "部门名称ids"
+        },
+        "personids": {
+          "default": "",
+          "required": true,
+          "description": "人员ids"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Config/DataRoleGroupAdd",
+      "summary": "新增编辑数据权限组",
+      "type": "POST",
+      "params": {
+        "datarolegroupid": {
+          "default": "1",
+          "required": true,
+          "description": "数据权限组id"
+        },
+        "rolename": {
+          "default": "",
+          "required": true,
+          "description": "权限组名称"
+        },
+        "roledescription": {
+          "default": "",
+          "required": true,
+          "description": "描述"
+        },
+        "orderby": {
+          "default": "",
+          "required": true,
+          "description": ""
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Config/DataRoleGroupGetList",
+      "summary": "获取数据权限组列表",
+      "type": "POST",
+      "params": {
+      },
+      "response": {
+      }
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Config/DataRoleGroupDelete",
+      "summary": "删除数据权限组",
+      "type": "POST",
+      "params": {
+        "datarolegroupid": {
+          "default": "1",
+          "required": true,
+          "description": "数据权限组id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Config/DataRoleAdd",
+      "summary": "新增编辑数据权限",
+      "type": "POST",
+      "params": {
+        "dataroleid": {
+          "default": "1",
+          "required": true,
+          "description": "数据权限组id"
+        },
+        "rolename": {
+          "default": "",
+          "required": true,
+          "description": "权限组名称"
+        },
+        "roledesc": {
+          "default": "",
+          "required": true,
+          "description": "描述"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Config/DataRoleGetList",
+      "summary": "获取数据权限列表",
+      "type": "POST",
+      "params": {
+        "datarolegroupid": {
+          "default": "1",
+          "required": true,
+          "description": "数据权限组id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Config/DataRoleDelete",
+      "summary": "删除数据权限",
+      "type": "POST",
+      "params": {
+        "dataroleid": {
+          "default": "1",
+          "required": true,
+          "description": "数据权限id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Config/SetAccountDataRoleGroup",
+      "summary": "设置账号数据权限组",
+      "type": "POST",
+      "params": {
+        "datarolegroupid": {
+          "default": "1",
+          "required": true,
+          "description": "数据权限组id"
+        },
+        "personid": {
+          "default": "1",
+          "required": true,
+          "description": "用户id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/CommonDeviceRegularCheckGetList",
+      "summary": "读取具体设备的定检信息",
+      "type": "POST",
+      "params": {
+        "deviceid": {
+          "default": "",
+          "required": true,
+          "description": "具体设备id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/CommonDeviceRegularCheckSave",
+      "summary": "保存具体设备的定检信息",
+      "type": "POST",
+      "params": {
+        "deviceid": {
+          "default": "",
+          "required": true,
+          "description": "具体设备id"
+        },
+        "regularcheckid": {
+          "default": "",
+          "required": true,
+          "description": "定检信息id"
+        },
+        "title": {
+          "default": "",
+          "required": true,
+          "description": "定检信息内容"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/CommonDeviceRegularCheckDel",
+      "summary": "删除具体设备的定检信息",
+      "type": "POST",
+      "params": {
+        "regularcheckid": {
+          "default": "",
+          "required": true,
+          "description": "定检信息id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/CommonDeviceStandbyAdd",
+      "summary": "添加设备为备车设备",
+      "type": "POST",
+      "params": {
+        "deviceids": {
+          "default": "",
+          "required": true,
+          "description": "设备ids"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/CommonDeviceStandbyRemove",
+      "summary": "去除备车设备",
+      "type": "POST",
+      "params": {
+        "deviceid": {
+          "default": "",
+          "required": true,
+          "description": "设备id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/RoleActionGetList",
+      "summary": "读取权限组控制的api列表",
+      "type": "POST",
+      "params": {
+        "key": {
+          "default": "",
+          "required": true,
+          "description": "关键字"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/AccountRoleActionGetList",
+      "summary": "读取用户权限组控制的api列表",
+      "type": "POST",
+      "params": {
+        "roleid": {
+          "default": "DC4722DE-EC62-4B0C-A941-01B6E19FC348",
+          "required": true,
+          "description": "权限组id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/AccountRoleActionAdd",
+      "summary": "增加用户权限组控制的api",
+      "type": "POST",
+      "params": {
+        "roleid": {
+          "default": "DC4722DE-EC62-4B0C-A941-01B6E19FC348",
+          "required": true,
+          "description": "权限组id"
+        },
+        "actionapi": {
+          "default": "UAPI/Device/StatusChangeRecordSave",
+          "required": true,
+          "description": "权限组id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/AccountRoleActionDel",
+      "summary": "增加用户权限组控制的api",
+      "type": "POST",
+      "params": {
+        "roleactionid": {
+          "default": "",
+          "required": true,
+          "description": "权限组id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/RegulationDeviceBaseTroubleHowdoCopy",
+      "summary": "从同一类型下的基础设备复制整改规程到另外一个基础设备",
+      "type": "POST",
+      "params": {
+        "devicebasefrom": {
+          "default": "",
+          "required": true,
+          "description": "被复制的基础设备id"
+        },
+        "devicebaseto": {
+          "default": "",
+          "required": true,
+          "description": "需要设置整改建议的基础设备id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/RegulationDeviceBaseTroubleHowdoDel",
+      "summary": "删除基础设备的整改规程",
+      "type": "POST",
+      "params": {
+        "howdoid": {
+          "default": "",
+          "required": true,
+          "description": "需要删除的基础设备整改规程id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/RegulationDeviceBaseTroubleHowdoGetList",
+      "summary": "读取基础设备的整改规程",
+      "type": "POST",
+      "params": {
+        "devicebaseid": {
+          "default": "",
+          "required": true,
+          "description": "基础设备id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/RegulationDeviceBaseTroubleHowdoSave",
+      "summary": "读取基础设备的整改规程",
+      "type": "POST",
+      "params": {
+        "devicebaseid": {
+          "default": "",
+          "required": true,
+          "description": "基础设备id"
+        },
+        "troubleinfoids": {
+          "default": "",
+          "required": true,
+          "description": "隐患ids"
+        },
+        "regulationlibraryids": {
+          "default": "",
+          "required": true,
+          "description": "规程ids"
+        },
+        "howdoids": {
+          "default": "",
+          "required": true,
+          "description": "整改ids"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "NoNeed": "1",
+      "url": "UAPI/Config/DataRoleGroupBind",
+      "summary": "数据权限组权限绑定",
+      "type": "POST",
+      "params": {
+        "datarolegroupid": {
+          "default": "1",
+          "required": true,
+          "description": "数据权限组id"
+        },
+        "dataroleids": {
+          "default": "1",
+          "required": true,
+          "description": "数据权限ids"
+        }
+      },
+      "response": {
+      }
+    }
+  ]
 }
