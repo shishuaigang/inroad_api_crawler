@@ -1420,6 +1420,39 @@
       },
       "response": {
       }
+    },
+    {
+      "url": "UAPI/Account/SignatureGetList",
+      "updatetime": "20170720",
+      "summary": "读取人员的电子签名",
+      "type": "POST",
+      "params": {
+        "personid": {
+          "default": "",
+          "required": true,
+          "description": "电子签名的用户id"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Account/SignatureAdd",
+      "updatetime": "20170720",
+      "summary": "添加人员的电子签名",
+      "type": "POST",
+      "params": {
+        "file": {
+          "default": "",
+          "required": true,
+          "description": "电子签名的链接地址"
+        },
+        "personid": {
+          "default": "",
+          "required": true,
+          "description": "电子签名的用户id"
+        }
+      },
+      "response": {}
     }
   ]
 }

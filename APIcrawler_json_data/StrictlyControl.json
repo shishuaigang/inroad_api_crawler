@@ -9,7 +9,7 @@
     "apis": [
         {
             "url": "UAPI/StrictlyControl/ArticlesCirculationGetList",
-            "updatetime":"20170710","summary": "读取严控物品流转记录",
+            "updatetime":"20170712","summary": "读取严控物品流转记录",
             "type": "POST",
             "params": {
                 "regionid": {
@@ -51,6 +51,16 @@
                     "default": "1",
                     "required": true,
                     "description": "管控物品类型 1 钢瓶"
+                },
+                "outintype": {
+                    "default": "1",
+                    "required": true,
+                    "description": "1 进入  2 离开"
+                },
+                "importantlevel": {
+                    "default": "1",
+                    "required": true,
+                    "description": "重要程度"
                 }
             },
             "response": {
@@ -76,6 +86,11 @@
                     "required": true,
                     "description": "查询关键字"
                 },
+                "importantlevel": {
+                    "default": "",
+                    "required": true,
+                    "description": "重要程度"
+                },
                 "type": {
                     "default": "1",
                     "required": true,
@@ -85,8 +100,50 @@
             "response": {
             }
         },
+{
+            "url": "UAPI/StrictlyControl/ImportantLevelDel",
+            "updatetime":"20170712","summary": "删除严控物品的重要等级",
+            "type": "POST",
+            "params": {
+                "importantlevel": {
+                    "default": "1",
+                    "required": true,
+                    "description": "重要等级id"
+                }
+            },
+            "response": {
+            }
+        },
 		{
-            "url": "UAPI/StrictlyControl/ArticlesSearch",
+            "url": "UAPI/StrictlyControl/ImportantLevelAdd",
+            "updatetime":"20170712","summary": "增加修改严控物品的重要等级",
+            "type": "POST",
+            "params": {
+                "importantlevel": {
+                    "default": "1",
+                    "required": true,
+                    "description": "重要等级id"
+                },
+				"title": {
+                    "default": "重要",
+                    "required": true,
+                    "description": "重要等级说明"
+                }
+            },
+            "response": {
+            }
+        },
+		{
+            "url": "UAPI/StrictlyControl/ImportantLevelGetList",
+            "updatetime":"20170712","summary": "读取严控物品的重要等级",
+            "type": "POST",
+            "params": {
+            },
+            "response": {
+            }
+        },
+		{
+             "url": "UAPI/StrictlyControl/ArticlesSearch",
             "updatetime":"20170710","summary": "搜索严控物品",
             "type": "POST",
             "params": {
@@ -109,6 +166,36 @@
                     "default": "",
                     "required": true,
                     "description": "查询关键字"
+                },
+                "type": {
+                    "default": "1",
+                    "required": true,
+                    "description": "严控物品类型  1  钢瓶"
+                },
+		"importantlevel": {
+                    "default": "",
+                    "required": true,
+                    "description": "重要程度"
+                },
+		 "controlarticlesid": {
+                    "default": "",
+                    "required": true,
+                    "description": "严控物品id"
+                }
+            },
+
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/StrictlyControl/ArticlesSearchOneRegion",
+            "updatetime":"20170710","summary": "搜索单个严控物品",
+            "type": "POST",
+            "params": {
+                "regionid": {
+                    "default": "80",
+                    "required": true,
+                    "description": "区域id"
                 },
                 "type": {
                     "default": "1",
@@ -178,6 +265,11 @@
                     "default": "",
                     "required": true,
                     "description": "严控物品类型 1 钢瓶"
+                },
+                "importantlevel": {
+                    "default": "",
+                    "required": true,
+                    "description": "重要程度"
                 }
             },
             "response": {
@@ -202,10 +294,20 @@
             "updatetime":"20170711","summary": "扫描读取严控物品",
             "type": "POST",
             "params": {
-                "scancode": {
+                "qrcode": {
+                    "default": "20170710",
+                    "required": true,
+                    "description": "扫描的二维码"
+                },
+		"nfcid": {
                     "default": "",
                     "required": true,
-                    "description": "扫描的二维码或者nfc卡"
+                    "description": "nfcid"
+                },
+		"articleno": {
+                    "default": "",
+                    "required": true,
+                    "description": "钢瓶编号"
                 }
             },
             "response": {
@@ -214,6 +316,15 @@
 		{
             "url": "UAPI/StrictlyControl/ArticlesTypeGetList",
             "updatetime":"20170711","summary": "读取严控物品的类型 当前都是1 钢瓶",
+            "type": "POST",
+            "params": {
+            },
+            "response": {
+            }
+        },
+	{
+            "url": "UAPI/StrictlyControl/ArticlesLevelGetList",
+            "updatetime":"20170711","summary": "读取严控物品等级",
             "type": "POST",
             "params": {
             },
@@ -249,6 +360,44 @@
                     "default": "",
                     "required": true,
                     "description": "严控物品id,当空时为新增,有时为修改"
+                }
+            },
+            "response": {
+            }
+        },
+		{
+            "url": "UAPI/StrictlyControl/ImportRoomSupporter",
+            "updatetime":"20170711","summary": "<span style='color:#EEDFCC'>[web]</span>导入房间与供应商的房间编号关系",
+            "type": "POST",
+            "params": {
+                "file": {
+                    "default": "",
+                    "required": true,
+                    "description": "文件 type=file"
+                }
+            },
+            "response": {
+            }
+        },
+		{
+            "url": "UAPI/StrictlyControl/ImportSummary",
+            "updatetime":"20170711","summary": "<span style='color:#EEDFCC'>[web]</span>导入（供应商）汇总数据",
+            "type": "POST",
+            "params": {
+                "file": {
+                    "default": "",
+                    "required": true,
+                    "description": "文件 type=file"
+                },
+                "deptid": {
+                    "default": "",
+                    "required": true,
+                    "description": "（供应商）部门id"
+                },
+                "deptname": {
+                    "default": "",
+                    "required": true,
+                    "description": "（供应商）部门名字"
                 }
             },
             "response": {
