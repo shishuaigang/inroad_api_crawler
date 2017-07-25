@@ -64,47 +64,101 @@ class gen_result:
             '<h3 align="center" style="color:black">详细信息&nbsp;&nbsp;</h3>')
         f1.write('<table width="75%" align="center" style="TABLE-LAYOUT:fixed" border="1" cellspacing="0">')
         f1.write('<tr>')
-        f1.write('<td align="center" width="5%" bgcolor="#A4D3EE">序号</td>')
-        f1.write('<td align="center" bgcolor="#A4D3EE">API_URL</td>')
-        f1.write('<td align="center" bgcolor="#A4D3EE">API_Chinese_Name</td>')
-        f1.write('<td align="center" width="10%" bgcolor="#A4D3EE">Response_Time</td>')
-        f1.write('<td align="center" width="10%" bgcolor="#A4D3EE">Response_Code</td>')
+        f1.write('<td align="center" width="3%" bgcolor="#A4D3EE">序号</td>')
+        f1.write('<td align="center" width="20%" bgcolor="#A4D3EE">API_URL</td>')
+        f1.write('<td align="center" width="20%" bgcolor="#A4D3EE">API_Chinese_Name</td>')
+        f1.write('<td align="center" width="10%" bgcolor="#A4D3EE">Res_Time</td>')
+        f1.write('<td align="center" width="7%" bgcolor="#A4D3EE">Res_Code</td>')
         f1.write('<td align="center" width="5%" bgcolor="#A4D3EE">Status</td>')
         f1.write(
-            '<td style="WORD-WRAP: break-word;word-break:break-all" align="center" bgcolor="#A4D3EE">Error_Message</td>')
+            '<td width="15%" style="WORD-WRAP: break-word;word-break:break-all" align="center" bgcolor="#A4D3EE">Error_Message</td>')
+        f1.write('<td align="center" width="15%" bgcolor="#A4D3EE">趋势</td>')
         f1.write('</tr>')
         for i in range(self.api_len):
-            f1.write('<tr>')
-            f1.write('<td align="center">' + str(i + 1) + '</td>')
-            f1.write('<td align="center" style="WORD-WRAP: break-word;word-break:break-all">' + self.url[i] + '</td>')
-            f1.write('<td align="center">' + self.cn_name[i] + '</td>')
-            f1.write('<td align="center">' + str(self.res_time[i]) + 'ms</td>')
-            # response code为200且status为1，code和status颜色为绿色，error message N/A
-            if self.res_code[i] == 200 and self.res_status[i] == 1:
-                f1.write('<td align="center" bgcolor="#C1FFC1">' + str(200) + '</td>')
-                f1.write('<td align="center" bgcolor="#C1FFC1">' + str(1) + '</td>')
+            if i % 2 == 0:
+                f1.write('<tr bgcolor=white>')
+                f1.write('<td align="center">' + str(i + 1) + '</td>')
                 f1.write(
-                    '<td style="word-break:keep-all;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" align="center">' + 'N/A' + '</td>')
-            # response code为200且status为0，code颜色为绿色，status为红色，填入error message
-            elif self.res_code[i] == 200 and self.res_status[i] == 0:
-                f1.write('<td align="center" bgcolor="#C1FFC1">' + str(200) + '</td>')
-                f1.write('<td align="center" bgcolor="red">' + str(0) + '</td>')
-                f1.write(
-                    '<td style="word-break:keep-all;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" align="center">' +
-                    (json.loads(str(self.res[i].text)))['error']['message'] + '</td>')
-            # response code为500，颜色为红色，填入Response code : 500, Sever Error
-            elif self.res_code[i] == 500:
-                f1.write('<td align="center" bgcolor="purple">' + str(500) + '</td>')
-                f1.write('<td align="center" bgcolor="purple">''</td>')
-                f1.write(
-                    '<td style="word-break:keep-all;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" align="center">Response code : 500, Sever Error</td>')
+                    '<td align="center" style="WORD-WRAP: break-word;word-break:break-all">' + self.url[i] + '</td>')
+                f1.write('<td align="center">' + self.cn_name[i] + '</td>')
+                f1.write('<td align="center">' + str(self.res_time[i]) + 'ms</td>')
+                # response code为200且status为1，code和status颜色为绿色，error message N/A
+                if self.res_code[i] == 200 and self.res_status[i] == 1:
+                    f1.write('<td align="center" bgcolor="#C1FFC1">' + str(200) + '</td>')
+                    f1.write('<td align="center" bgcolor="#C1FFC1">' + str(1) + '</td>')
+                    f1.write(
+                        '<td style="word-break:keep-all;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" align="center">' +
+                        (json.loads(str(self.res[i].text)))['error']['message'] + '</td>')
+                    f1.write('<td align="left"><div style="width:' + str(
+                        float(self.res_time[i]) / 2) + 'px;height:15px;background:darkblue;"></div></td>')
+                    # response code为200且status为0，code颜色为绿色，status为红色，填入error message
+                elif self.res_code[i] == 200 and self.res_status[i] == 0:
+                    f1.write('<td align="center" bgcolor="#C1FFC1">' + str(200) + '</td>')
+                    f1.write('<td align="center" bgcolor="red">' + str(0) + '</td>')
+                    f1.write(
+                        '<td style="word-break:keep-all;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" align="center">' +
+                        (json.loads(str(self.res[i].text)))['error']['message'] + '</td>')
+                    # response code为500，颜色为红色，填入Response code : 500, Sever Error
+                    f1.write('<td align="left"><div style="width:' + str(
+                        float(self.res_time[i]) / 2) + 'px;height:15px;background:darkblue;"></div></td>')
+                elif self.res_code[i] == 500:
+                    f1.write('<td align="center" bgcolor="purple">' + str(500) + '</td>')
+                    f1.write('<td align="center" bgcolor="purple">''</td>')
+                    f1.write(
+                        '<td style="word-break:keep-all;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" align="center">Response code : 500, Sever Error</td>')
+                    f1.write('<td align="left"><div style="width:' + str(
+                        float(self.res_time[i]) / 2) + 'px;height:15px;background:darkblue;"></div></td>')
+                else:
+                    f1.write('<td align="center" bgcolor="red">' + str(self.res_code[i]) + '</td>')
+                    f1.write('<td align="center" bgcolor="red">''</td>')
+                    f1.write(
+                        '<td style="word-break:keep-all;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" align="center">' +
+                        self.res[i].text + '</td>')
+                    f1.write('<td align="left"><div style="width:' + str(
+                        float(self.res_time[i]) / 2) + 'px;height:15px;background:darkblue;"></div></td>')
+                f1.write('</tr>')
             else:
-                f1.write('<td align="center" bgcolor="red">' + str(self.res_code[i]) + '</td>')
-                f1.write('<td align="center" bgcolor="red">''</td>')
+                f1.write('<tr bgcolor="#D0D0D0">')
+                f1.write('<td align="center">' + str(i + 1) + '</td>')
                 f1.write(
-                    '<td style="word-break:keep-all;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" align="center">' +
-                    self.res[i].text + '</td>')
-            f1.write('</tr>')
+                    '<td align="center" style="WORD-WRAP: break-word;word-break:break-all">' + self.url[i] + '</td>')
+                f1.write('<td align="center">' + self.cn_name[i] + '</td>')
+                f1.write('<td align="center">' + str(self.res_time[i]) + 'ms</td>')
+                # response code为200且status为1，code和status颜色为绿色，error message N/A
+                if self.res_code[i] == 200 and self.res_status[i] == 1:
+                    f1.write('<td align="center" bgcolor="#C1FFC1">' + str(200) + '</td>')
+                    f1.write('<td align="center" bgcolor="#C1FFC1">' + str(1) + '</td>')
+                    f1.write(
+                        '<td style="word-break:keep-all;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" align="center">' +
+                        (json.loads(str(self.res[i].text)))['error']['message'] + '</td>')
+                    f1.write('<td align="left"><div style="width:' + str(
+                        float(self.res_time[i]) / 2) + 'px;height:15px;background:darkblue;"></div></td>')
+                    # response code为200且status为0，code颜色为绿色，status为红色，填入error message
+                elif self.res_code[i] == 200 and self.res_status[i] == 0:
+                    f1.write('<td align="center" bgcolor="#C1FFC1">' + str(200) + '</td>')
+                    f1.write('<td align="center" bgcolor="red">' + str(0) + '</td>')
+                    f1.write(
+                        '<td style="word-break:keep-all;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" align="center">' +
+                        (json.loads(str(self.res[i].text)))['error']['message'] + '</td>')
+                    f1.write('<td align="left"><div style="width:' + str(
+                        float(self.res_time[i]) / 2) + 'px;height:15px;background:darkblue;"></div></td>')
+                    # response code为500，颜色为红色，填入Response code : 500, Sever Error
+                elif self.res_code[i] == 500:
+                    f1.write('<td align="center" bgcolor="purple">' + str(500) + '</td>')
+                    f1.write('<td align="center" bgcolor="purple">''</td>')
+                    f1.write(
+                        '<td style="word-break:keep-all;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" align="center">Response code : 500, Sever Error</td>')
+                    f1.write('<td align="left"><div style="width:' + str(
+                        float(self.res_time[i]) / 2) + 'px;height:15px;background:darkblue;"></div></td>')
+                else:
+                    f1.write('<td align="center" bgcolor="red">' + str(self.res_code[i]) + '</td>')
+                    f1.write('<td align="center" bgcolor="red">''</td>')
+                    f1.write(
+                        '<td style="word-break:keep-all;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" align="center">' +
+                        self.res[i].text + '</td>')
+                    f1.write('<td align="left"><div style="width:' + str(
+                        float(self.res_time[i]) / 2) + 'px;height:15px;background:darkblue;"></div></td>')
+                f1.write('</tr>')
         f1.write('</table>')
         f1.write('</body>')
         f1.write('</html>')
@@ -118,11 +172,11 @@ class gen_result:
             for i in range(self.api_len):
                 if self.res_code[i] == 200 and self.res_status[i] == 1:
                     a.writerow([str(self.url[i]), str(self.cn_name[i]).replace('\'', '#'), str(self.res_code[i]),
-                                str(self.res_time[i]) + 'ms', str(self.res_status[i]), 'N/A'])
+                                str(self.res_time[i]), str(self.res_status[i]), 'N/A'])
                 elif self.res_code[i] == 200 and self.res_status[i] == 0:
                     a.writerow([str(self.url[i]), str(self.cn_name[i]).replace('\'', '#'), str(self.res_code[i]),
-                                str(self.res_time[i]) + 'ms', str(self.res_status[i]),
+                                str(self.res_time[i]), str(self.res_status[i]),
                                 str((json.loads(str(self.res[i].text)))['error']['message']).replace('\'', '#')])
                 else:
                     a.writerow([str(self.url[i]), str(self.cn_name[i]).replace('\'', '#'), str(self.res_code[i]),
-                                str(self.res_time[i]) + 'ms', str(self.res_status[i]), 'Please check the testreport'])
+                                str(self.res_time[i]), str(self.res_status[i]), 'Please check the testreport'])
