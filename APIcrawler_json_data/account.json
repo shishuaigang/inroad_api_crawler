@@ -843,7 +843,7 @@
           "required": true,
           "description": "人员ids"
         },
-        "area": {
+        "areaid": {
           "default": "",
           "required": true,
           "description": "安全区域"

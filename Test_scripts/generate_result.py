@@ -29,39 +29,64 @@ class gen_result:
         self.res_status = response_staus
 
     # 生成temp.html
-    def create_html(self, passrate, t):
+    def create_html(self, passrate, begintime, endtime, testNo):
         f = open(self.path + r'\\temp.html', 'wb')
         message = """
             <html>
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
             <head>
             <title>Inroad API扫描</title>
+            <style type="text/css">
+                tr:hover {
+                        background: yellowgreen;
+                        color: black;
+                        }
+                tr:hover td{background:none;}
+                tr:hover th{background:none;}
+            </style>
             </head>
             <body bgcolor="#F7F7F7">
+            <h1 style="margin-left:12.5%;">Inroad_API_Scan</h1>
+            <h2 align="center" style="color:darkblue">Summary</h2>
              """
         f.write(message)
         f.close()
         fx = open(self.path + r'\\temp.html', 'a')
+        fx.write('')
         fx.write(
-            '<h1 align="center">Inroad_API_Scan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size=3>Begin: ' + t + '</font></h1>')
-        fx.write('<table style="margin-left:12.5%;" width="40%" align="left-side" border="1" cellspacing="0">')
+            '<table style="margin-left:12.5%;" width="75%" align="left-side" border="1" cellspacing="0" height="280">')
         fx.write('<tr>')
-        fx.write('<th align="center" width="150" bgcolor="#A4D3EE">API总数</th>')
-        fx.write('<th align="center" width="150" bgcolor="#A4D3EE">成功</th>')
-        fx.write('<th align="center" width="150" bgcolor="#A4D3EE">失败</th>')
-        fx.write('<th align="center" width="150" bgcolor="#A4D3EE">成功率</th>')
+        fx.write('<th align="center" bgcolor="#D0D0D0">测试编号</th>')
+        fx.write('<td align="center" bgcolor="#D0D0D0">' + testNo + '</td>')
+        fx.write('</tr>')
+        fx.write('<tr>')
+        fx.write('<th align="center">开始时间</th>')
+        fx.write('<td align="center">' + begintime + '</td>')
+        fx.write('</tr>')
+        fx.write('<tr>')
+        fx.write('<th align="center"  bgcolor="#D0D0D0">结束时间</th>')
+        fx.write('<td align="center"  bgcolor="#D0D0D0">' + endtime + '</td>')
+        fx.write('</tr>')
+        fx.write('<tr>')
+        fx.write('<th align="center">总数</th>')
+        fx.write('<td align="center">' + str(self.api_len) + '</td>')
+        fx.write('</tr>')
+        fx.write('<tr>')
+        fx.write('<th align="center"  bgcolor="#D0D0D0">成功</th>')
+        fx.write('<td align="center"  bgcolor="#D0D0D0">' + str(passrate[0]) + '</td>')
+        fx.write('</tr>')
+        fx.write('<tr>')
+        fx.write('<th align="center">失败</th>')
+        fx.write('<td align="center"><font color=red>' + str(passrate[1]) + '</font></td>')
+        fx.write('</tr>')
+        fx.write('<th align="center"  bgcolor="#D0D0D0">成功率</th>')
+        fx.write('<td align="center"  bgcolor="#D0D0D0">' + str(passrate[2]) + '</td>')
         fx.write('</tr>')
         fx.close()
         f1 = open(self.path + r'\\temp.html', 'a')
-        f1.write('<tr>')
-        f1.write('<td align="center">' + str(self.api_len) + '</td>')
-        f1.write('<td align="center" bgcolor="#C1FFC1">' + str(passrate[0]) + '</td>')
-        f1.write('<td align="center" bgcolor="#DC143C">' + str(passrate[1]) + '</td>')
-        f1.write('<td align="center">' + str(passrate[2]) + '</td>')  # 以百分比显示成功率，2位小数
-        f1.write('</tr>')
         f1.write('</table>')
         f1.write(
-            '<h3 align="center" style="color:black">详细信息&nbsp;&nbsp;</h3>')
+            '<h2 align="center" style="color:darkblue">Details</h2>')
         f1.write('<table width="75%" align="center" style="TABLE-LAYOUT:fixed" border="1" cellspacing="0">')
         f1.write('<tr>')
         f1.write('<td align="center" width="3%" bgcolor="#A4D3EE">序号</td>')
@@ -88,7 +113,7 @@ class gen_result:
                     f1.write('<td align="center" bgcolor="#C1FFC1">' + str(1) + '</td>')
                     f1.write('<td></td>')
                     f1.write('<td align="left"><div style="width:' + str(
-                        float(self.res_time[i]) / 2) + 'px;height:15px;background:darkblue;"></div></td>')
+                        float(self.res_time[i]) / 4) + 'px;height:15px;background:darkblue;"></div></td>')
                     # response code为200且status为0，code颜色为绿色，status为红色，填入error message
                 elif self.res_code[i] == 200 and self.res_status[i] == 0:
                     f1.write('<td align="center" bgcolor="#C1FFC1">' + str(200) + '</td>')

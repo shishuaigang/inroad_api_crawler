@@ -9,8 +9,9 @@ from Test_scripts import generate_result, response_status, pass_rate
 
 if __name__ == "__main__":
     print u'API遍历测试开始'
-    t = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
     if platform.system() == 'Windows':
+        bt = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))  # 测试开始时间
+        testNo = time.strftime('%Y%m%d%H%M', time.localtime())
         cur_dir = os.getcwd()
         api_json_path = cur_dir + '\\APIcrawler_json_data'
         print 'Now you are in ' + cur_dir
@@ -29,20 +30,21 @@ if __name__ == "__main__":
         res_time = ['%.1f' % (float(res[i].elapsed.microseconds) / 1000) for i in range(api_len)]
         res_status = response_status.response_status(api_len).res_status(res)
         passrate = pass_rate.passrate(api_len).pass_rate(res_status, res_code)  # 计算成功率
+        et = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))  # 测试结束时间
         # 创建temp.html
         generate_result.gen_result(conf, cur_dir, inroad_url, api_len, cn_name, res, res_code, res_time,
-                                   res_status).create_html(passrate, t)
+                                   res_status).create_html(passrate, bt, et, testNo)
         # 创建temp.csv
         generate_result.gen_result(conf, cur_dir, inroad_url, api_len, cn_name, res, res_code, res_time,
                                    res_status).create_csv()
         time.sleep(5)
-        t = time.strftime('%Y%m%d%H%M', time.localtime())
+
         os.chdir(cur_dir)
         print u'尝试将测试结果写入数据库...'
         if write_database.write_db(conf['db_name'], conf['db_host'], conf['db_username'], conf['db_userpasswd'],
-                                   t).write_db(api_len) == 1:
+                                   testNo).write_db(api_len) == 1:
             print u'尝试发送测试报告...'
-            sendmail.send_mail(conf['receiver_list'], conf['mail_subject'], t).send_mail()
+            sendmail.send_mail(conf['receiver_list'], conf['mail_subject'], testNo).send_mail()
             print u'测试报告发送成功,API遍历测试完成'
         else:
             print u'写入数据库或者测试报告发送失败,请检查脚本和错误信息'

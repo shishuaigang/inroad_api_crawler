@@ -1,459 +1,470 @@
 {
-    "resource": "Maintenance",
-    "section": [
-        {
-            "name": "设备维保",
-            "value": "apis"
+  "resource": "Maintenance",
+  "section": [
+    {
+      "name": "设备维保",
+      "value": "apis"
+    }
+  ],
+  "apis": [
+    {
+      "url": "UAPI/Maintenance/DeviceTypeAdd",
+      "updatetime": "20170425",
+      "summary": "设备大类绑定设备维保的mode",
+      "type": "POST",
+      "params": {
+        "devicetypeid": {
+          "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
+          "required": true,
+          "description": "设备类型id"
+        },
+        "modeids": {
+          "default": "",
+          "required": true,
+          "description": "设备维保modes"
         }
-    ],
-    "apis": [
-        {
-            "url": "UAPI/Maintenance/DeviceTypeAdd",
-            "updatetime": "20170425",
-            "summary": "设备大类绑定设备维保的mode",
-            "type": "POST",
-            "params": {
-                "devicetypeid": {
-                    "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
-                    "required": true,
-                    "description": "设备类型id"
-                },
-                "modeids": {
-                    "default": "",
-                    "required": true,
-                    "description": "设备维保modes"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Maintenance/DeviceTypeDel",
-            "updatetime": "20170425",
-            "summary": "删除设备大类绑定设备维保的mode",
-            "type": "POST",
-            "params": {
-                "typemodeid": {
-                    "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
-                    "required": true,
-                    "description": "设备大类绑定设备维保的id"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Maintenance/DeviceTypeGetList",
-            "updatetime": "20170425",
-            "summary": "读取设备大类绑定设备维保的mode",
-            "type": "POST",
-            "params": {
-                "devicetypeid": {
-                    "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
-                    "required": true,
-                    "description": "设备大类的id"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Maintenance/ModeAdd",
-            "updatetime": "20170425",
-            "summary": "增加修改维保的mode",
-            "type": "POST",
-            "params": {
-                "modeid": {
-                    "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
-                    "required": true,
-                    "description": "维保的id"
-                },
-                "modename": {
-                    "default": "",
-                    "required": true,
-                    "description": "维保的名称"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Maintenance/RecordPeopleAdd",
-            "updatetime": "20170511",
-            "summary": "<span style='color:#87CEEB'>[app]</span>维保记录增加人员",
-            "type": "POST",
-            "params": {
-                "recordid": {
-                    "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
-                    "required": true,
-                    "description": "维保记录"
-                },
-                "managerids": {
-                    "default": "",
-                    "required": true,
-                    "description": "管理人员ids"
-                },
-                "participants": {
-                    "default": "",
-                    "required": true,
-                    "description": "参与人员ids"
-                },
-                "checkids": {
-                    "default": "",
-                    "required": true,
-                    "description": "审核人员ids"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Maintenance/ModeDel",
-            "updatetime": "20170425",
-            "summary": "删除维保的mode",
-            "type": "POST",
-            "params": {
-                "modeid": {
-                    "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
-                    "required": true,
-                    "description": "维保的id"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Maintenance/ModeGetList",
-            "updatetime": "20170425",
-            "summary": "读取维保的mode",
-            "type": "POST",
-            "params": {},
-            "response": {}
-        },
-        {
-            "url": "UAPI/Maintenance/NodeAdd",
-            "updatetime": "20170425",
-            "summary": "增加修改维保的mode的节点",
-            "type": "POST",
-            "params": {
-                "modeid": {
-                    "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
-                    "required": true,
-                    "description": "维保的id"
-                },
-                "nodeid": {
-                    "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
-                    "required": true,
-                    "description": "维保节点的id"
-                },
-                "nodename": {
-                    "default": "",
-                    "required": true,
-                    "description": "节点的名称"
-                },
-                "type": {
-                    "default": "",
-                    "required": true,
-                    "description": "节点的类型  1规程  2流程"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Maintenance/NodeDel",
-            "updatetime": "20170425",
-            "summary": "删除维保的mode的节点",
-            "type": "POST",
-            "params": {
-                "nodeid": {
-                    "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
-                    "required": true,
-                    "description": "维保节点的id"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Maintenance/NodeGetList",
-            "updatetime": "20170425",
-            "summary": "读取维保的mode的节点",
-            "type": "POST",
-            "params": {
-                "modeid": {
-                    "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
-                    "required": true,
-                    "description": "维保mode的id"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Maintenance/NodeRegulationAdd",
-            "updatetime": "20170425",
-            "summary": "增加修改维保的mode的节点对应的规程",
-            "type": "POST",
-            "params": {
-                "nodeid": {
-                    "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
-                    "required": true,
-                    "description": "维保mode的id"
-                },
-                "regulationids": {
-                    "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
-                    "required": true,
-                    "description": "规程ids"
-                },
-                "sorts": {
-                    "default": "1",
-                    "required": true,
-                    "description": "排序数字s"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Maintenance/NodeRegulationDel",
-            "updatetime": "20170425",
-            "summary": "删除维保的mode的节点对应的规程",
-            "type": "POST",
-            "params": {
-                "noderegulationid": {
-                    "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
-                    "required": true,
-                    "description": "删除维保mode的节点对应的规程的id"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Maintenance/NodeSort",
-            "updatetime": "20170425",
-            "summary": "维保的mode的节点对应的规程排序",
-            "type": "POST",
-            "params": {
-                "modeid": {
-                    "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
-                    "required": true,
-                    "description": "维保mode的id"
-                },
-                "nodeids": {
-                    "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
-                    "required": true,
-                    "description": "维保mode的节点ids"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Maintenance/NodeRegulationGetList",
-            "updatetime": "20170425",
-            "summary": "读取维保mode的节点对应的规程",
-            "type": "POST",
-            "params": {
-                "nodeid": {
-                    "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
-                    "required": true,
-                    "description": "维保mode的节点id"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Maintenance/DeviceMaintenanceModeGetlist",
-            "updatetime": "20170425",
-            "summary": "<span style='color:#87CEEB'>[app]</span>根据设备读取维保mode",
-            "type": "POST",
-            "params": {
-                "deviceid": {
-                    "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
-                    "required": true,
-                    "description": "具体设备id"
-                }
-            },
-            "response": {}
-        },
-        {
-             "url": "UAPI/Maintenance/RecordRegister",
-            "updatetime":"20170425","summary": "<span style='color:#87CEEB'>[app]</span>维保记录登记",
-            "type": "POST",
-            "params": {
-               	"registerno": {
-                    "default": "11111",
-                    "required": true,
-                    "description": "登记号"
-                },
-				"regionid": {
-                    "default": "80",
-                    "required": true,
-                    "description": "区域id"
-                },
-				"deviceid": {
-                    "default": "3DCB730D-3032-4827-90EF-032F73C28655",
-                    "required": true,
-                    "description": "设备id"
-                },
-				"modeid": {
-                    "default": "EBB71C92-F0F8-4F32-8762-EE94E3BF15B8",
-                    "required": true,
-                    "description": "维保modeid"
-                },
-				"maintenancename": {
-                    "default": "",
-                    "required": true,
-                    "description": "维保标题"
-                },
-				"begintime": {
-                    "default": "2017-01-01",
-                    "required": true,
-                    "description": "开始时间"
-                },
-				"managerids": {
-                    "default": "efcc720c-a498-4b07-b674-9c7b6019c2ae",
-                    "required": true,
-                    "description": "管理人ids"
-                },
-				"participants": {
-                    "default": "efcc720c-a498-4b07-b674-9c7b6019c2ae",
-                    "required": true,
-                    "description": "参与人ids"
-                },
-				"checkids": {
-                    "default": "efcc720c-a498-4b07-b674-9c7b6019c2ae",
-                    "required": true,
-                    "description": "审核人ids"
-                },
-				"followids": {
-                    "default": "",
-                    "required": true,
-                    "description": "关注人ids"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Maintenance/GetMyRecord",
-            "updatetime": "20170425",
-            "summary": "<span style='color:#87CEEB'>[app]</span>读取我的维保记录",
-            "type": "POST",
-            "params": {},
-            "response": {}
-        },
-        {
-            "url": "UAPI/Maintenance/RecordSearch",
-            "updatetime": "20170425",
-            "summary": "<span style='color:#87CEEB'>[app]</span>维保记录查询 status：1 已登记  2 进行中 3 待验收  4 已验收",
-            "type": "POST",
-            "params": {
-                "registerno": {
-                    "default": "15541",
-                    "required": true,
-                    "description": "登记号"
-                },
-                "regionid": {
-                    "default": "80",
-                    "required": true,
-                    "description": "区域id"
-                },
-                "innercode": {
-                    "default": "",
-                    "required": true,
-                    "description": "阀门位号"
-                },
-                "begintime": {
-                    "default": "",
-                    "required": true,
-                    "description": "开始时间"
-                },
-                "endtime": {
-                    "default": "",
-                    "required": true,
-                    "description": "结束时间"
-                },
-                "recordid": {
-                    "default": "",
-                    "required": true,
-                    "description": "维保记录id"
-                },
-                "devicetypeid": {
-                    "default": "",
-                    "required": true,
-                    "description": "设备类型id"
-                },
-                "key": {
-                    "default": "",
-                    "required": true,
-                    "description": "关键字"
-                }
-            },
-            "response": {}
-        },
-        {
-            "url": "UAPI/Maintenance/GetLines",
-            "updatetime": "20170425",
-            "summary": "<span style='color:#87CEEB'>[app]</span>获取设备维保记录节点条",
-            "type": "POST",
-            "params": {
-               	"businessid": {
-                    "default": "39614CF8-6D13-4304-90B2-00515B54C2A9",
-                    "required": true,
-                    "description": "维保记录id"
-                }
-            },
-            "response": {
-                "items": {
-                    "c_id": "维保当前节点记录id",
-                    "nodeid": "维保当前节点id",
-                    "nodename": "维保当前节点名字",
-                    "sort": "维保当前节点排序",
-                    "nodestatus": "维保当前节点状态 0未开始  1 进行中  2 已完成 ",
-                    "nodetype": "维保当前节点绑定数据的类型 1 规程  2 流程  如果是1 那么打开页面的时候调用 UAPI/Regulation/MaintainRegulation接口  如果是2 那么打开页面的时候调用 UAPI/Maintenance/MaintainFlow接口"
-                }
-            }
-        },
-        {
-            "url": "UAPI/Maintenance/NodeConfirm",
-            "updatetime": "20170425",
-            "summary": "<span style='color:#87CEEB'>[app]</span>维保记录节点点击确认",
-            "type": "POST",
-            "params": {
-                "businessid": {
-                    "default": "",
-                    "required": true,
-                    "description": "业务记录id"
-                },
-                "noderecordid": {
-                    "default": "",
-                    "required": true,
-                    "description": "节点记录id"
-                }
-            },
-            "response": {
-                "items": {
-                    "nextNodeId": "下一个节点的节点id 如果为空 说明没有下一个节点",
-                    "nextNodeRecordId": "下一个节点的节点记录id 在调用下面两种情况的接口时需要",
-                    "nextNodeType": "下一个节点的类型 1、规程 2、流程 如果是1 那么打开页面的时候调用 UAPI/Regulation/MaintainRegulation接口  如果是2 那么打开页面的时候调用 UAPI/Maintenance/MaintainFlow接口"
-                }
-            }
-        },
-        {
-            "url": "UAPI/Maintenance/MaintainFlow",
-            "updatetime": "20170425",
-            "summary": "<span style='color:#87CEEB'>[app]</span>设备维保节点，打开流程页面",
-            "type": "POST",
-            "params": {
-                "noderecordid": {
-                    "default": "94D94B13-6429-42A4-AAC7-B3227BED0A51",
-                    "required": true,
-                    "description": "节点记录id"
-                }
-            },
-            "response": {
-                "items": {
-                    "isShowSubmit": "是否显示提交按钮 1、是 0、否",
-                    "isShowFlow": "是否显示流程处理按钮  1、是 0、否",
-                    "flowmemo": "流程节点页面的那一行文字（类似作业单审批页面返回的参数）",
-                    "flowrecordid": "流程记录id，（类似作业单审批页面返回的参数，可能跳转流程页面用到）",
-                    "flownoderecordid": "流程节点记录id，（类似作业单审批页面返回的参数，可能跳转流程页面用到）",
-                    "flowstatus": "当前节点流程的状态，0、未处理 1、进行中 2、已通过 3、已驳回  用于app控制这个页面显示什么样的按钮，或者是否显示按钮",
-                    "flowlist": "点击‘提交验收’按钮时，弹出来的流程列表，但是如果isCanUseDefaultParm=1 那不需要弹出来",
-                    "defaultCreateParm": "点击‘提交验收’按钮时，如果能直接用创建流程参数提交（不弹出流程列表），那么直接可以用这里参数来调用创建流程接口",
-                    "isCanUseDefaultParm": "点击‘提交验收’按钮时，判断是否能直接用创建流程参数，1 能 0 不能，如果是0不能，那么需要弹出流程列表，让用户选择"
-                }
-            }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Maintenance/DeviceTypeDel",
+      "updatetime": "20170425",
+      "summary": "删除设备大类绑定设备维保的mode",
+      "type": "POST",
+      "params": {
+        "typemodeid": {
+          "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
+          "required": true,
+          "description": "设备大类绑定设备维保的id"
         }
-    ]
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Maintenance/DeviceTypeGetList",
+      "updatetime": "20170425",
+      "summary": "读取设备大类绑定设备维保的mode",
+      "type": "POST",
+      "params": {
+        "devicetypeid": {
+          "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
+          "required": true,
+          "description": "设备大类的id"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Maintenance/ModeAdd",
+      "updatetime": "20170425",
+      "summary": "增加修改维保的mode",
+      "type": "POST",
+      "params": {
+        "modeid": {
+          "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
+          "required": true,
+          "description": "维保的id"
+        },
+        "modename": {
+          "default": "",
+          "required": true,
+          "description": "维保的名称"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Maintenance/RecordPeopleAdd",
+      "updatetime": "20170511",
+      "summary": "<span style='color:#87CEEB'>[app]</span>维保记录增加人员",
+      "type": "POST",
+      "params": {
+        "recordid": {
+          "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
+          "required": true,
+          "description": "维保记录"
+        },
+        "managerids": {
+          "default": "",
+          "required": true,
+          "description": "管理人员ids"
+        },
+        "participants": {
+          "default": "",
+          "required": true,
+          "description": "参与人员ids"
+        },
+        "checkids": {
+          "default": "",
+          "required": true,
+          "description": "审核人员ids"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Maintenance/ModeDel",
+      "updatetime": "20170425",
+      "summary": "删除维保的mode",
+      "type": "POST",
+      "params": {
+        "modeid": {
+          "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
+          "required": true,
+          "description": "维保的id"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Maintenance/ModeGetList",
+      "updatetime": "20170425",
+      "summary": "读取维保的mode",
+      "type": "POST",
+      "params": {},
+      "response": {}
+    },
+    {
+      "url": "UAPI/Maintenance/NodeAdd",
+      "updatetime": "20170425",
+      "summary": "增加修改维保的mode的节点",
+      "type": "POST",
+      "params": {
+        "modeid": {
+          "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
+          "required": true,
+          "description": "维保的id"
+        },
+        "nodeid": {
+          "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
+          "required": true,
+          "description": "维保节点的id"
+        },
+        "nodename": {
+          "default": "",
+          "required": true,
+          "description": "节点的名称"
+        },
+        "type": {
+          "default": "",
+          "required": true,
+          "description": "节点的类型  1规程  2流程"
+        },
+        "ismust": {
+          "default": "1",
+          "required": true,
+          "description": "是否必填"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Maintenance/NodeDel",
+      "updatetime": "20170425",
+      "summary": "删除维保的mode的节点",
+      "type": "POST",
+      "params": {
+        "nodeid": {
+          "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
+          "required": true,
+          "description": "维保节点的id"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Maintenance/NodeGetList",
+      "updatetime": "20170425",
+      "summary": "读取维保的mode的节点",
+      "type": "POST",
+      "params": {
+        "modeid": {
+          "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
+          "required": true,
+          "description": "维保mode的id"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Maintenance/NodeRegulationAdd",
+      "updatetime": "20170727",
+      "summary": "增加修改维保的mode的节点对应的规程",
+      "type": "POST",
+      "params": {
+        "nodeid": {
+          "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
+          "required": true,
+          "description": "维保mode的id"
+        },
+        "regulationids": {
+          "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
+          "required": true,
+          "description": "规程ids"
+        },
+        "sorts": {
+          "default": "1",
+          "required": true,
+          "description": "排序数字s"
+        },
+        "ismusts": {
+          "default": "1",
+          "required": true,
+          "description": "是否必填"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Maintenance/NodeRegulationDel",
+      "updatetime": "20170425",
+      "summary": "删除维保的mode的节点对应的规程",
+      "type": "POST",
+      "params": {
+        "noderegulationid": {
+          "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
+          "required": true,
+          "description": "删除维保mode的节点对应的规程的id"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Maintenance/NodeSort",
+      "updatetime": "20170425",
+      "summary": "维保的mode的节点对应的规程排序",
+      "type": "POST",
+      "params": {
+        "modeid": {
+          "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
+          "required": true,
+          "description": "维保mode的id"
+        },
+        "nodeids": {
+          "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
+          "required": true,
+          "description": "维保mode的节点ids"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Maintenance/NodeRegulationGetList",
+      "updatetime": "20170425",
+      "summary": "读取维保mode的节点对应的规程",
+      "type": "POST",
+      "params": {
+        "nodeid": {
+          "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
+          "required": true,
+          "description": "维保mode的节点id"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Maintenance/DeviceMaintenanceModeGetlist",
+      "updatetime": "20170425",
+      "summary": "<span style='color:#87CEEB'>[app]</span>根据设备读取维保mode",
+      "type": "POST",
+      "params": {
+        "deviceid": {
+          "default": "143AB7F2-0B5D-4FB7-996E-0168A2EAA9D2",
+          "required": true,
+          "description": "具体设备id"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Maintenance/RecordRegister",
+      "updatetime": "20170425",
+      "summary": "<span style='color:#87CEEB'>[app]</span>维保记录登记",
+      "type": "POST",
+      "params": {
+        "registerno": {
+          "default": "11111",
+          "required": true,
+          "description": "登记号"
+        },
+        "regionid": {
+          "default": "80",
+          "required": true,
+          "description": "区域id"
+        },
+        "deviceid": {
+          "default": "3DCB730D-3032-4827-90EF-032F73C28655",
+          "required": true,
+          "description": "设备id"
+        },
+        "modeid": {
+          "default": "EBB71C92-F0F8-4F32-8762-EE94E3BF15B8",
+          "required": true,
+          "description": "维保modeid"
+        },
+        "maintenancename": {
+          "default": "",
+          "required": true,
+          "description": "维保标题"
+        },
+        "begintime": {
+          "default": "2017-01-01",
+          "required": true,
+          "description": "开始时间"
+        },
+        "managerids": {
+          "default": "efcc720c-a498-4b07-b674-9c7b6019c2ae",
+          "required": true,
+          "description": "管理人ids"
+        },
+        "participants": {
+          "default": "efcc720c-a498-4b07-b674-9c7b6019c2ae",
+          "required": true,
+          "description": "参与人ids"
+        },
+        "checkids": {
+          "default": "efcc720c-a498-4b07-b674-9c7b6019c2ae",
+          "required": true,
+          "description": "审核人ids"
+        },
+        "followids": {
+          "default": "",
+          "required": true,
+          "description": "关注人ids"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Maintenance/GetMyRecord",
+      "updatetime": "20170425",
+      "summary": "<span style='color:#87CEEB'>[app]</span>读取我的维保记录",
+      "type": "POST",
+      "params": {},
+      "response": {}
+    },
+    {
+      "url": "UAPI/Maintenance/RecordSearch",
+      "updatetime": "20170425",
+      "summary": "<span style='color:#87CEEB'>[app]</span>维保记录查询 status：1 已登记  2 进行中 3 待验收  4 已验收",
+      "type": "POST",
+      "params": {
+        "registerno": {
+          "default": "15541",
+          "required": true,
+          "description": "登记号"
+        },
+        "regionid": {
+          "default": "80",
+          "required": true,
+          "description": "区域id"
+        },
+        "innercode": {
+          "default": "",
+          "required": true,
+          "description": "阀门位号"
+        },
+        "begintime": {
+          "default": "",
+          "required": true,
+          "description": "开始时间"
+        },
+        "endtime": {
+          "default": "",
+          "required": true,
+          "description": "结束时间"
+        },
+        "recordid": {
+          "default": "",
+          "required": true,
+          "description": "维保记录id"
+        },
+        "devicetypeid": {
+          "default": "",
+          "required": true,
+          "description": "设备类型id"
+        },
+        "key": {
+          "default": "",
+          "required": true,
+          "description": "关键字"
+        }
+      },
+      "response": {}
+    },
+    {
+      "url": "UAPI/Maintenance/GetLines",
+      "updatetime": "20170425",
+      "summary": "<span style='color:#87CEEB'>[app]</span>获取设备维保记录节点条",
+      "type": "POST",
+      "params": {
+        "businessid": {
+          "default": "39614CF8-6D13-4304-90B2-00515B54C2A9",
+          "required": true,
+          "description": "维保记录id"
+        }
+      },
+      "response": {
+        "items": {
+          "c_id": "维保当前节点记录id",
+          "nodeid": "维保当前节点id",
+          "nodename": "维保当前节点名字",
+          "sort": "维保当前节点排序",
+          "nodestatus": "维保当前节点状态 0未开始  1 进行中  2 已完成 ",
+          "nodetype": "维保当前节点绑定数据的类型 1 规程  2 流程  如果是1 那么打开页面的时候调用 UAPI/Regulation/MaintainRegulation接口  如果是2 那么打开页面的时候调用 UAPI/Maintenance/MaintainFlow接口"
+        }
+      }
+    },
+    {
+      "url": "UAPI/Maintenance/NodeConfirm",
+      "updatetime": "20170425",
+      "summary": "<span style='color:#87CEEB'>[app]</span>维保记录节点点击确认",
+      "type": "POST",
+      "params": {
+        "businessid": {
+          "default": "",
+          "required": true,
+          "description": "业务记录id"
+        },
+        "noderecordid": {
+          "default": "",
+          "required": true,
+          "description": "节点记录id"
+        }
+      },
+      "response": {
+        "items": {
+          "nextNodeId": "下一个节点的节点id 如果为空 说明没有下一个节点",
+          "nextNodeRecordId": "下一个节点的节点记录id 在调用下面两种情况的接口时需要",
+          "nextNodeType": "下一个节点的类型 1、规程 2、流程 如果是1 那么打开页面的时候调用 UAPI/Regulation/MaintainRegulation接口  如果是2 那么打开页面的时候调用 UAPI/Maintenance/MaintainFlow接口"
+        }
+      }
+    },
+    {
+      "url": "UAPI/Maintenance/MaintainFlow",
+      "updatetime": "20170425",
+      "summary": "<span style='color:#87CEEB'>[app]</span>设备维保节点，打开流程页面",
+      "type": "POST",
+      "params": {
+        "noderecordid": {
+          "default": "94D94B13-6429-42A4-AAC7-B3227BED0A51",
+          "required": true,
+          "description": "节点记录id"
+        }
+      },
+      "response": {
+        "items": {
+          "isShowSubmit": "是否显示提交按钮 1、是 0、否",
+          "isShowFlow": "是否显示流程处理按钮  1、是 0、否",
+          "flowmemo": "流程节点页面的那一行文字（类似作业单审批页面返回的参数）",
+          "flowrecordid": "流程记录id，（类似作业单审批页面返回的参数，可能跳转流程页面用到）",
+          "flownoderecordid": "流程节点记录id，（类似作业单审批页面返回的参数，可能跳转流程页面用到）",
+          "flowstatus": "当前节点流程的状态，0、未处理 1、进行中 2、已通过 3、已驳回  用于app控制这个页面显示什么样的按钮，或者是否显示按钮",
+          "flowlist": "点击‘提交验收’按钮时，弹出来的流程列表，但是如果isCanUseDefaultParm=1 那不需要弹出来",
+          "defaultCreateParm": "点击‘提交验收’按钮时，如果能直接用创建流程参数提交（不弹出流程列表），那么直接可以用这里参数来调用创建流程接口",
+          "isCanUseDefaultParm": "点击‘提交验收’按钮时，判断是否能直接用创建流程参数，1 能 0 不能，如果是0不能，那么需要弹出流程列表，让用户选择"
+        }
+      }
+    }
+  ]
 }
