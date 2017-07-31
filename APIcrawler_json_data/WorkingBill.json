@@ -1,1308 +1,1366 @@
 {
-  "resource": "WorkingBill",
-  "section": [
-    {
-      "name": "作业票",
-      "value": "apis"
+    "resource": "WorkingBill",
+    "section": [
+        {
+            "name": "作业票",
+            "value": "apis"
+        }
+    ],
+    "apis": [
+            {
+                "url": "UAPI/WorkingBill/RecordFollowAdd",
+                "updatetime": "20170721",
+                "summary": "<span style='color:#87CEEB'>[app]</span>作业票添加关注人",
+                "type": "POST",
+                "params": {
+                    "recordid": {
+                        "default": "B226B94C-08CD-4695-BB34-19437227E333",
+                        "required": true,
+                        "description": "作业票id"
+                    },
+                    "personids": {
+                        "default": "00E274AD-79FD-4051-BC83-2388EA2A79A4;0103D669-59F7-480D-ACE4-04896421C8AB",
+                        "required": true,
+                        "description": "评论人ids"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/RecordFollowGetList",
+                "updatetime": "20170721",
+                "summary": "<span style='color:#87CEEB'>[app]</span>作业票关注人列表",
+                "type": "POST",
+                "params": {
+                    "recordid": {
+                        "default": "B226B94C-08CD-4695-BB34-19437227E333",
+                        "required": true,
+                        "description": "作业票id"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/RecordCommentAdd",
+                "updatetime": "20170720",
+                "summary": "<span style='color:#87CEEB'>[app]</span>作业票添加评论",
+                "type": "POST",
+                "params": {
+                    "recordid": {
+                        "default": "B226B94C-08CD-4695-BB34-19437227E333",
+                        "required": true,
+                        "description": "作业票id"
+                    },
+                    "memo": {
+                        "default": "很好很好",
+                        "required": false,
+                        "description": "评论内容"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/RecordCommentGetList",
+                "updatetime": "20170720",
+                "summary": "<span style='color:#87CEEB'>[app]</span>作业票读取评论",
+                "type": "POST",
+                "params": {
+                    "recordid": {
+                        "default": "B226B94C-08CD-4695-BB34-19437227E333",
+                        "required": true,
+                        "description": "作业票id"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/RecordCount",
+                "updatetime": "20170720",
+                "summary": "<span style='color:#EEDFCC'>[web]</span></span><span style='color:#87CEEB'>[app]</span>作业票统计",
+                "type": "POST",
+                "params": {
+                    "regionid": {
+                        "default": "",
+                        "required": false,
+                        "description": "区域id"
+                    },
+                    "begintime": {
+                        "default": "",
+                        "required": false,
+                        "description": "开始时间"
+                    },
+                    "endtime": {
+                        "default": "",
+                        "required": false,
+                        "description": "结束时间"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/RecordSearch",
+                "updatetime": "20170720",
+                "summary": "<span style='color:#EEDFCC'>[web]</span></span><span style='color:#87CEEB'>[app]</span>作业票检索",
+                "type": "POST",
+                "params": {
+                    "regionid": {
+                        "default": "",
+                        "required": false,
+                        "description": "区域id"
+                    },
+                    "begintime": {
+                        "default": "",
+                        "required": false,
+                        "description": "开始时间"
+                    },
+                    "endtime": {
+                        "default": "",
+                        "required": false,
+                        "description": "结束时间"
+                    },
+                    "deviceid": {
+                        "default": "",
+                        "required": false,
+                        "description": "设备id"
+                    },
+                    "status": {
+                        "default": "",
+                        "required": false,
+                        "description": "-- 1 待评估  2 待审批(评估完)     3 准备中  4 进行中    5 待验收  6验收通过    -2 挂起   -1 终止   "
+                    },
+                    "key": {
+                        "default": "",
+                        "required": false,
+                        "description": "关键字"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/EvaluateConfigSolutionAdd",
+                "updatetime": "20170720",
+                "summary": "<span style='color:#EEDFCC'>[web]</span>作业票评估内容配置添加编辑",
+                "type": "POST",
+                "params": {
+                    "evaluateconfigid": {
+                        "default": "2652B9CA-2D1E-4DFB-8009-8E36AF266BD8",
+                        "required": true,
+                        "description": "作业票评估配置id"
+                    },
+                    "title": {
+                        "default": "处理方案",
+                        "required": true,
+                        "description": "标题"
+                    },
+                    "solutionid": {
+                        "default": "",
+                        "required": true,
+                        "description": "作业票评估内容id"
+                    },
+                    "type": {
+                        "default": "1",
+                        "required": true,
+                        "description": "item对应内容的类型  0 无内容   1  文本  2 附件  3 web页面"
+                    },
+                    "needprepare": {
+                        "default": "1",
+                        "required": true,
+                        "description": "是否需要作业准备"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/EvaluateConfigSolutionDel",
+                "updatetime": "20170720",
+                "summary": "<span style='color:#EEDFCC'>[web]</span>作业票评估内容配置删除",
+                "type": "POST",
+                "params": {
+                    "solutionid": {
+                        "default": "",
+                        "required": true,
+                        "description": "作业票评估内容id"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/EvaluateConfigSolutionGetList",
+                "updatetime": "20170720",
+                "summary": "<span style='color:#EEDFCC'>[web]</span>作业票评估内容配置列表",
+                "type": "POST",
+                "params": {
+                    "evaluateconfigid": {
+                        "default": "2652B9CA-2D1E-4DFB-8009-8E36AF266BD8",
+                        "required": true,
+                        "description": "维修记录配置id"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/EvaluateConfigSolutionItemGetList",
+                "updatetime": "20170720",
+                "summary": "<span style='color:#EEDFCC'>[web]</span>作业票评估内容所有文件列表",
+                "type": "POST",
+                "params": {
+                    "solutionid": {
+                        "default": "1ED5097A-76D5-4CFA-AB53-C0D6C489E21C",
+                        "required": true,
+                        "description": "作业票评估内容id"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/EvaluateConfigSolutionItemDel",
+                "updatetime": "20170720",
+                "summary": "<span style='color:#EEDFCC'>[web]</span>作业票评估内容所有文件列表删除",
+                "type": "POST",
+                "params": {
+                    "solutionitemid": {
+                        "default": "",
+                        "required": true,
+                        "description": "作业票评估内容文件id"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/RepairConfigSolutionAdd",
+                "updatetime": "20170719",
+                "summary": "<span style='color:#EEDFCC'>[web]</span>作业票检修记录内容配置添加编辑",
+                "type": "POST",
+                "params": {
+                    "repairconfigid": {
+                        "default": "363D9EBD-DAEC-4DE7-AFC1-2D6BE103C0C9",
+                        "required": true,
+                        "description": "维修记录配置id"
+                    },
+                    "title": {
+                        "default": "温度",
+                        "required": true,
+                        "description": "标题"
+                    },
+                    "solutionid": {
+                        "default": "",
+                        "required": true,
+                        "description": "检修记录内容id"
+                    },
+                    "type": {
+                        "default": "1",
+                        "required": true,
+                        "description": "需要输入内容的类型  1  文本  2 附件"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/RepairConfigSolutionDel",
+                "updatetime": "20170719",
+                "summary": "<span style='color:#EEDFCC'>[web]</span>作业票检修记录内容配置删除",
+                "type": "POST",
+                "params": {
+                    "solutionid": {
+                        "default": "",
+                        "required": true,
+                        "description": "检修记录内容id"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/RepairConfigSolutionGetList",
+                "updatetime": "20170719",
+                "summary": "<span style='color:#EEDFCC'>[web]</span>作业票检修记录内容配置列表",
+                "type": "POST",
+                "params": {
+                    "repairconfigid": {
+                        "default": "363D9EBD-DAEC-4DE7-AFC1-2D6BE103C0C9",
+                        "required": true,
+                        "description": "维修记录配置id"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/RepairConfigAdd",
+                "updatetime": "20170719",
+                "summary": "<span style='color:#EEDFCC'>[web]</span>作业票检修记录配置添加编辑",
+                "type": "POST",
+                "params": {
+                    "repairconfigid": {
+                        "default": "",
+                        "required": true,
+                        "description": "维修记录配置id"
+                    },
+                    "title": {
+                        "default": "损坏程度",
+                        "required": true,
+                        "description": "标题"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/RepairConfigDel",
+                "updatetime": "20170719",
+                "summary": "<span style='color:#EEDFCC'>[web]</span>作业票检修记录配置删除",
+                "type": "POST",
+                "params": {
+                    "repairconfigid": {
+                        "default": "",
+                        "required": true,
+                        "description": "维修记录配置id"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/RepairConfigSort",
+                "updatetime": "20170719",
+                "summary": "<span style='color:#EEDFCC'>[web]</span>作业票检修记录配置排序",
+                "type": "POST",
+                "params": {
+                    "repairconfigids": {
+                        "default": "",
+                        "required": true,
+                        "description": "维修记录配置ids"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/RepairConfigGetList",
+                "updatetime": "20170719",
+                "summary": "<span style='color:#EEDFCC'>[web]</span>作业票检修记录配置列表",
+                "type": "POST",
+                "params": {
+                    
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/FinishRepairConfigAdd",
+                "updatetime": "20170719",
+                "summary": "<span style='color:#EEDFCC'>[web]</span>作业票类完成检修后注意事项添加编辑",
+                "type": "POST",
+                "params": {
+                    "finishrepairconfigid": {
+                        "default": "",
+                        "required": true,
+                        "description": "注意事项id"
+                    },
+                    "title": {
+                        "default": "清扫现场",
+                        "required": true,
+                        "description": "标题"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/FinishRepairConfigDel",
+                "updatetime": "20170719",
+                "summary": "<span style='color:#EEDFCC'>[web]</span>作业票类完成检修后注意事项删除",
+                "type": "POST",
+                "params": {
+                    "finishrepairconfigid": {
+                        "default": "",
+                        "required": true,
+                        "description": "注意事项id"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/FinishRepairConfigSort",
+                "updatetime": "20170719",
+                "summary": "<span style='color:#EEDFCC'>[web]</span>作业票类完成检修后注意事项排序",
+                "type": "POST",
+                "params": {
+                    "finishrepairconfigids": {
+                        "default": "",
+                        "required": true,
+                        "description": "注意事项ids"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/FinishRepairConfigGetList",
+                "updatetime": "20170719",
+                "summary": "<span style='color:#EEDFCC'>[web]</span>作业票类完成检修后注意事项列表",
+                "type": "POST",
+                "params": {
+                    
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/EvaluateConfigAdd",
+                "updatetime": "20170720",
+                "summary": "<span style='color:#EEDFCC'>[web]</span>作业票评估配置添加编辑",
+                "type": "POST",
+                "params": {
+                    "evaluateconfigid": {
+                        "default": "",
+                        "required": true,
+                        "description": "作业票评估配置配置id"
+                    },
+                    "title": {
+                        "default": "施工方案",
+                        "required": true,
+                        "description": "标题"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/EvaluateConfigDel",
+                "updatetime": "20170720",
+                "summary": "<span style='color:#EEDFCC'>[web]</span>作业票评估配置删除",
+                "type": "POST",
+                "params": {
+                    "evaluateconfigid": {
+                        "default": "",
+                        "required": true,
+                        "description": "作业票评估配置配置id"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/EvaluateConfigSort",
+                "updatetime": "20170720",
+                "summary": "<span style='color:#EEDFCC'>[web]</span>作业票评估配置排序",
+                "type": "POST",
+                "params": {
+                    "evaluateconfigids": {
+                        "default": "",
+                        "required": true,
+                        "description": "作业票评估配置配置ids"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/EvaluateConfigGetList",
+                "updatetime": "20170720",
+                "summary": "<span style='color:#EEDFCC'>[web]</span>作业票评估配置列表",
+                "type": "POST",
+                "params": {
+                    
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/TypeAdd",
+                "updatetime": "20170718",
+                "summary": "<span style='color:#EEDFCC'>[web]</span>作业票类别添加修改,同原来的作业详情设置",
+                "type": "POST",
+                "params": {
+                    "typeid": {
+                        "default": "",
+                        "required": true,
+                        "description": "作业票类别id"
+                    },
+                    "title": {
+                        "default": "拆装作业",
+                        "required": true,
+                        "description": "标题"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/TypeDel",
+                "updatetime": "20170718",
+                "summary": "<span style='color:#EEDFCC'>[web]</span>作业票类别删除,同原来的作业详情设置",
+                "type": "POST",
+                "params": {
+                    "typeid": {
+                        "default": "",
+                        "required": true,
+                        "description": "作业票类别id"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/TypeGetList",
+                "updatetime": "20170718",
+                "summary": "<span style='color:#EEDFCC'>[web]</span>作业票类别读取,同原来的作业详情设置",
+                "type": "POST",
+                "params": {
+                    
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/TypeDetailAdd",
+                "updatetime": "20170718",
+                "summary": "<span style='color:#EEDFCC'>[web]</span>作业票类别详情添加修改,同原来的作业详情设置",
+                "type": "POST",
+                "params": {
+                    "typeid": {
+                        "default": "156E7264-8ACD-4F41-BA58-8B43C730CE6E",
+                        "required": true,
+                        "description": "作业票类别id"
+                    },
+                    "title": {
+                        "default": "拆装作业",
+                        "required": true,
+                        "description": "标题"
+                    },
+                    "typedetailid": {
+                        "default": "",
+                        "required": true,
+                        "description": "作业票类别详情id"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/TypeDetailDel",
+                "updatetime": "20170718",
+                "summary": "<span style='color:#EEDFCC'>[web]</span>作业票类别详情删除,同原来的作业详情设置",
+                "type": "POST",
+                "params": {
+                    "typedetailid": {
+                        "default": "",
+                        "required": true,
+                        "description": "作业票类别详情id"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/TypeDetailDel",
+                "updatetime": "20170718",
+                "summary": "<span style='color:#EEDFCC'>[web]</span>作业票类别详情列表,同原来的作业详情设置",
+                "type": "POST",
+                "params": {
+                    "typeid": {
+                        "default": "",
+                        "required": true,
+                        "description": "作业票类别id"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/CreateWorkingBill",
+                "updatetime": "20170718",
+                "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>创建作业票",
+                "type": "POST",
+                "params": {
+                    "title": {
+                        "default": "测试标题",
+                        "required": true,
+                        "description": "标题"
+                    },
+                    "regionid": {
+                        "default": "80",
+                        "required": true,
+                        "description": "区域id"
+                    },
+                    "deviceid": {
+                        "default": "",
+                        "required": false,
+                        "description": "设备id"
+                    },
+                    "deptid": {
+                        "default": "36",
+                        "required": true,
+                        "description": "部门id"
+                    },
+                    "workingmanager": {
+                        "default": "6d3b5089-c2d3-4685-91fd-4bee68a8a881",
+                        "required": false,
+                        "description": "作业负责人"
+                    },
+                    "workingdept": {
+                        "default": "68",
+                        "required": true,
+                        "description": "作业单位的部门id"
+                    },
+                    "evaluatemanager": {
+                        "default": "6d3b5089-c2d3-4685-91fd-4bee68a8a881",
+                        "required": true,
+                        "description": "评估负责人"
+                    },
+                    "planbegintime": {
+                        "default": "2017-07-31 15:00",
+                        "required": true,
+                        "description": "计划开始时间"
+                    },
+                    "planendtime": {
+                        "default": "2017-08-30 15:00",
+                        "required": true,
+                        "description": "计划结束时间"
+                    },
+                    "workingbillno": {
+                        "default": "",
+                        "required": true,
+                        "description": "作业票编号"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/EditWorkingBill",
+                "updatetime": "20170724",
+                "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>编辑作业票",
+                "type": "POST",
+                "params": {
+                    "recordid": {
+                        "default": "2CBE3F72-4A3A-4920-9424-76EF1CA44695",
+                        "required": true,
+                        "description": "记录id"
+                    },
+                    "regionid": {
+                        "default": "80",
+                        "required": true,
+                        "description": "区域id"
+                    },
+                    "deviceid": {
+                        "default": "",
+                        "required": false,
+                        "description": "设备id"
+                    },
+                    "workingmanager": {
+                        "default": "6d3b5089-c2d3-4685-91fd-4bee68a8a881",
+                        "required": false,
+                        "description": "作业负责人"
+                    },
+                    "workingdept": {
+                        "default": "64",
+                        "required": true,
+                        "description": "作业单位的部门id"
+                    },
+                    "planbegintime": {
+                        "default": "2017-07-30 15:00",
+                        "required": true,
+                        "description": "计划开始时间"
+                    },
+                    "planendtime": {
+                        "default": "2017-07-31 15:00",
+                        "required": true,
+                        "description": "计划结束时间"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/TypeDetailGetList",
+                "updatetime": "20170718",
+                "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>读取作业票名称列表,同原作业票的详情描述",
+                "type": "POST",
+                "params": {
+                    "typeid": {
+                        "default": "",
+                        "required": true,
+                        "description": "作业类型id"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/MyBillCount",
+                "updatetime": "20170718",
+                "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>我需要操作的作业票统计",
+                "type": "POST",
+                "params": {
+                    
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/MyBill",
+                "updatetime": "20170718",
+                "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>我需要操作作业票的列表",
+                "type": "POST",
+                "params": {
+                    "type": {
+                        "default": "0",
+                        "required": true,
+                        "description": "作业票的类型 --0 全部  1处理"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/RecordInfo",
+                "updatetime": "20170718",
+                "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>作业票信息记录",
+                "type": "POST",
+                "params": {
+                    "recordid": {
+                        "default": "2CBE3F72-4A3A-4920-9424-76EF1CA44695",
+                        "required": true,
+                        "description": "作业票总recordid"
+                    }
+                },
+                "response": {
+                    "items": {
+                        "isevaluatemanager": "是否评估负责人",
+                        "isapproval": "是否审批人",
+                        "evaluatememo": "评估备注",
+                        "evaluatefiles": "评估文件",
+                        "status": "作业票状态 1 待评估  2 待审批(评估完)   3  准备中   4 进行中   5完成待验收     6验收通过  -2 挂起   -1 终止 ",
+                        "needprepare": "审批通过以后，是否需要显示“作业准备”这个环节 1、是 0、否",
+                        "createInfo": "申请信息模型",
+                        "evaluateList": "评估列表",
+                        "evaluateList-isShowPlus": "是否显示加号（是否可编辑）",
+                        "evaluateList-isShowAt": "是否显示at人",
+                        "evaluateList-isShowCancel": "是否显示删除人按钮",
+                        "evaluateList-cancelusername": "isShowCancel=1，那么此字段值为删除那个人的名字",
+                        "approvalList": "审批记录列表",
+                        "approvalList-operatetype": "1、通过 2、驳回 3、挂起 4、终止"
+                    }
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/EvaluateEditInfo",
+                "updatetime": "20170719",
+                "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>获取作业票评估编辑页面信息",
+                "type": "POST",
+                "params": {
+                    "recordid": {
+                        "default": "2CBE3F72-4A3A-4920-9424-76EF1CA44695",
+                        "required": true,
+                        "description": "作业票总recordid"
+                    },
+                    "recordevaluateid": {
+                        "default": "",
+                        "required": true,
+                        "description": "评估项纪录id"
+                    },
+                    "type": {
+                        "default": "3",
+                        "required": true,
+                        "description": "1固定的交叉作业 2、固定的安全许可证  3、来自配置表WorkingBillEvaluateConfig"
+                    }
+                },
+                "response": {
+                    "items": {
+                        "isShowPlus": "是否显示加号（是否可编辑）",
+                        "isShowAt": "是否显示at人",
+                        "isShowCancel": "是否显示删除人按钮",
+                        "cancelusername": "isShowCancel=1，那么此字段值为删除那个人的名字"
+                    }
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/WorkingBillPermissionList",
+                "updatetime": "20170718",
+                "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>获取安全许可证列表",
+                "type": "POST",
+                "params": {
+                    
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/WorkingBillRegionList",
+                "updatetime": "20170718",
+                "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>获取交叉/关联作业列表",
+                "type": "POST",
+                "params": {
+                    "regionid": {
+                        "default": "80",
+                        "required": true,
+                        "description": "当前作业票的区域id"
+                    },
+                    "recordid": {
+                        "default": "2CBE3F72-4A3A-4920-9424-76EF1CA44695",
+                        "required": true,
+                        "description": "当前作业票的记录id"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/ConfigSolutionList",
+                "updatetime": "20170718",
+                "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>获取配置评估项内的列表",
+                "type": "POST",
+                "params": {
+                    "configid": {
+                        "default": "9C74E160-2858-47DF-85FA-E006C8F96A51",
+                        "required": true,
+                        "description": "配置项的configid"
+                    }
+                },
+                "response": {
+                    "items": {
+                        "type": "1 文本类型  2 附件型 3、web页面",
+                        "title": "标题",
+                        "needprepare": "是否需要作业准备 ",
+                        "lisItem-title": "type=1，此字段为空；type=2，附件标题",
+                        "lisItem-content": "type=1，对应方案的描述信息；type=2，附件的描述",
+                        "lisItem-url": "type=1，此字段为空；type=2，附件的url；type=3，web页面的url链接",
+                        "lisItem-size": "type=1，此字段为空；type=2，附件的大小kb",
+                        "lisItem-filetype": "type=1，此字段为空；type=2，附件的类型 ",
+                        "lisItem-filetypeexplain": "type=1，此字段为空；type=2，附件的类型说明"
+                    }
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/EvaluateRecordSave",
+                "updatetime": "20170719",
+                "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>配置出来的评估项添加记录",
+                "type": "POST",
+                "params": {
+                    "json": {
+                        "default": "{'recordid':'','recordevaluateid':'','files':'用分号分割多个url','memo':'备注','solutionLis':[{'c_id':'我是第二层的主键id'}]}",
+                        "required": true,
+                        "description": "请求参数json字符串"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/EvaluateRegionPermissionSave",
+                "updatetime": "20170718",
+                "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>固定的评估项添加记录",
+                "type": "POST",
+                "params": {
+                    "recordid": {
+                        "default": "",
+                        "required": true,
+                        "description": "作业票记录id"
+                    },
+                    "c_ids": {
+                        "default": "",
+                        "required": true,
+                        "description": "之前接口列表选择的项的c_id，多个用分号分割，如果传空，则认为是删除"
+                    },
+                    "type": {
+                        "default": "",
+                        "required": true,
+                        "description": "之前的接口列表中返回的type，1固定的交叉作业 2、固定的安全许可证 "
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/EvaluateAtUser",
+                "updatetime": "20170718",
+                "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>评估方案at人",
+                "type": "POST",
+                "params": {
+                    "recordid": {
+                        "default": "2CBE3F72-4A3A-4920-9424-76EF1CA44695",
+                        "required": true,
+                        "description": "作业票记录id"
+                    },
+                    "touserid": {
+                        "default": "6d3b5089-c2d3-4685-91fd-4bee68a8a881",
+                        "required": true,
+                        "description": "at用户id"
+                    },
+                    "recordevaluateid": {
+                        "default": "6D704BE5-04C2-4254-9236-8B0FFFE9B42B",
+                        "required": true,
+                        "description": "方案记录id "
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/EvaluateCancelAtUser",
+                "updatetime": "20170718",
+                "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>评估方案取消at人",
+                "type": "POST",
+                "params": {
+                    "recordid": {
+                        "default": "2CBE3F72-4A3A-4920-9424-76EF1CA44695",
+                        "required": true,
+                        "description": "作业票记录id"
+                    },
+                    "recordevaluateid": {
+                        "default": "6D704BE5-04C2-4254-9236-8B0FFFE9B42B",
+                        "required": true,
+                        "description": "方案记录id "
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/EvaluateConfigSolutionItemAdd",
+                "updatetime": "20170720",
+                "summary": "<span style='color:#EEDFCC'>[web]</span>配置的第三层添加",
+                "type": "POST",
+                "params": {
+                    "json": {
+                        "default": "{'solutionid':'我是第二层主键id','type':' 0无内容   1 纯文本    2 附件型   3web页面','itemLis':[{'solutionitemid':null,'title':'type=0，无；type=1，无；type=2，附件名字；type=3，web标题','content':'type=0，无；type=1，无；type=2，无；type=3，web富文本提交的html字符串','url':'type=0，无；type=1，无；type=2，附件url；type=3，无','size':'type=0，无；type=1，无；type=2，附件大小kb；type=3，无','filetype':'type=0，无；type=1，无；type=2，无；type=3，无','filetypeexplain':'type=0，无；type=1，无；type=2，附件后缀；type=3，无'}]}",
+                        "required": true,
+                        "description": "json格式字符串"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/FinishEvaluate",
+                "updatetime": "20170720",
+                "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>评估负责人完成评估",
+                "type": "POST",
+                "params": {
+                    "recordid": {
+                        "default": "2CBE3F72-4A3A-4920-9424-76EF1CA44695",
+                        "required": true,
+                        "description": "作业票记录id"
+                    },
+                    "touserid": {
+                        "default": "6d3b5089-c2d3-4685-91fd-4bee68a8a881",
+                        "required": true,
+                        "description": "审批人id "
+                    },
+                    "memo": {
+                        "default": "发的方式",
+                        "required": true,
+                        "description": "备注"
+                    },
+                    "files": {
+                        "default": "",
+                        "required": true,
+                        "description": "附件 "
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/ApprovelFinishEvaluate",
+                "updatetime": "20170726",
+                "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>审批负责人完成评估",
+                "type": "POST",
+                "params": {
+                    "recordid": {
+                        "default": "2CBE3F72-4A3A-4920-9424-76EF1CA44695",
+                        "required": true,
+                        "description": "作业票记录id"
+                    },
+                    "touserid": {
+                        "default": "6d3b5089-c2d3-4685-91fd-4bee68a8a881",
+                        "required": true,
+                        "description": "审批人id "
+                    },
+                    "memo": {
+                        "default": "",
+                        "required": true,
+                        "description": "备注"
+                    },
+                    "files": {
+                        "default": "",
+                        "required": true,
+                        "description": "附件 "
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/SubmitApproval",
+                "updatetime": "20170720",
+                "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>审批人提交审批",
+                "type": "POST",
+                "params": {
+                    "recordid": {
+                        "default": "2CBE3F72-4A3A-4920-9424-76EF1CA44695",
+                        "required": true,
+                        "description": "作业票记录id"
+                    },
+                    "memo": {
+                        "default": "",
+                        "required": true,
+                        "description": "备注"
+                    },
+                    "files": {
+                        "default": "",
+                        "required": true,
+                        "description": "附件"
+                    },
+                    "signpicture": {
+                        "default": "sfsdf",
+                        "required": true,
+                        "description": "签名图片url"
+                    },
+                    "operatetype": {
+                        "default": "1",
+                        "required": true,
+                        "description": "操作类型 1、通过 2、驳回 3、挂起 4、终止"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/CheckPassword",
+                "updatetime": "20170720",
+                "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>验证密码，返回签名图片url",
+                "type": "POST",
+                "params": {
+                    "checkTarget": {
+                        "default": "",
+                        "required": true,
+                        "description": "rsa加密后的密码"
+                    },
+                    "checkUserid": {
+                        "default": "",
+                        "required": true,
+                        "description": "验证的那个人的用户id，如果为当前用户，则传空"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/WorkingBillPrepareInfo",
+                "updatetime": "20170721",
+                "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>作业准备页面信息",
+                "type": "POST",
+                "params": {
+                    "recordid": {
+                        "default": "2CBE3F72-4A3A-4920-9424-76EF1CA44695",
+                        "required": true,
+                        "description": "记录id"
+                    }
+                },
+                "response": {
+                    "items": {
+                        "isworkingmanager": "是否作业负责人",
+                        "preparestatus": "准备状态中的不同进度  0 初始状态（显示人员安排界面，等待安排）   1  已人员安排，显示现场确认界面  2  现场处理人已确认（显示监护人确认界面）  3  监护人已确认",
+                        "userarrage": "人员安排模型，有workingmanager、workingmanagername、participateuserids（参与人ids）、participateusernames（参与人姓名s）",
+                        "fieldconfirm": "现场确认模型，有evaluateList（相关的评估方案记录列表）、memo、files、fieldconfirmuserid、fieldconfirmusername"
+                    }
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/UserarrageSubmit",
+                "updatetime": "20170721",
+                "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>人员安排提交",
+                "type": "POST",
+                "params": {
+                    "workingmanager": {
+                        "default": "6d3b5089-c2d3-4685-91fd-4bee68a8a881",
+                        "required": true,
+                        "description": "作业负责人id"
+                    },
+                    "participateuserids": {
+                        "default": "6d3b5089-c2d3-4685-91fd-4bee68a8a881",
+                        "required": true,
+                        "description": "参与人id，多个用分号分割"
+                    },
+                    "recordid": {
+                        "default": "2CBE3F72-4A3A-4920-9424-76EF1CA44695",
+                        "required": true,
+                        "description": "记录id"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/FieldconfirmSubmit",
+                "updatetime": "20170724",
+                "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>现场处理确认提交",
+                "type": "POST",
+                "params": {
+                    "memo": {
+                        "default": "",
+                        "required": true,
+                        "description": "备注"
+                    },
+                    "files": {
+                        "default": "",
+                        "required": true,
+                        "description": "附件url，多个分号分割"
+                    },
+                    "recordid": {
+                        "default": "2CBE3F72-4A3A-4920-9424-76EF1CA44695",
+                        "required": true,
+                        "description": "记录id"
+                    },
+                    "signpicture": {
+                        "default": "223ee",
+                        "required": true,
+                        "description": "签名图片"
+                    },
+                    "fieldconfirmuserid": {
+                        "default": "6d3b5089-c2d3-4685-91fd-4bee68a8a881",
+                        "required": true,
+                        "description": "现场处理人的用户id"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/SafetyCommentSubmit",
+                "updatetime": "20170725",
+                "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>安全告知提交",
+                "type": "POST",
+                "params": {
+                    "memo": {
+                        "default": "",
+                        "required": true,
+                        "description": "备注"
+                    },
+                    "files": {
+                        "default": "",
+                        "required": true,
+                        "description": "附件url，多个分号分割"
+                    },
+                    "recordid": {
+                        "default": "2CBE3F72-4A3A-4920-9424-76EF1CA44695",
+                        "required": true,
+                        "description": "记录id"
+                    },
+                    "signpicture": {
+                        "default": "112112签名图片",
+                        "required": true,
+                        "description": "签名图片"
+                    },
+                    "guardianuserid": {
+                        "default": "6d3b5089-c2d3-4685-91fd-4bee68a8a881",
+                        "required": true,
+                        "description": "现场处理人的用户id"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/WorkingBillWorkRecordInfo",
+                "updatetime": "20170727",
+                "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>作业记录页面信息",
+                "type": "POST",
+                "params": {
+                    "recordid": {
+                        "default": "2CBE3F72-4A3A-4920-9424-76EF1CA44695",
+                        "required": true,
+                        "description": "记录id"
+                    }
+                },
+                "response": {
+                    "items": {
+                        "isCanEdit": "是否能添加记录操作 1、是 0 、否 ",
+                        "isCanSubmit": "是否能提交操作 1、是 0、否 ",
+                        "isCanComment": "是否能评论 1、是 0、否 ",
+                        "isCanAddFollowUsers": "是否能邀请关注人 1、是 0、否 ",
+                        "recordRepair": "检修记录模型",
+                        "finishRepair": "检修后确认模型"
+                    }
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/AddWorkingBillRecordRepair",
+                "updatetime": "20170727",
+                "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>作业记录-添加记录",
+                "type": "POST",
+                "params": {
+                    "json": {
+                        "default": "{'files':'我是文件url列表，多个用分号','repairconfigid':'我是记录下拉选项的id','recordid':'我是记录id','repairconfigtitle':'我是记录下拉选项的名称','solutionLis':[{'solutionid':'我是id','repairvalue':'我是值'}]}",
+                        "required": true,
+                        "description": "json字符串"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/WorkingBillRecordRepairSubmit",
+                "updatetime": "20170727",
+                "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>作业记录-提交",
+                "type": "POST",
+                "params": {
+                    "recordid": {
+                        "default": "2CBE3F72-4A3A-4920-9424-76EF1CA44695",
+                        "required": true,
+                        "description": "记录id"
+                    },
+                    "checkuserid": {
+                        "default": "6d3b5089-c2d3-4685-91fd-4bee68a8a881",
+                        "required": true,
+                        "description": "验收人id"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+	{
+                "url": "UAPI/WorkingBill/RecordCancel",
+                "updatetime": "20170728",
+                "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>作业票取消",
+                "type": "POST",
+                "params": {
+                    "recordid": {
+                        "default": "2B792229-63D3-41BA-A32D-04BC3E9650B7",
+                        "required": true,
+                        "description": "记录id"
+                    }
+                },
+                "response": {
+                    
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/WorkingBillCheckInfo",
+                "updatetime": "20170727",
+                "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>验收页面信息",
+                "type": "POST",
+                "params": {
+                    "recordid": {
+                        "default": "2CBE3F72-4A3A-4920-9424-76EF1CA44695",
+                        "required": true,
+                        "description": "记录id"
+                    }
+                },
+                "response": {
+                    "items": {
+                        "isCheckUser": "是否验收人 1、是 0 、否 ，如果是 可以先是验收按钮",
+                        "checkuserid": "验收人id",
+                        "checkusername": "验收人姓名",
+                        "isCanEdit": "是否可编辑",
+                        "checkLis": "验收记录列表"
+                    }
+                }
+            },
+            {
+                "url": "UAPI/WorkingBill/WorkingBillCheckSubmit",
+                "updatetime": "20170727",
+                "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>验收提交",
+                "type": "POST",
+                "params": {
+                    "recordid": {
+                        "default": "2CBE3F72-4A3A-4920-9424-76EF1CA44695",
+                        "required": true,
+                        "description": "作业票记录id"
+                    },
+                    "memo": {
+                        "default": "备注",
+                        "required": true,
+                        "description": "备注"
+                    },
+                    "files": {
+                        "default": "",
+                        "required": true,
+                        "description": "附件"
+                    },
+                    "signpicture": {
+                        "default": "的士速递签名图片ur",
+                        "required": true,
+                        "description": "签名图片url"
+                    },
+                    "operatetype": {
+                        "default": "1",
+                        "required": true,
+                        "description": "1、合格 2、不合格"
+                    }
+                },
+                "response": {
+                    
+                }
+            }
+        ]
     }
-  ],
-  "apis": [
-    {
-      "url": "UAPI/WorkingBill/RecordRepairSolutionGetList",
-      "updatetime": "20170720",
-      "summary": "<span style='color:#87CEEB'>[app]</span>作业票维修记录列表",
-      "type": "POST",
-      "params": {
-        "recordid": {
-          "default": "B226B94C-08CD-4695-BB34-19437227E333",
-          "required": true,
-          "description": "作业票id"
-        }
-      },
-      "response": {
-        "items": {
-          "type": "1 文本类型  2 附件型 "
-        }
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/RecordFollowAdd",
-      "updatetime": "20170721",
-      "summary": "<span style='color:#87CEEB'>[app]</span>作业票添加关注人",
-      "type": "POST",
-      "params": {
-        "recordid": {
-          "default": "B226B94C-08CD-4695-BB34-19437227E333",
-          "required": true,
-          "description": "作业票id"
-        },
-        "personids": {
-          "default": "00E274AD-79FD-4051-BC83-2388EA2A79A4;0103D669-59F7-480D-ACE4-04896421C8AB",
-          "required": true,
-          "description": "评论人ids"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/RecordFollowGetList",
-      "updatetime": "20170721",
-      "summary": "<span style='color:#87CEEB'>[app]</span>作业票关注人列表",
-      "type": "POST",
-      "params": {
-        "recordid": {
-          "default": "B226B94C-08CD-4695-BB34-19437227E333",
-          "required": true,
-          "description": "作业票id"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/RecordCommentAdd",
-      "updatetime": "20170720",
-      "summary": "<span style='color:#87CEEB'>[app]</span>作业票添加评论",
-      "type": "POST",
-      "params": {
-        "recordid": {
-          "default": "B226B94C-08CD-4695-BB34-19437227E333",
-          "required": true,
-          "description": "作业票id"
-        },
-        "memo": {
-          "default": "很好很好",
-          "required": false,
-          "description": "评论内容"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/RecordCommentGetList",
-      "updatetime": "20170720",
-      "summary": "<span style='color:#87CEEB'>[app]</span>作业票读取评论",
-      "type": "POST",
-      "params": {
-        "recordid": {
-          "default": "B226B94C-08CD-4695-BB34-19437227E333",
-          "required": true,
-          "description": "作业票id"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/RecordCount",
-      "updatetime": "20170720",
-      "summary": "<span style='color:#EEDFCC'>[web]</span></span><span style='color:#87CEEB'>[app]</span>作业票统计",
-      "type": "POST",
-      "params": {
-        "regionid": {
-          "default": "",
-          "required": false,
-          "description": "区域id"
-        },
-        "begintime": {
-          "default": "",
-          "required": false,
-          "description": "开始时间"
-        },
-        "endtime": {
-          "default": "",
-          "required": false,
-          "description": "结束时间"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/RecordSearch",
-      "updatetime": "20170720",
-      "summary": "<span style='color:#EEDFCC'>[web]</span></span><span style='color:#87CEEB'>[app]</span>作业票检索",
-      "type": "POST",
-      "params": {
-        "regionid": {
-          "default": "",
-          "required": false,
-          "description": "区域id"
-        },
-        "begintime": {
-          "default": "",
-          "required": false,
-          "description": "开始时间"
-        },
-        "endtime": {
-          "default": "",
-          "required": false,
-          "description": "结束时间"
-        },
-        "deviceid": {
-          "default": "",
-          "required": false,
-          "description": "设备id"
-        },
-        "status": {
-          "default": "",
-          "required": false,
-          "description": "-- 1 待评估  2 待审批(评估完)  3  准备中   4 评估通过(维修中)  5 待验收     6 验收通过  -2 挂起   -1 终止 "
-        },
-        "key": {
-          "default": "",
-          "required": false,
-          "description": "关键字"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/EvaluateConfigSolutionAdd",
-      "updatetime": "20170720",
-      "summary": "<span style='color:#EEDFCC'>[web]</span>作业票评估内容配置添加编辑",
-      "type": "POST",
-      "params": {
-        "evaluateconfigid": {
-          "default": "2652B9CA-2D1E-4DFB-8009-8E36AF266BD8",
-          "required": true,
-          "description": "作业票评估配置id"
-        },
-        "title": {
-          "default": "处理方案",
-          "required": true,
-          "description": "标题"
-        },
-        "solutionid": {
-          "default": "",
-          "required": true,
-          "description": "作业票评估内容id"
-        },
-        "type": {
-          "default": "1",
-          "required": true,
-          "description": "item对应内容的类型  0 无内容   1  文本  2 附件  3 web页面"
-        },
-        "needprepare": {
-          "default": "1",
-          "required": true,
-          "description": "是否需要作业准备"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/EvaluateConfigSolutionDel",
-      "updatetime": "20170720",
-      "summary": "<span style='color:#EEDFCC'>[web]</span>作业票评估内容配置删除",
-      "type": "POST",
-      "params": {
-        "solutionid": {
-          "default": "",
-          "required": true,
-          "description": "作业票评估内容id"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/EvaluateConfigSolutionGetList",
-      "updatetime": "20170720",
-      "summary": "<span style='color:#EEDFCC'>[web]</span>作业票评估内容配置列表",
-      "type": "POST",
-      "params": {
-        "evaluateconfigid": {
-          "default": "2652B9CA-2D1E-4DFB-8009-8E36AF266BD8",
-          "required": true,
-          "description": "维修记录配置id"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/EvaluateConfigSolutionItemGetList",
-      "updatetime": "20170720",
-      "summary": "<span style='color:#EEDFCC'>[web]</span>作业票评估内容所有文件列表",
-      "type": "POST",
-      "params": {
-        "solutionid": {
-          "default": "1ED5097A-76D5-4CFA-AB53-C0D6C489E21C",
-          "required": true,
-          "description": "作业票评估内容id"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/EvaluateConfigSolutionItemDel",
-      "updatetime": "20170720",
-      "summary": "<span style='color:#EEDFCC'>[web]</span>作业票评估内容所有文件列表删除",
-      "type": "POST",
-      "params": {
-        "solutionitemid": {
-          "default": "",
-          "required": true,
-          "description": "作业票评估内容文件id"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/RepairConfigSolutionAdd",
-      "updatetime": "20170719",
-      "summary": "<span style='color:#EEDFCC'>[web]</span>作业票检修记录内容配置添加编辑",
-      "type": "POST",
-      "params": {
-        "repairconfigid": {
-          "default": "363D9EBD-DAEC-4DE7-AFC1-2D6BE103C0C9",
-          "required": true,
-          "description": "维修记录配置id"
-        },
-        "title": {
-          "default": "温度",
-          "required": true,
-          "description": "标题"
-        },
-        "solutionid": {
-          "default": "",
-          "required": true,
-          "description": "检修记录内容id"
-        },
-        "type": {
-          "default": "1",
-          "required": true,
-          "description": "需要输入内容的类型  1  文本  2 附件"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/RepairConfigSolutionDel",
-      "updatetime": "20170719",
-      "summary": "<span style='color:#EEDFCC'>[web]</span>作业票检修记录内容配置删除",
-      "type": "POST",
-      "params": {
-        "solutionid": {
-          "default": "",
-          "required": true,
-          "description": "检修记录内容id"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/RepairConfigSolutionGetList",
-      "updatetime": "20170719",
-      "summary": "<span style='color:#EEDFCC'>[web]</span>作业票检修记录内容配置列表",
-      "type": "POST",
-      "params": {
-        "repairconfigid": {
-          "default": "363D9EBD-DAEC-4DE7-AFC1-2D6BE103C0C9",
-          "required": true,
-          "description": "维修记录配置id"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/RepairConfigAdd",
-      "updatetime": "20170719",
-      "summary": "<span style='color:#EEDFCC'>[web]</span>作业票检修记录配置添加编辑",
-      "type": "POST",
-      "params": {
-        "repairconfigid": {
-          "default": "",
-          "required": true,
-          "description": "维修记录配置id"
-        },
-        "title": {
-          "default": "损坏程度",
-          "required": true,
-          "description": "标题"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/RepairConfigDel",
-      "updatetime": "20170719",
-      "summary": "<span style='color:#EEDFCC'>[web]</span>作业票检修记录配置删除",
-      "type": "POST",
-      "params": {
-        "repairconfigid": {
-          "default": "",
-          "required": true,
-          "description": "维修记录配置id"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/RepairConfigSort",
-      "updatetime": "20170719",
-      "summary": "<span style='color:#EEDFCC'>[web]</span>作业票检修记录配置排序",
-      "type": "POST",
-      "params": {
-        "repairconfigids": {
-          "default": "",
-          "required": true,
-          "description": "维修记录配置ids"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/RepairConfigGetList",
-      "updatetime": "20170719",
-      "summary": "<span style='color:#EEDFCC'>[web]</span>作业票检修记录配置列表",
-      "type": "POST",
-      "params": {
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/FinishRepairConfigAdd",
-      "updatetime": "20170719",
-      "summary": "<span style='color:#EEDFCC'>[web]</span>作业票类完成检修后注意事项添加编辑",
-      "type": "POST",
-      "params": {
-        "finishrepairconfigid": {
-          "default": "",
-          "required": true,
-          "description": "注意事项id"
-        },
-        "title": {
-          "default": "清扫现场",
-          "required": true,
-          "description": "标题"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/FinishRepairConfigDel",
-      "updatetime": "20170719",
-      "summary": "<span style='color:#EEDFCC'>[web]</span>作业票类完成检修后注意事项删除",
-      "type": "POST",
-      "params": {
-        "finishrepairconfigid": {
-          "default": "",
-          "required": true,
-          "description": "注意事项id"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/FinishRepairConfigSort",
-      "updatetime": "20170719",
-      "summary": "<span style='color:#EEDFCC'>[web]</span>作业票类完成检修后注意事项排序",
-      "type": "POST",
-      "params": {
-        "finishrepairconfigids": {
-          "default": "",
-          "required": true,
-          "description": "注意事项ids"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/FinishRepairConfigGetList",
-      "updatetime": "20170719",
-      "summary": "<span style='color:#EEDFCC'>[web]</span>作业票类完成检修后注意事项列表",
-      "type": "POST",
-      "params": {
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/EvaluateConfigAdd",
-      "updatetime": "20170720",
-      "summary": "<span style='color:#EEDFCC'>[web]</span>作业票评估配置添加编辑",
-      "type": "POST",
-      "params": {
-        "evaluateconfigid": {
-          "default": "",
-          "required": true,
-          "description": "作业票评估配置配置id"
-        },
-        "title": {
-          "default": "施工方案",
-          "required": true,
-          "description": "标题"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/EvaluateConfigDel",
-      "updatetime": "20170720",
-      "summary": "<span style='color:#EEDFCC'>[web]</span>作业票评估配置删除",
-      "type": "POST",
-      "params": {
-        "evaluateconfigid": {
-          "default": "",
-          "required": true,
-          "description": "作业票评估配置配置id"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/EvaluateConfigSort",
-      "updatetime": "20170720",
-      "summary": "<span style='color:#EEDFCC'>[web]</span>作业票评估配置排序",
-      "type": "POST",
-      "params": {
-        "evaluateconfigids": {
-          "default": "",
-          "required": true,
-          "description": "作业票评估配置配置ids"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/EvaluateConfigGetList",
-      "updatetime": "20170720",
-      "summary": "<span style='color:#EEDFCC'>[web]</span>作业票评估配置列表",
-      "type": "POST",
-      "params": {
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/TypeAdd",
-      "updatetime": "20170718",
-      "summary": "<span style='color:#EEDFCC'>[web]</span>作业票类别添加修改,同原来的作业详情设置",
-      "type": "POST",
-      "params": {
-        "typeid": {
-          "default": "",
-          "required": true,
-          "description": "作业票类别id"
-        },
-        "title": {
-          "default": "拆装作业",
-          "required": true,
-          "description": "标题"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/TypeDel",
-      "updatetime": "20170718",
-      "summary": "<span style='color:#EEDFCC'>[web]</span>作业票类别删除,同原来的作业详情设置",
-      "type": "POST",
-      "params": {
-        "typeid": {
-          "default": "",
-          "required": true,
-          "description": "作业票类别id"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/TypeGetList",
-      "updatetime": "20170718",
-      "summary": "<span style='color:#EEDFCC'>[web]</span>作业票类别读取,同原来的作业详情设置",
-      "type": "POST",
-      "params": {
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/TypeDetailAdd",
-      "updatetime": "20170718",
-      "summary": "<span style='color:#EEDFCC'>[web]</span>作业票类别详情添加修改,同原来的作业详情设置",
-      "type": "POST",
-      "params": {
-        "typeid": {
-          "default": "156E7264-8ACD-4F41-BA58-8B43C730CE6E",
-          "required": true,
-          "description": "作业票类别id"
-        },
-        "title": {
-          "default": "拆装作业",
-          "required": true,
-          "description": "标题"
-        },
-        "typedetailid": {
-          "default": "",
-          "required": true,
-          "description": "作业票类别详情id"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/TypeDetailDel",
-      "updatetime": "20170718",
-      "summary": "<span style='color:#EEDFCC'>[web]</span>作业票类别详情删除,同原来的作业详情设置",
-      "type": "POST",
-      "params": {
-        "typedetailid": {
-          "default": "",
-          "required": true,
-          "description": "作业票类别详情id"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/TypeDetailDel",
-      "updatetime": "20170718",
-      "summary": "<span style='color:#EEDFCC'>[web]</span>作业票类别详情列表,同原来的作业详情设置",
-      "type": "POST",
-      "params": {
-        "typeid": {
-          "default": "",
-          "required": true,
-          "description": "作业票类别id"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/CreateWorkingBill",
-      "updatetime": "20170718",
-      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>创建作业票",
-      "type": "POST",
-      "params": {
-        "title": {
-          "default": "",
-          "required": true,
-          "description": "标题"
-        },
-        "regionid": {
-          "default": "",
-          "required": true,
-          "description": "区域id"
-        },
-        "deviceid": {
-          "default": "",
-          "required": false,
-          "description": "设备id"
-        },
-        "deptid": {
-          "default": "",
-          "required": true,
-          "description": "部门id"
-        },
-        "workingmanager": {
-          "default": "",
-          "required": false,
-          "description": "作业负责人"
-        },
-        "workingdept": {
-          "default": "",
-          "required": true,
-          "description": "作业单位的部门id"
-        },
-        "evaluatemanager": {
-          "default": "",
-          "required": true,
-          "description": "评估负责人"
-        },
-        "planbegintime": {
-          "default": "",
-          "required": true,
-          "description": "计划开始时间"
-        },
-        "planendtime": {
-          "default": "",
-          "required": true,
-          "description": "计划结束时间"
-        },
-        "workingbillno": {
-          "default": "",
-          "required": true,
-          "description": "作业票编号"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/EditWorkingBill",
-      "updatetime": "20170724",
-      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>编辑作业票",
-      "type": "POST",
-      "params": {
-        "recordid": {
-          "default": "",
-          "required": true,
-          "description": "记录id"
-        },
-        "regionid": {
-          "default": "",
-          "required": true,
-          "description": "区域id"
-        },
-        "deviceid": {
-          "default": "",
-          "required": false,
-          "description": "设备id"
-        },
-        "workingmanager": {
-          "default": "",
-          "required": false,
-          "description": "作业负责人"
-        },
-        "workingdept": {
-          "default": "",
-          "required": true,
-          "description": "作业单位的部门id"
-        },
-        "planbegintime": {
-          "default": "",
-          "required": true,
-          "description": "计划开始时间"
-        },
-        "planendtime": {
-          "default": "",
-          "required": true,
-          "description": "计划结束时间"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/TypeDetailGetList",
-      "updatetime": "20170718",
-      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>读取作业票名称列表,同原作业票的详情描述",
-      "type": "POST",
-      "params": {
-        "typeid": {
-          "default": "",
-          "required": true,
-          "description": "作业类型id"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/MyBillCount",
-      "updatetime": "20170718",
-      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>我需要操作的作业票统计",
-      "type": "POST",
-      "params": {
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/MyBill",
-      "updatetime": "20170718",
-      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>我需要操作作业票的列表",
-      "type": "POST",
-      "params": {
-        "type": {
-          "default": "0",
-          "required": true,
-          "description": "作业票的类型 --0 全部  1处理"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/RecordInfo",
-      "updatetime": "20170718",
-      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>作业票信息记录",
-      "type": "POST",
-      "params": {
-        "recordid": {
-          "default": "",
-          "required": true,
-          "description": "作业票总recordid"
-        }
-      },
-      "response": {
-        "items": {
-          "isevaluatemanager": "是否评估负责人",
-          "isapproval": "是否审批人",
-          "evaluatememo": "评估备注",
-          "evaluatefiles": "评估文件",
-          "status": "作业票状态 1 待评估  2 待审批(评估完)   3  准备中   4 进行中   5完成待验收     6验收通过  -2 挂起   -1 终止 ",
-          "needprepare": "审批通过以后，是否需要显示“作业准备”这个环节 1、是 0、否",
-          "createInfo": "申请信息模型",
-          "evaluateList": "评估列表",
-          "evaluateList-isShowPlus": "是否显示加号（是否可编辑）",
-          "evaluateList-isShowAt": "是否显示at人",
-          "evaluateList-isShowCancel": "是否显示删除人按钮",
-          "evaluateList-cancelusername": "isShowCancel=1，那么此字段值为删除那个人的名字",
-          "approvalList": "审批记录列表",
-          "approvalList-operatetype": "1、通过 2、驳回 3、挂起 4、终止"
-        }
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/EvaluateEditInfo",
-      "updatetime": "20170719",
-      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>获取作业票评估编辑页面信息",
-      "type": "POST",
-      "params": {
-        "recordid": {
-          "default": "",
-          "required": true,
-          "description": "作业票总recordid"
-        },
-        "recordevaluateid": {
-          "default": "",
-          "required": true,
-          "description": "评估项纪录id"
-        },
-        "type": {
-          "default": "3",
-          "required": true,
-          "description": "1固定的交叉作业 2、固定的安全许可证  3、来自配置表WorkingBillEvaluateConfig"
-        }
-      },
-      "response": {
-        "items": {
-          "isShowPlus": "是否显示加号（是否可编辑）",
-          "isShowAt": "是否显示at人",
-          "isShowCancel": "是否显示删除人按钮",
-          "cancelusername": "isShowCancel=1，那么此字段值为删除那个人的名字"
-        }
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/WorkingBillPermissionList",
-      "updatetime": "20170718",
-      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>获取安全许可证列表",
-      "type": "POST",
-      "params": {
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/WorkingBillRegionList",
-      "updatetime": "20170718",
-      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>获取交叉/关联作业列表",
-      "type": "POST",
-      "params": {
-        "regionid": {
-          "default": "",
-          "required": true,
-          "description": "当前作业票的区域id"
-        },
-        "recordid": {
-          "default": "",
-          "required": true,
-          "description": "当前作业票的记录id"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/ConfigSolutionList",
-      "updatetime": "20170718",
-      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>获取配置评估项内的列表",
-      "type": "POST",
-      "params": {
-        "configid": {
-          "default": "9C74E160-2858-47DF-85FA-E006C8F96A51",
-          "required": true,
-          "description": "配置项的configid"
-        }
-      },
-      "response": {
-        "items": {
-          "type": "1 文本类型  2 附件型 3、web页面",
-          "title": "标题",
-          "needprepare": "是否需要作业准备 ",
-          "lisItem-title": "type=1，此字段为空；type=2，附件标题",
-          "lisItem-content": "type=1，对应方案的描述信息；type=2，附件的描述",
-          "lisItem-url": "type=1，此字段为空；type=2，附件的url；type=3，web页面的url链接",
-          "lisItem-size": "type=1，此字段为空；type=2，附件的大小kb",
-          "lisItem-filetype": "type=1，此字段为空；type=2，附件的类型 ",
-          "lisItem-filetypeexplain": "type=1，此字段为空；type=2，附件的类型说明"
-        }
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/EvaluateRecordSave",
-      "updatetime": "20170719",
-      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>配置出来的评估项添加记录",
-      "type": "POST",
-      "params": {
-        "json": {
-          "default": "{'recordid':'','recordevaluateid':'','files':'用分号分割多个url','memo':'备注','solutionLis':[{'c_id':'我是第二层的主键id'}]}",
-          "required": true,
-          "description": "请求参数json字符串"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/EvaluateRegionPermissionSave",
-      "updatetime": "20170718",
-      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>固定的评估项添加记录",
-      "type": "POST",
-      "params": {
-        "recordid": {
-          "default": "",
-          "required": true,
-          "description": "作业票记录id"
-        },
-        "c_ids": {
-          "default": "",
-          "required": true,
-          "description": "之前接口列表选择的项的c_id，多个用分号分割，如果传空，则认为是删除"
-        },
-        "type": {
-          "default": "",
-          "required": true,
-          "description": "之前的接口列表中返回的type，1固定的交叉作业 2、固定的安全许可证 "
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/EvaluateAtUser",
-      "updatetime": "20170718",
-      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>评估方案at人",
-      "type": "POST",
-      "params": {
-        "recordid": {
-          "default": "",
-          "required": true,
-          "description": "作业票记录id"
-        },
-        "touserid": {
-          "default": "",
-          "required": true,
-          "description": "at用户id"
-        },
-        "recordevaluateid": {
-          "default": "",
-          "required": true,
-          "description": "方案记录id "
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/EvaluateCancelAtUser",
-      "updatetime": "20170718",
-      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>评估方案取消at人",
-      "type": "POST",
-      "params": {
-        "recordid": {
-          "default": "",
-          "required": true,
-          "description": "作业票记录id"
-        },
-        "recordevaluateid": {
-          "default": "",
-          "required": true,
-          "description": "方案记录id "
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/EvaluateConfigSolutionItemAdd",
-      "updatetime": "20170720",
-      "summary": "<span style='color:#EEDFCC'>[web]</span>配置的第三层添加",
-      "type": "POST",
-      "params": {
-        "json": {
-          "default": "{'solutionid':'我是第二层主键id','type':' 0无内容   1 纯文本    2 附件型   3web页面','itemLis':[{'solutionitemid':null,'title':'type=0，无；type=1，无；type=2，附件名字；type=3，web标题','content':'type=0，无；type=1，无；type=2，无；type=3，web富文本提交的html字符串','url':'type=0，无；type=1，无；type=2，附件url；type=3，无','size':'type=0，无；type=1，无；type=2，附件大小kb；type=3，无','filetype':'type=0，无；type=1，无；type=2，无；type=3，无','filetypeexplain':'type=0，无；type=1，无；type=2，附件后缀；type=3，无'}]}",
-          "required": true,
-          "description": "json格式字符串"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/FinishEvaluate",
-      "updatetime": "20170720",
-      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>评估负责人完成评估",
-      "type": "POST",
-      "params": {
-        "recordid": {
-          "default": "",
-          "required": true,
-          "description": "作业票记录id"
-        },
-        "touserid": {
-          "default": "",
-          "required": true,
-          "description": "审批人id "
-        },
-        "memo": {
-          "default": "",
-          "required": true,
-          "description": "备注"
-        },
-        "files": {
-          "default": "",
-          "required": true,
-          "description": "附件 "
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/ApprovelFinishEvaluate",
-      "updatetime": "20170726",
-      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>审批负责人完成评估",
-      "type": "POST",
-      "params": {
-        "recordid": {
-          "default": "",
-          "required": true,
-          "description": "作业票记录id"
-        },
-        "touserid": {
-          "default": "",
-          "required": true,
-          "description": "审批人id "
-        },
-        "memo": {
-          "default": "",
-          "required": true,
-          "description": "备注"
-        },
-        "files": {
-          "default": "",
-          "required": true,
-          "description": "附件 "
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/SubmitApproval",
-      "updatetime": "20170720",
-      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>审批人提交审批",
-      "type": "POST",
-      "params": {
-        "recordid": {
-          "default": "",
-          "required": true,
-          "description": "作业票记录id"
-        },
-        "memo": {
-          "default": "",
-          "required": true,
-          "description": "备注"
-        },
-        "files": {
-          "default": "",
-          "required": true,
-          "description": "附件"
-        },
-        "signpicture": {
-          "default": "",
-          "required": true,
-          "description": "签名图片url"
-        },
-        "operatetype": {
-          "default": "",
-          "required": true,
-          "description": "操作类型 1、通过 2、驳回 3、挂起 4、终止"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/CheckPassword",
-      "updatetime": "20170720",
-      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>验证密码，返回签名图片url",
-      "type": "POST",
-      "params": {
-        "checkTarget": {
-          "default": "",
-          "required": true,
-          "description": "rsa加密后的密码"
-        },
-        "checkUserid": {
-          "default": "",
-          "required": true,
-          "description": "验证的那个人的用户id，如果为当前用户，则传空"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/WorkingBillPrepareInfo",
-      "updatetime": "20170721",
-      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>作业准备页面信息",
-      "type": "POST",
-      "params": {
-        "recordid": {
-          "default": "",
-          "required": true,
-          "description": "记录id"
-        }
-      },
-      "response": {
-        "items": {
-          "isworkingmanager": "是否作业负责人",
-          "preparestatus": "准备状态中的不同进度  0 初始状态（显示人员安排界面，等待安排）   1  已人员安排，显示现场确认界面  2  现场处理人已确认（显示监护人确认界面）  3  监护人已确认",
-          "userarrage": "人员安排模型，有workingmanager、workingmanagername、participateuserids（参与人ids）、participateusernames（参与人姓名s）",
-          "fieldconfirm": "现场确认模型，有evaluateList（相关的评估方案记录列表）、memo、files、fieldconfirmuserid、fieldconfirmusername"
-        }
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/UserarrageSubmit",
-      "updatetime": "20170721",
-      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>人员安排提交",
-      "type": "POST",
-      "params": {
-        "workingmanager": {
-          "default": "",
-          "required": true,
-          "description": "作业负责人id"
-        },
-        "participateuserids": {
-          "default": "",
-          "required": true,
-          "description": "参与人id，多个用分号分割"
-        },
-        "recordid": {
-          "default": "",
-          "required": true,
-          "description": "记录id"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/FieldconfirmSubmit",
-      "updatetime": "20170724",
-      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>现场处理确认提交",
-      "type": "POST",
-      "params": {
-        "memo": {
-          "default": "",
-          "required": true,
-          "description": "备注"
-        },
-        "files": {
-          "default": "",
-          "required": true,
-          "description": "附件url，多个分号分割"
-        },
-        "recordid": {
-          "default": "",
-          "required": true,
-          "description": "记录id"
-        },
-        "signpicture": {
-          "default": "",
-          "required": true,
-          "description": "签名图片"
-        },
-        "fieldconfirmuserid": {
-          "default": "",
-          "required": true,
-          "description": "现场处理人的用户id"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/SafetyCommentSubmit",
-      "updatetime": "20170725",
-      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>安全告知提交",
-      "type": "POST",
-      "params": {
-        "memo": {
-          "default": "",
-          "required": true,
-          "description": "备注"
-        },
-        "files": {
-          "default": "",
-          "required": true,
-          "description": "附件url，多个分号分割"
-        },
-        "recordid": {
-          "default": "",
-          "required": true,
-          "description": "记录id"
-        },
-        "signpicture": {
-          "default": "",
-          "required": true,
-          "description": "签名图片"
-        },
-        "guardianuserid": {
-          "default": "",
-          "required": true,
-          "description": "现场处理人的用户id"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/WorkingBillWorkRecordInfo",
-      "updatetime": "20170727",
-      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>作业记录页面信息",
-      "type": "POST",
-      "params": {
-        "recordid": {
-          "default": "",
-          "required": true,
-          "description": "记录id"
-        }
-      },
-      "response": {
-        "items": {
-          "isCanEdit": "是否能添加记录操作 1、是 0 、否 ",
-          "isCanSubmit": "是否能提交操作 1、是 0、否 ",
-          "isCanComment": "是否能评论 1、是 0、否 ",
-          "isCanAddFollowUsers": "是否能邀请关注人 1、是 0、否 ",
-          "recordRepair": "检修记录模型",
-          "finishRepair": "检修后确认模型"
-        }
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/AddWorkingBillRecordRepair",
-      "updatetime": "20170727",
-      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>作业记录-添加记录",
-      "type": "POST",
-      "params": {
-        "json": {
-          "default": "{'files':'我是文件url列表，多个用分号','repairconfigid':'我是记录下拉选项的id','recordid':'我是记录id','repairconfigtitle':'我是记录下拉选项的名称','solutionLis':[{'solutionid':'我是id','repairvalue':'我是值'}]}",
-          "required": true,
-          "description": "json字符串"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/WorkingBillRecordRepairSubmit",
-      "updatetime": "20170727",
-      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>作业记录-提交",
-      "type": "POST",
-      "params": {
-        "recordid": {
-          "default": "",
-          "required": true,
-          "description": "记录id"
-        },
-        "checkuserid": {
-          "default": "",
-          "required": true,
-          "description": "验收人id"
-        }
-      },
-      "response": {
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/WorkingBillCheckInfo",
-      "updatetime": "20170727",
-      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>验收页面信息",
-      "type": "POST",
-      "params": {
-        "recordid": {
-          "default": "",
-          "required": true,
-          "description": "记录id"
-        }
-      },
-      "response": {
-        "items": {
-          "isCheckUser": "是否验收人 1、是 0 、否 ，如果是 可以先是验收按钮",
-          "checkuserid": "验收人id",
-          "checkusername": "验收人姓名",
-          "isCanEdit": "是否可编辑",
-          "checkLis": "验收记录列表"
-        }
-      }
-    },
-    {
-      "url": "UAPI/WorkingBill/WorkingBillCheckSubmit",
-      "updatetime": "20170727",
-      "summary": "<span style='color:#EEDFCC'>[web]</span><span style='color:#87CEEB'>[app]</span>验收提交",
-      "type": "POST",
-      "params": {
-        "recordid": {
-          "default": "",
-          "required": true,
-          "description": "作业票记录id"
-        },
-        "memo": {
-          "default": "",
-          "required": true,
-          "description": "备注"
-        },
-        "files": {
-          "default": "",
-          "required": true,
-          "description": "附件"
-        },
-        "signpicture": {
-          "default": "",
-          "required": true,
-          "description": "签名图片url"
-        },
-        "operatetype": {
-          "default": "",
-          "required": true,
-          "description": "1、合格 2、不合格"
-        }
-      },
-      "response": {
-      }
-    }
-  ]
-}
