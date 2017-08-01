@@ -104,8 +104,8 @@ class gen_result:
                 f1.write('<tr bgcolor=white>')
                 f1.write('<td align="center">' + str(i + 1) + '</td>')
                 f1.write(
-                    '<td align="center" style="WORD-WRAP: break-word;word-break:break-all"><a href="http://192.168.31.199:5000?begintime=20170701&endtime=20190630&apiname=' +
-                    self.url[i] + '>' + self.url[i] + '</td>')
+                    '<td align="center" style="WORD-WRAP: break-word;word-break:break-all"><a href="http://192.168.31.199:5000/detail?begintime=20170701&endtime=20190630&apiname=' +
+                    self.url[i] + '">' + self.url[i] + '</a></td>')
                 f1.write('<td align="center">' + self.cn_name[i] + '</td>')
                 f1.write('<td align="center">' + str(self.res_time[i]) + 'ms</td>')
                 # response code为200且status为1，code和status颜色为绿色，error message N/A
@@ -146,7 +146,7 @@ class gen_result:
                 f1.write('<td align="center">' + str(i + 1) + '</td>')
                 f1.write(
                     '<td align="center" style="WORD-WRAP: break-word;word-break:break-all"><a href="http://192.168.31.199:5000?begintime=20170701&endtime=20190630&apiname=' +
-                    self.url[i] + '>' + self.url[i] + '</td>')
+                    self.url[i] + '">' + self.url[i] + '</td>')
                 f1.write('<td align="center">' + self.cn_name[i] + '</td>')
                 f1.write('<td align="center">' + str(self.res_time[i]) + 'ms</td>')
                 # response code为200且status为1，code和status颜色为绿色，error message N/A
