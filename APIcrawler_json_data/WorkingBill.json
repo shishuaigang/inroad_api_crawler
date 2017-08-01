@@ -1,4 +1,4 @@
-{
+﻿{
     "resource": "WorkingBill",
     "section": [
         {
@@ -807,7 +807,7 @@
                         "description": "作业票总recordid"
                     },
                     "recordevaluateid": {
-                        "default": "",
+                        "default": "61442AB8-B859-46D1-A6E0-CE712EFB48EB",
                         "required": true,
                         "description": "评估项纪录id"
                     },
@@ -939,7 +939,7 @@
                         "description": "作业票记录id"
                     },
                     "touserid": {
-                        "default": "6d3b5089-c2d3-4685-91fd-4bee68a8a881",
+                        "default": "02e41058-63cc-4fbd-8b76-28e55f7cc940",
                         "required": true,
                         "description": "at用户id"
                     },
