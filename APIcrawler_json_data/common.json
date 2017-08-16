@@ -190,6 +190,7 @@
       "response": {}
     },
     {
+      "NoNeed": "1",
       "url": "API/Common/MenuCustomAdd",
       "updatetime": "20170627",
       "summary": "添加用户的模块菜单",
@@ -220,6 +221,7 @@
       }
     },
     {
+      "NoNeed": "1",
       "url": "API/Common/MenuCustomDel",
       "updatetime": "20170627",
       "summary": "删除用户的菜单模块",
@@ -240,6 +242,7 @@
       }
     },
     {
+      "NoNeed": "1",
       "url": "API/Common/MenuCustomGetList",
       "updatetime": "20170627",
       "summary": "用户的菜单模块列表",
@@ -350,6 +353,7 @@
       }
     },
     {
+      "NoNeed": "1",
       "url": "API/Common/MenuCustomEdit",
       "updatetime": "20170627",
       "summary": "编辑用户的模块菜单",
