@@ -18,7 +18,7 @@ class api_cor_res(correct):
         :return: 返回response
         """
         response_result = []
-        api_param = self.api_correct_params()
+        api_param = self.api_modify_params()
         api_url = self.api_url()
         for i in range(len(self.api_url())):
             results = requests.post("http://192.168.31.99:8088/" + api_url[i],

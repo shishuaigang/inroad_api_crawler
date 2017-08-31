@@ -126,6 +126,101 @@
       }
     },
     {
+      "url": "UAPI/Config/CommonFunctionPostAdd",
+      "updatetime": "20170821",
+      "summary": "岗位添加/编辑",
+      "type": "POST",
+      "params": {
+        "functionpostid": {
+          "default": "",
+          "required": false,
+          "description": "岗位id"
+        },
+        "title": {
+          "default": "总负责人",
+          "required": false,
+          "description": "岗位标题"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/CommonFunctionPostDel",
+      "updatetime": "20170821",
+      "summary": "岗位删除",
+      "type": "POST",
+      "params": {
+        "functionpostid": {
+          "default": "10E9D793-038A-4193-BDBA-D9FE431B3F06",
+          "required": true,
+          "description": "岗位id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/CommonFunctionPostGetList",
+      "updatetime": "20170821",
+      "summary": "岗位列表",
+      "type": "POST",
+      "params": {
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/TroubleTypeAdd",
+      "updatetime": "20170821",
+      "summary": "隐患类型添加/编辑",
+      "type": "POST",
+      "params": {
+        "troubletypeid": {
+          "default": "",
+          "required": false,
+          "description": "隐患类型id"
+        },
+        "functionpostid": {
+          "default": "",
+          "required": false,
+          "description": "岗位id"
+        },
+        "title": {
+          "default": "其他隐患",
+          "required": false,
+          "description": "隐患标题"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/TroubleTypeDel",
+      "updatetime": "20170821",
+      "summary": "隐患类型删除",
+      "type": "POST",
+      "params": {
+        "troubletypeid": {
+          "default": "AFCBB343-1954-4074-8C56-0C018E387C88",
+          "required": false,
+          "description": "隐患类型id"
+        }
+      },
+      "response": {
+      }
+    },
+    {
+      "url": "UAPI/Config/TroubleTypeGetList",
+      "updatetime": "20170821",
+      "summary": "隐患类型列表",
+      "type": "POST",
+      "params": {
+      },
+      "response": {
+      }
+    },
+    {
       "NoNeed": "1",
       "url": "UAPI/Config/GetPadMenuList",
       "summary": "获取可用Pad菜单列表",

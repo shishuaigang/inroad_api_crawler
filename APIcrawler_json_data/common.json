@@ -192,19 +192,49 @@
     {
       "NoNeed": "1",
       "url": "API/Common/MenuCustomAdd",
-      "updatetime": "20170627",
+      "updatetime": "20170729",
       "summary": "添加用户的模块菜单",
       "type": "POST",
       "params": {
-        "menuids": {
-          "default": "1",
-          "required": true,
-          "description": "菜单ids"
+        "icon": {
+          "default": "",
+          "required": false,
+          "description": "菜单图标地址"
         },
         "type": {
           "default": "1",
           "required": true,
           "description": "--1 appmenu  2 webmenu "
+        },
+        "alias": {
+          "default": "菜单名称",
+          "required": true,
+          "description": "菜单名称"
+        },
+        "skiptype": {
+          "default": "0",
+          "required": true,
+          "description": "跳转类型  0目录节点  1 原菜单 2 链接 3 知识点 4 台账  5知识点目录  6台账快照  7  关键数据报表"
+        },
+        "skiptypevalue": {
+          "default": "",
+          "required": false,
+          "description": "跳转类型 0 时为空 "
+        },
+        "parentmenuid": {
+          "default": "0",
+          "required": true,
+          "description": "父菜单id ，根菜单为0"
+        },
+        "ordervalue": {
+          "default": "1",
+          "required": true,
+          "description": "菜单的排序号 "
+        },
+        "parameter": {
+          "default": "",
+          "required": false,
+          "description": "菜单所带的参数"
         }
       },
       "response": {
@@ -353,9 +383,24 @@
       }
     },
     {
+      "url": "API/Common/MenuCustomCopy",
+      "updatetime": "20170829",
+      "summary": "全套复制自定义菜单",
+      "type": "POST",
+      "params": {
+        "type": {
+          "default": "1",
+          "required": true,
+          "description": "--1 appmenu  2 webmenu "
+        }
+      },
+      "response": {
+      }
+    },
+    {
       "NoNeed": "1",
       "url": "API/Common/MenuCustomEdit",
-      "updatetime": "20170627",
+      "updatetime": "20170829",
       "summary": "编辑用户的模块菜单",
       "type": "POST",
       "params": {
@@ -377,7 +422,7 @@
         "skiptype": {
           "default": "1",
           "required": true,
-          "description": "1  原菜单  2 链接  3 知识点  4 台账 "
+          "description": "1  原菜单  2 链接  3 知识点  4 台账(汇总，明细)  5 知识点目录  6 台账快照  7 关键数据报表 "
         },
         "skiptypevalue": {
           "default": "1",
@@ -388,6 +433,21 @@
           "default": "1",
           "required": true,
           "description": "--1 appmenu  2 webmenu "
+        },
+        "parentmenuid": {
+          "default": "1",
+          "required": true,
+          "description": "父菜单id"
+        },
+        "ordervalue": {
+          "default": "1",
+          "required": true,
+          "description": "排序号"
+        },
+        "parameter": {
+          "default": "",
+          "required": false,
+          "description": "参数 json格式"
         }
       },
       "response": {

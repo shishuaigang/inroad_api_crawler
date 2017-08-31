@@ -2,6 +2,7 @@
 import os
 import codecs
 import json
+import random
 import sys
 import copy
 from more_itertools import chunked
@@ -16,6 +17,7 @@ class api_num:
 
     @property
     def json_data(self):
+        json_file = None
         for files in os.walk(self.path):
             json_file = files[2]
         return json_file
@@ -61,6 +63,18 @@ class api_url(api_num):
                             url.append(dict_json[array_name[m][n]][k]["url"])
         return url
 
+    def reg_api_loc(self):  # register这个api的位置
+        url = self.api_url()
+        for i in range(len(url)):
+            if url[i] == "API/Account/Register":
+                return i
+
+    def getmobcode_api_loc(self):  # register这个api的位置
+        url = self.api_url()
+        for i in range(len(url)):
+            if url[i] == "API/Account/GetMobCode":
+                return i
+
 
 class api_cn_name(api_num):
     def api_chinese_name(self):
@@ -74,7 +88,7 @@ class api_cn_name(api_num):
                 for n in range(len(num[m])):
                     for k in range(num[m][n]):
                         if "NoNeed" not in dict_json[array_name[m][n]][k] or dict_json[array_name[m][n]][k][
-                                "NoNeed"] == str(0):
+                            "NoNeed"] == str(0):
                             api_chinese_name.append(dict_json[array_name[m][n]][k]["summary"])  # api的中文名字
         return api_chinese_name
 
@@ -107,6 +121,15 @@ class api_cor_params(api_url):
             params_keys.append("APIVersion")
             params_values.append("999999999")
             params.append(dict(zip(params_keys, params_values)))
+        return params
+
+    def api_modify_params(self):
+        i = self.reg_api_loc()
+        prelist = ["130", "131", "132", "133", "134", "135", "136", "137", "138", "139", "147", "150", "151", "152",
+                   "153", "155", "156", "157", "158", "159", "177", "180", "181", "182", "183", "186", "187", "188",
+                   "189"]
+        params = self.api_correct_params()
+        params[i]['phonenumber'] = random.choice(prelist) + "".join(random.choice("0123456789") for i in range(8))
         return params
 
 

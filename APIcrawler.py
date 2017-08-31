@@ -30,7 +30,6 @@ if __name__ == "__main__":
 
     api_ver = conf['api_version']
     cookie = getcookie.gecookie(api_ver)
-    print 'Current api version is ' + api_ver
     inroad_url = api_param.api_url(api_json_path).api_url()  # 获取api的url的地址
     cn_name = api_param.api_cn_name(api_json_path).api_chinese_name()  # 获取api的中文名字
     api_len = len(inroad_url)  # 获取api的个数
