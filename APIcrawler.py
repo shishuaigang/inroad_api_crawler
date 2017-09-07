@@ -5,7 +5,7 @@ import codecs
 import time
 import platform
 from Test_scripts import api_param, api_response, getcookie, sendmail, write_database
-from Test_scripts import generate_result, response_status, pass_rate
+from Test_scripts import generate_result, status_errormessage, pass_rate
 
 if __name__ == "__main__":
     print u'API遍历测试开始'
@@ -38,21 +38,18 @@ if __name__ == "__main__":
     res = api_response.api_cor_res(api_json_path).res_results(cookie, api_ver, headers)
     res_code = [res[i].status_code for i in range(api_len)]
     res_time = ['%.1f' % (float(res[i].elapsed.microseconds) / 1000) for i in range(api_len)]
-    res_status = response_status.response_status(api_len).res_status(res)
+    res_status = status_errormessage.response_status(api_len).res_status(res)
+    err_mes = status_errormessage.error_message(api_len).error_mes(res)
     passrate = pass_rate.passrate(api_len).pass_rate(res_status, res_code)  # 计算成功率
     et = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))  # 测试结束时间
     # 创建temp.html
     generate_result.gen_result(conf, cur_dir, inroad_url, api_len, cn_name, res, res_code, res_time,
                                res_status).create_html(passrate, bt, et, testNo)
-    # 创建temp.csv
-    generate_result.gen_result(conf, cur_dir, inroad_url, api_len, cn_name, res, res_code, res_time,
-                               res_status).create_csv()
-    time.sleep(5)
 
     os.chdir(cur_dir)
     print u'尝试将测试结果写入数据库...'
     if write_database.write_db(conf['db_name'], conf['db_host'], conf['db_username'], conf['db_userpasswd'],
-                               testNo).write_db(api_len) == 1:
+                               testNo).write_db(inroad_url,cn_name,res_code,res_time,res_status,err_mes) == 1:
         print u'尝试发送测试报告...'
         try:
             sendmail.send_mail(conf['receiver_list'], conf['mail_subject'], testNo).send_mail()

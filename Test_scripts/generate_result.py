@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 import json
-import csv
 
 
 class gen_result:
@@ -186,20 +185,3 @@ class gen_result:
         f1.write('</body>')
         f1.write('</html>')
         f1.close()
-
-    def create_csv(self):
-        with open(self.path + r'\\temp.csv', 'wb') as csvfile:
-            a = csv.writer(csvfile, dialect='excel')
-            a.writerow(
-                ['API_URL', 'API_ChineseName', 'Response_code', 'Response_time', 'Response_status', 'Error_Message'])
-            for i in range(self.api_len):
-                if self.res_code[i] == 200 and self.res_status[i] == 1:
-                    a.writerow([str(self.url[i]), str(self.cn_name[i]).replace('\'', '#'), str(self.res_code[i]),
-                                str(self.res_time[i]), str(self.res_status[i]), 'N/A'])
-                elif self.res_code[i] == 200 and self.res_status[i] == 0:
-                    a.writerow([str(self.url[i]), str(self.cn_name[i]).replace('\'', '#'), str(self.res_code[i]),
-                                str(self.res_time[i]), str(self.res_status[i]),
-                                str((json.loads(str(self.res[i].text)))['error']['message']).replace('\'', '#')])
-                else:
-                    a.writerow([str(self.url[i]), str(self.cn_name[i]).replace('\'', '#'), str(self.res_code[i]),
-                                str(self.res_time[i]), str(self.res_status[i]), 'Please check the testreport'])
