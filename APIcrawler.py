@@ -49,7 +49,7 @@ if __name__ == "__main__":
     os.chdir(cur_dir)
     print u'尝试将测试结果写入数据库...'
     if write_database.write_db(conf['db_name'], conf['db_host'], conf['db_username'], conf['db_userpasswd'],
-                               testNo).write_db(inroad_url,cn_name,res_code,res_time,res_status,err_mes) == 1:
+                               testNo).write_db(inroad_url, cn_name, res_code, res_time, res_status, err_mes) == 1:
         print u'尝试发送测试报告...'
         try:
             sendmail.send_mail(conf['receiver_list'], conf['mail_subject'], testNo).send_mail()

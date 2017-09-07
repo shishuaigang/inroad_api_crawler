@@ -22,11 +22,11 @@ class error_message:
         self.length = length
 
     def error_mes(self, response):
-        error_message = []
+        error_mes = []
         for i in range(self.length):
             try:
                 s = json.loads(str(response[i].text))
-                error_message.append(s['error']['message'])
+                error_mes.append(s['error']['message'])
             except Exception:
-                error_message.append('response中无返回，请确认')
-        return error_message
+                error_mes.append('response中无返回，请确认')
+        return error_mes

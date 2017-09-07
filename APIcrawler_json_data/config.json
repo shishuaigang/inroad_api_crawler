@@ -1394,6 +1394,21 @@
       }
     },
     {
+      "url": "UAPI/Config/RoleSort",
+      "updatetime": "20170907",
+      "summary": "权限组排序",
+      "type": "POST",
+      "params": {
+        "roleids": {
+          "default": "93EFB852-072B-47B4-A552-9F39DE801AFB",
+          "required": true,
+          "description": "权限组ids"
+        }
+      },
+      "response": {
+      }
+    },
+    {
       "url": "UAPI/Config/NoticeManagerGetList",
       "summary": "获取部门通知跟人员对应关系",
       "type": "POST",
