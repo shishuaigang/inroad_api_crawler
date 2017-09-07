@@ -16,11 +16,12 @@ class api_num:
         self.path = path
 
     @property
+    # @property可以将python定义的函数“当做”属性访问(只读)
     def json_data(self):
         json_file = None
         for files in os.walk(self.path):
             json_file = files[2]
-        return json_file
+        return [json_file[i] for i in range(len(json_file)) if json_file[i].endswith(".json")]  # 粗略判断文件是否以.json结尾
 
     def read_section(self):  # 返回每个section下value的值
         os.chdir(self.path)

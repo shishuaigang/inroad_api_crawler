@@ -660,6 +660,7 @@
       }
     },
     {
+      "NoNeed": "1",
       "url": "UAPI/Config/DeptDelete",
       "summary": "删除部门",
       "type": "POST",
@@ -733,6 +734,7 @@
       }
     },
     {
+      "NoNeed": "1",
       "url": "UAPI/Config/RegionToRoomDel",
       "updatetime": "20170711",
       "summary": "删除区域对应的房间",
