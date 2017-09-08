@@ -1,14 +1,9 @@
-# -*- coding: utf-8 -*-
 import os
 import codecs
 import json
 import random
-import sys
 import copy
 from more_itertools import chunked
-
-reload(sys)
-sys.setdefaultencoding('utf8')
 
 
 class api_num:
@@ -117,8 +112,8 @@ class api_cor_params(api_url):
             params_keys = []
             params_values = []
             for j in range(len(api_param_details[i].keys())):
-                params_keys.append(api_param_details[i].keys()[j])
-                params_values.append(str(api_param_details[i].values()[j]["default"]))
+                params_keys.append(list(api_param_details[i].keys())[j])
+                params_values.append(str(list(api_param_details[i].values())[j]["default"]))
             params_keys.append("APIVersion")
             params_values.append("999999999")
             params.append(dict(zip(params_keys, params_values)))

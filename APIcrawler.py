@@ -8,7 +8,7 @@ from Test_scripts import api_param, api_response, getcookie, sendmail, write_dat
 from Test_scripts import generate_result, status_errormessage, pass_rate
 
 if __name__ == "__main__":
-    print u'API遍历测试开始'
+    print('API遍历测试开始')
     bt = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))  # 测试开始时间
     testNo = time.strftime('%Y%m%d%H%M', time.localtime())
     cur_dir = os.getcwd()
@@ -19,8 +19,8 @@ if __name__ == "__main__":
     elif platform.system() == 'Darwin':
         api_json_path = cur_dir + '/APIcrawler_json_data'
 
-    print 'Now you are in ' + cur_dir
-    print 'Your api json data location is ' + api_json_path
+    print('Now you are in ' + cur_dir)
+    print('Your api json data location is ' + api_json_path)
 
     conf = None
     if platform.system() == 'Windows':
@@ -33,7 +33,7 @@ if __name__ == "__main__":
     inroad_url = api_param.api_url(api_json_path).api_url()  # 获取api的url的地址
     cn_name = api_param.api_cn_name(api_json_path).api_chinese_name()  # 获取api的中文名字
     api_len = len(inroad_url)  # 获取api的个数
-    print 'Now you need test api number is ' + str(api_len)
+    print('Now you need test api number is ' + str(api_len))
     headers = {"Referer": "123"}
     res = api_response.api_cor_res(api_json_path).res_results(cookie, api_ver, headers)
     res_code = [res[i].status_code for i in range(api_len)]
@@ -47,14 +47,14 @@ if __name__ == "__main__":
                                res_status).create_html(passrate, bt, et, testNo)
 
     os.chdir(cur_dir)
-    print u'尝试将测试结果写入数据库...'
+    print('尝试将测试结果写入数据库...')
     if write_database.write_db(conf['db_name'], conf['db_host'], conf['db_username'], conf['db_userpasswd'],
                                testNo).write_db(inroad_url, cn_name, res_code, res_time, res_status, err_mes) == 1:
-        print u'尝试发送测试报告...'
+        print('尝试发送测试报告...')
         try:
             sendmail.send_mail(conf['receiver_list'], conf['mail_subject'], testNo).send_mail()
-            print u'测试报告发送成功,API遍历测试完成'
+            print('测试报告发送成功,API遍历测试完成')
         except Exception:
-            print u'发送邮件失败'
+            print('发送邮件失败')
     else:
-        print u'写入数据库或者测试报告发送失败,请检查脚本和错误信息'
+        print('写入数据库或者测试报告发送失败,请检查脚本和错误信息')

@@ -1,12 +1,7 @@
-# -*- coding: utf-8 -*-
-from api_param import api_cor_params as correct
-from api_param import api_err_params as error
+from Test_scripts.api_param import api_cor_params as correct
+from Test_scripts.api_param import api_err_params as error
 from more_itertools import chunked
 import requests
-import sys
-
-reload(sys)
-sys.setdefaultencoding('utf8')
 
 
 class api_cor_res(correct):

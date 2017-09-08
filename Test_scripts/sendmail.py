@@ -1,10 +1,9 @@
-# -*- coding: utf-8 -*-
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.application import MIMEApplication
 import os
 import smtplib
-import get_git_log
+from Test_scripts import get_git_log
 
 
 class send_mail:
@@ -38,4 +37,4 @@ class send_mail:
             s.sendmail(sender, self.receiver, msg.as_string())  # 发送邮件
             s.close()
         except IOError as e:
-            print "Please check the file 'temp.html' exist or not"
+            print("Please check the file 'temp.html' exist or not")

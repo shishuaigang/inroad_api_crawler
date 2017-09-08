@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 class passrate:
     def __init__(self, length):
         self.length = length

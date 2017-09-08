@@ -1,12 +1,11 @@
-# coding:utf-8
-import cookielib
-import urllib
-import urllib2
+import http.cookiejar
+import urllib.request
+import urllib.parse
 
 
 def gecookie(api_ver):
-    c = cookielib.CookieJar()
-    opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(c))
+    c = http.cookiejar.CookieJar()
+    opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(c))
     url = 'http://192.168.31.99:8088/API/Account/Login'
     data = {
         "APIVersion": api_ver,
@@ -14,7 +13,7 @@ def gecookie(api_ver):
         "password": "123456",
         "rememberme": "True"
     }
-    post_info = urllib.urlencode(data)
-    request = urllib2.Request(url, post_info)
+    post_info = urllib.parse.urlencode(data).encode(encoding='UTF8')
+    request = urllib.request.Request(url, post_info)
     html = opener.open(request).read()
     return c
