@@ -41,6 +41,7 @@ class gen_result:
                         }
                 tr:hover td{background:none;}
                 tr:hover th{background:none;}
+                body,td,th,tr {font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 13px;color: #1d1007; line-height:24px}
             </style>
             </head>
             <body bgcolor="#F7F7F7">
