@@ -1,30 +1,30 @@
-from Test_scripts.api_param import api_cor_params as correct
-from Test_scripts.api_param import api_err_params as error
-from more_itertools import chunked
+from Test_scripts.get_api_param import APIparam
 import requests
 
 
-class api_cor_res(correct):
-    def res_results(self, cookie, api_version, headers):
+class ApiResponse(object):
+    def __init__(self, url, param):
+        self.url = url
+        self.params = param
+
+    def res_results(self, cookie, api_version, header):
         """
-        发送正确参数的请求
         :param cookie: value参数为cookie的值
         :param api_version: apiversion
         :return: 返回response
         """
         response_result = []
-        api_param = self.api_modify_params()
-        api_url = self.api_url()
-        for i in range(len(self.api_url())):
-            results = requests.post("http://192.168.31.99:8088/" + api_url[i],
-                                    data=api_param[i],
+        for i in range(APIparam.length):
+            results = requests.post("http://192.168.31.99:8088/" + self.url[i],
+                                    data=self.params[i],
                                     cookies=cookie,
-                                    headers=headers
+                                    headers=header
                                     )
             response_result.append(results)
         return response_result
 
 
+'''
 class api_err_res(error):
     def res_results(self, cookie, api_version, error_list, headers):
         """
@@ -50,3 +50,4 @@ class api_err_res(error):
                 result.append(_result_min)
             response_result.append(result)
         return response_result
+'''

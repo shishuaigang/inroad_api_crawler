@@ -1,56 +1,19 @@
-import os
-import codecs
-import json
-import random
-import copy
-from more_itertools import chunked
+from Test_scripts.readjson import ReadJson
 
+'''
+计算本地noneed的api
+再利用差集来算需要测试的api
+'''
 
-class api_num:
-    def __init__(self, path):
-        self.path = path
-
-    @property
-    # @property可以将python定义的函数“当做”属性访问(只读)
-    def json_data(self):
-        json_file = None
-        for files in os.walk(self.path):
-            json_file = files[2]
-        return [json_file[i] for i in range(len(json_file)) if json_file[i].endswith(".json")]  # 粗略判断文件是否以.json结尾
-
-    def read_section(self):  # 返回每个section下value的值
-        os.chdir(self.path)
-        re = []
-        temp = [(json.loads(codecs.open(self.json_data[i], encoding='utf-8').read()))["section"]
-                for i in range(len(self.json_data))]  # 结构[[{},{},{}],[{}]]
-        for i in range(len(self.json_data)):
-            result = []
-            for j in range(len(temp[i])):
-                result.append(temp[i][j]['value'])  # i=0时，result的第一个元素插入了temp[i]下面的所有value的值
-            re.append(result)
-        return re
-
-    def every_json_api_number(self):  # 每个json文件下有多少个API，存入list
-        # 返回格式[[15], [27, 6, 4, 3, 6, 5, 3, 8, 4, 3, 18, 6, 6], [63], [38]]
-        os.chdir(self.path)
-        l = self.read_section()
-        re = []
-        for i in range(len(self.json_data)):
-            result = []
-            for j in range(len(l[i])):
-                result.append(len(json.loads(codecs.open(self.json_data[i], encoding='utf-8').read())[l[i][j]]))
-            re.append(result)
-        return re
-
-
-class api_url(api_num):
+'''
+class ApiUrlWithoutNoneed(ReadJson):
     def api_url(self):
         num = self.every_json_api_number()
         array_name = self.read_section()
+        rm_boom_data = self.json_rm_boom()
         url = []
-        for m in range(len(self.json_data)):
-            f = codecs.open(self.json_data[m], encoding='utf-8')
-            dict_json = json.loads(f.read())
+        for m in range(len(rm_boom_data)):
+            dict_json = rm_boom_data[m]
             if "NoNeed" not in dict_json.keys() or dict_json["NoNeed"] == str(0):
                 for n in range(len(num[m])):  # num[m]是一个list
                     for k in range(num[m][n]):
@@ -72,14 +35,14 @@ class api_url(api_num):
                 return i
 
 
-class api_cn_name(api_num):
+class ApiCNnameWithoutNoneed(ReadJson):
     def api_chinese_name(self):
         num = self.every_json_api_number()
         array_name = self.read_section()
+        rm_boom_data = self.json_rm_boom()
         api_chinese_name = []
-        for m in range(len(self.json_data)):
-            f = codecs.open(self.json_data[m], encoding='utf-8')
-            dict_json = json.loads(f.read())
+        for m in range(len(rm_boom_data)):
+            dict_json = rm_boom_data[m]
             if "NoNeed" not in dict_json.keys() or dict_json["NoNeed"] == str(0):
                 for n in range(len(num[m])):
                     for k in range(num[m][n]):
@@ -89,14 +52,14 @@ class api_cn_name(api_num):
         return api_chinese_name
 
 
-class api_cor_params(api_url):
+class api_cor_params(ApiUrlWithoutNoneed):
     def api_details(self):
         num = self.every_json_api_number()
         array_name = self.read_section()
+        rm_boom_data = self.json_rm_boom()
         param_all_details = []
-        for m in range(len(self.json_data)):
-            f = codecs.open(self.json_data[m], encoding='utf-8')
-            dict_json = json.loads(f.read())
+        for m in range(len(rm_boom_data)):
+            dict_json = rm_boom_data[m]
             if "NoNeed" not in dict_json.keys() or dict_json["NoNeed"] == str(0):
                 for n in range(len(num[m])):
                     for k in range(num[m][n]):
@@ -147,3 +110,26 @@ class api_err_params(api_cor_params):
                 for k in range(len(error_list)):
                     error_values[i][j][len(p_c[i].keys()) * k + j] = error_list[k]
         return [error_keys, error_values]
+
+'''
+
+
+class ApiWithNoneed(object):
+    RJ = ReadJson("E:\Original_code\inroad_api_crawler\APIcrawler_json_data")
+    num = RJ.every_json_api_number()
+    array_name = RJ.read_section()
+    rm_boom_data = RJ.json_rm_boom()
+
+    def api_url(self):
+        url = []
+        for m in range(len(self.rm_boom_data)):
+            if "NoNeed" not in self.rm_boom_data[m].keys():
+                for n in range(len(self.num[m])):  # num[m]是一个list
+                    for k in range(self.num[m][n]):
+                        if "NoNeed" in self.rm_boom_data[m][self.array_name[m][n]][k]:
+                            url.append(self.rm_boom_data[m][self.array_name[m][n]][k]["url"])
+            else:
+                for n in range(len(self.num[m])):  # num[m]是一个list
+                    for k in range(self.num[m][n]):
+                        url.append(self.rm_boom_data[m][self.array_name[m][n]][k]["url"])
+        return url

@@ -1,26 +1,16 @@
-# -*- coding: utf-8 -*-
 import os
 import json
 import codecs
 import time
 import platform
-from Test_scripts import api_param, api_response, getcookie, sendmail, write_database
+from Test_scripts import api_response, getcookie, sendmail, write_database, get_api_param
 from Test_scripts import generate_result, status_errormessage, pass_rate
 
 if __name__ == "__main__":
-    print('API遍历测试开始')
     bt = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))  # 测试开始时间
+    print('测试开始: ' + bt)
     testNo = time.strftime('%Y%m%d%H%M', time.localtime())
-    cur_dir = os.getcwd()
-
-    api_json_path = None
-    if platform.system() == 'Windows':
-        api_json_path = cur_dir + '\\APIcrawler_json_data'
-    elif platform.system() == 'Darwin':
-        api_json_path = cur_dir + '/APIcrawler_json_data'
-
-    print('Now you are in ' + cur_dir)
-    print('Your api json data location is ' + api_json_path)
+    cur_dir = os.path.dirname(os.getcwd())
 
     conf = None
     if platform.system() == 'Windows':
@@ -30,12 +20,13 @@ if __name__ == "__main__":
 
     api_ver = conf['api_version']
     cookie = getcookie.gecookie(api_ver)
-    inroad_url = api_param.api_url(api_json_path).api_url()  # 获取api的url的地址
-    cn_name = api_param.api_cn_name(api_json_path).api_chinese_name()  # 获取api的中文名字
+    inroad_url = get_api_param.APIparam().url()  # api的url的地址
+    cn_name = get_api_param.APIparam().cn_name()  # api的中文名字
+    params = get_api_param.APIparam().params()  # api的参数
     api_len = len(inroad_url)  # 获取api的个数
-    print('Now you need test api number is ' + str(api_len))
+    print('测试API的数目为: ' + str(api_len))
     headers = {"Referer": "123"}
-    res = api_response.api_cor_res(api_json_path).res_results(cookie, api_ver, headers)
+    res = api_response.ApiResponse(inroad_url, params).res_results(cookie, api_ver, headers)
     res_code = [res[i].status_code for i in range(api_len)]
     res_time = ['%.1f' % (float(res[i].elapsed.microseconds) / 1000) for i in range(api_len)]
     res_status = status_errormessage.response_status(api_len).res_status(res)

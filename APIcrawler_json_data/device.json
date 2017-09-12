@@ -420,13 +420,6 @@
       "response": {}
     },
     {
-      "url": "UAPI/Device/StandbyMachineStatistics",
-      "summary": "备车设备统计",
-      "type": "POST",
-      "params": {},
-      "response": {}
-    },
-    {
       "url": "UAPI/Device/StandbyDeviceLevelGellist",
       "summary": "备车设备等级",
       "type": "POST",

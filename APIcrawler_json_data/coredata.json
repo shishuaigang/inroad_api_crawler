@@ -63,95 +63,6 @@
       "response": {}
     },
     {
-      "url": "UAPI/CoreData/DataItemConfigSave",
-      "updatetime": "20170413",
-      "summary": "数据项设置编辑",
-      "type": "POST",
-      "params": {
-        "itemid": {
-          "default": "",
-          "required": true,
-          "description": "空为创建，不空为更新"
-        },
-        "title": {
-          "default": "煤浆比",
-          "required": true,
-          "description": "标题"
-        },
-        "itemunit": {
-          "default": "m3/H",
-          "required": true,
-          "description": "单位"
-        },
-        "datatype": {
-          "default": "2",
-          "required": true,
-          "description": "数据项类型1-数据 2--字符串"
-        },
-        "itemtype": {
-          "default": "",
-          "required": true,
-          "description": "数据分类类型"
-        },
-        "minvalue": {
-          "default": "0",
-          "required": true,
-          "description": "数据区间min"
-        },
-        "maxvalue": {
-          "default": "0",
-          "required": true,
-          "description": "数据区间max"
-        },
-        "goodminvalue": {
-          "default": "0",
-          "required": true,
-          "description": "数据控制区间min"
-        },
-        "goodmaxvalue": {
-          "default": "0",
-          "required": true,
-          "description": "数据控制区间max"
-        },
-        "lowvalue": {
-          "default": "0",
-          "required": true,
-          "description": "数据报警区间low"
-        },
-        "highvalue": {
-          "default": "0",
-          "required": true,
-          "description": "数据报警区间high"
-        },
-        "lianlowvalue": {
-          "default": "0",
-          "required": true,
-          "description": "数据联动区间low"
-        },
-        "lianhighvalue": {
-          "default": "0",
-          "required": true,
-          "description": "数据联动区间high"
-        },
-        "code": {
-          "default": "",
-          "required": true,
-          "description": "代码"
-        },
-        "unittype": {
-          "default": "1",
-          "required": true,
-          "description": "单位类型"
-        },
-        "dataoption": {
-          "default": "",
-          "required": false,
-          "description": "当数据类型不为数值型时候，关键数据值的选择项"
-        }
-      },
-      "response": {}
-    },
-    {
       "url": "UAPI/CoreData/CoreReportShareCheck",
       "summary": "分享关注数据报表的处理",
       "type": "POST",
@@ -352,13 +263,6 @@
       "response": {}
     },
     {
-      "url": "UAPI/CoreData/ItemTypeGetList",
-      "summary": "获取数据项类型列表",
-      "type": "POST",
-      "params": {},
-      "response": {}
-    },
-    {
       "url": "UAPI/CoreData/DataItemTypeAdd",
       "summary": "新增数据项类型",
       "type": "POST",
@@ -448,6 +352,7 @@
     },
     {
       "url": "UAPI/CoreData/DataItemConfigSave",
+      "updatetime": "20170413",
       "summary": "数据项设置编辑",
       "type": "POST",
       "params": {
@@ -515,19 +420,21 @@
           "default": "0",
           "required": true,
           "description": "数据联动区间high"
-        }
-      },
-      "response": {}
-    },
-    {
-      "url": "UAPI/CoreData/CoreDataitemGetRules",
-      "summary": "获取数据项目权限信息",
-      "type": "POST",
-      "params": {
-        "itemid": {
-          "default": "B21F3C2D-4B63-483D-81C7-159AFA6C839C",
+        },
+        "code": {
+          "default": "",
           "required": true,
-          "description": "数据项目ID"
+          "description": "代码"
+        },
+        "unittype": {
+          "default": "1",
+          "required": true,
+          "description": "单位类型"
+        },
+        "dataoption": {
+          "default": "",
+          "required": false,
+          "description": "当数据类型不为数值型时候，关键数据值的选择项"
         }
       },
       "response": {}
