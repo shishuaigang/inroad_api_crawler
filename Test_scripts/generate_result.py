@@ -1,5 +1,7 @@
 import json
 
+import os
+
 
 class gen_result:
     def __init__(self, conf, path, inroad_url, api_len, cn_name, response, response_code, response_time,
@@ -28,7 +30,7 @@ class gen_result:
 
     # 生成temp.html
     def create_html(self, passrate, begintime, endtime, testNo):
-        f = open(self.path + r'\\temp.html', 'w', encoding="utf-8")
+        f = open(self.path + '/temp.html', 'w', encoding="utf-8")
         message = """
             <html>
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -50,7 +52,7 @@ class gen_result:
              """
         f.write(message)
         f.close()
-        fx = open(self.path + r'\\temp.html', 'a', encoding="utf-8")
+        fx = open(self.path + r'/temp.html', 'a', encoding="utf-8")
         fx.write('')
         fx.write(
             '<table style="margin-left:12.5%;" width="75%" align="left-side" border="1" cellspacing="0" height="280">')
@@ -82,7 +84,7 @@ class gen_result:
         fx.write('<td align="center"  bgcolor="#D0D0D0">' + str(passrate[2]) + '</td>')
         fx.write('</tr>')
         fx.close()
-        f1 = open(self.path + r'\\temp.html', 'a', encoding="utf-8")
+        f1 = open(self.path + r'/temp.html', 'a', encoding="utf-8")
         f1.write('</table>')
         f1.write(
             '<h2 align="center" style="color:darkblue">Details</h2>')
