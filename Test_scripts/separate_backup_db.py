@@ -58,7 +58,7 @@ class Separate_Backup_DB:
         cur.callproc('sp_detach_db', ("InroadTest",))
         print("done")
         print("copy 数据库")
-        # os.system("net use * /del /y")
+        os.system("net use * /del /y")
         os.system(r"net use \\192.168.31.99\ipc$ Esl91n /user:Administrator")
         os.system(r"xcopy  \\192.168.31.99\d$\DB\InroadTest.mdf   \\192.168.31.99\e$\TestDb\InroadTestBak  /s/e/y/r/q")
         os.system(
