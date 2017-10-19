@@ -75,9 +75,3 @@ class Separate_Backup_DB:
         print("分离备份完成")
         cur.close()
         conn.close()
-
-        # if __name__ == "__main__":
-        # help("separate_backup_db")
-        # param = yaml.load(open('config/db_config.yaml'))
-        # print(param['host'])
-        # Separate_Backup_DB(param['dbname'], param['host'], param['user'], param['password']).copy_database()

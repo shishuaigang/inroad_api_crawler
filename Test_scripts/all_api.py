@@ -2,7 +2,7 @@ from Test_scripts.readjson import ReadJson
 
 
 class AllAPI(object):
-    RJ = ReadJson("z:\\")
+    RJ = ReadJson(r"\\192.168.31.99\ApiForTest")
     num = RJ.every_json_api_number()
     array_name = RJ.read_section()
     rm_boom_data = RJ.json_rm_boom()
