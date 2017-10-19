@@ -10,19 +10,16 @@ from Test_scripts import generate_result, status_errormessage, pass_rate, separa
 if __name__ == "__main__":
     bt = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))  # 测试开始时间
     print('测试开始: ' + bt)
-    print('备份分离数据库')
-    param = yaml.load(open('config/db_config.yaml'))
-    separate_backup_db.Separate_Backup_DB(param['dbname'], param['host'], param['user'],
-                                          param['password']).copy_database()
+
     testNo = time.strftime('%Y%m%d%H%M', time.localtime())
     cur_dir = os.path.dirname(os.getcwd())
 
-    conf = None
-    if platform.system() == 'Windows':
-        conf = json.loads(codecs.open(cur_dir + '\\Config\\config.json', encoding='utf-8').read())
-    elif platform.system() == 'Darwin':
-        conf = json.loads(codecs.open(cur_dir + '/Config/config.json', encoding='utf-8').read())
+    print('备份分离数据库')
+    param = yaml.load(open(cur_dir + '\\Config\\db_config.yaml'))
+    separate_backup_db.Separate_Backup_DB(param['dbname'], param['host'], param['user'],
+                                          param['password']).copy_database()
 
+    conf = json.loads(codecs.open(cur_dir + '\\Config\\config.json', encoding='utf-8').read())
     api_ver = conf['api_version']
     cookie = getcookie.gecookie(api_ver)
     inroad_url = get_api_param.APIparam().url()  # api的url的地址

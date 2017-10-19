@@ -115,7 +115,7 @@ class api_err_params(api_cor_params):
 
 
 class ApiWithNoneed(object):
-    RJ = ReadJson("/Users/shishuaigang/PycharmProjects/inroad_api_crawler/APIcrawler_json_data")
+    RJ = ReadJson("E:\\Original_code\\inroad_api_crawler\\APIcrawler_json_data")
     num = RJ.every_json_api_number()
     array_name = RJ.read_section()
     rm_boom_data = RJ.json_rm_boom()
