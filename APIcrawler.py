@@ -3,12 +3,17 @@ import json
 import codecs
 import time
 import platform
+import yaml
 from Test_scripts import api_response, getcookie, sendmail, write_database, get_api_param
-from Test_scripts import generate_result, status_errormessage, pass_rate
+from Test_scripts import generate_result, status_errormessage, pass_rate, separate_backup_db
 
 if __name__ == "__main__":
     bt = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))  # 测试开始时间
     print('测试开始: ' + bt)
+    print('备份分离数据库')
+    param = yaml.load(open('config/db_config.yaml'))
+    separate_backup_db.Separate_Backup_DB(param['dbname'], param['host'], param['user'],
+                                          param['password']).copy_database()
     testNo = time.strftime('%Y%m%d%H%M', time.localtime())
     cur_dir = os.path.dirname(os.getcwd())
 

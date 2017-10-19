@@ -55,11 +55,11 @@ class ReadJson:
         # 返回格式[[15], [27, 6, 4, 3, 6, 5, 3, 8, 4, 3, 18, 6, 6], [63], [38]]
         os.chdir(self.path)
         rm_boom_data = self.json_rm_boom()
-        l = self.read_section()
+        sec = self.read_section()
         re = []
         for i in range(len(rm_boom_data)):
             result = []
-            for j in range(len(l[i])):
-                result.append(len(rm_boom_data[i][l[i][j]]))
+            for j in range(len(sec[i])):
+                result.append(len(rm_boom_data[i][sec[i][j]]))
             re.append(result)
         return re
