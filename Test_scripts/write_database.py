@@ -3,7 +3,7 @@ import pymssql
 import shutil
 
 
-class write_db:
+class WriteDB:
     def __init__(self, dbname, host, username, password, t):
         self.dbname = dbname
         self.host = host

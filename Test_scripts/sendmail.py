@@ -6,7 +6,7 @@ import smtplib
 from Test_scripts import get_git_log
 
 
-class send_mail:
+class SendMail:
     def __init__(self, rec_list, mail_subject, t):
         self.receiver = rec_list
         self.mail_subject = mail_subject
@@ -14,7 +14,7 @@ class send_mail:
 
     def send_mail(self):
         try:  # 判定是否存在temp.html，如没有，则抛出异常
-            gitlog = get_git_log.gitlog()
+            gitlog = get_git_log.GitLog()
             os.chdir(r"Test_results")
             os.rename('temp.html', 'TestReport_' + self.t + '.html')
             # 定义发件人邮箱，密码和收件人的list

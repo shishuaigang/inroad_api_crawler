@@ -1,4 +1,4 @@
-class passrate:
+class PassRate:
     def __init__(self, length):
         self.length = length
 

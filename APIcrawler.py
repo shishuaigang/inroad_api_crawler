@@ -31,21 +31,21 @@ if __name__ == "__main__":
     res = api_response.ApiResponse(inroad_url, params).res_results(cookie, api_ver, headers)
     res_code = [res[i].status_code for i in range(api_len)]
     res_time = ['%.1f' % (float(res[i].elapsed.microseconds) / 1000) for i in range(api_len)]
-    res_status = status_errormessage.response_status(api_len).res_status(res)
-    err_mes = status_errormessage.error_message(api_len).error_mes(res)
-    passrate = pass_rate.passrate(api_len).pass_rate(res_status, res_code)  # 计算成功率
+    res_status = status_errormessage.ResponseStatus(api_len).res_status(res)
+    err_mes = status_errormessage.ErrorMessage(api_len).error_mes(res)
+    passrate = pass_rate.PassRate(api_len).pass_rate(res_status, res_code)  # 计算成功率
     et = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))  # 测试结束时间
     # 创建temp.html
-    generate_result.gen_result(conf, cur_dir, inroad_url, api_len, cn_name, res, res_code, res_time,
-                               res_status).create_html(passrate, bt, et, testNo)
+    generate_result.GenerateResult(conf, cur_dir, inroad_url, api_len, cn_name, res, res_code, res_time,
+                                   res_status).create_html(passrate, bt, et, testNo)
 
     os.chdir(cur_dir)
     print('尝试将测试结果写入数据库...')
-    if write_database.write_db(conf['db_name'], conf['db_host'], conf['db_username'], conf['db_userpasswd'],
-                               testNo).write_db(inroad_url, cn_name, res_code, res_time, res_status, err_mes) == 1:
+    if write_database.WriteDB(conf['db_name'], conf['db_host'], conf['db_username'], conf['db_userpasswd'],
+                              testNo).write_db(inroad_url, cn_name, res_code, res_time, res_status, err_mes) == 1:
         print('尝试发送测试报告...')
         try:
-            sendmail.send_mail(conf['receiver_list'], conf['mail_subject'], testNo).send_mail()
+            sendmail.SendMail(conf['receiver_list'], conf['mail_subject'], testNo).send_mail()
             print('测试报告发送成功,API遍历测试完成')
         except Exception:
             print('发送邮件失败')

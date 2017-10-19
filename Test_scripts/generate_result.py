@@ -3,7 +3,7 @@ import json
 import os
 
 
-class gen_result:
+class GenerateResult:
     def __init__(self, conf, path, inroad_url, api_len, cn_name, response, response_code, response_time,
                  response_staus):
         """

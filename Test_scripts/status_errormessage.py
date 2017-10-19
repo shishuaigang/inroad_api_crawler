@@ -1,7 +1,7 @@
 import json
 
 
-class response_status:
+class ResponseStatus:
     def __init__(self, length):
         self.length = length
 
@@ -16,7 +16,7 @@ class response_status:
         return respon_status
 
 
-class error_message:
+class ErrorMessage:
     def __init__(self, length):
         self.length = length
 
